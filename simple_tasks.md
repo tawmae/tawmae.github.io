@@ -11,7 +11,7 @@ Twitch
 {: .label .label-purple }
 
 OBS
-{: .label .label-darkgrey }
+{: .label .label-grey-dk-100 }
 
 StreamerBot
 {: .label .label-blue }

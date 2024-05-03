@@ -6,7 +6,6 @@ nav_order: 5
 
 ![Picture](assets/media/simple_tasks_title.png)
 
-
 Twitch
 {: .label .label-purple }
 

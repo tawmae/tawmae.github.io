@@ -9,5 +9,5 @@ aux_links:
 
 callouts:
   warning:
-    title: Warning
-    color: red
+    title: Info
+    color: green

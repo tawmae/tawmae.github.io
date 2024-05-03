@@ -1,5 +1,5 @@
 ---
-title: User Inventory
+title: Heart Containers
 layout: default
 nav_order: 9
 ---

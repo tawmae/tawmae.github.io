@@ -6,6 +6,17 @@ nav_order: 5
 
 ![Picture](assets/media/simple_tasks_title.png)
 
+
+Twitch
+{: .label .label-purple }
+
+OBS
+{: .label .label-darkgrey }
+
+StreamerBot
+{: .label .label-blue }
+
+
 # Table of contents
 {: .no_toc .text-delta }
 

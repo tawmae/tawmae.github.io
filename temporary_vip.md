@@ -14,7 +14,7 @@ nav_order: 3
 
 ---
 
-{: .warning }
+{: .info }
 A paragraph...
 
 ## Description

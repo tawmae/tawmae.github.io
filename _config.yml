@@ -8,6 +8,6 @@ aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
 callouts:
-  warning:
+  info:
     title: Info
     color: green

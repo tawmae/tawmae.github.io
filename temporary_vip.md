@@ -6,6 +6,13 @@ nav_order: 3
 
 ![User Inventory](assets/media/temporary_vip_title.png)
 
+Twitch
+{: .label .label-purple }
+
+StreamerBot
+{: .label .label-blue }
+
+
 # Table of contents
 {: .no_toc .text-delta }
 

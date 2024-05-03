@@ -54,40 +54,40 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 
 - **!add item [User] [Item]**
 
-![User Inventory](assets/media/user_inventory_add_item.png) 
+    ![User Inventory](assets/media/user_inventory_add_item.png) 
 
-Add an item of your choice to a user's inventory. The items can contain spaces and can have a set amount before them (e. g. 10x Health Potion).
+    Add an item of your choice to a user's inventory. The items can contain spaces and can have a set amount before them (e. g. 10x Health Potion).
 
 - - - -
 
 
 - **!remove item [User] [Item]**
 
-![User Inventory](assets/media/user_inventory_remove_item.png)
+    ![User Inventory](assets/media/user_inventory_remove_item.png)
 
-Remove a specific item from a user's inventory (you can only remove a single item at once).
+    Remove a specific item from a user's inventory (you can only remove a single item at once).
 
 - - - -
 
 
 - **!use [Item]** 
 
-![User Inventory](assets/media/user_inventory_use_item.png)
+    ![User Inventory](assets/media/user_inventory_use_item.png)
 
-Use an item in your inventory.
+    Use an item in your inventory.
 
 - - - -
 
 
 - **!items** or **!inventory**  
 
-![User Inventory](assets/media/user_inventory_items.png)
+    ![User Inventory](assets/media/user_inventory_items.png)
 
-See the content of your inventory.
+    See the content of your inventory.
 
 - - - -
-
-Note: Items are case-sensitive!
+{: .highlight }
+Items are case-sensitive!
 
 
 ## Configuration

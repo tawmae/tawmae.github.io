@@ -68,6 +68,8 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 - **!addVip [User] [Time]**
 
+  ![Picture](assets/media/temporary_vip_add_vip.png)
+
   Adds VIP time to the specified user. If `[Time]` has been left blank, it will pick the default time that is set in the action. See the available time formats above.
 
 
@@ -76,12 +78,16 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 - **!removeVip [User] [Time]**
 
-   Removes VIP time. If the removed time exceeds the time the user had left, it will un-vip them. So to completely remove someone from being a timed VIP, you can just remove 100 years.
+  ![Picture](assets/media/temporary_vip_remove_vip.png)
+
+  Removes VIP time. If the removed time exceeds the time the user had left, it will un-vip them. So to completely remove someone from being a timed VIP, you can just remove 100 years.
 
 
 - - - -
 
 - **!checkVip**
+
+  ![Picture](assets/media/temporary_vip_check_vip.png)
 
   Will allow the users to check when their VIP status expires. If a moderator or permanent VIP uses this, it lists all current temporary VIPs.
 
@@ -89,6 +95,9 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 - - - -
 
 - **!refreshVip**
+  
+    ![Picture](assets/media/temporary_vip_refresh_vip.png)
+
    A manual refresh and checks for expired VIPs. If any are expired, they'll be removed.
 
 

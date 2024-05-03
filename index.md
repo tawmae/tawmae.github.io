@@ -1,6 +1,7 @@
 ---
-title: Home
-layout: home
+title: Start
+layout: default
+nav_order: 1
 ---
 
 hehe

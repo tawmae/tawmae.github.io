@@ -6,6 +6,16 @@ nav_order: 4
 
 ![Picture](assets/media/event_list_title_1.png)
 
+Twitch
+{: .label .label-purple }
+
+OBS
+{: .label .label-grey-dk-100 }
+
+StreamerBot
+{: .label .label-blue }
+
+
 # Table of contents
 {: .no_toc .text-delta }
 

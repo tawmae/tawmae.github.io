@@ -86,7 +86,7 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
     See the content of your inventory.
 
 - - - -
-{: .highlight }
+{: .new }
 Items are case-sensitive!
 
 
@@ -102,7 +102,7 @@ Items are case-sensitive!
 2. In the action `[User Inventory] Loot (Channel Point Reward)` you can duplicate a `Set Argument` subaction inside the "Random Item" group and add any items you want to be in the loot pool. By rightclicking the subactions, you can change the "Weight" and therefore its loot probabilites. The item is picked randomly and will be added to the user's inventory.
 
    
-   ![User Inventory](Assets/user_inventory_loot_item_action.png)
+   ![User Inventory](assets/media/user_inventory_loot_item_action.png)
 
 
    The `Set Argument` subaction allows you to set a %-chance for *noItemChance* that __no__ item will be looted.  The user will then simply draw a blank :) It is set to 0% by default.

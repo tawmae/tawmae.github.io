@@ -38,7 +38,7 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 
 ## Installation
 
-1. Download the import file from above and import the content
+1. Copy the import code from above and import the content
 
     ![Import Actions](assets/media/import_actions.png)
 

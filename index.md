@@ -9,7 +9,7 @@ On your left, you'll find a collection of my personal StreamerBot extensions her
 
 ![Picture](assets/media/sb_logo.png) [StreamerBot](https://streamer.bot/){: .btn .btn-purple }
 
-![Picture](assets/media/discord.png) [StreamerBot Discord](https://discord.streamer.bot/){: .btn .btn-purple .mr-1 }
+![Picture](assets/media/discord_logo.png) [StreamerBot Discord](https://discord.streamer.bot/){: .btn .btn-purple .mr-1 }
 
 ![Picture](assets/media/twitch_logo.png) [My Twitch Channel](https://twitch.tv/tawmae){: .btn .btn-purple .mr-2 }
 

@@ -14,8 +14,7 @@ nav_order: 3
 
 ---
 
-{: .warning }
-A paragraph lmao...
+
 
 ## Description
 Give users a VIP status - but only for a limited amount of time! You can either add a custom amount of time with a command or use a channel point reward with a set amount of time.
@@ -51,8 +50,8 @@ U0JBRR+LCAAAAAAABADtPVlz4kia7xux/4Gpfdjd2FZ16kTqiHkwlLls0wUYAZrqB+UhoUIHA+LyRP/3
 
 - In the `[Temporary VIP] Add Time` action, you can set a default time. The `defaultTime` is either used when no time is specified in a command or when you use a channel point reward. So a default time of `1d` would add 1 day if used with a channel point reward.
 
-> {: .new }
-> > Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
+{: .new }
+Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 ![Import Actions](assets/media/temporary_vip_settings.png)
 

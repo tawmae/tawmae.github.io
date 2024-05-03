@@ -54,7 +54,7 @@ U0JBRR+LCAAAAAAABADtfVtz4krS4PtG7H9wnH35Nmbo0QXZMBH7YBBg0VRxAF2QvjMPugCSkIAxYJAm
 
 3. Go back into StreamerBot, copy the import code from above and import the content
    
-  ![Import Actions](assets/media/import_actions.png)
+   ![Import Actions](assets/media/import_actions.png)
 
 5. Go into the `[Event List] Event List + Setup` action, rightclick the "Test" trigger and click "Test trigger". 
 

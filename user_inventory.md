@@ -14,7 +14,8 @@ nav_order: 2
 {:toc}
 
 ---
-
+{: .new }
+Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 ## Description
 
@@ -86,6 +87,7 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
     See the content of your inventory.
 
 - - - -
+
 {: .new }
 Items are case-sensitive!
 

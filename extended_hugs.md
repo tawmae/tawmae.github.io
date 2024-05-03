@@ -4,7 +4,7 @@ layout: default
 nav_order: 8
 ---
 
-![Picture](assets/media/extended_hugs_title.gif)
+![Picture](assets/media/extended_hugs_title_2.png)
 
 Twitch
 {: .label .label-purple }
@@ -26,6 +26,8 @@ StreamerBot
 Let your viewers hug other viewers if they have given their consent (optional). Consent can be given to all, to none, to specific users and for individual hug requests. 
 
 Stats for hugs given and received are saved in user variables (total hugs and individual hugs given/received to/from specific users). Those can be displayed in a leaderboard for example.
+
+![Picture](assets/media/extended_hugs_title.gif)
 
 ---
 

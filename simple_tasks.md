@@ -18,7 +18,7 @@ nav_order: 5
 ## Description
 Add, complete and remove tasks from your OBS overlay vía chat commands.
 
-![Picture](assets/media/simple_tasks_title_2.png)
+![Picture](assets/media/simple_tasks_title_2.gif)
 
 ---
 
@@ -52,33 +52,39 @@ Make sure you have OBS on version `30.1.1` or newer
 
 ## Commands
 
-**!task [Task]** 
-Adds commands to the list.
+- **!task [Task]**
+  
+  Adds commands to the list.
 
 ---
 
-**!task complete [Task]**
-Creates a checkmark behind the task.
+- **!task complete [Task]**
+
+  Creates a checkmark behind the task.
 
 ---
 
-**!task remove [Task]** 
-Removes a task from the list.
+- **!task remove [Task]**
+  
+  Removes a task from the list.
 
 ---
 
-**!task next**
-Shows the first task in chat.
+- **!task next**
+
+  Shows the first task in chat.
 
 ---
 
-**!task next [Number]**
-Shows the specified task in chat. 
+- **!task next [Number]**
+  
+  Shows the specified task in chat. 
 
 ---
 
-**!task reset**
-Resets the entire list.
+- **!task reset**
+
+  Resets the entire list.
 
 ---
 

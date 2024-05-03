@@ -14,8 +14,6 @@ nav_order: 2
 {:toc}
 
 ---
-{: .new }
-Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 ## Description
 

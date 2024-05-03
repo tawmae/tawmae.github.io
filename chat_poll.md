@@ -42,14 +42,14 @@ After half the time there will be an interim result posted to chat. The poll dur
 ---
 
 ## Required OBS Plugins
-1. Source Copy: https://obsproject.com/forum/resources/source-copy.1261/ 
-2. Advanced Masks: https://obsproject.com/forum/resources/advanced-masks.1856/
-3. Shaderfilter: https://obsproject.com/forum/resources/obs-shaderfilter.1736/
-4. Strike Glow Shadow: https://obsproject.com/forum/resources/stroke-glow-shadow.1800/
-5. Move: https://obsproject.com/forum/resources/move.913/
+1. [Source Copy Plugin](https://obsproject.com/forum/resources/source-copy.1261/) 
+2. [Advanced Masks Plugin](https://obsproject.com/forum/resources/advanced-masks.1856/)
+3. [Shaderfilter](https://obsproject.com/forum/resources/obs-shaderfilter.1736/)
+4. [Stroke Glow Shadow Plugin](https://obsproject.com/forum/resources/stroke-glow-shadow.1800/)
+5. [Move Plugin](https://obsproject.com/forum/resources/move.913/)
 
 {: .highlight }
-Make sure you have the latest versions of all plugins and OBS itself.
+Make sure you have the latest versions of all plugins (especially Source Copy) and OBS itself.
 
 ---
 

@@ -90,7 +90,8 @@ U0JBRR+LCAAAAAAABADtfVmT4siy5vs1u/8hreZlxu6hWmuC2sbGLNlFIVGAkJBu9YM2kEACGsR67Pz3
 
   ![Picture](assets/media/basic_twitch_alerts_global.png)
 
-   Then rightclick the action and exclude it from history. 
+   Then rightclick the action and exclude it from history.
+   
   ![Picture](assets/media/basic_twitch_alerts_exclude.png)
  
   {: .note }

@@ -106,8 +106,6 @@ U0JBRR+LCAAAAAAABADsvXlz4tqSL/r/jbjfwVE3brz34hz21mijjui4wWxhJAoQCKnrxAtNgIQEbgMG
 7. Rightclick the Test-Trigger and click on "Test Trigger". This will apply the settings.
 
 
-8. **Done!** :partying_face:
-
 ---
 
 {: .note }

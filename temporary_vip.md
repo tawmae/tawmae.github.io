@@ -14,8 +14,8 @@ nav_order: 3
 
 ---
 
-{: .info }
-A paragraph...
+{: .custom1 }
+>A paragraph...
 
 ## Description
 Give users a VIP status - but only for a limited amount of time! You can either add a custom amount of time with a command or use a channel point reward with a set amount of time.

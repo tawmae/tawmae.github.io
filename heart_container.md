@@ -4,7 +4,7 @@ layout: default
 nav_order: 9
 ---
 
-![Picture](assets/media/hearth_container_title.png)
+![Picture](assets/media/heart_container_title.png)
 
 Twitch
 {: .label .label-purple }
@@ -28,7 +28,7 @@ StreamerBot
 
 Use events, commands or any trigger you can think of to add or remove heart containers from your OBS overlay.
 
-![Picture](assets/media/hearth_container_title_2.gif)
+![Picture](assets/media/heart_container_title_2.gif)
 
 ---
 
@@ -50,7 +50,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 ## Downloads
 
-* Images and sounds: [OBS Heart Containers.zip](media/assets/OBS%20Heart%20Containers.zip)
+* Images and sounds: [OBS Heart Containers.zip](assets/media/OBS%20Heart%20Containers.zip)
 
 ---
 
@@ -62,7 +62,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
    Unzip "OBS Heart Containers.zip" and place the folder right into your StreamerBot folder. 
 
-   ![Picture](assets/media/hearth_container_folder.png)
+   ![Picture](assets/media/heart_container_folder.png)
 
 3. Copy the import code from above and import the content
 
@@ -71,11 +71,11 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 4. Navigate to the action `[Heart Containers] ++ Setup ++`, rightclick the "Test" trigger and hit "Test Trigger". 
 
 
-   ![Picture](assets/media/hearth_container_test_trigger.png)
+   ![Picture](assets/media/heart_container_test_trigger.png)
 
    This will create the OBS scene and sources for you. You will get a success response in chat afterwards. 
 
-   ![Picture](assets/media/hearth_container_setup_completed.png)
+   ![Picture](assets/media/heart_container_setup_completed.png)
 
 
 5. You can now assign any triggers you want to the `[Heart Containers] Add Hearts` and `[Heart Containers] Remove Hearts` action.

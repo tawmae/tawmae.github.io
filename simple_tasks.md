@@ -102,6 +102,7 @@ Make sure you have OBS on version `30.1.1` or newer
 {: .note }
 You can also use the line number to complete or remove tasks, e.g. `!task remove 1` to remove the first task of the list.
 
+---
 
 ## Settings
 

@@ -4,6 +4,8 @@ layout: default
 nav_order: 1
 ---
 
+![Picture](assets/media/sb_title.png)
+
 On your left, you'll find a collection of my personal StreamerBot extensions. If you run into any issues, open a support post in the StreamerBot discord and feel free to ping me.
 
 

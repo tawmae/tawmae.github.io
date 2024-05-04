@@ -87,8 +87,8 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ## Commands
 
-- ##`!hotpotato start`
-  {: .no_toc .text-delta }
+## `!hotpotato start`
+{: .no_toc .text-delta }
 
   Starts the game.
 

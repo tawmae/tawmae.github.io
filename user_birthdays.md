@@ -69,7 +69,8 @@ U0JBRR+LCAAAAAAABADtXFlz4siWfp+I+Q+emsfbcmlH6oh5MNiAsE0VYASoq2NCuSBkJMEFCQwd/d/n
 
 ## Commands
 
-- **!birthday set [Date]**
+- ## `!BIRTHDAY SET [DATE]`
+  {: .no_toc }
 
   ![Picture](assets/media/user_birthdays_set.png)
 
@@ -77,7 +78,8 @@ U0JBRR+LCAAAAAAABADtXFlz4siWfp+I+Q+emsfbcmlH6oh5MNiAsE0VYASoq2NCuSBkJMEFCQwd/d/n
 
 ---
 
-- **!birthday check [User]**
+- ## `!BIRTHDAY CHECK [USERNAME]`
+  {: .no_toc }
 
   ![Picture](assets/media/user_birthdays_check.png)
 
@@ -85,7 +87,8 @@ U0JBRR+LCAAAAAAABADtXFlz4siWfp+I+Q+emsfbcmlH6oh5MNiAsE0VYASoq2NCuSBkJMEFCQwd/d/n
 
 ---
 
-- **!birthday next**
+- ## `!BIRTHDAY NEXT`
+  {: .no_toc }
 
   ![Picture](assets/media/user_birthdays_next.png)
 
@@ -93,7 +96,8 @@ U0JBRR+LCAAAAAAABADtXFlz4siWfp+I+Q+emsfbcmlH6oh5MNiAsE0VYASoq2NCuSBkJMEFCQwd/d/n
 
 ---
 
-- **!birthday change [User] [Date]**
+- ## `!BIRTHDAY CHANGE [USERNAME] [DATE]`
+  {: .no_toc }
 
   ![Picture](assets/media/user_birthdays_change.png)
 
@@ -101,7 +105,8 @@ U0JBRR+LCAAAAAAABADtXFlz4siWfp+I+Q+emsfbcmlH6oh5MNiAsE0VYASoq2NCuSBkJMEFCQwd/d/n
 
 ---
 
-- **!birthday delete [User]**
+- ## `!BIRTHDAY DELETE [USERNAME]`
+  {: .no_toc }
 
   ![Picture](assets/media/user_birthdays_delete.png)
 

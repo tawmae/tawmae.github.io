@@ -1,7 +1,7 @@
 ---
 title: Extended Hugs
 layout: default
-nav_order: 8
+nav_order: 9
 ---
 
 ![Picture](assets/media/extended_hugs_title_2.png)

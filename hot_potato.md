@@ -82,7 +82,7 @@ U0JBRR+LCAAAAAAABADtPftv4kiav590/wPbp5X2NOue8tse3a4USACTDtNA89wenapcZXDwgwEDIaP5
    {: .new }
    The broadcaster and bot account are not being counted as "active chatters".   
 
-- In the `[Hot Potato] End` action, you can set `passesGameEnd` to a number of your liking. The game will automatically end and resolve in a draw once the potato has been passed along this many times-
+- In the `[Hot Potato] Pass On` action, you can set `passesGameEnd` to a number of your liking. The game will automatically end and resolve in a draw once the potato has been passed along this many times-
 
   ![Picture](assets/media/hot_potato_settings_3.png) 
 

@@ -1,7 +1,7 @@
 ---
 title: Phasmophobia Log
 layout: default
-nav_order: 11
+nav_order: 13
 ---
 
 ![Picture](assets/media/phasmo_title.png)

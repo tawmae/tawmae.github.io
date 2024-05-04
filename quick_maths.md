@@ -9,9 +9,6 @@ nav_order: 14
 Twitch
 {: .label .label-purple }
 
-OBS
-{: .label .label-yellow }
-
 StreamerBot
 {: .label .label-blue }
 

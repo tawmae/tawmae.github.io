@@ -1,6 +1,6 @@
 ---
 title: Start
-layout: default
+layout: home
 nav_order: 1
 ---
 

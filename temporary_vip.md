@@ -73,7 +73,8 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 ## Commands
 
-- **!addVip [User] [Time]**
+- ## `!ADDVIP [USERNAME] [TIME]`
+  {: .no_toc }
 
   ![Picture](assets/media/temporary_vip_add_vip.png)
 
@@ -83,7 +84,8 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 - - - -
 
 
-- **!removeVip [User] [Time]**
+- ## `!REMOVEVIP [USERNAME] [TIME]`
+  {: .no_toc }
 
   ![Picture](assets/media/temporary_vip_remove_vip.png)
 
@@ -92,7 +94,8 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 - - - -
 
-- **!checkVip**
+- ## `!CHECKVIP`
+  {: .no_toc }
 
   ![Picture](assets/media/temporary_vip_check_vip.png)
 
@@ -101,7 +104,8 @@ Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
 
 - - - -
 
-- **!refreshVip**
+- ## `!REFRESHVIP`
+  {: .no_toc }
   
     ![Picture](assets/media/temporary_vip_refresh_vip.png)
 

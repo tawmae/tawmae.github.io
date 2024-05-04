@@ -87,7 +87,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ## Commands
 
-- ##`!hotpotato start`
+- ## `!hotpotato start`
   {: .no_toc }
 
 
@@ -103,7 +103,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
-- ##`!hotpotato exclude`
+- ## `!hotpotato exclude`
   {: .no_toc }
 
   Exclude yourself from the game. Type it again to include yourself back in.

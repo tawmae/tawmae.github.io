@@ -88,6 +88,16 @@ U0JBRR+LCAAAAAAABADtPftv4kiav590/wPbp5X2NOue8tse3a4USACTaaaB5rk9OlW5yuDEDwYMhIzm
 
 ---
 
+Here's a cool little image of a hot potato I found online and resized for channel point rewards. Feel free to use! :)
+
+![Picture](assets/media/hot_potato_reward_picture.png) 
+
+![Picture](assets/media/hot_potato_112x112.png) ![Picture](assets/media/hot_potato_56x56.png) ![Picture](assets/media/hot_potato_28x28.png) 
+
+
+
+---
+
 ## Commands
 
 - ## `!HOTPOTATO START`

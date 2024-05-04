@@ -55,7 +55,7 @@ U0JBRR+LCAAAAAAABADtPWlz4kiW3zdi/wNT+2FnY1s1qROpI+aDocxlmy7ACNBUx4bykFChg0ECjCf6
 - In the `[Temporary VIP] Add Time` action, you can set a default time. The `defaultTime` is either used when no time is specified in a command or when you use a channel point reward. So a default time of `1d` would add 1 day if used with a channel point reward.
 
 {: .new }
-Allowed time formats:  1y / 2mo / 3d / 4h / 5min / 6s
+Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
 
 ![Import Actions](assets/media/temporary_vip_settings.png)
 

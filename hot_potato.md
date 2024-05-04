@@ -88,6 +88,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 ## Commands
 
 - ##`!hotpotato start`
+  {: .no_toc }
 
 
   Starts the game.
@@ -95,6 +96,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 ---
 
 - ## `!pass`
+  {: .no_toc }
 
 
   Pass the hot potato to another random player.
@@ -102,15 +104,14 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 ---
 
 - ##`!hotpotato exclude`
-  {: .no_toc .text-delta }
+  {: .no_toc }
 
   Exclude yourself from the game. Type it again to include yourself back in.
 
 ---
 
 - ## `!hotpotato exclude [Username]`
-  
-  {: .no_toc .text-delta }
+  {: .no_toc }
 
   Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.
 

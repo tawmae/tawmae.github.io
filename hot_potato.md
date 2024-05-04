@@ -87,15 +87,15 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ## Commands
 
-## `!hotpotato start`
-{: .no_toc .text-delta }
+- ##`!hotpotato start`
+
 
   Starts the game.
 
 ---
 
-- ##`!pass`
-  {: .no_toc .text-delta }
+- ## `!pass`
+
 
   Pass the hot potato to another random player.
 
@@ -108,7 +108,8 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
-- # `!hotpotato exclude [Username]`
+- ## `!hotpotato exclude [Username]`
+  
   {: .no_toc .text-delta }
 
   Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.

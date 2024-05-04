@@ -107,7 +107,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 - **!hotpotato exclude [Username]**
 
-  Exclude the specified user from the game. Mods only. To include them back in, retype the command.
+  Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.
 
 ---
 

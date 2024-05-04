@@ -110,7 +110,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
-- ## `!HOTPOTATO [USERNAME]`
+- ## `!HOTPOTATO EXCLUDE [USERNAME]`
   {: .no_toc }
 
   Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.

@@ -99,3 +99,15 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
+- **!hotpotato exclude**
+
+  Exclude yourself from the game. Type it again to include yourself back in.
+
+---
+
+- **!hotpotato exclude [Username]**
+
+  Exclude the specified user from the game. Mods only. To include them back in, retype the command.
+
+---
+

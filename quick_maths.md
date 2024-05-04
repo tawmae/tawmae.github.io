@@ -53,16 +53,17 @@ U0JBRR+LCAAAAAAABADtWutz4kiS/34R9z9wvvuwG9dy6wlSR2xsgGxA2KYN2OIx7rtQPfQwJYnRAyzP
 
 ## Commands
 
-- **!quickmaths**
+- ## `!QUICKMATHS`
+  {: .no_toc }
 
   Starts the game.
 
 ---
 
-> {: .new }
-> > 1. Only one game can run at the same time.
-> >
-> > 2. Results are always whole numbers (-250 to 250).
-> >
-> > 3. The game resets after 60s if noone's given the correct answer, you can change the time of the Timed Aciton "Quick Maths" to lower/increase it.
+{: .new }
+> 1. Only one game can run at the same time.
+>
+> 2. Results are always whole numbers (-250 to 250).
+>
+> 3. The game resets after 60s if noone's given the correct answer, you can change the time of the Timed Aciton "Quick Maths" to lower/increase it.
 

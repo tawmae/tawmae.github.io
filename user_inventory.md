@@ -57,7 +57,8 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 
 ## Commands
 
-- **!add item [User] [Item]**
+- ## `!ADD ITEM [USERNAME] [ITEM]`
+  {: .no_toc }
 
     ![User Inventory](assets/media/user_inventory_add_item.png) 
 
@@ -66,7 +67,8 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 - - - -
 
 
-- **!remove item [User] [Item]**
+- ## `!REMOVE ITEM [USERNAME] [ITEM]`
+  {: .no_toc }
 
     ![User Inventory](assets/media/user_inventory_remove_item.png)
 
@@ -75,7 +77,8 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 - - - -
 
 
-- **!use [Item]** 
+- ## `!USE [ITEM]`
+  {: .no_toc } 
 
     ![User Inventory](assets/media/user_inventory_use_item.png)
 
@@ -84,7 +87,8 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 - - - -
 
 
-- **!items** or **!inventory**  
+- ## `!ITEMS` or `!INVENTORY`
+  {: .no_toc } 
 
     ![User Inventory](assets/media/user_inventory_items.png)
 
@@ -92,7 +96,7 @@ U0JBRR+LCAAAAAAABADtPWtz4kiS3y/i/gPbFxtxF7Ny6wnSROwHwAaEbboNmNd6YqJUVRJq9GCQZIw3
 
 - - - -
 
-{: .new }
+{: .highlight }
 Items are case-sensitive!
 
 

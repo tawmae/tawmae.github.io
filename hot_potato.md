@@ -53,13 +53,13 @@ U0JBRR+LCAAAAAAABADtPGlz4kiW3zdi/wNb+2U2elSl++jY2QiDDQiXKQPm0lTHRqYyJVToYJAA447+
 
 5. In StreamerBot, go to `Platforms -> Twitch -> Channel Point Rewards` and create two rewards. One to start the game, one to pass on the potato. Name them whatever you want. Keep `User Input Required` and `Redemption Skips Queue` unchecked, so the reward can be refunded.
 
-  ![Picture](assets/media/hot_potato_rewards_1.png)   
+    ![Picture](assets/media/hot_potato_rewards_1.png)   
 
 6. Assign the rewards as a trigger in the `[Hot Potato] Start` and `[Hot Potato] Pass On` action.
 
 7. In the `[Hot Potato] Start` action, you will find a folder called `Config (for Channelpoint Rewards only` with two subactions in there. Go back into `Platforms -> Twitch -> Channel Point Rewards`, rightclick the rewards and copy their Reward ID. Paste the reward ID of the Start-Reward into `startRewardId` and the Pass-Reward-ID into `passRewardId` of the `[Hot Potato] Start` action.
 
-   ![Picture](assets/media/hot_potato_rewards_2.png)  
+    ![Picture](assets/media/hot_potato_rewards_2.png)  
 
 9. Now you're done!
 

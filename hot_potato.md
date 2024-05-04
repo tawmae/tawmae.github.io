@@ -74,13 +74,11 @@ U0JBRR+LCAAAAAAABADtPGlz4kiW3zdi/wNb+2U2elSl++jY2QiDDQiXKQPm0lTHRqYyJVToYJAA447+
 
   ![Picture](assets/media/hot_potato_settings_1.png) 
 
-- In the `[Hot Potato] End` action, you can set `timeOutDurationInSeconds` to a number of your liking. The person who missed to pass the potato in time will get timeouted for that amount of time.
+- In the `[Hot Potato] End` action, you can edit the `Twitch Timeout` subaction and edit the time and reason to your liking. If a moderator gets a timeout, they'll be remodded automatically afterwards.
 
   ![Picture](assets/media/hot_potato_settings_1.png)
 
-   {: .new }
-   If a moderator gets a timeout, they'll be remodded automatically afterwards.
-
+   
    {: .new }
    The broadcaster and bot account are not being counted as "active chatters".   
 

@@ -87,7 +87,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ## Commands
 
-- ## `!hotpotato start`
+- ## `!HOTPOTATO START`
   {: .no_toc }
 
 
@@ -95,7 +95,7 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
-- ## `!pass`
+- ## `!PASS`
   {: .no_toc }
 
 
@@ -103,14 +103,14 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ---
 
-- ## `!hotpotato exclude`
+- ## `!HOTPOTATO EXCLUDE`
   {: .no_toc }
 
   Exclude yourself from the game. Type it again to include yourself back in.
 
 ---
 
-- ## `!hotpotato exclude [Username]`
+- ## `!HOTPOTATO [USERNAME]`
   {: .no_toc }
 
   Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.

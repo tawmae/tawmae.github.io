@@ -122,8 +122,6 @@ Items are case-sensitive!
 ## Items to import
 
 1. VIP-Voucher
-    {: .label .label-red }
-   
 
     Here's an item called **VIP-Voucher** that grants a user a VIP status on time upon usage. This only works in combination with the [Temporary VIP extension](https://tawmae.github.io/temporary_vip.html).
 

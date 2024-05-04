@@ -123,6 +123,7 @@ After you change any of those settings again, you will need to click "Test Trigg
 ---
 
 - ## `!result`
+  {: .no_toc .text-delta }
 
   Posts the last poll result to chat.
 

@@ -73,49 +73,57 @@ U0JBRR+LCAAAAAAABADtPdly6kiW7xMx/+CueazWLa2AKqIfDDabbcqALYHaFROSUoCMhGgQa0f9+5zM
 
 ## Commands
 
-- ## `!hug [User]`
+- ## `!HUG [USERNAME]`
+  {: .no_toc }
 
    (Request to) Hug a user.
 
 ---
 
-- ## `!consent all`
+- ## `!CONSENT ALL`
+  {: .no_toc }
 
    Give consent for all upcoming hug requests.
 
 ---
 
-- ## `!consent all revoke`
+- ## `!CONSENT ALL REVOKE`
+  {: .no_toc }
 
    Revoke the consent-for-all hug requests.
 
 ---
 
-- ## `!consent none`
+- ## `!CONSENT NONE`
+  {: .no_toc }
 
    Give no-consent for all upcoming hug requests.
 
 ---
 
-- ## `!consent none revoke`
+- ## `!CONSENT NONE REVOKE`
+  {: .no_toc }
 
    Revoke the no-consent for all hug requests.
 
 ---
 
-- ## `!consent user [User]`
+- ## `!CONSENT USER [USERNAME]`
+  {: .no_toc }
 
    Give consent for all upcoming hug requests to a specified user.
 
 ---
 
-- ## `!consent user revoke [User]`
+- ## `!CONSENT USER REVOKE [USERNAME]`
+  {: .no_toc }
 
   Revoke the consent for all upcoming hug requests for a specified user.
 
 ---
 
-- ## `!hugLeaderboard`
+- ## `!HUGLEADERBOARD`
+  {: .no_toc }
 
    Shows the top 5 leaderboard of all hug givers and receivers.
 

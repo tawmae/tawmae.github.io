@@ -122,7 +122,7 @@ After you change any of those settings again, you will need to click "Test Trigg
 
 ---
 
-- ## `!result`
+- ## `!RESULT`
   {: .no_toc }
 
   Posts the last poll result to chat.

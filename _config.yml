@@ -5,6 +5,9 @@ url: https://just-the-docs.github.io
 
 favicon_ico: "/assets/media/favicon.ico"
 
+back_to_top: true
+back_to_top_text: "Back to top"
+
 ga_tracking: G-E3GPLL6JPF
 ga_tracking_anonymize_ip: true
 

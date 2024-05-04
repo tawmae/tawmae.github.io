@@ -28,7 +28,7 @@ Users in chat are able to store items in their own inventory. They can either lo
 ![User Inventory](assets/media/user_inventory_title_2.png)
 
 _Examples:_
-- a [*VIP-Voucher*](https://tawmae.github.io/user_inventory.html#vip-voucher) that grants a user VIP
+- a [*VIP-Voucher*](https://tawmae.github.io/user_inventory.html#items-to-import) that grants a user VIP
 -  a *Potion Of Silence* that mutes the streamer's mic
 - a *Ban Hammer* that allows the user to timeout another user
 

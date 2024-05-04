@@ -87,27 +87,25 @@ U0JBRR+LCAAAAAAABADtXXlv20qS/3+B/Q6aLBaYxQyT5k0+zAxgyZZEOdaLJOvi5GHRzW5KjHlodNny
 
 ## Commands
 
-## `!hotpotato start`
-
-### `!hotpotato start`
+- ## `!hotpotato start`
 
   Starts the game.
 
 ---
 
-- **!pass**
+- ## `!pass`
 
   Pass the hot potato to another random player.
 
 ---
 
-- **!hotpotato exclude**
+- ## `!hotpotato exclude`
 
   Exclude yourself from the game. Type it again to include yourself back in.
 
 ---
 
-- **!hotpotato exclude [Username]**
+- ## `!hotpotato exclude [Username]`
 
   Exclude the specified user from the game. Only usable by moderators. To include them back in, retype the command.
 

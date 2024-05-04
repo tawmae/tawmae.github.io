@@ -115,13 +115,13 @@ After you change any of those settings again, you will need to click "Test Trigg
 
 ## Commands
 
-- **!endpoll** or **!pollend**
+- ## `!endpoll` or `!pollend`
   
   Ends the current poll.
 
 ---
 
-- **!result**
+- ## `!result`
 
   Posts the last poll result to chat.
 

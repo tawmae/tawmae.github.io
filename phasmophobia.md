@@ -79,43 +79,50 @@ U0JBRR+LCAAAAAAABADtfVlz4kry7/uN+H8H374v98YZ92hBtpk3swlhJDebhDR9HrRgJJCAA2LTxHz3
 
 You can now start using the commands listed below. Adding evidence is set to "everyone" by default, so technically everyone can add evidence to the list. You can set it to sub/VIP/mod only to your own liking. 
 
-- **!evidence**
+- ## `!EVIDENCE`
+  {: .no_toc }
   
   Show the current gathered evidence.
 
 ---
 
-- **!evidence [Evidence]**
+- ## `!EVIDENCE [EVIDENCE]`
+  {: .no_toc }
 
   Adds evidence to the list (e. g. `!evidence EMF`).
 
 ---
 
-- **!evidence exclude [Evidence]**
+- ## `!EVIDENCE EXCLUDE [EVIDENCE]`
+  {: .no_toc }
   
   Excludes evidence to the list (e. g. `!evidence exclude EMF`).
 
 ---
 
-- **!evidence remove [Evidence]**
+- ## `!EVIDENCE REMOVE [EVIDENCE]`
+  {: .no_toc }
 
   Removes evidence from the list (e. g. `!evidence remove EMF`). Works for both added and excluded evidence.
 
 ---
 
-- **!evidence reset**
+- ## `!EVIDENCE RESET`
+  {: .no_toc }
   
   Resets the evidence list.
 
 ---
 
-- **!ghosts**
+- ## `!GHOSTS`
+  {: .no_toc }
 
   Show the possible remaining ghosts.
 
 ---
 
-- **!ghost [Ghost]**
+- ## `!GHOST [GHOST]`
+  {: .no_toc }
 
   Show the characteristics of a specific ghost (e. g. `!ghost Mare`).
 

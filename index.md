@@ -6,7 +6,7 @@ nav_order: 1
 
 ![Picture](assets/media/sb_title.png)
 
-On your left, you'll find a collection of my personal StreamerBot extensions. If you run into any issues, open a support post in the StreamerBot discord and feel free to ping me.
+Here you'll find a collection of my personal StreamerBot extensions. If you run into any issues, open a support post in the StreamerBot discord and feel free to ping me.
 
 
 ![Picture](assets/media/sb_logo.png) [StreamerBot](https://streamer.bot/){: .btn .btn-purple }

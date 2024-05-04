@@ -115,7 +115,7 @@ Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
 - - - -
 
 {: .new }
-The extension checks automatically for expired VIPs whenever your Twitch stream goes live, whenever you use the `refreshVip` command **and** every 15 minutes. If you want to change the check interval, you can go to `Settings -> Timed Actions` and set the time for `Temporary VIP Expiration Check` to your liking.
+The extension automatically checks for expired VIPs whenever your Twitch stream goes live, whenever you use the `refreshVip` command **and** every 15 minutes. If you want to change the check interval, you can go to `Settings -> Timed Actions` and set the time for `Temporary VIP Expiration Check` to your liking.
 
 
 - - - -

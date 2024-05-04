@@ -115,15 +115,15 @@ After you change any of those settings again, you will need to click "Test Trigg
 
 ## Commands
 
-- ## `!endpoll` or `!pollend`
-  {: .no_toc .text-delta }
+- ## `!ENDPOLL`
+  {: .no_toc }
   
   Ends the current poll.
 
 ---
 
 - ## `!result`
-  {: .no_toc .text-delta }
+  {: .no_toc }
 
   Posts the last poll result to chat.
 

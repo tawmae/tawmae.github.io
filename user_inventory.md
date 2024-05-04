@@ -28,7 +28,7 @@ Users in chat are able to store items in their own inventory. They can either lo
 ![User Inventory](assets/media/user_inventory_title_2.png)
 
 _Examples:_
-- a *VIP-Voucher* that grants a user VIP
+- a *VIP-Voucher* that grants a user VIP (export of this item at the end)
 -  a *Potion Of Silence* that mutes the streamer's mic
 - a *Ban Hammer* that allows the user to timeout another user
 
@@ -116,4 +116,14 @@ Items are case-sensitive!
 
 
    The `Set Argument` subaction allows you to set a %-chance for *noItemChance* that __no__ item will be looted.  The user will then simply draw a blank :) It is set to 0% by default.
+
+- - - -
+
+Here's an item called **VIP-Voucher** that grants a user a VIP status on time upon usage. This only works in combination with the [Temporary VIP extension](https://tawmae.github.io/temporary_vip.html).
+
+```scss
+U0JBRR+LCAAAAAAABADNV1tT2zgUft+Z/Q8e9mF3Z+og323eSighoYQNSRxIw3RkSXZM5MvackLa6X/fYzsBcoEFpg9lBoP1nZs+HZ1z/P333yTpYM6yPEzigyNJ+1AthFGaZMLdXo7COIyK6HH9ADXUhi5jnk5xQz9YSTGBAftevsBrjCNWirrtf2Q3KciUZbUgYLgQ0yQrUYEXEWYPwHzThfYAUJaTLEzFCvwYS6FgkeQnmSSmTBrmLJPa8ZzFIsmWErsXLC4NSX9NhUjzo8PD2lEjCMW08BphcliAytdwrdKYioj//UFKYr6UFkk2y6UwlkgSeWGMS6/SAjQrXwNWsoTBDWztVa7EWuPrPExrT0+pSK6K+CNZbS0uOC+hHzWpFG+QiiuxHFa+1CvSGqrgkJbk+LZpKBoismdiJuumZssY20Q2DGqqyLKJSv21/0rt34IVbOX76TqLscdZaVNkBdtA7gkvKDvNkugszEsCQcjHPN+QWqfAl83jOZLawMittCczKrUgS4q01NunJjUTzlnN1lMlzBd4mQOT+wLJcEyT6IHjHZwkMSmyDPzsQ0UWBgEkZsn67YbP3dPYOpE6qTGv6D0YvSevjqQ35NVTSlY74/VF+8NGCJ2e7gjUKWNZtoc8ZMuK72FZpwaWPeLYsmPomulT7FmqtqO6YGEwLRlDDbSNiWVabllByNmGHo53x+Cz+VZHGlN2X9p8uv7jw8vMZ2FpsrtKRKBplXCDMGI7/h8OSqE7WHlPB/Wm9gZX0YhsTVFtw5JV0zJkHf6VHVO3ZF3zqa3aukcN5100qtrPZtF4C4srWvpMVJkqgDxpmiwknsRBtTKvWZXyaVJwKgVw4USZxu/NR1Wjjmpplkw8lci6Z1myrVNHNjTDMoipEsdHv0o+au9g8uMch7w0XnMJbSzCIof4ltKhpEYJPLUFPHQKD2MKDxOaMPyx8hcoRchG+i4vNaUe0xhRICNtG9uyTjRfxhQpsscM3bGJxRym/yqU6u+gtFXmXF5lY9naJSyJjYKaCyyKl9h7MSGZQxBF0FMVYulQID0ke7YB19uwDZN6DlIN/1dhD72evXWH3vG0NW/t4BnzGfRLwna6XwU3jyaTEcSTLPLJ5CIkWZInvmh0Pw0mk9MMnJYjlqlPJnO9gRoa0hRnMolykmQ89BqU84NNk7fb/r2lYM2EVsHT627qRSQYavwbbbnicoHOT3rpgo46OR5dBDfq/ZRoF0FPOW73RwasGRxw66SXdMiZG3otftdudeaeugiurqf8RnPRuB+kJc7AVrPHT4afgsI96xhXqot61534vNlRiOouB9GpGPfbebvlKLR5/I2edapYICZOZsbUGw3Ty+dtqPj6eORp7h1uuUu3xffbivjCjRzlRp1ywq/SbZvDlT06UrgX95J2xAvYF7pogq0z99v4unN5A9j5IO82g1mn5OEz73L66XQ51lwxHhlgDHzFxwo9+RR+bh7viWtW8dUcdnv9ptGnI+P4RoNYVKPJhnwG+nfd6HQ2Ho3vLvtI67auZp8HPbUb3YibQffuYon0i7vZ/cUgULqt3nLcaofreEjkInrdKdpnV0s6GlZ+/B46L393Ei/NGExPacjZnlFtlbocL/sCZ/uGuUoix3N2xfKCi0HirkaEl2Q3pHbvQl0hKHQqokKFUC0dRijEGJRWmAIo9YnjMWha1u7E8YoK4ZQ/z5aIkyT+E5py2X5/SrV4fNkz6bZKr/877tZ0aDr0cB2GSaSaMAppxIaJkiqyBsOkaihI997YwdelCoYQEcbBbiWvh/znznG9XfX1xXHVN22sWb6uyr6qlaOx6UHlV3XZVhhhhmVaqvm20Xi9kZeO7nV7MV9zdNDgOE5zRh9P73YNr3TW8vWH4MZ3DqhHEQSzubhgXp6QGRN9ls23vowewSYP4YtqEyzHnewxCAjgx3/TBeghjBAAAA==
+```
+
+   
 

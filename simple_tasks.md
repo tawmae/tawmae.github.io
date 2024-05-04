@@ -62,37 +62,43 @@ Make sure you have OBS on version `30.1.1` or newer
 
 ## Commands
 
-- **!task [Task]**
+- ## `!TASK [TASK]`
+  {: .no_toc }
   
   Adds commands to the list.
 
 ---
 
-- **!task complete [Task]**
+- ## `!TASK COMPLETE [TASK]`
+  {: .no_toc }
 
-  Creates a checkmark behind the task.
+  Creates a checkmark behind the task. The task can be a number, too.
 
 ---
 
-- **!task remove [Task]**
+- ## `!TASK REMOVE [TASK]`
+  {: .no_toc }
   
-  Removes a task from the list.
+  Removes a task from the list. The task can be a number, too.
 
 ---
 
-- **!task next**
+- ## `!TASK NEXT`
+  {: .no_toc }
 
   Shows the first task in chat.
 
 ---
 
-- **!task next [Number]**
+- ## `!TASK NEXT [NUMBER]`
+  {: .no_toc }
   
   Shows the specified task in chat. 
 
 ---
 
-- **!task reset**
+- ## `!TASK RESET`
+  {: .no_toc }
 
   Resets the entire list.
 

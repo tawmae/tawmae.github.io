@@ -116,6 +116,7 @@ After you change any of those settings again, you will need to click "Test Trigg
 ## Commands
 
 - ## `!endpoll` or `!pollend`
+  {: .no_toc .text-delta }
   
   Ends the current poll.
 

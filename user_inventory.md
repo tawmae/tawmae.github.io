@@ -118,6 +118,8 @@ Items are case-sensitive!
    The `Set Argument` subaction allows you to set a %-chance for *noItemChance* that __no__ item will be looted.  The user will then simply draw a blank :) It is set to 0% by default.
 
 - - - -
+### VIP-Voucher
+{: .no_toc } 
 
 Here's an item called **VIP-Voucher** that grants a user a VIP status on time upon usage. This only works in combination with the [Temporary VIP extension](https://tawmae.github.io/temporary_vip.html).
 

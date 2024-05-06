@@ -104,6 +104,8 @@ Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
 
   Will allow the users to check when their VIP status expires. If a moderator or permanent VIP uses this, it lists all current temporary VIPs.
 
+  ![Picture](assets/media/temp_vip_check_2.png)
+  
 
 - - - -
 

@@ -5,4 +5,6 @@ nav_order: 16
 has_children: true
 ---
 
-Extensions for specific games
+![Image](assets/media/games_title.png)
+
+Extensions for specific video games

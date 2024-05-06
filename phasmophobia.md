@@ -1,7 +1,7 @@
 ---
 title: Phasmophobia Log
 layout: default
-parent: Layout
+parent: Games
 ---
 
 ![Picture](assets/media/phasmo_title.png)

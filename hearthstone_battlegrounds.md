@@ -68,7 +68,7 @@ U0JBRR+LCAAAAAAABACtWGtzoswS/v5Wvf/Bk/N1NQOCCfstEi9o4sYbKMetU8MwwsTh8nIxmq3972cG
 
 
 
-- ## `!mmr`
+- ## `!MMR`
   {: .no_toc }
   
   Displays the MMR in chat.

@@ -132,7 +132,7 @@ Here's a cool little image of a hot potato I found online and resized for channe
 
 ## Changelog
 
-| Date        | Changes          |
-|:-------------|:------------------|
-| May 06, 2024           | Fixed an issue with disabling and re-enabling the channel rewards after a game has ended |
+| Date        | Changes          | Version |
+|:-------------|:------------------|:------------------|
+| May 06, 2024           | Fixed an issue with disabling and re-enabling the channel rewards after a game has ended | 0.2.3 |
 

@@ -1,7 +1,7 @@
 ---
-title: Test
-layout: minimal
-parent: Games
+layout: default
+title: test
+parent: Layout
 ---
 
 Test123

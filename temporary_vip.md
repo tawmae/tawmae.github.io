@@ -122,3 +122,9 @@ The extension automatically checks for expired VIPs whenever your Twitch stream 
 
 
 - - - -
+
+## Changelog
+
+| Date        | Changes          |
+|:-------------|:------------------|
+| May 06, 2024           | Added a "StreamerBot Started" trigger to automatically enable the Timed Action |

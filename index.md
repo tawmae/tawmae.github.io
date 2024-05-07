@@ -18,8 +18,9 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 ![Picture](assets/media/kofi_logo.png) [My Ko-Fi](https://ko-fi.com/tawmae){: .btn .btn-purple .mr-1 }
 
 ---
-
-![Picture](assets/media/lgbtq.jpg) ![Picture](assets/media/fcknzs.jpg) ![Picture](assets/media/nyancat.png)
+![Picture](assets/media/fcknzs.jpg) 
+![Picture](assets/media/lgbtq.jpg) 
+![Picture](assets/media/nyancat.png)
 
 
 

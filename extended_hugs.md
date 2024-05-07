@@ -56,18 +56,18 @@ U0JBRR+LCAAAAAAABADtPdly6kiW7xMx/+CueazWLa2AKqIfDDabbcqALYHaFROSUoCMhGgQa0f9+5zM
 
 1. You can set `consentOn` to `True` if you want to activate the requirement for consent in total 
 
-  ![Picture](assets/media/extended_hugs_settings_1.png)
+    ![Picture](assets/media/extended_hugs_settings_1.png)
 
 
 2.  `showStats` can be set to `True` if you want individual user stats shown after each hug (these get saved nontheless) 
 
-  ![Picture](assets/media/extended_hugs_show_stats.png)
+    ![Picture](assets/media/extended_hugs_show_stats.png)
 
 3. For the leaderboard, you can set the argument to `True` to exclude the broadcaster and bot account 
 
-  ![Picture](assets/media/extended_hugs_settings_2.png)
+    ![Picture](assets/media/extended_hugs_settings_2.png)
   
-  ![Picture](assets/media/extended_hugs_leaderboard.png)
+    ![Picture](assets/media/extended_hugs_leaderboard.png)
 
 ---
 

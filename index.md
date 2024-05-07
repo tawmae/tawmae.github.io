@@ -16,3 +16,6 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 ![Picture](assets/media/twitch_logo.png) [My Twitch Channel](https://twitch.tv/tawmae){: .btn .btn-purple .mr-2 }
 
 ![Picture](assets/media/kofi_logo.png) [My Ko-Fi](https://ko-fi.com/tawmae){: .btn .btn-purple .mr-1 }
+
+
+![Picture](assets/media/banner.jpg)

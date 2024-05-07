@@ -19,7 +19,9 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 ---
 ![Picture](assets/media/fcknzs.jpg) 
+
 ![Picture](assets/media/lgbtq.jpg) 
+
 ![Picture](assets/media/nyancat.png)
 
 

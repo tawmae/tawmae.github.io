@@ -77,6 +77,7 @@ Make sure you have the latest OBS version installed.
 - You can set the `contentRating` from `1` to `4`, with `1` being the most family friendly filter. But even `4` is still in line with Twitch's ToS, so don't worry keeping it at `4`. For ratings, [see here](https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating).
 
   Level 1 Rating example:
+  
   ![Picture](assets/media/giphy_rating_1.png)
 
 

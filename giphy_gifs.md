@@ -89,6 +89,9 @@ The OBS browser source will **always** have a top center alignment and will plac
 
   Shows the GIF in OBS.
 
+{: .note }
+Leaving the input empty will show a random gif.
+
 ---
 
 {: .new }

@@ -74,7 +74,7 @@ Make sure you have the latest OBS version installed.
 
     ![Picture](assets/media/giphy_settings_2.png)
 
-- You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. The default rating is also the highest (level 4), but there are never any gifs that are not in line with Twitch's ToS. So don't worry leaving family-friendly at `False`. For ratings, see here: https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating
+- You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. The default rating is also the highest (level 4), but there are never any gifs that are not in line with Twitch's ToS. So don't worry leaving family-friendly at `False`. For ratings, [see here](https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating).
 
   ![Picture](assets/media/giphy_rating_1.png)
 

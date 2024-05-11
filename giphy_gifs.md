@@ -60,7 +60,10 @@ This extension requires a GIPHY API key. You can get yours for free at https://d
 
 4. Use the command once (or test the trigger) to create the OBS nested scene and browser source for you. You will get confirmation in your Twitch chat once it's completed.
 
-5. Done! 🥳
+    {: .highlight }
+       Make sure you have the latest OBS version.
+
+6. Done! 🥳
 
 
 ---

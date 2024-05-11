@@ -1,0 +1,87 @@
+---
+title: GIPHY gifs
+layout: default
+nav_order: 16
+---
+
+![Picture](assets/media/giphy_title_1.png)
+
+Twitch
+{: .label .label-purple }
+
+StreamerBot
+{: .label .label-blue }
+
+
+# Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+
+## Description
+Make a gif appear based on the input of a command / channel point reward from GIPHY.
+
+![Picture](assets/media/giphy_title_2.png)
+
+---
+
+## Import Code
+```scss
+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
+``` 
+
+---
+
+## GIPHY API Key
+
+{: .highlight }
+This extension requires a GIPHY API key. You can get yours for free at https://developers.giphy.com/dashboard/?create=true. The free API key includes 100 requests per hour.
+
+## Installation
+
+1. Copy the import code from above and import the content
+
+    ![Import Actions](assets/media/import_actions.png)
+
+2. Move to the `Commands` tab and enable the imported commands
+
+    ![How To Enable Commands](assets/media/enable_commands.png)
+
+3. In the `GIPHY` action, put in your GIPHY API key
+
+   ![Picture](assets/media/giphy_settings_1.png)
+
+4. Use the command once (or test the trigger) to create the OBS nested scene and browser source for you. You will get confirmation in your Twitch chat once it's completed.
+
+5. Done! 🥳
+
+
+---
+
+## Settings
+
+- You can set the gif duration in milliseconds as well as the gif scaling. GIPHY itself neither gives the gif duration nor the framerate, so you can't have a proper dynamic delay. I wouldn't recommend using that anyways, since gifs can technically be only a few milliseconds up to 15 seconds long.
+
+- You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. Having it off will still comply with Twitch ToS, so there's no NSFW-content. For ratings, see here: https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating
+
+  ![Picture](assets/media/giphy_settings_2.png)
+
+  {: .new }
+  The OBS browser source will **always** have a top center alignment and will place itself in the upper center of your canvas based on the gif size. The code will try to automatically adjust the browser source size based of the gif size.
+---
+
+## Commands
+
+- ## `!GIF [INPUT]` or `!GIPHY [INPUT]`
+  {: .no_toc }
+
+  Shows the GIF in OBS.
+
+---
+
+{: .new }
+Channel points will be automatically refunded if the request fails. So make sure you have created the reward in StreamerBot itself, so that `Owned` shows as `Yes`  in `Platforms -> Twitch -> Channel Point Rewards`

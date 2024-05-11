@@ -39,7 +39,7 @@ U0JBRR+LCAAAAAAABADNXGuTosia/r4R+x88vR/O2YihhqvKxF6itErFKq1WFJStiQ3IRKBMwBFQcWL+
 ## GIPHY API Key
 
 {: .highlight }
-This extension requires a GIPHY API key. You can get yours for free at https://developers.giphy.com/dashboard/?create=true. The free API key includes 100 requests per hour.
+This extension requires a GIPHY API key. You can get yours for free at https://developers.giphy.com/dashboard/?create=true. The free beta API key includes 100 requests per hour. You can apply for a production key for higher rate limits.
 
 ## Installation
 

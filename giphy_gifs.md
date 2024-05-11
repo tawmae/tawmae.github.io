@@ -28,7 +28,7 @@ StreamerBot
 ## Description
 Make a gif appear based on the input of a command / channel point reward from GIPHY.
 
-![Picture](assets/media/giphy_title_2.png)
+![Picture](assets/media/giphy_gifs_title_2.gif)
 
 ---
 
@@ -72,9 +72,11 @@ This extension requires a GIPHY API key. You can get yours for free at https://d
 - You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. Having it off will still comply with Twitch ToS, so there's no NSFW-content. For ratings, see here: https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating
 
   ![Picture](assets/media/giphy_settings_2.png)
+  
 
 {: .new }
 The OBS browser source will **always** have a top center alignment and will place itself in the upper center of your canvas based on the gif size. The code will try to automatically adjust the browser source size based of the gif size.
+
 ---
 
 ## Commands

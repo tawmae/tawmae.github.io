@@ -70,8 +70,8 @@ This extension requires a GIPHY API key. You can get yours for free at https://d
 
   ![Picture](assets/media/giphy_settings_2.png)
 
-  {: .new }
-  The OBS browser source will **always** have a top center alignment and will place itself in the upper center of your canvas based on the gif size. The code will try to automatically adjust the browser source size based of the gif size.
+{: .new }
+The OBS browser source will **always** have a top center alignment and will place itself in the upper center of your canvas based on the gif size. The code will try to automatically adjust the browser source size based of the gif size.
 ---
 
 ## Commands

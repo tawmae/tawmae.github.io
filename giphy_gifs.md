@@ -72,9 +72,13 @@ Make sure you have the latest OBS version installed.
 
 - You can set the gif duration in milliseconds as well as the gif scaling. GIPHY itself neither gives the gif duration nor the framerate, so you can't have a proper dynamic delay. I wouldn't recommend using that anyways, since gifs can technically be only a few milliseconds up to 15 seconds long.
 
-- You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. Having it off will still comply with Twitch ToS, so there's no NSFW-content. For ratings, see here: https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating
+    ![Picture](assets/media/giphy_settings_2.png)
 
-  ![Picture](assets/media/giphy_settings_2.png)
+- You can set `familyFriendly` to `True` to set the filter to the Level 1 rating. The default rating is also the highest (level 4), but there are never any gifs that are not in line with Twitch's ToS. So don't worry leaving family-friendly at `False`. For ratings, see here: https://support.giphy.com/hc/en-us/articles/360058840971-Content-Rating
+
+  ![Picture](assets/media/giphy_rating_1.png)
+
+  ![Picture](assets/media/giphy_rating_2.png)
   
 
 {: .new }

@@ -23,7 +23,7 @@ StreamerBot
 
 
 ## Description
-Automatically manage lurkers and allows your viewers to check and track their lurking time.
+Automatically manage lurkers and allow your viewers to check and track their lurking time.
 
 ![Picture](assets/media/lurk_title_2.png)
 

@@ -104,6 +104,11 @@ If you only want to break lurks with the command, you can also remove the `Chat 
 
 ---
 
+{: .note }
+If someone's still lurking when the stream goes offline, it will automatically remove them as a lurker and add their time to their total time.
+
+---
+
 ## Changelog
 
 | Date        | Changes          | Version |

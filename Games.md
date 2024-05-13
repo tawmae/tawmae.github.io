@@ -1,7 +1,7 @@
 ---
 title: Games
 layout: default
-nav_order: 17
+nav_order: 100
 has_children: true
 ---
 

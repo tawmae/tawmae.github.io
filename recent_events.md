@@ -91,8 +91,9 @@ You can also choose whether you want the profile pictures to have rounded corner
 
 ![Picture](assets/media/event_list_settings.png)
 
+---
 
-
+## Changelog
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|

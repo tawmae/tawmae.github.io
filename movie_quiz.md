@@ -33,7 +33,7 @@ Have your chat guess the movie based on its description! Either with an OBS over
 
 ## API key
 
-This extension requires a The Movie Database API key. You can get yours for free at: [https://developer.themoviedb.org/reference/intro/getting-started](https://developer.themoviedb.org/reference/intro/getting-started)
+- This extension requires a The Movie Database API key. You can get yours for free at: [https://developer.themoviedb.org/reference/intro/getting-started](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ---
 
@@ -45,7 +45,7 @@ U0JBRR+LCAAAAAAABADtfWmP6lqS4PeR+j/k3NZI3armPi84waWZkdgxic0FjI3dtzTyhjHYQIHZXKr/
 --- 
 
 ## Downloads
-[DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
+- [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
 {: .highlight }
 This .dll file is required for the chat answers and allows for not-100% matches. So if the movie was `Schindler's List`, then the answer `schindlers list` would count as well. This is not 100% accurate and may occasionally have a match when it's not supposed to, but it's better than having to type the movie name 100% accurate.

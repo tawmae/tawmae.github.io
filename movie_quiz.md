@@ -65,7 +65,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 ## Setup
 1. (Optional) If you want the OBS overlay, download and install all **three OBS plugins**.
 
-2. Download the `DuoVia.FuzzyStrings.dll` file and paste it into your `StreamerBot/dll` folder
+2. Download the `DuoVia.FuzzyStrings.dll` file and paste it into your `StreamerBot/dlls` folder
 
    ![Picture](assets/media/movie_quiz_settings_3.png)
 

@@ -29,6 +29,8 @@ Have your chat guess the movie based on its description! Either with an OBS over
 
 ![Picture](assets/media/movie_quiz_title_2.gif)
 
+![Picture](assets/media/movie_quiz_title_3.png)
+
 ---
 
 ## API key

@@ -31,6 +31,8 @@ Have your chat guess the movie based on its description! Either with an OBS over
 
 ---
 
+## API key
+
 {: .highlight }
 This extension requires a The Movie Database API key. You can get yours for free at https://developer.themoviedb.org/reference/intro/getting-started
 

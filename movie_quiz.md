@@ -105,6 +105,22 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 ---
 
+## Commands
+
+- ## `!MOVIEQUIZ START`
+  {: .no_toc }
+
+  Starts the game.
+
+---
+
+- ## `!MOVIEQUIZ STATS`
+  {: .no_toc }
+
+  Shows the total games and how many movies the user has guessed correctly.
+
+---
+
 ## Changelog
 
 | Date        | Changes          | Version |

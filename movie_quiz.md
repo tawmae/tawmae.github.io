@@ -50,7 +50,7 @@ U0JBRR+LCAAAAAAABADtfWmP6lqS4PeR+j/k3NZI3armPi84waWZkdgxic0FjI3dtzTyhjHYQIHZXKr/
 - [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
 {: .highlight }
-This .dll file is required for the chat answers and allows for not-100% matches. So if the movie was `Schindler's List`, then the answer `schindlers list` would count as well. This is not 100% accurate and may occasionally have a match when it's not supposed to, but it's better than having to type the movie name 100% accurate.
+This .dll file is required for the chat answers and allows for not-100% accurate matches. So if the movie was `Schindler's List`, then the answer `schindlers list` would count as well. This is not 100% accurate and may occasionally have a match when it's not supposed to, but it's better than having to type the movie name 100% accurate.
 
 ## Required OBS plugins (optional if you only want the chat version)
 1. [Stroke Glow Shadow Plugin](https://obsproject.com/forum/resources/stroke-glow-shadow.1800/)

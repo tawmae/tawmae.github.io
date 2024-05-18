@@ -99,7 +99,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 - As mentioned in the installation above, you can decide whether you want to use the OBS overlay by setting `movieQuiz_obsOverlay` to either `True` or `False` and change your `movieQuiz_obsConneciton` if needed. But usually leave this at `0`.
 
-- You can set the language for the movie description and title (ISO code prefix + suffix, see [here](https://docs.dyspatch.io/localization/supported_languages/#:~:text=The%20code%20for%20English%20(United,%2D1%20Alpha%2D2%20standard)).
+- You can set the language `movieQuizLanguage`for the movie description and title (ISO code prefix + suffix, e.g. `en-US`, see [here](https://docs.dyspatch.io/localization/supported_languages/#:~:text=The%20code%20for%20English%20(United,%2D1%20Alpha%2D2%20standard))).
 
   ![Picture](assets/media/movie_quiz_settings_1.png)
 

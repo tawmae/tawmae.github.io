@@ -112,6 +112,11 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 ---
 
+{: .new }
+If you use a Channel Point Reward to start a game, points will automatically get refunded if something goes wrong. So make sure the reward has been created in SB and is owned by it.
+
+---
+
 ## Commands
 
 - ## `!MOVIEQUIZ START`

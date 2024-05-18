@@ -99,9 +99,12 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 - As mentioned in the installation above, you can decide whether you want to use the OBS overlay by setting `movieQuiz_obsOverlay` to either `True` or `False` and change your `movieQuiz_obsConneciton` if needed. But usually leave this at `0`.
 
+  ![Picture](assets/media/movie_quiz_settings_1.png)
+
 - To show hints (release year + genre) after 15 seconds, leave `showHints` at `True`
 
-  ![Picture](assets/media/movie_quiz_settings_1.png)
+  ![Picture](assets/media/movie_quiz_hint.png)
+  
 
 - In the `[Movie Quiz] Correct Answer` action, you can optionally only allow 100% accurate answers. They're still not case sensitive, but it has to match the actual title. I'd recommend to leave this at `False`.
 

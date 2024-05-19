@@ -101,6 +101,8 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 - You can set the language `movieQuizLanguage`for the movie description and title (ISO code prefix + suffix, e.g. `en-US`, see [here](https://docs.dyspatch.io/localization/supported_languages/#:~:text=The%20code%20for%20English%20(United,%2D1%20Alpha%2D2%20standard))). Other languages may have weird titles and super long descriptions though, so no guarantee for good quality for languages other than english. You might want to decrease the font size for the image description too in that case.
 
+- You can also change the `movieQuizTime` in seconds. **Important: This time has to match with the `Movie Quiz` timer in `Settings -> Timed Actions`!**
+
   ![Picture](assets/media/movie_quiz_settings_1.png)
 
 - To show hints (release year + genre and a movie image in OBS) after 15 seconds, leave `showHints` at `True`

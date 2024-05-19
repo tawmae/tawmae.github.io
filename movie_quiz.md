@@ -139,7 +139,7 @@ If you use a Channel Point Reward to start a game, points will automatically get
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| May 18, 2024           | Even more refined answer accuracy (mostly ignoring sub titles, "The", etc. pp.) | 0.2.9 |
+| May 19, 2024           | Even more refined answer accuracy (mostly ignoring sub titles, "The", etc. pp.) | 0.2.9 |
 | May 18, 2024           | Refined answer accuracy for numerations | 0.2.8 |
 | May 18, 2024           | Added a movie image hint for OBS // added both original title and language title as valid answers for other languages | 0.2.7 |
 | May 18, 2024           | Added multi language support | 0.2.6 |

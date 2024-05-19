@@ -153,6 +153,7 @@ If you use a Channel Point Reward to start a game, points will automatically get
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
+| May 19, 2024           | Added the possibility to play multiple rounds automatically // added a non-blocking queue // OBS UI changes | 0.4.0 |
 | May 19, 2024           | Changed efficiency and added more debugging methods | 0.3.0 |
 | May 19, 2024           | Even more refined answer accuracy (mostly ignoring sub titles, "The", etc. pp.) | 0.2.9 |
 | May 18, 2024           | Refined answer accuracy for numerations | 0.2.8 |

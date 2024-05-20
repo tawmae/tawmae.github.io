@@ -171,10 +171,4 @@ If you don't have a bot account connected, your broadcaster account will be excl
 |:-------------|:------------------|:------------------|
 | May 20, 2024           | Added TV shows (optional) | 1.1.0 |
 | May 20, 2024           | Added cast hints and pictures // code improvements // OBS UI changes | 1.0.0 |
-| May 19, 2024           | Added the possibility to play multiple rounds automatically // added a non-blocking queue // OBS UI changes | 0.4.0 |
-| May 19, 2024           | Changed efficiency and added more debugging methods | 0.3.0 |
-| May 19, 2024           | Even more refined answer accuracy (mostly ignoring sub titles, "The", etc. pp.) | 0.2.9 |
-| May 18, 2024           | Refined answer accuracy for numerations | 0.2.8 |
-| May 18, 2024           | Added a movie image hint for OBS // added both original title and language title as valid answers for other languages | 0.2.7 |
-| May 18, 2024           | Added multi language support | 0.2.6 |
-| May 17, 2024           | OBS design changes // Hints added // Added debugging messages | 0.2.5 |
+| May 19, 2024           | Added the possibility to play multiple rounds automatically // added a non-blocking queue // OBS UI changes | 0.2.3 |

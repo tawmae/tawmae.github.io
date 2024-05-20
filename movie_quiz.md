@@ -109,7 +109,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
   ![Picture](assets/media/movie_quiz_settings_1.png)
 
-- To show hints (release year + genre and a movie image in OBS) after half the time has passed, leave `showHints` at `True`
+- To show hints (release year + genre, the cast and a movie image in OBS), leave `showHints` at `True`
 
   ![Picture](assets/media/movie_quiz_hint.png)
   

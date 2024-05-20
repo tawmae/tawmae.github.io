@@ -157,6 +157,9 @@ If you use a Channel Point Reward to start a game, points will automatically get
 
 ---
 
+{: .note }
+If a movie title has a number that is greater than 1 (for example `Terminator 2` or `Star Wars Episode IV`), then the user input **must** have that number in there. So `Star Wars Episode 4` as well as `Star Wars Episode IV` would count.
+
 {: .highlight }
 If you don't have a bot account connected, your broadcaster account will be excluded from giving the correct answer.
 

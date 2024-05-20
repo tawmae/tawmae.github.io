@@ -169,7 +169,7 @@ If you don't have a bot account connected, your broadcaster account will be excl
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| May 20, 2024           | Added optional TV shows | 1.1.0 |
+| May 20, 2024           | Added TV shows (optional) | 1.1.0 |
 | May 20, 2024           | Added cast hints and pictures // code improvements // OBS UI changes | 1.0.0 |
 | May 19, 2024           | Added the possibility to play multiple rounds automatically // added a non-blocking queue // OBS UI changes | 0.4.0 |
 | May 19, 2024           | Changed efficiency and added more debugging methods | 0.3.0 |

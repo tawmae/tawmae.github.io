@@ -91,7 +91,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
    ![Picture](assets/media/event_list_test_trigger.png)
 
-   This creates the scene and sources in OBS. As confirmation it says "Quiz Movie setup completed" in your Twitch chat. 
+   This creates the scene and sources in OBS. As confirmation it says "Quiz Movie setup completed" in your Twitch chat. You can then nest the scene anywhere you want.
 
 8. Done! 🥳
 

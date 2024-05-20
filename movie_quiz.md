@@ -170,6 +170,7 @@ If you don't have a bot account connected, your broadcaster account will be excl
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
+| May 20, 2024           | The exact movie/show title will now be censored in the description // Removed mod-restriction for starting a single round with the command | 1.1.1 |
 | May 20, 2024           | Added TV shows (optional) | 1.1.0 |
 | May 20, 2024           | Added cast hints and pictures // code improvements // OBS UI changes | 1.0.0 |
 | May 19, 2024           | Added the possibility to play multiple rounds automatically // added a non-blocking queue // OBS UI changes | 0.2.3 |

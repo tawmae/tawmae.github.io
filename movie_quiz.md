@@ -170,7 +170,7 @@ If you don't have a bot account connected, your broadcaster account will be excl
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| May 22, 2024           | Added a prevention for duplicate movies/shows to appear within the same session (as long as SB is running) | 1.1.6 |
+| May 22, 2024           | Added a prevention for duplicate movies/shows to appear within the same session (as long as SB is running) // fixed a minor bug with showing the wrong amount of guessed movies after the rounds have finished | 1.1.6 |
 | May 21, 2024           | Improved input accuracy and description redacting | 1.1.5 |
 | May 20, 2024           | The exact title will now be censored in the description // Removed mod-restriction for starting a single round via command // moved the API key to a seperate group // adjusted hint timers // input accuracy adjustments | 1.1.4 |
 | May 20, 2024           | Added TV shows (optional) | 1.1.0 |

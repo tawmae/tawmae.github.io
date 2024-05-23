@@ -164,6 +164,9 @@ If a movie title has a number that is greater than 1 (for example `Terminator 2`
 {: .highlight }
 If you don't have a bot account connected, your broadcaster account will be excluded from giving the correct answer.
 
+{: .highlight }
+If you upgrade to a newer version that contained OBS UI changes, delete the old Movie Quiz scene entirely and **then** re-import it again.
+
 ---
 
 ## Changelog

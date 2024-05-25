@@ -265,7 +265,7 @@ If you have translated the genre names in the code, the genres have to match in 
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| May 25, 2024           | Added Expert Settings  | 1.2.0 |
+| May 25, 2024           | Added Expert Settings // New OBS design | 1.2.0 |
 | May 24, 2024           | If the title differs from the english title, it will show both titles in the answer // added a new settings "showEnglishDescriptionInChat" that will always post the english description to chat, even with OBS overlay on (useful for multi-language streams) // fixed an issue with roman letters from VI to VIII // added new command aliases // added debugging  | 1.1.9 |
 | May 23, 2024           | Movies are now scanned whether they are part of a collection (e.g. prequels). Even if the part number is not within the title, the chat input should count (example: "Indiana Jones 2" would count for the title "Indiana Jones and the Temple of Doom" | 1.1.8 |
 | May 23, 2024           | If the original movie/show name varies from the translated one, it will show both titles in the overlay and in chat // some slight OBS UI changes | 1.1.7 |

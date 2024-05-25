@@ -25,7 +25,7 @@ StreamerBot
 ---
 
 ## Description
-Have your chat guess the movie and/or TV show based on its description! Either with an OBS overlay or just in chat. The movies are being picked from a top list and only include such with 2000+ votes. You have optional hints with the release date, pictures of the cast and movie/show!
+Have your chat guess the movie and/or TV show based on its description! Either with an OBS overlay or just in chat.
 
 ![Picture](assets/media/movie_quiz_title_2.gif)
 

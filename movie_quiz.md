@@ -212,6 +212,55 @@ If you have translated the genre names in the code, the genres have to match in 
 
 ---
 
+## Language Codes
+
+| Language    | Language Code |
+|:------------|:--------------|
+| Afar        | aa            |
+| Abkhazian   | ab            |
+| Avestan     | ae            |
+| Afrikaans   | af            |
+| Akan        | ak            |
+| Amharic     | am            |
+| Aragonese   | an            |
+| Arabic      | ar            |
+| Assamese    | as            |
+| Avaric      | av            |
+| Aymara      | ay            |
+| Azerbaijani | az            |
+| Bashkir     | ba            |
+| Belarusian  | be            |
+| Bulgarian   | bg            |
+| Bihari      | bh            |
+| Bislama     | bi            |
+| Bambara     | bm            |
+| Bengali     | bn            |
+| Tibetan     | bo            |
+| Breton      | br            |
+| Bosnian     | bs            |
+| Catalan     | ca            |
+| Chechen     | ce            |
+| Chamorro    | ch            |
+| Corsican    | co            |
+| Cree        | cr            |
+| Czech       | cs            |
+| Old Church Slavonic | cu    |
+| Chuvash     | cv            |
+| Welsh       | cy            |
+| Danish      | da            |
+| German      | de            |
+| Divehi      | dv            |
+| Dzongkha    | dz            |
+| Ewe         | ee            |
+| Greek       | el            |
+| English     | en            |
+| Esperanto   | eo            |
+| Spanish     | es            |
+| Estonian    | et            |
+
+
+---
+
 ## Changelog
 
 | Date        | Changes          | Version |

@@ -119,6 +119,10 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
   
 - In the `Expert Settings (Movies)` and `Expert Settings (TV Shows)` you can set exact criteria for the search queries. That includes the minimum user votes, the minimum average user rating from 1-10, excluded genres and original languages. The input has to match **exactly**, so see below for [genres](https://tawmae.github.io/movie_quiz.html#genres) or [language codes](https://tawmae.github.io/movie_quiz.html#language-codes). If you are unsure about the settings or getting errors, contact me.
 
+  Example input for **excluded** movie enres: `Animation, Documentary, Music, Romance, Western`
+
+  Example input for **included** original languages (english, german, french, spanish, japanese, korean): `en|de|fr|es|ja|ko`
+
   ![Picture](assets/media/movie_quiz_expert_settings_movie.png)
 
   ![Picture](assets/media/movie_quiz_expert_settings_tvseries.png)

@@ -203,7 +203,7 @@ If you have translated the genre names in the code, the genres have to match in 
 | Horror           | Reality | 
 | Music           | Sci-Fi & Fantasy | 
 | Mystery           | Soap | 
-| Romanca           | War & Politics | 
+| Romance           | War & Politics | 
 | Science Fiction          | Western | 
 | TV Movie           | 
 | Thriller           | 

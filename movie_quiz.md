@@ -102,7 +102,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 - You can decide whether you want only movies, only TV shows or both included in the quiz. Just set `movieQuizMedia` accordingly to either `Movies`, `TV Shows` or `Both`.
 
-- You can set the language `movieQuizLanguage`for the movie description and title (ISO code prefix + suffix, e.g. `en-US`, see [here](https://docs.dyspatch.io/localization/supported_languages/#:~:text=The%20code%20for%20English%20(United,%2D1%20Alpha%2D2%20standard))). Other languages may have weird titles and super long descriptions though, so no guarantee for good quality for languages other than english. You might want to decrease the font size for the image description too in that case.
+- You can set the language `movieQuizLanguage`for the movie description and title (ISO code prefix + suffix, e.g. `en-US`, see [here](https://tawmae.github.io/movie_quiz.html#language-codes). Other languages may have weird titles and super long descriptions though, so no guarantee for good quality for languages other than english. You might want to decrease the font size for the image description too in that case.
 
 - You can also change the `movieQuizTime` in seconds. **Important: This time has to match with the `Movie Quiz` timer in `Settings -> Timed Actions`!** If you are playing with an OBS overlay and hints, don't set the time below 45 seconds. I recommend leaving it at 60.
 
@@ -211,49 +211,51 @@ If you have translated the genre names in the code, the genres have to match in 
 
 ## Language Codes
 
-| Language    | Language Code |
-|:------------|:--------------|
-| Afar        | aa            |
-| Abkhazian   | ab            |
-| Avestan     | ae            |
-| Afrikaans   | af            |
-| Akan        | ak            |
-| Amharic     | am            |
-| Aragonese   | an            |
-| Arabic      | ar            |
-| Assamese    | as            |
-| Avaric      | av            |
-| Aymara      | ay            |
-| Azerbaijani | az            |
-| Bashkir     | ba            |
-| Belarusian  | be            |
-| Bulgarian   | bg            |
-| Bihari      | bh            |
-| Bislama     | bi            |
-| Bambara     | bm            |
-| Bengali     | bn            |
-| Tibetan     | bo            |
-| Breton      | br            |
-| Bosnian     | bs            |
-| Catalan     | ca            |
-| Chechen     | ce            |
-| Chamorro    | ch            |
-| Corsican    | co            |
-| Cree        | cr            |
-| Czech       | cs            |
-| Old Church Slavonic | cu    |
-| Chuvash     | cv            |
-| Welsh       | cy            |
-| Danish      | da            |
-| German      | de            |
-| Divehi      | dv            |
-| Dzongkha    | dz            |
-| Ewe         | ee            |
-| Greek       | el            |
-| English     | en            |
-| Esperanto   | eo            |
-| Spanish     | es            |
-| Estonian    | et            |
+| Language      | Language Code (for expert settings) | Language Code (your description language)       |
+|:--------------|:--------------|:----------------------|
+| Afrikaans     | af            | af-ZA                 |
+| Arabic        | ar            | ar-BH, ar-KW, ar-LB, ar-OM, ar-QA, ar-SA, ar-AE, ar-EG |
+| Bengali       | bn            | bn-BD                 |
+| Bosnian       | bs            | bs-BA                 |
+| Bulgarian     | bg            | bg-BG                 |
+| Catalan       | ca            | ca-ES                 |
+| Chinese       | zh            | zh-CN, zh-HK, zh-TW, zh-Hans-HK, zh-Hans-TW, zh-Hant-HK, zh-Hant-TW |
+| Croatian      | hr            | hr-HR                 |
+| Czech         | cs            | cs-CZ                 |
+| Danish        | da            | da-DK                 |
+| Dutch         | nl            | nl-BE, nl-NL          |
+| English       | en            | en-US, en-CA, en-GB, en-AU, en-IN, en-SG, en-NZ, en-ZA, en-IE, en-JM, en-BZ, en-TT |
+| Estonian      | et            | et-EE                 |
+| Finnish       | fi            | fi-FI                 |
+| French        | fr            | fr-FR, fr-BE, fr-CA, fr-CH, fr-LU |
+| German        | de            | de-DE, de-AT, de-CH, de-LU |
+| Greek         | el            | el-GR                 |
+| Hebrew        | he            | he-IL                 |
+| Hindi         | hi            | hi-IN                 |
+| Hungarian     | hu            | hu-HU                 |
+| Icelandic     | is            | is-IS                 |
+| Indonesian    | id            | id-ID                 |
+| Italian       | it            | it-IT, it-CH          |
+| Japanese      | ja            | ja-JP                 |
+| Korean        | ko            | ko-KR                 |
+| Latvian       | lv            | lv-LV                 |
+| Lithuanian    | lt            | lt-LT                 |
+| Malay         | ms            | ms-MY                 |
+| Norwegian     | no            | no-NO                 |
+| Polish        | pl            | pl-PL                 |
+| Portuguese    | pt            | pt-PT, pt-BR          |
+| Romanian      | ro            | ro-RO                 |
+| Russian       | ru            | ru-RU                 |
+| Serbian       | sr            | sr-RS                 |
+| Slovak        | sk            | sk-SK                 |
+| Slovenian     | sl            | sl-SI                 |
+| Spanish       | es            | es-ES, es-MX, es-AR, es-CO, es-PE, es-VE, es-CL, es-EC, es-GT, es-CU, es-BO, es-DO, es-HN, es-PY, es-SV, es-NI, es-CR, es-PA, es-UY, es-PR, es-419 |
+| Swedish       | sv            | sv-SE                 |
+| Thai          | th            | th-TH                 |
+| Turkish       | tr            | tr-TR                 |
+| Ukrainian     | uk            | uk-UA                 |
+| Urdu          | ur            | ur-PK                 |
+| Vietnamese    | vi            | vi-VN                 |
 
 
 ---

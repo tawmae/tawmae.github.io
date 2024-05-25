@@ -29,9 +29,6 @@ Have your chat guess the movie and/or TV show based on its description! Either w
 
 ![Picture](assets/media/movie_quiz_title_2.gif)
 
-![Picture](assets/media/movie_quiz_title_3.png)
-
-[YouTube example](https://www.youtube.com/watch?v=W3-XcXdebCY)
 
 ---
 
@@ -118,7 +115,7 @@ Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on v
 
 - To show hints (release year + genre, the cast and a movie image in OBS), leave `showHints` at `True`
 
-  ![Picture](assets/media/movie_quiz_hint.png)
+  ![Picture](assets/media/movie_quiz_title_3.png)
   
 - In the `Expert Settings (Movies)` and `Expert Settings (TV Shows)` you can set exact criteria for the search queries. That includes the minimum user votes, the minimum average user rating from 1-10, excluded genres and original languages. The input has to match **exactly**, so see below for [genres](https://tawmae.github.io/movie_quiz.html#genres) or [language codes](https://tawmae.github.io/movie_quiz.html#language-codes). If you are unsure about the settings or getting errors, contact me.
 

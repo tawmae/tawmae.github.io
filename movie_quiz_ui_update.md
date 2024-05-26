@@ -53,7 +53,7 @@ to be released
 
 1. [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
-2. [SettingUI.dll](assets/media/SettingUI.dll)
+2. [SettingUI.dll](www.google.com)
 
 {: .highlight }
 > Both dll files are required to run this extension

@@ -4,6 +4,10 @@ layout: default
 nav_order: 25
 ---
 
+{: .important }
+This is just a test site for the next update. Please refer to this [Movie Quiz](https://tawmae.github.io/movie_quiz.html) for the current version
+
+
 ![Picture](assets/media/movie_quiz_title_1.png)
 
 Twitch

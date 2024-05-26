@@ -142,7 +142,7 @@ By default, every user type can use `!moviequiz start` to start a single round. 
 
 ## Commands
 
-- ## `!MOVIEQUIZ START`or `!MQ START`
+- ## `!MOVIEQUIZ START` or `!MQ START`
   {: .no_toc }
 
   Starts one round of the game.

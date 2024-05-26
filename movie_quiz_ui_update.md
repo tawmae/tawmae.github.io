@@ -4,7 +4,7 @@ layout: default
 nav_order: 25
 ---
 
-{: .important }
+{: .warning }
 This is just a test site for the next update. Please refer to this [Movie Quiz](https://tawmae.github.io/movie_quiz.html) for the current version
 
 

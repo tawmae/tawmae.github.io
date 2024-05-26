@@ -123,10 +123,10 @@ Make sure you have the latest version of Source Copy `0.2.3` (or newer) and OBS 
 Thanks to a brand new release of [TerrierDarts](https://terrierdarts.co.uk/en/home/), there's now a UI for the settings. You can customize general settings as well as the specific search parameters for movies and for TV shows individually. You can set your own quiz language, you can exclude certain genres, specify the release years / air dates, the user vote count and average user rating and the original languages of the movies / TV shows.
 
 General settings:
-![Picture](assets/media/movie_quiz_settings_window_1.png)
+[Picture](assets/media/movie_quiz_settings_window_1.png)
 
 Expert settings (one tab for movies, one for TV shows)
-![Picture](assets/media/movie_quiz_settings_window_2.png)
+[Picture](assets/media/movie_quiz_settings_window_2.png)
 
 
 {: .highlight }

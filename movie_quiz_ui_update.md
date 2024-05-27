@@ -37,7 +37,7 @@ StreamerBot
 ## Description
 Have your chat guess the movie and/or TV show based on its description! Either with an OBS overlay or just in chat.
 
-![Picture](assets/media/movie_quiz_title_2.gif)
+![Picture](assets/media/movie_quiz_title_2_updated.gif)
 
 
 ---

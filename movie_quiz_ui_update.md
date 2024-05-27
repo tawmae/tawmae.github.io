@@ -55,7 +55,7 @@ to be released
 
 --- 
 
-## ddl-Downloads
+## dll-Downloads
 
 1. [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 

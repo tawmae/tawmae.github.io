@@ -92,7 +92,7 @@ Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
 
   ![Picture](assets/media/temporary_vip_remove_vip.png)
 
-  Removes VIP time. If the removed time exceeds the time the user had left, it will un-vip them. So to completely remove someone from being a timed VIP, you can just remove 100 years.
+  Removes VIP time. If the removed time exceeds the time the user had left, it will un-vip them. So to completely remove someone from being a temporary VIP, you can just remove 100 years.
 
 
 - - - -

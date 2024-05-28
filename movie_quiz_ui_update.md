@@ -59,14 +59,14 @@ to be released
 
 1. [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
-2. SettingUI.dll
+2. SettingsUI.dll
 
 {: .highlight }
 > Both dll files are required to run this extension
 >
 > `DuoVia.FuzzyStrings.dll` is responsible for the chat responses by your viewers. This allows the input to not be 100% accurate. So if the movie was `Schindler's List`, the chat message `schindlers list` would count as a correct answer, even though it's not an exact match.
 >
-> `SettingUI.dll` is a release by [TerrierDarts](https://terrierdarts.co.uk/en/home/) that allows to have a user-friendly UI for various settings. You will be easily able to customize a lot of stuff to your liking.
+> `SettingsUI.dll` is a release by [TerrierDarts](https://terrierdarts.co.uk/en/home/) that allows to have a user-friendly UI for various settings. You will be easily able to customize a lot of stuff to your liking.
 
 ---
 

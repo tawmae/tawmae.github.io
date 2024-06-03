@@ -10,8 +10,6 @@ nav_order: 25
 > 
 > This is just a test site for the next update. Please refer to this [Movie Quiz](https://tawmae.github.io/movie_quiz.html) for the current version
 >
->
->
 
 
 ![Picture](assets/media/movie_quiz_title_1.png)
@@ -25,6 +23,8 @@ OBS
 StreamerBot
 {: .label .label-blue }
 
+{: .highlight }
+Update 2.0.0 requires a re-import of the OBS overlay! Delete the old scene and test the trigger again.
 
 # Table of contents
 {: .no_toc .text-delta }

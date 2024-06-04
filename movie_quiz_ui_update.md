@@ -1,8 +1,3 @@
----
-title: Movie Quiz (test)
-layout: default
-nav_order: 25
----
 
 
 ![Picture](assets/media/movie_quiz_title_1.png)

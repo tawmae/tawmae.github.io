@@ -151,7 +151,7 @@ Chat Messages (change and/or translate the responses):
 
 
 {: .highlight }
-Depending how narrow your search parameters are, it might happen that the first search will not find any results. This will fix itself after the first error, so the second time you start the game it will have adjusted itself. If the error persists, your seach parameters are **too narrow** and you will have to check them. Reset them in the worst case.
+To avoid for duplicates, you cannot get the same TV show/movie within the same session (until you restart StreamerBot). The last 50 movies **and** TV shows are also saved **between** sessions, meaning that you won't get one of the last 50 movies/shows even on a different day of playing. Depending how narrow your search parameters are, it might happen that the first search will not find any results. If that's the case because you played like 1000 rounds already, the list will reset itself once you hit the limit. If your settings are way too narrow and don't show a single movie/show, you will obviously have to change your settings. I recommend leaving it at my default settings.
 
 
 ---

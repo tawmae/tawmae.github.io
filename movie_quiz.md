@@ -132,6 +132,7 @@ Settings will only apply if you save them.
 General settings:
 
 ![Picture](assets/media/movie_quiz_settings_window_1.png)
+![Picture](assets/media/movie_quiz_settings_window_hints.png)
 
 Expert settings (one tab for movies, one for TV shows):
 

@@ -5,10 +5,10 @@ url: https://just-the-docs.github.io
 
 favicon_ico: "/assets/media/favicon.ico"
 
-# External navigation links
-nav_external_links:
-  - title: Discord
-    url: https://discord.gg/gEm5UMSvYs
+aux_links:
+  "Neep help?":
+    - "https://discord.gg/gEm5UMSvYs"
+   
 
 back_to_top: true
 back_to_top_text: "Back to top"

@@ -219,7 +219,7 @@ You can use the variables `%user%`, `%userName%` or `%userId%` for both triggers
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| June 06, 2024           | Added two custom triggers | 2.0.2 |
+| June 06, 2024           | Added two custom triggers // The most correct answers message will now show all users in case of a tie and not just a single random one | 2.0.2 |
 | June 05, 2024           | Hotfix for a source not hiding after playing multiple rounds // changed the command inputs | 2.0.1 |
 | June 04, 2024           | complete OBS & settings UI overhall // TTS stops after a correct guess // much improved filters | 2.0.0 |
 | May 25, 2024           | Added Expert Settings // New OBS design | 1.2.0 |

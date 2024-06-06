@@ -215,11 +215,11 @@ If you upgrade to a newer version that contained OBS UI changes, delete the old 
 >
 > You don't need a `The` or special characters in your answer. `Matrix` is good for `The Matrix` and `swat` is good for `S.W.A.T.`. Same with hyphens, semicolons, brackets etc. pp.
 >
-> If a movie title has a number that is greater than 1 (for example `Terminator 2` or `Star Wars Episode IV`), then the user input **must** have that number in there. So `Star Wars Episode 4` as well as `Star Wars Episode IV` would count.
+> If a movie title has a number that is greater than 1 (for example `Terminator 2` or `Star Wars Episode IV`), then the user input **must** have that number in there. So `Star Wars Episode 4` as well as `Star Wars Episode IV` would count. If the title was `Thor 4: Love and Thunder`, just `Thor Love and Thunder` **wouldn't** count as it needs the `4` in there. `Love and Thunder 4` however would do fine in that case.
 >
 > If a title is seperated by a colon, both parts before **and** after the colon will count. So `Avengers: Infinity War` would allow `Avengers` as well as `Infinity War` as an answer.
 >
-> If a movie is a part of a collection, the API tries to get its number. `The Matrix Reloaded` will also accept `Matrix 2` as a correct answer. However, this is not always accurate, as there's sometimes weird ass random movies that made it into the collection, causing the numeration to be off. So if there was a Matrix short film between part 1 and 2, part would be labeled as part 3 and so on.
+> If a movie is a part of a collection, the API tries to get its number. `The Matrix Reloaded` will also accept `Matrix 2` as a correct answer. However, this is not always accurate, as there's sometimes weird ass random movies that made it into the collection, causing the numeration to be off. So if there was a Matrix short film between part 1 and 2, part 2 would be labeled as part 3 and so on...
 >
 > I tried my best to account for every naming scheme there is, but there will be cases where it does not count when it should have counted and cases where it should not have counted when it did. So please bear with me and have mercy on my tiny soul.
 

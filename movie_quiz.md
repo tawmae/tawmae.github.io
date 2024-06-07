@@ -209,6 +209,7 @@ For them to appear in the Triggers menu, you might want to play a single round a
 > For example you can distribute 500 extra currency points if a user guessed more than 50% of the total movies/shows.
 
 ![Picture](assets/media/movie_quiz_custom_triggers_2.png)
+![Picture](assets/media/movie_quiz_custom_triggers_3.png)
 
 ---
 

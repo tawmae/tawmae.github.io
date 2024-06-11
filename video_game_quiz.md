@@ -94,7 +94,7 @@ Make sure you have the latest version of Source Copy `0.2.3` (or newer) and OBS 
    ![Picture](assets/media/video_game_quiz_obs_setting.png)
 
 
-6. Navigate to the `[Movie Quiz] Start Game` action and rightclick the `Test` trigger there too and hit `Test Trigger`. This will create the OBS scene for you, which you can then nest into your other scenes.
+6. Navigate to the `[Video Game Quiz] Start Game` action and rightclick the `Test` trigger there too and hit `Test Trigger`. This will create the OBS scene for you, which you can then nest into your other scenes.
 
     ![Picture](assets/media/video_game_quiz_test_start.png)
 

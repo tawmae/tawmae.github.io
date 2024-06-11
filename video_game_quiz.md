@@ -116,7 +116,7 @@ To access the settings, navigate into the `[Video Game Quiz] Settings` action, r
 {: .highlight }
 Settings will only apply if you save them.
 
-![Picture](assets/media/video_game_quiz_settings_window.png)
+![Picture](assets/media/video_game_quiz_setting_window.png)
 
 
 

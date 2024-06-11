@@ -172,7 +172,7 @@ For them to appear in the Triggers menu, you might want to play a single round a
 
 1. `Video Game Quiz Correct Answer` triggers whenever a user types in the correct answer.
 
-2. `Video Quiz Most Correct Answers` triggers after you've played multiple rounds and one or more users guessed the most movies/shows correctly. Example: you have played 10 rounds, user A guessed 3 correctly, and user B also guessed 3 correctly. This means, the trigger will fire two times. If only a single person has the most correct guesses, it will only trigger once.
+2. `Video Quiz Most Correct Answers` triggers after you've played multiple rounds and one or more users guessed the most video games correctly. Example: you have played 10 rounds, user A guessed 3 correctly, and user B also guessed 3 correctly. This means, the trigger will fire two times. If only a single person has the most correct guesses, it will only trigger once.
 
 {: .new }
 > You can use the variables `%user%`, `%userName%` or `%userId%` for both triggers. 
@@ -182,7 +182,7 @@ For them to appear in the Triggers menu, you might want to play a single round a
 > 2. `<int>` `%correctGuesses%`: the amount of correct guesses a user had (e.g. `5`)
 > 3. `<double>` `%correctGuessesPercentage%`: the percentage share of correct guesses (e.g. 10 total rounds, 4 correct guesses, so `40(%)`)
 >
-> For example you can distribute 500 extra currency points if a user guessed more than 50% of the total movies/shows.
+> For example you can distribute 500 extra currency points if a user guessed more than 50% of the total video games.
 
 ---
 

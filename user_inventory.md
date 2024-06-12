@@ -1,7 +1,7 @@
 ---
 title: User Inventory
 layout: default
-nav_order: 2
+nav_order: 3
 ---
 
 ![User Inventory](assets/media/user_inventory_title.png)

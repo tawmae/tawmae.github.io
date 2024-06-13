@@ -244,18 +244,18 @@ If you upgrade to a newer version that contained OBS UI changes, delete the old 
 
 ## Changelog
 
-| Date        | Changes          | Version |
-|:-------------|:------------------|:------------------|
-| June 07, 2024           | Hotfix for the rounds not continuing if noone's answered the first round correctly | 2.0.3 |
-| June 06, 2024           | Added two custom triggers // The most correct answers message will now show all users in case of a tie and not just a single random one // Please change the according message in the settings (@%user% did guess most...) to match the template to its left | 2.0.2 |
-| June 05, 2024           | Hotfix for a source not hiding after playing multiple rounds // changed the command inputs | 2.0.1 |
-| June 04, 2024           | complete OBS & settings UI overhall // TTS stops after a correct guess // much improved filters | 2.0.0 |
-| May 25, 2024           | Added Expert Settings // New OBS design | 1.2.0 |
-| May 24, 2024           | If the title differs from the english title, it will show both titles in the answer // added a new settings "showEnglishDescriptionInChat" that will always post the english description to chat, even with OBS overlay on (useful for multi-language streams) // fixed an issue with roman letters from VI to VIII // added new command aliases // added debugging  | 1.1.9 |
-| May 23, 2024           | Movies are now scanned whether they are part of a collection (e.g. prequels). Even if the part number is not within the title, the chat input should count (example: "Indiana Jones 2" would count for the title "Indiana Jones and the Temple of Doom" | 1.1.8 |
-| May 23, 2024           | If the original movie/show name varies from the translated one, it will show both titles in the overlay and in chat // some slight OBS UI changes | 1.1.7 |
-| May 22, 2024           | Added a prevention for duplicate movies/shows to appear within the same session (as long as SB is running) // fixed a minor bug with showing the wrong amount of guessed movies after the rounds have finished // slight OBS UI changes | 1.1.6 |
-| May 21, 2024           | Improved input accuracy and description redacting | 1.1.5 |
+| Date        | Changes          | Version | Requires OBS scene re-import |
+|:-------------|:------------------|:------------------|:-----|
+| June 07, 2024           | Hotfix for the rounds not continuing if noone's answered the first round correctly | 2.0.3 | No |
+| June 06, 2024           | Added two custom triggers // The most correct answers message will now show all users in case of a tie and not just a single random one // Please change the according message in the settings (@%user% did guess most...) to match the template to its left | 2.0.2 | No |
+| June 05, 2024           | Hotfix for a source not hiding after playing multiple rounds // changed the command inputs | 2.0.1 | No |
+| June 04, 2024           | complete OBS & settings UI overhall // TTS stops after a correct guess // much improved filters | 2.0.0 | Yes |
+| May 25, 2024           | Added Expert Settings // New OBS design | 1.2.0 | No |
+| May 24, 2024           | If the title differs from the english title, it will show both titles in the answer // added a new settings "showEnglishDescriptionInChat" that will always post the english description to chat, even with OBS overlay on (useful for multi-language streams) // fixed an issue with roman letters from VI to VIII // added new command aliases // added debugging  | 1.1.9 | No |
+| May 23, 2024           | Movies are now scanned whether they are part of a collection (e.g. prequels). Even if the part number is not within the title, the chat input should count (example: "Indiana Jones 2" would count for the title "Indiana Jones and the Temple of Doom" | 1.1.8 | No |
+| May 23, 2024           | If the original movie/show name varies from the translated one, it will show both titles in the overlay and in chat // some slight OBS UI changes | 1.1.7 | No |
+| May 22, 2024           | Added a prevention for duplicate movies/shows to appear within the same session (as long as SB is running) // fixed a minor bug with showing the wrong amount of guessed movies after the rounds have finished // slight OBS UI changes | 1.1.6 | No |
+| May 21, 2024           | Improved input accuracy and description redacting | 1.1.5 | No |
 | May 20, 2024           | The exact title will now be censored in the description // Removed mod-restriction for starting a single round via command // moved the API key to a seperate group // adjusted hint timers // input accuracy adjustments | 1.1.4 |
 | May 20, 2024           | Added TV shows (optional) | 1.1.0 |
 | May 20, 2024           | Added cast hints and pictures // code improvements // OBS UI changes | 1.0.0 |

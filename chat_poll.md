@@ -1,8 +1,4 @@
----
-title: Automated Chat Poll
-layout: default
-nav_order: 11
----
+
 
 
 ![Picture](assets/media/chat_poll_title_1.png)

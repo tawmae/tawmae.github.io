@@ -184,6 +184,14 @@ For them to appear in the Triggers menu, you might want to play a single round a
 >
 > For example you can distribute 500 extra currency points if a user guessed more than 50% of the total video games.
 
+![Picture](assets/media/video_game_quiz_custom_triggers_1.png)
+![Picture](assets/media/video_game_quiz_custom_triggers_2.png)
+
+
+If you use both triggers and want the "Correct Answer" to only trigger for single rounds, you can add this on top of your action that has the "Correct Answer" trigger:
+
+![Picture](assets/media/video_game_quiz_custom_triggers_3.png)
+
 ---
 
 

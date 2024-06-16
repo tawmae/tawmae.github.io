@@ -71,7 +71,7 @@ U0JBRR+LCAAAAAAABADNW9tzqsi6f99V53/IXvthP8yQaUCMTNV+iMQLJnEtNaIyWXUKulsgcnEENLhr
 {: .note }
 > 1. The last 50 random advices are stored in a global variable to avoid back-to-back duplicates.
 >
-> 2. Getting an advice also works with cheers, chat messages and donations
+> 2. Getting an advice also works with cheers, chat messages and donations. You just need to add the trigger.
 
 ---
 

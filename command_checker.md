@@ -57,6 +57,8 @@ You can set `cooldown` to a cooldown duration of your choice in **seconds**. Tha
 
 ![Picture](assets/media/command_check_1.png)
 
+![Picture](assets/media/command_check_8.png)
+
 
 In the `Get Commands` subaction, you can choose whether you only want to show a specific command group or all of them. And then, whether you want to include command aliases and permission rights. If you want to show multiple command groups, you can duplicate the subaction and replace `selectedCommands[x]` with the next higher number.
 

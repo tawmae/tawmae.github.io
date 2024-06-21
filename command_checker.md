@@ -65,21 +65,27 @@ In the `Get Commands` subaction, you can choose whether you only want to show a 
 --- 
 
 So the first subaction shows all my commands in the "Movie Quiz" group.
+
 ![Picture](assets/media/command_check_2.png)
+
 ![Picture](assets/media/command_check_5.png)
 
 ---
 
 The second subaction then shows the "Video Game Quiz" group. I changed `selectedCommands1` to `selectedCommands2`
+
 ![Picture](assets/media/command_check_3.png)
+
 ![Picture](assets/media/command_check_6.png)
 
 ---
 
 The third subaction then shows the "User Inventory" group. I changed `selectedCommands2` to `selectedCommands3`
+
 ![Picture](assets/media/command_check_4.png)
 ![Picture](assets/media/command_check_7.png)
 
 ---
 
-
+{: .note }
+If your commands exceed Twitch's character limit, it will automatically split the messages

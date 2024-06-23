@@ -102,7 +102,11 @@ In the "Cost Increase Settings" group, you can decide **how** the cost should in
 
 ### Reset Settings
 
-In the `[Champion Of The Hill] Reset` action, you can decide whether you want a reset to happen and if so, if it should happen daily, weekly or monthly. A new week starts every monday, a few month every 1st day of the month (surprised pikachu). The reset occurs whenever you start your stream, so if you stream past midnight and want the reset to happen, you'll have to go into the action and rightclick the "Test" trigger and hit "Test Trigger".
+In the `[Champion Of The Hill] Reset` action, you can decide whether you want a reset to happen and if so, if it should happen daily, weekly or monthly. A new week starts every monday, a new month every 1st day of the month (surprised pikachu). 
+
+For the reset to happen, change `False` to `True`.
+
+The reset occurs whenever you start your stream, so if you stream past midnight and want the reset to happen, you'll have to go into the action and rightclick the "Test" trigger and hit "Test Trigger".
 
 ![Picture](assets/media/champion_2.png)
 

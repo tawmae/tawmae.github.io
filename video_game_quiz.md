@@ -53,6 +53,11 @@ U0JBRR+LCAAAAAAABADsvWlz6siyLvz9jXj/w479+XYfDai7fb6BJWTRVGmDS4iqu0/cMMJGo+2zjI2k
 >
 > `SettingsUI.dll` has been made by [TerrierDarts](https://terrierdarts.co.uk/en/home/) that allows for a user-friendly settings UI. You will be easily able to customize a lot of stuff to your liking **and** settings will be persisted after updating to newer versions.
 
+{: .warning }
+> If you are on StreamerBot version `0.2.4`, please download this file instead: [SettingsUI.dll (0.2.4)](assets/media/SettingsUI_0_2_4.dll). Replace the old dll. Rename the file to `Settings.UI`.
+>
+> **Note**: Do **not** use this file if you are still on `0.2.3`
+
 ---
 
 ## Required OBS plugins (optional if you only want the chat version)

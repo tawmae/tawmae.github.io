@@ -24,6 +24,12 @@ StreamerBot
 
 ---
 
+{: .warning }
+If you import the scene with the "Test" trigger, it needs to happen with the Move plugin **prior** to `3.0.0`. After you've imported the scene successfully, you can update again.
+
+
+---
+
 ## Description
 Show your four most recent Twitch events on a moving OBS overlay, all done locally. It also supports donation events for Ko-Fi, Streamlabs and Streamelements.
 

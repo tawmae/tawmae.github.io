@@ -16,8 +16,6 @@ OBS
 StreamerBot
 {: .label .label-blue }
 
-{: .highlight }
-Update 2.0.0 requires a re-import of the OBS overlay! Delete the old scene and test the trigger again.
 
 # Table of contents
 {: .no_toc .text-delta }

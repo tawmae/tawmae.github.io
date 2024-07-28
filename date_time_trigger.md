@@ -61,7 +61,7 @@ Each `Global (Set)` subaction is one timer. So `time_1` set at `00:00:00` will t
 The format for times is the 24h format `hh:mm:ss` and dates is `MM/DD/YYYY`.
 
 {: .new }
-If `time_X` has a corresponding `date_X`, it will trigger at the specific date. If there's no correspondig `date_X`, `time_1` will trigger daily.
+If `time_X` has a corresponding `date_X`, it will trigger at the specific date. If there's no correspondig `date_X`, `time_X` will trigger daily.
 
 ![Picture](assets/media/dt_settings.png)
 

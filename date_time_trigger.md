@@ -4,7 +4,7 @@ layout: default
 nav_order: 20
 ---
 
-![Picture](assets/media/dt_title_1.png)
+![Picture](assets/media/dt_title.png)
 
 Twitch
 {: .label .label-purple }
@@ -25,7 +25,7 @@ StreamerBot
 ## Description
 Trigger actions at a specific time every day or at a specific time at a specific date. You can set up as many times as you want.
 
-![Picture](assets/media/dt_title_2.png)
+![Picture](assets/media/dt_title_2.gif)
 
 ---
 

@@ -152,8 +152,9 @@ You can give "no-consent" to everyone (`!consent none`) while at the same time w
 
 ## Changelog
 
+
 {: .warning }
-Extended Hugs update 2.0.0 receives a complete overhaul. It will not work natively with older versions. If you happened to run an older version and want to upgrade, please feel free to DM me and I'll work something out to transfer the user stats
+Extended Hugs update 2.0.0 received a complete overhaul. It will not work natively with older versions. If you happened to run an older version and want to upgrade, please feel free to DM me and I'll work something out to transfer the user stats
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|

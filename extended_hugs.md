@@ -87,14 +87,14 @@ U0JBRR+LCAAAAAAABADtXdlz4kiTf9+I/R+83od9mFWPTpAmYh8MNpfbdBtsDo0nNqSSBDISYkFc/mL+
 
 ---
 
-- ## `!CONSENT` or `!CONSENT [USER]
+- ## `!CONSENT` or `!CONSENT [USER]`
   {: .no_toc }
 
    If you type "!consent" without a specified user, you will give consent to the first hug request in your queue.
 
 ---
 
-- ## `!NOCONSENT` or `!NOCONSENT [USER]
+- ## `!NOCONSENT` or `!NOCONSENT [USER]`
   {: .no_toc }
 
    If you type "!noconsent" without a specified user, you will refuse consent to the first hug request in your queue.

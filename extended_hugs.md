@@ -63,11 +63,6 @@ U0JBRR+LCAAAAAAABADtXdlz4kiTf9+I/R+83od9mFWPTpAmYh8MNpfbdBtsDo0nNqSSBDISYkFc/mL+
 
     ![Picture](assets/media/extended_hugs_show_stats.png)
 
-3. For the leaderboard, you can set the argument to `True` to exclude the broadcaster and bot account 
-
-    ![Picture](assets/media/extended_hugs_settings_2.png)
-  
-    ![Picture](assets/media/extended_hugs_leaderboard.png)
 
 ---
 
@@ -149,10 +144,6 @@ U0JBRR+LCAAAAAAABADtXdlz4kiTf9+I/R+83od9mFWPTpAmYh8MNpfbdBtsDo0nNqSSBDISYkFc/mL+
    Shows the top 5 leaderboard of all hug givers and receivers.
 
 ---
-
-{: .note }
-You can only give consent to the latest hug request. If user1 requests to hug you and so does user2 before you could give consent to user1, then the request will be overwritten.
-
 
 {: .note }
 You can give "no-consent" to everyone (`!consent none`) while at the same time whitelist specified users (`!consent user [Username]`). 

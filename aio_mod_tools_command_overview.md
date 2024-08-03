@@ -220,7 +220,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **Predictions**
 
-- ## `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] | [Outcome3] ...`
+- ## `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] ...`
   {: .no_toc }
  
    Creates a channel point prediction with up to 10 outcomes. Requires a title and at least two outcomes. The duration is optional. Seperated by a `|` symbol.
@@ -244,7 +244,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **Polls**
 
-- ## `!pollCreate [Title] | [Duration] | [Option1] | [Option2] | [Option2] ...`
+- ## `!pollCreate [Title] | [Duration] | [Option1] | [Option2] ...`
   {: .no_toc }
  
    Creates a poll with up to 5 options. Requires a title and at least two options. The duration is optional. Seperated by a `|` symbol.

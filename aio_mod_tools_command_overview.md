@@ -137,7 +137,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Translates a given text into a chosen language.
 
-- ## `!clear`
+- ## `!clearChat`
   {: .no_toc }
  
    Clear chat.

@@ -46,7 +46,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **Hate Raid**
 
-- ## `!chatShield [on/off]` or `!hateRaid [on/off]`
+- ## `!hateShield [on/off]` or `!hateRaid [on/off]`
   {: .no_toc }
  
    Toggles the hate raid shield.
@@ -176,6 +176,26 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
   {: .no_toc }
  
   Runs a commercial for the specified duration (max. 180 seconds, will default to 180 if exceeded).
+
+- ## `!slowMode [Delay (seconds)]`
+  {: .no_toc }
+ 
+  Toggles the chat slow mode for the specified delay in seconds.
+
+- ## `!followerMode [Delay]` or `!followersOnly [Duration (hours)]`
+  {: .no_toc }
+ 
+  Toggles the followers-only chat with the specified minimum follow duration in hours.
+
+- ## `!emoteOnly [Delay]` or `!followersOnly [Duration (hours)]`
+  {: .no_toc }
+ 
+  Toggles the followers-only chat with the specified minimum follow duration in hours.
+
+- ## `!subMode` or `!subOnly`
+  {: .no_toc }
+ 
+  Toggles the subscribers-only chat.
 
 --- 
 

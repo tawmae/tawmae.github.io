@@ -187,7 +187,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
   Toggles the followers-only chat with the specified minimum follow duration in hours.
 
-- ## `!emoteOnly [Delay]` or `!followersOnly [Duration (hours)]`
+- ## `!emoteOnly [on/off]`
   {: .no_toc }
  
   Toggles the followers-only chat with the specified minimum follow duration in hours.

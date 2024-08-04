@@ -182,10 +182,10 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
   Toggles the chat slow mode for the specified delay in seconds.
 
-- ## `!followerMode [Delay]` or `!followersOnly [Duration (hours)]`
+- ## `!followerMode [Delay]` or `!followersOnly [Duration]`
   {: .no_toc }
  
-  Toggles the followers-only chat with the specified minimum follow duration in hours.
+  Toggles the followers-only chat with the specified minimum follow duration. If [Duration] is just a number, it will default to hours. You can specify the time format with `min`, `h` or `d`, like `!followerMode 1d` for set it to a day.
 
 - ## `!emoteOnly [on/off]`
   {: .no_toc }

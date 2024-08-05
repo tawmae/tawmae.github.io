@@ -134,7 +134,7 @@ All the other settings can be left at default if wanted. You can of course chang
 
 A full command overview is also available with the `!modCommands` command that will redirect to this page: [All-In-One Moderation Tools: Command Overview](https://tawmae.github.io/aio_mod_tools_command_overview.html)
 
-### **URL Filter**
+### URL Filter
 
 - #### `!urlBlock [on/off]`
   {: .no_toc }
@@ -156,7 +156,7 @@ A full command overview is also available with the `!modCommands` command that w
  
    Removes a link from the whitelist.
 
-### **Follow Bot Attacks**
+### Follow Bot Attacks
 
 - #### `!followShield [on/off]`
   {: .no_toc }
@@ -165,7 +165,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### **Hate Raid**
+### Hate Raid
 
 - #### `!hateShield [on/off]` or `!hateRaid [on/off]`
   {: .no_toc }
@@ -174,7 +174,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### **Channel Management**
+### Channel Management
 
 - #### `!channelTitle [Title]`
   {: .no_toc }
@@ -208,7 +208,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### **OBS Management**
+### OBS Management
 
 - #### `!scenes`
   {: .no_toc }
@@ -223,7 +223,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### **Raids and Shoutouts**
+### Raids and Shoutouts
 
 - #### `!raid [User]`
   {: .no_toc }
@@ -247,7 +247,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### **Chat Management**
+### Chat Management
 
 - #### `!modTranslate [Text]`
   {: .no_toc }
@@ -316,7 +316,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### **Channel Point Rewards**
+### Channel Point Rewards
 
 - #### `!rewardEnable [Reward Name]`
   {: .no_toc }
@@ -355,7 +355,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### **Predictions**
+### Predictions
 
 - #### `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] ...`
   {: .no_toc }
@@ -379,7 +379,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### **Polls**
+### Polls
 
 - #### `!pollCreate [Title] | [Duration] | [Option1] | [Option2] ...`
   {: .no_toc }

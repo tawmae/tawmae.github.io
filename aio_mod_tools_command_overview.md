@@ -118,6 +118,16 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **Raids and Shoutouts**
 
+- ## `!raid [User]`
+  {: .no_toc }
+ 
+   Raid a channel.
+
+- ## `!raidCancel` or `!cancelRaid`
+  {: .no_toc }
+ 
+   Cancel an ongoing raid.
+
 - ## `!raidMessage`
   {: .no_toc }
  

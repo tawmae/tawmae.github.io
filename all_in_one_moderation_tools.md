@@ -130,7 +130,7 @@ All the other settings can be left at default if wanted. You can of course chang
 
 ---
 
-## Commands
+## **Commands**
 
 A full command overview is also available with the `!modCommands` command that will redirect to this page: [All-In-One Moderation Tools: Command Overview](https://tawmae.github.io/aio_mod_tools_command_overview.html)
 
@@ -389,7 +389,7 @@ A full command overview is also available with the `!modCommands` command that w
 ---
 
 
-## Changelog
+## **Changelog**
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|

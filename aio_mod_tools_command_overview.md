@@ -104,20 +104,6 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Set a specific active OBS scene.
 
-- ## `!timeout [User] [Duration] [Reason]`
-  {: .no_toc }
- 
-   Timeout a specified user. Duration (seconds) and reason are optional.
-
-- ## `!ban [User] [Reason]`
-  {: .no_toc }
- 
-   Timeout a specified user. The reason is optional.
-
-- ## `!purge [User]`
-  {: .no_toc }
- 
-   Deletes all messages of a specified user.
 
 --- 
 

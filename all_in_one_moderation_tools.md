@@ -136,30 +136,25 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### URL Filter
 
-- #### `!urlBlock [on/off]`
-  {: .no_toc }
+- `!urlBlock [on/off]`
  
    Toggle the URL filter as a whole.
 
-- #### `!permit [User]`
-  {: .no_toc }
+- `!permit [User]`
  
    Permit a specified user to post links to chat for a given amount of time.
 
-- #### `!whitelistURL [URL]`
-  {: .no_toc }
+- `!whitelistURL [URL]`
  
    Add a link to the whitelist.
 
-- #### `!removeWhitelistURL [URL]`
-  {: .no_toc }
+- `!removeWhitelistURL [URL]`
  
    Removes a link from the whitelist.
 
 ### Follow Bot Attacks
 
-- #### `!followShield [on/off]`
-  {: .no_toc }
+- `!followShield [on/off]`
  
    Toggles the Follow Bot Attack shield mode.
 
@@ -167,8 +162,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Hate Raid
 
-- #### `!hateShield [on/off]` or `!hateRaid [on/off]`
-  {: .no_toc }
+- `!hateShield [on/off]` or `!hateRaid [on/off]`
  
    Toggles the hate raid shield.
 
@@ -176,33 +170,27 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Channel Management
 
-- #### `!channelTitle [Title]`
-  {: .no_toc }
+- `!channelTitle [Title]`
  
    Set a channel title.
 
-- #### `!channelGame [Game]` or `!channelCategory [Category]`
-  {: .no_toc }
+- `!channelGame [Game]` or `!channelCategory [Category]`
  
    Set the channel game/category.
 
-- #### `!channelSetTags [Tag1] | [Tag2] | [Tag3] ...`
-  {: .no_toc }
+- `!channelSetTags [Tag1] | [Tag2] | [Tag3] ...`
  
    Set up to 10 channels tags, seperated by a `|` symbol.
 
-- #### `!channelAddTag [Tag]`
-  {: .no_toc }
+- `!channelAddTag [Tag]`
  
    Add a channel tag.
 
-- #### `!channelRemoveTag [Tag]`
-  {: .no_toc }
+- `!channelRemoveTag [Tag]`
  
    Remove a channel tag.
 
-- #### `!channelClearTags`
-  {: .no_toc }
+- `!channelClearTags`
  
    Clear all channel tags (Note: The Twitch API requires at least one tag to always be set, so it will instead remove all tags and add a "No Tags" placeholder).
 
@@ -210,13 +198,11 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### OBS Management
 
-- #### `!scenes`
-  {: .no_toc }
+- `!scenes`
  
    Lists all OBS scene names in chat.
 
-- #### `!setScene [Scene Name]` or `!changeScene [Scene Name]`
-  {: .no_toc }
+- `!setScene [Scene Name]` or `!changeScene [Scene Name]`
  
    Set a specific active OBS scene.
 
@@ -225,23 +211,19 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Raids and Shoutouts
 
-- #### `!raid [User]`
-  {: .no_toc }
+- `!raid [User]`
  
    Raid a channel.
 
-- #### `!raidCancel` or `!cancelRaid`
-  {: .no_toc }
+- `!raidCancel` or `!cancelRaid`
  
    Cancel an ongoing raid.
 
-- #### `!raidMessage`
-  {: .no_toc }
+- `!raidMessage`
  
    Posts a custom raid message into chat (for users to copy, when you are about to start a raid).
 
-- #### `!modShoutout [User]`
-  {: .no_toc }
+- `!modShoutout [User]`
  
    Posts a shoutout into chat and also does the Twitch integrated shoutout.
 
@@ -249,68 +231,55 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Chat Management
 
-- #### `!modTranslate [Text]`
-  {: .no_toc }
+- `!modTranslate [Text]`
  
    Translates a given text into a chosen language.
 
-- #### `!clearChat`
-  {: .no_toc }
+- `!clearChat`
  
    Clear chat.
 
-- #### `!warn [User] [Reason]`
-  {: .no_toc }
+- `!warn [User] [Reason]`
  
    Warn a specified user. The reason is optional.
 
-- #### `!timeout [User] [Duration] [Reason]`
-  {: .no_toc }
+- `!timeout [User] [Duration] [Reason]`
  
    Timeout a specified user. Duration (seconds) and reason are optional.
 
-- #### `!ban [User] [Reason]`
-  {: .no_toc }
+- `!ban [User] [Reason]`
  
    Timeout a specified user. The reason is optional.
 
-- #### `!purge [User]`
-  {: .no_toc }
+- `!purge [User]`
  
    Deletes all messages of a specified user.
 
-- #### `!addBlockedTerm [Term]`
-  {: .no_toc }
+- `!addBlockedTerm [Term]`
  
    Adds a blocked term to the Twitch internal block list.
 
-- #### `!removeBlockedTerm [Term]`
-  {: .no_toc }
+- `!removeBlockedTerm [Term]`
  
    Removes a blocked term from the Twitch internal block list.
 
-- #### `!modRunAd [Duration]`
-  {: .no_toc }
+- `!modRunAd [Duration]`
  
   Runs a commercial for the specified duration (max. 180 seconds, will default to 180 if exceeded).
 
-- #### `!slowMode [Delay (seconds)]`
-  {: .no_toc }
+- `!slowMode [Delay (seconds)]`
  
   Toggles the chat slow mode for the specified delay in seconds.
 
-- #### `!followerMode [Delay]` or `!followersOnly [Duration]`
-  {: .no_toc }
+- `!followerMode [Delay]` or `!followersOnly [Duration]`
  
   Toggles the followers-only chat with the specified minimum follow duration. If [Duration] is just a number, it will default to hours. You can specify the time format with `min`, `h` or `d`, like `!followerMode 1d` for set it to a day.
 
-- #### `!emoteOnly [on/off]`
-  {: .no_toc }
+- `!emoteOnly [on/off]`
  
   Toggles the followers-only chat with the specified minimum follow duration in hours.
 
-- #### `!subMode` or `!subOnly`
-  {: .no_toc }
+- `!subMode` or `!subOnly`
  
   Toggles the subscribers-only chat.
 
@@ -318,38 +287,31 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Channel Point Rewards
 
-- #### `!rewardEnable [Reward Name]`
-  {: .no_toc }
+- `!rewardEnable [Reward Name]`
  
    Enables a specified channel point reward.
 
-- #### `!rewardDisable [Reward Name]`
-  {: .no_toc }
+- `!rewardDisable [Reward Name]`
  
    Disables a specified channel point reward.
 
-- #### `!rewardPause [Reward Name]`
-  {: .no_toc }
+- `!rewardPause [Reward Name]`
  
    Pauses a specified channel point reward.
 
-- #### `!rewardUnpause [Reward Name]`
-  {: .no_toc }
+- `!rewardUnpause [Reward Name]`
  
    Unpauses a specified channel point reward.
 
-- #### `!rewardTitle [Reward Name] | [Title]`
-  {: .no_toc }
+- `!rewardTitle [Reward Name] | [Title]`
  
    Sets the title of a specified channel point reward, seperated by a `|` symbol.
 
-- #### `!rewardPrompt [Reward Name] | [Prompt]` or `!rewardDescription [Reward Name] | [Cost]`
-  {: .no_toc }
+- `!rewardPrompt [Reward Name] | [Prompt]` or `!rewardDescription [Reward Name] | [Cost]`
  
    Sets the prompt/description of a specified channel point reward, seperated by a `|` symbol.
 
-- #### `!rewardCost [Reward Name] | [Cost]`
-  {: .no_toc }
+- `!rewardCost [Reward Name] | [Cost]`
  
    Sets the cost of a specified channel point reward, seperated by a `|` symbol.
 
@@ -357,23 +319,19 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Predictions
 
-- #### `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] ...`
-  {: .no_toc }
+- `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] ...`
  
    Creates a channel point prediction with up to 10 outcomes. Requires a title and at least two outcomes. The duration is optional. Seperated by a `|` symbol.
 
-- #### `!predictionLock`
-  {: .no_toc }
+- `!predictionLock`
  
    Locks the currently active prediction.
 
-- #### `!predictionCancel`
-  {: .no_toc }
+- `!predictionCancel`
  
    Cancels the currently active prediction.
 
-- #### `!predictionResolve [Outcome Number]` or `!predictionResolve [Outcome Title]`
-  {: .no_toc }
+- `!predictionResolve [Outcome Number]` or `!predictionResolve [Outcome Title]`
  
    Resolves a prediction after it's been locked. Can either be an outcome number like `1` or the actual outcome title.
 
@@ -381,8 +339,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Polls
 
-- #### `!pollCreate [Title] | [Duration] | [Option1] | [Option2] ...`
-  {: .no_toc }
+- `!pollCreate [Title] | [Duration] | [Option1] | [Option2] ...`
  
    Creates a poll with up to 5 options. Requires a title and at least two options. The duration is optional. Seperated by a `|` symbol.
 

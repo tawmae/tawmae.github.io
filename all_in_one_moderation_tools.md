@@ -79,7 +79,7 @@ Thanks to [TerrierDarts](https://terrierdarts.co.uk/en/home/), there's now a UI 
 {: .new }
 Those settings will **persist** across updates!
 
-### **Recommended Configurations**
+### Recommended Configurations
 
 Usually this extension is import & go, but I highly suggest to configure two things beforehand:
 
@@ -91,7 +91,7 @@ Usually this extension is import & go, but I highly suggest to configure two thi
 
 ![Picture](assets/media/aio_hr.png)
 
-### **Other Settings**
+### Other Settings
 
 All the other settings can be left at default if wanted. You can of course change everything to your liking there.
 

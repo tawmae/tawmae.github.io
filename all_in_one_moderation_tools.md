@@ -354,4 +354,5 @@ A full command overview is also available with the `!modCommands` command that w
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|
+| August 08, 2024           | Added a !FollowAttackUndoAll command | 1.0.1 |
 | August 06, 2024           | Release for SB 0.2.4-beta.11 | 1.0.0 |

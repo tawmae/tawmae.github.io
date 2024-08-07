@@ -47,6 +47,11 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Toggles the Follow Bot Attack shield mode.
 
+- ## `!followAttackUndoAll`
+  {: .no_toc }
+ 
+   Unblocks and unbans every user that got caught during an active Follow Attack Shield. This is just a safety measure.
+
 ---
 
 # **Hate Raid**

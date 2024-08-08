@@ -83,7 +83,7 @@ Those settings will **persist** across updates!
 
 Usually this extension is import & go, but I highly suggest to configure two things beforehand:
 
-1. In the Settings UI window, head into the `Follow Bot Attacks` tab and type in the name of your Follow Alert **Action** and **Queue**. Make sure the action is in that queue and that it is set to blocking `Action Queues -> Queues`. This will make sure that follow alerts won't pop up when you receive a couple hundred (if not thousand) botted followers.
+1. In the Settings UI window, head into the `Follow Bot Attacks` tab and type in the name of your Follow Alert **Action** and **Queue**. Make sure the action is in that queue and that it is set to **Blocking** `Action Queues -> Queues`. This will make sure that follow alerts won't pop up when you receive a couple hundred (if not thousand) botted followers.
 
 ![Picture](assets/media/aio_fb.png)
 

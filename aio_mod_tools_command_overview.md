@@ -275,4 +275,14 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Creates a poll with up to 5 options. Requires a title and at least two options. The duration is optional. Seperated by a `|` symbol.
 
+- ## `!pollEnd`
+  {: .no_toc }
+ 
+   Ends the current poll.
+
+- ## `!pollArchive`
+  {: .no_toc }
+ 
+   Archives the current poll.
+
 --- 

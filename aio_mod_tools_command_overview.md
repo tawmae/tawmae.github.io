@@ -52,6 +52,11 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Unblocks and unbans every user that got caught during an active Follow Attack Shield. This is just a safety measure.
 
+- ## `!removeAllFollowers [Minutes]`
+  {: .no_toc }
+ 
+   Removes all followers that have followed within the last X minutes.
+
 ---
 
 # **Hate Raid**

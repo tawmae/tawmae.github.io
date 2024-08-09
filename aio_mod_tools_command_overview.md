@@ -109,6 +109,13 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
    Set a specific active OBS scene.
 
+- ## `!endStream`
+  {: .no_toc }
+ 
+   Ends the stream. The possibility for mods to end the stream can be crucial in some situations. This is disabled by default and, if enabled, requires a double-confirmation to avoid accidentally ending the stream.
+
+  
+
 
 --- 
 

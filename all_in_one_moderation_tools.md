@@ -1,5 +1,5 @@
 ---
-title: All-In-One Moderation Tools (0.2.4 BETA ONLY)
+title: All-In-One Moderation Tools
 layout: default
 nav_order: 5
 ---
@@ -16,6 +16,9 @@ OBS
 StreamerBot
 {: .label .label-blue }
 
+{: .highlight }
+This extension only works for StreamerBot v0.2.4 (currently in beta)
+
 
 # Table of contents
 {: .no_toc .text-delta }
@@ -24,9 +27,6 @@ StreamerBot
 {:toc}
 
 ---
-
-{: .warning }
-This extension only works for StreamerBot v0.2.4 (currently in beta)
 
 ## **Description**
 Import the most important moderation tools and commands at once and without any need of extra configuration.

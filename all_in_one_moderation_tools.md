@@ -58,7 +58,7 @@ U0JBRR+LCAAAAAAABADsfVlz4tiW7vuNuP8ho+7jadeRBNjQEf1gMKNtMgEjQJ0nOjRgwIihzExH//f7
 
 1. Download the `SettingsUI.dll` file and paste it into your `StreamerBot/dlls` folder
 
-   ![Picture](assets/media/movie_quiz_dlls.png)
+   ![Picture](assets/media/settingsUI_only_path.png)
 
 2. Go into StreamerBot, copy the import code from above and import the content
    

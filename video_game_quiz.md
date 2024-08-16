@@ -44,7 +44,7 @@ U0JBRR+LCAAAAAAABADsvWlz4sqyLvz9jXj/w479+a51NPZqn2+ABBaLKm1hgVx194kbRrgRGmyfNjZS
 
 1. [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
-2. [SettingsUI.dll](assets/media/SettingsUI.dll)
+2. [SettingsUI.dll](assets/dlls/SettingsUI.dll)
 
 {: .highlight }
 > Both dll files are required to run this extension

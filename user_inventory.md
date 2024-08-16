@@ -102,14 +102,14 @@ Items are case-sensitive!
 
 ## Configuration
 
-1. In the action `[User Inventory] Use Item`, a variable called `%usedItem%` is being populated that can then be used in an if/else-subaction to trigger another action off of it. An example would be:
+1. In the action `[User Inventory] 3 - Use Item`, a variable called `%usedItem%` is being populated that can then be used in an if/else-subaction to trigger another action off of it. An example would be:
 
     `if usedItem equals Health Potion <do action for Health Potion> then continue, else continue"`
 
       ![User Inventory](assets/media/user_inventory_used_item.png)
 
 
-2. In the action `[User Inventory] Loot (Channel Point Reward)` you can duplicate a `Set Argument` subaction inside the "Random Item" group and add any items you want to be in the loot pool. By rightclicking the subactions, you can change the "Weight" and therefore its loot probabilites. The item is picked randomly and will be added to the user's inventory.
+2. In the action `[User Inventory] 5 - Loot (Channel Point Reward)` you can duplicate a `Set Argument` subaction inside the "Random Item" group and add any items you want to be in the loot pool. By rightclicking the subactions, you can change the "Weight" and therefore its loot probabilites. The item is picked randomly and will be added to the user's inventory.
 
    
    ![User Inventory](assets/media/user_inventory_loot_item_action.png)

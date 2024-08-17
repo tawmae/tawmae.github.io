@@ -167,9 +167,6 @@ Under `Custom -> Video Game Quiz` you will now be able to find two custom trigge
 
 ![Picture](assets/media/video_game_quiz_custom_triggers.png)
 
-{: .highlight }
-For them to appear in the Triggers menu, you might want to play a single round and type in the correct answer. After that, you should be able to select them.
-
 1. `Video Game Quiz Correct Answer` triggers whenever a user types in the correct answer.
 
 2. `Video Quiz Most Correct Answers` triggers after you've played multiple rounds and one or more users guessed the most video games correctly. Example: you have played 10 rounds, user A guessed 3 correctly, and user B also guessed 3 correctly. This means, the trigger will fire two times. If only a single person has the most correct guesses, it will only trigger once.

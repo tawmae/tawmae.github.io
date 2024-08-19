@@ -215,6 +215,26 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
   Toggles the subscribers-only chat.
 
+- ## `!ttsStop` or `!stopTts`
+  {: .no_toc }
+ 
+  Stops the current TTS.
+
+- ## `!ttsPause` or `!pauseTts`
+  {: .no_toc }
+ 
+  Pauses the TTS queue.
+
+- ## `!ttsClear` or `!clearTts`
+  {: .no_toc }
+ 
+  Clears the TTS queue.
+
+- ## `!ttsResume` or `!resumeTts`
+  {: .no_toc }
+ 
+  Resumes the TTS queue.
+
 --- 
 
 # **Channel Point Rewards**

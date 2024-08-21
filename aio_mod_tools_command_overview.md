@@ -235,6 +235,11 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
  
   Resumes the TTS queue.
 
+- ## `!autoMod [Level]`
+  {: .no_toc }
+ 
+  Enables AutoMod level 0 to 4.
+
 --- 
 
 # **Channel Point Rewards**

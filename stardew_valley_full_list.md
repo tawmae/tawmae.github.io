@@ -7433,7 +7433,7 @@ FrontDoor
 ---
 
 
-# *Music Tracks*
+# **Music Tracks**
 
 ```
 50s
@@ -7566,7 +7566,7 @@ XOR
 
 ---
 
-# *Sounds*
+# **Sounds**
 
 ```
 CowboyFootstep

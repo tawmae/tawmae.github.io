@@ -164,13 +164,6 @@ Variables:
 - `oldLocation` *(string)* - the old location
 - `newLocation` *(string)* - the new location
 
-### Player Warped
-Triggers when the player gets warped (changes location).
-Variables:
-- `npcName` *(string)* - the name of the NPC
-- `npcType` *(string)* - the old location
-- `newLocation` *(string)* - the new location
-
 ### Friendship Increased
 Triggers when the player's friendship with an NPC increases.
 Variables:

@@ -80,26 +80,31 @@ The mod comes with a bunch of events that can be used a custom trigger under `Cu
 
 ### Connected
 Triggers when the mod connects.
+
 Variables: `none`
 
 ### SaveLoaded
 Triggers when a save has been loaded.
+
 Variables:
 - `farmName` *(string)* - the name of the farm
 - `playerName` *(string)* - the name of the player
   
 ### Saved
 Triggers when the game saves.
+
 Variables:
 - `farmName` *(string)* - the name of the farm
 - `playerName` *(string)* - the name of the player
 
 ### Return To Title
 Triggers when the game returns to title screen.
+
 Variables: `none`
 
 ### Day Started
 Triggers when a new day starts.
+
 Variables:
 - `season` *(string)* - the current season
 - `day` *(int)* - the current day
@@ -110,6 +115,7 @@ Variables:
 
 ### Day Ending
 Triggers when a day is ending.
+
 Variables:
 - `season` *(string)* - the current season
 - `day` *(int)* - the current day
@@ -120,12 +126,14 @@ Variables:
 
 ### Time Changed
 Triggers when the time updates (e.g. 06:30 AM to 06:40 AM).
+
 Variables:
 - `oldTime` *(int)* - the old time value
 - `newTime` *(int)* - the new time value
 
 ### Player Inventory Changed
 Triggers when the players get a new item, loses an item or gets more items to an already existing stack.
+
 Variables:
 - `playerName` *(string)* - the name of the player
 - `addedItemCount` *(int)* - count of newly added unique items (e.g. +1 Diamond, +1 Stone that the player did not have in their inventory before makes an `addedItemCount` of `2`)
@@ -151,6 +159,7 @@ Variables:
 
 ### Player Level Changed
 Triggers when the player's level changes.
+
 Variables:
 - `playerName` *(string)* - the name of the player
 - `skill` *(string)* - the player's skill
@@ -159,6 +168,7 @@ Variables:
 
 ### Player Warped
 Triggers when the player gets warped (changes location).
+
 Variables:
 - `playerName` *(string)* - the name of the player
 - `oldLocation` *(string)* - the old location
@@ -166,6 +176,7 @@ Variables:
 
 ### Friendship Increased
 Triggers when the player's friendship with an NPC increases.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
@@ -176,6 +187,7 @@ Variables:
 
 ### Multiple Friendships Increased
 Triggers when the player's friendship with multiple NPCs increases.
+
 Variables:
 - `npcCount` *(int)* - the number of NPCs whose friendship increased
 - `npc_[i]_name` *(string)* - indexed NPC name
@@ -187,6 +199,7 @@ Variables:
 
 ### Friendship Decreased
 Triggers when the player's friendship with an NPC decreases.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
@@ -198,6 +211,7 @@ Variables:
 
 ### Multiple Friendships Decreased
 Triggers when the player's friendship with multiple NPCs decreases.
+
 Variables:
 - `npcCount` *(int)* - the number of NPCs whose friendship decreased
 - `npc_[i]_name` *(string)* - indexed NPC name
@@ -209,30 +223,35 @@ Variables:
 
 ### Player Started Dating
 Triggers when the player starts dating an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
 
 ### Player Stopped Dating
 Triggers when the player stops dating an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
 
 ### Player Engaged
 Triggers when the player gets engaged to an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
 
 ### Player No Longer Engaged
 Triggers when the player is no longer engaged to an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
 
 ### Player Married
 Triggers when the player marries an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
@@ -240,6 +259,7 @@ Variables:
 
 ### Player Divorced
 Triggers when the player divorces an NPC.
+
 Variables:
 - `npcName` *(string)* - the name of the NPC
 - `npcType` *(int)* - the type of NPC
@@ -247,11 +267,13 @@ Variables:
 
 ### Festival Started
 Triggers when a festival starts.
+
 Variables:
 - `festivalName` *(string)* - the name of the festival
 
 ### Festival Ended
 Triggers when a festival ends.
+
 Variables:
 - `festivalName` *(string)* - the name of the festival
 
@@ -263,12 +285,15 @@ The extension also comes with a bunch of requests
 
 ### Fully Heal Player
 Fully heals the player.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
 
 ### Get Player Info
 Fetches various player info.
+
 Variables:
 - `name` *(string)* - the name of the player
 - `displayName` *(string)* - the display name of the player
@@ -292,6 +317,7 @@ Variables:
 
 ### Get Player Inventory
 Fetches inventory info.
+
 Variables:
 - `item[i]Name` *(string)* - indexed name of the item in the inventory
 - `item[i]Quality` *(string)* - indexed quality of the item in the inventory
@@ -300,71 +326,94 @@ Variables:
 
 ### Give Item By ID
 Gives the player one item of the specified ID.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
+
 Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
 
 ### Give Item By Name
 Gives the player one item of the specified display name.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
 Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
 
 ### Give Money
 Gives the player gold of the specified amount.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `amount` *(int)* - the amount of gold to give (can also be a negative value)
+
 Variables: `none`
 
 ### Knockout Player
 Knocks the player out (essentially "kills" them).
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
 
 ### Pass Player Out
 Fully drains the player's energy, causing them to pass out.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
 
 ### Play Music Track
 Plays a specified music track.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `music` *(string)* - the music track
+
 Variables: `none`
+
 Full List of Music Tracks here: [**All Music Tracks**](https://tawmae.github.io/stardew_valley_full_list.html#music-tracks)
 
 ### Play Sound
 Plays a specified sound.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `sound` *(string)* - the sound name
+
 Variables: `none`
 Full List of Sounds here: [**All Sounds**](https://tawmae.github.io/stardew_valley_full_list.html#sounds)
 
 ### Refill Player's Energy
 Fully refills the player's energy.
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
 Variables: `none`
 
 ### Refill Player's Energy
 Fully refills the player's energy.
+
 Parameters:
 - `largeHudMessage` *(string)* - shows a large text on screen with a specified message
+
 Variables: `none`
 
 ###  Warp Player
 Warps the player to a specified location (**Note: Can cause spoilers if you teleport yourself to a location you haven't unlocked or discovered yet**)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `locationName` *(string)* - the name of the location
+
 Variables: `none`
+
 Full List of Locations here: [**All Locations**](https://tawmae.github.io/stardew_valley_full_list.html#locations)
 
 ---

@@ -55,7 +55,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 - ## `!removeAllFollowers [Minutes]`
   {: .no_toc }
  
-   Removes all followers that have followed within the last X minutes.
+   Removes all followers that have followed within the last X minutes. Also works if Streamer.bot wasn't active during the follows.
 
 ---
 

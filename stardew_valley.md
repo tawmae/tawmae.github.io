@@ -257,7 +257,7 @@ Variables:
 
 ---
 
-## Requests
+## **Requests**
 
 The extension also comes with a bunch of requests
 
@@ -303,14 +303,14 @@ Gives the player one item of the specified ID.
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 Variables: `none`
-Full List of Items here:
+Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
 
 ### Give Item By Name
 Gives the player one item of the specified display name.
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 Variables: `none`
-Full List of Items here:
+Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
 
 ### Give Money
 Gives the player gold of the specified amount.
@@ -337,7 +337,7 @@ Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `music` *(string)* - the music track
 Variables: `none`
-Full List of Music Tracks here:
+Full List of Music Tracks here: [**All Music Tracks**](https://tawmae.github.io/stardew_valley_full_list.html#music-tracks)
 
 ### Play Sound
 Plays a specified sound.
@@ -345,7 +345,7 @@ Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `sound` *(string)* - the sound name
 Variables: `none`
-Full List of Sounds here:
+Full List of Sounds here: [**All Sounds**](https://tawmae.github.io/stardew_valley_full_list.html#sounds)
 
 ### Refill Player's Energy
 Fully refills the player's energy.
@@ -365,7 +365,7 @@ Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `locationName` *(string)* - the name of the location
 Variables: `none`
-Full List of Locations here:
+Full List of Locations here: [**All Locations**](https://tawmae.github.io/stardew_valley_full_list.html#locations)
 
 ---
 

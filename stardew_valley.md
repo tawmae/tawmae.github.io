@@ -328,6 +328,9 @@ The extension also comes with a bunch of requests
 ### Change Player's Energy By %
 Changes the player's energy by a specified percent value (-100 to 100). Uses the max stamina to adjust.
 
+![Picture](assets/media/sd_refill_energy.png)
+![Picture](assets/media/sd_reduce_energy.png)
+
 Parameters:
 - `percent` *(int)* - the percentage (can be negative, from -100 to 100)
 - `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for adding stamina)
@@ -337,6 +340,9 @@ Parameters:
 
 ### Change Player's Health By %
 Changes the player's health by a specified percent value (-100 to 100). Uses the max health to adjust.
+
+![Picture](assets/media/sd_heal_player.png)
+![Picture](assets/media/sd_damage_player.png)
 
 Parameters:
 - `percent` *(int)* - the percentage (can be negative, from -100 to 100)
@@ -348,8 +354,22 @@ Parameters:
 ### Fully Heal Player
 Fully heals the player.
 
+![Picture](assets/media/sd_fully_heal_player.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+
+---
+
+### Fully Refill Player's Energy
+Fully refills the player's energy.
+
+![Picture](assets/media/sd_fully_refill_energy.png)
+
+Parameters:
+- `largeHudMessage` *(string)* - shows a large text on screen with a specified message
 
 Variables: `none`
 
@@ -395,6 +415,8 @@ Variables:
 ### Give Item By ID
 Gives the player one item of the specified ID.
 
+![Picture](assets/media/sd_give_item_by_id.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 
@@ -407,6 +429,8 @@ Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley
 ### Give Item By Name
 Gives the player one item of the specified display name.
 
+![Picture](assets/media/sd_give_item_by_name.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 
@@ -417,6 +441,8 @@ Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley
 
 ### Give Money
 Gives the player gold of the specified amount.
+
+![Picture](assets/media/sd_give_money.png)
 
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
@@ -429,6 +455,8 @@ Variables: `none`
 ### Knockout Player
 Knocks the player out (essentially "kills" them).
 
+![Picture](assets/media/sd_knockout.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 
@@ -439,6 +467,8 @@ Variables: `none`
 ### Pass Player Out
 Fully drains the player's energy, causing them to pass out.
 
+![Picture](assets/media/sd_passout.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 
@@ -448,6 +478,8 @@ Variables: `none`
 
 ### Play Music Track
 Plays a specified music track.
+
+![Picture](assets/media/sd_play_music_track.png)
 
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
@@ -462,6 +494,8 @@ Full List of Music Tracks here: [**All Music Tracks**](https://tawmae.github.io/
 ### Play Sound
 Plays a specified sound.
 
+![Picture](assets/media/sd_play_sound.png)
+
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 - `sound` *(string)* - the sound name
@@ -469,21 +503,15 @@ Parameters:
 Variables: `none`
 Full List of Sounds here: [**All Sounds**](https://tawmae.github.io/stardew_valley_full_list.html#sounds)
 
-### Refill Player's Energy
-Fully refills the player's energy.
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-
 ---
 
-### Refill Player's Energy
-Fully refills the player's energy.
+### Show Large HUD Message
+Shows a large HUD message by a specifiec input.
+
+![Picture](assets/media/sd_large_hud.png)
 
 Parameters:
-- `largeHudMessage` *(string)* - shows a large text on screen with a specified message
+- `largeHudMessage` *(string)* - message to show
 
 Variables: `none`
 
@@ -491,6 +519,8 @@ Variables: `none`
 
 ###  Warp Player
 Warps the player to a specified location (**Note: Can cause spoilers if you teleport yourself to a location you haven't unlocked or discovered yet**)
+
+![Picture](assets/media/sd_warp.png)
 
 Parameters:
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request

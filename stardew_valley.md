@@ -554,6 +554,6 @@ Full List of Locations here: [**All Locations**](https://tawmae.github.io/starde
 
 | Date        | Changes          | Version | Requires Mod-Update?
 |:-------------|:------------------|:------------------|:-----|
-| August 22, 2024           | Added a "Apply Buffs" request | 1.0.2 | Yes |
+| August 23, 2024           | Added a "Apply Buffs" request | 1.0.2 | Yes |
 | August 22, 2024           | Added "Change Player's Health By %" and "Change Player's Energy By %" requests | 1.0.1 | Yes |
 | August 21, 2024           | Release | 1.0.0 | - |

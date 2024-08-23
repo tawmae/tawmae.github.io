@@ -331,9 +331,10 @@ Applies a buff to the player..
 ![Picture](assets/media/sd_apply_buff.png)
 
 Parameters:
-- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
-- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for adding stamina)
-- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for reducing stamina)
+- `buffName` *(string)* - the name of the buff
+- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier)
+- `duration` *(int)* - the buff duration in seconds
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 
 Full List of Buff Names here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#buffs)
 
@@ -348,10 +349,10 @@ Changes the player's energy by a specified percent value (-100 to 100). Uses the
 ![Picture](assets/media/sd_reduce_energy.png)
 
 Parameters:
-- `buffName` *(string)* - the name of the buff
-- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier)
-- `duration` *(int)* - the buff duration in seconds
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
+- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for adding stamina)
+- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for reducing stamina)
+
 
 ---
 

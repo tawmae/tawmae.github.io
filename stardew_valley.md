@@ -44,7 +44,7 @@ U0JBRR+LCAAAAAAABADtvdly28iWKPp+I+4/6FRHRXfH3qjKAQkgd8R5sFQSJdlWWRMl8dSOHTmBpMWp
 You will need to install [SMAPI](https://smapi.io/) in order to use mods and then the actual `StardewWebApi (Streamer.bot)` mod, a slightly modified mod by the original creator [zunderscore](https://github.com/zunderscore/StardewWebApi).
  
 
-- [StardewWebApi for StreamerBot.rar](assets/dlls/StardewWebApi_For_Streamer.bot_(v1.0.2).rar)
+- [StardewWebApi for StreamerBot.rar](assets/dlls/StardewWebApi_For_Streamer.bot_(v1.0.3))
 
 
  
@@ -57,7 +57,7 @@ You will need to install [SMAPI](https://smapi.io/) in order to use mods and the
 {: .highlight }
 Make sure to read the install instructions. SMAPI is required to load mods into Stardew Valley.
 
-2. Download `StardewWebApi (Streamer.bot).rar` from above and unzip the folder into your `\Stardew Valley\Mods` directory.
+2. Download `StardewWebApi_For_Streamer.bot_(v1.0.3).rar` from above and unzip the folder into your `\Stardew Valley\Mods` directory.
    
    ![Picture](assets/media/stardew_valley_mod_dir.png)
 
@@ -326,7 +326,7 @@ Variables:
 The extension also comes with a bunch of requests
 
 ### Apply Buff
-Applies a buff to the player..
+Applies a buff to the player.
 
 ![Picture](assets/media/sd_apply_buff.png)
 
@@ -535,6 +535,21 @@ Variables: `none`
 
 ---
 
+### Spawn Monster
+Spawns a specified monster next to the player.
+
+![Picture](assets/media/sd_spawn_monster.png)
+
+Parameters:
+- `monsterName` *(string)* - the name of the monster
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Full List of Monster Names here: [**All Monster Names**](https://tawmae.github.io/stardew_valley_full_list.html#monsters)
+
+*Note: Monsters spawn randomly 3-5 tiles next to the player*
+
+---
+
 ###  Warp Player
 Warps the player to a specified location (**Note: Can cause spoilers if you teleport yourself to a location you haven't unlocked or discovered yet**)
 
@@ -554,6 +569,7 @@ Full List of Locations here: [**All Locations**](https://tawmae.github.io/starde
 
 | Date        | Changes          | Version | Requires Mod-Update?
 |:-------------|:------------------|:------------------|:-----|
+| August 24, 2024           | Added a "Spawn Monster" request | 1.0.3 | Yes |
 | August 23, 2024           | Added a "Apply Buffs" request | 1.0.2 | Yes |
 | August 22, 2024           | Added "Change Player's Health By %" and "Change Player's Energy By %" requests | 1.0.1 | Yes |
 | August 21, 2024           | Release | 1.0.0 | - |

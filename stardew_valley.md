@@ -337,6 +337,8 @@ Parameters:
 
 Full List of Buff Names here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#buffs)
 
+*Note: Some of the buffs don't have an icon indicator (like CombatLevel or all the Multiplier buffs)*
+
 ---
 
 ### Change Player's Energy By %

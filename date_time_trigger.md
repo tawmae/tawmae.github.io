@@ -92,8 +92,9 @@ This trigger triggers for **all** timers that you have set up. To narrow the tri
 
 
 ### Example
-
+![Import Actions](assets/media/dt_Example_2.png)
 ![Import Actions](assets/media/dt_Example.png)
+*(rightclick -> Copy Image URL to make it the image bigger)*
 
 ---
 

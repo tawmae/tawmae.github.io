@@ -78,7 +78,7 @@ What you actually use to trigger other actions is the custom `Date Time Trigger`
 
 ![Import Actions](assets/media/dt_trigger.png)
 
-This trigger triggers for **all** timers that you have set up. To narrow the trigger down to a specific one, you can use the variables that it populates
+This trigger triggers for **all** timers that you have set up. To narrow the trigger down to a specific one, you can use the variables that it populates in an **if/else subaction** (`Core -> Logic -> If/Else).
 
 `%timeOnly%` is a bool that is either `True` or `False`. It indicates whether the trigger was set to a specific date (=`False`) or to every day (=`True`)
 
@@ -89,6 +89,11 @@ This trigger triggers for **all** timers that you have set up. To narrow the tri
 ![Import Actions](assets/media/dt_vars2.png)
 
 ![Import Actions](assets/media/dt_vars3.png)
+
+
+### Example
+
+![Import Actions](assets/media/dt_Example.png)
 
 ---
 

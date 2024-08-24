@@ -44,7 +44,7 @@ U0JBRR+LCAAAAAAABADtvdly28iWKPp+I+4/8FRHRXfH3qjKAQkgd8R5sGSJkmyrShMp8dSOHTmBpMWp
 You will need to install [SMAPI](https://smapi.io/) in order to use mods and then the actual `StardewWebApi (Streamer.bot)` mod, a slightly modified mod by the original creator [zunderscore](https://github.com/zunderscore/StardewWebApi).
  
 
-- [StardewWebApi for StreamerBot.rar](assets/dlls/StardewWebApi_For_Streamer.bot_(v1.0.3))
+- [StardewWebApi for StreamerBot.rar](assets/dlls/StardewWebApi_For_Streamer.bot_(v1.0.3).rar)
 
 
  

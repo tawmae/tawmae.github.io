@@ -69,6 +69,251 @@ Make sure to read the install instructions. SMAPI is required to load mods into 
 
    ![Picture](assets/media/stardew_valley_ws.png)
 
+
+---
+
+## **Requests**
+
+The extension also comes with a bunch of requests
+
+### Apply Buff
+Applies a buff to the player.
+
+![Picture](assets/media/sd_apply_buff.png)
+
+Parameters:
+- `buffName` *(string)* - the name of the buff
+- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier)
+- `duration` *(int)* - the buff duration in seconds
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Full List of Buff Names here: [**All Buff Names**](https://tawmae.github.io/stardew_valley_full_list.html#buffs)
+
+*Note: Some of the buffs don't have an icon indicator (like CombatLevel or all the Multiplier buffs)*
+
+---
+
+### Change Player's Energy By %
+Changes the player's energy by a specified percent value (-100 to 100). Uses the max stamina to adjust.
+
+![Picture](assets/media/sd_refill_energy.png)
+![Picture](assets/media/sd_reduce_energy.png)
+
+Parameters:
+- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
+- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for adding stamina)
+- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for reducing stamina)
+
+
+---
+
+### Change Player's Health By %
+Changes the player's health by a specified percent value (-100 to 100). Uses the max health to adjust.
+
+![Picture](assets/media/sd_heal_player.png)
+![Picture](assets/media/sd_damage_player.png)
+
+Parameters:
+- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
+- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for healing)
+- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for damaging)
+
+---
+
+### Fully Heal Player
+Fully heals the player.
+
+![Picture](assets/media/sd_fully_heal_player.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+
+---
+
+### Fully Refill Player's Energy
+Fully refills the player's energy.
+
+![Picture](assets/media/sd_fully_refill_energy.png)
+
+Parameters:
+- `largeHudMessage` *(string)* - shows a large text on screen with a specified message
+
+Variables: `none`
+
+---
+
+### Get Player Info
+Fetches various player info.
+
+Variables:
+- `name` *(string)* - the name of the player
+- `displayName` *(string)* - the display name of the player
+- `farmName` *(string)* - the name of the farm
+- `money` *(string)* - the amount of money the player has
+- `stamina` *(string)* - the current stamina of the player
+- `maxStamina` *(string)* - the maximum stamina of the player
+- `health` *(string)* - the current health of the player
+- `maxHealth` *(string)* - the maximum health of the player
+- `location` *(string)* - the current location of the player
+- `dailyLuck` *(string)* - the daily luck value
+- `dailyLuckDescription` *(string)* - the description of the daily luck value
+- `skillName[i]` *(string)* - indexed name of the player's skill
+- `skillLevel[i]` *(string)* - indexed level of the player's skill
+- `skillProfessions[i]` *(string)* - indexed professions of the player's skill (comma-separated list)
+- `datingWith` *(string)* - comma-separated list of NPCs the player is dating
+- `engagedTo` *(string)* - comma-separated list of NPCs the player is engaged to
+- `marriedTo` *(string)* - comma-separated list of NPCs the player is married to
+- `roommateWith` *(string)* - comma-separated list of NPCs the player is a roommate with
+- `divorcedTo` *(string)* - comma-separated list of NPCs the player is divorced from
+
+---
+
+### Get Player Inventory
+Fetches inventory info.
+
+Variables:
+- `item[i]Name` *(string)* - indexed name of the item in the inventory
+- `item[i]Quality` *(string)* - indexed quality of the item in the inventory
+- `item[i]StackSize` *(string)* - indexed stack size of the item in the inventory
+- `itemDictionary` *(string)* - JSON string representing the item dictionary, where the key is the item name and the value is a tuple of quality and stack size
+
+---
+
+### Give Item By ID
+Gives the player one item of the specified ID.
+
+![Picture](assets/media/sd_give_item_by_id.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+
+Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
+
+---
+
+### Give Item By Name
+Gives the player one item of the specified display name.
+
+![Picture](assets/media/sd_give_item_by_name.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
+
+---
+
+### Give Money
+Gives the player gold of the specified amount.
+
+![Picture](assets/media/sd_give_money.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+- `amount` *(int)* - the amount of gold to give (can also be a negative value)
+
+Variables: `none`
+
+---
+
+### Knockout Player
+Knocks the player out (essentially "kills" them).
+
+![Picture](assets/media/sd_knockout.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+
+---
+
+### Pass Player Out
+Fully drains the player's energy, causing them to pass out.
+
+![Picture](assets/media/sd_passout.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Variables: `none`
+
+---
+
+### Play Music Track
+Plays a specified music track.
+
+![Picture](assets/media/sd_play_music_track.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+- `music` *(string)* - the music track
+
+Variables: `none`
+
+Full List of Music Tracks here: [**All Music Tracks**](https://tawmae.github.io/stardew_valley_full_list.html#music-tracks)
+
+---
+
+### Play Sound
+Plays a specified sound.
+
+![Picture](assets/media/sd_play_sound.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+- `sound` *(string)* - the sound name
+
+Variables: `none`
+Full List of Sounds here: [**All Sounds**](https://tawmae.github.io/stardew_valley_full_list.html#sounds)
+
+---
+
+### Show Large HUD Message
+Shows a large HUD message by a specifiec input.
+
+![Picture](assets/media/sd_large_hud.png)
+
+Parameters:
+- `largeHudMessage` *(string)* - message to show
+
+Variables: `none`
+
+---
+
+### Spawn Monster
+Spawns a specified monster next to the player.
+
+![Picture](assets/media/sd_spawn_monster.png)
+
+Parameters:
+- `monsterName` *(string)* - the name of the monster
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+
+Full List of Monster Names here: [**All Monster Names**](https://tawmae.github.io/stardew_valley_full_list.html#monsters)
+
+*Note: Monsters spawn randomly 1-3 tiles next to the player and it can happen that they spawn within another object and can't move*
+
+---
+
+###  Warp Player
+Warps the player to a specified location (**Note: Can cause spoilers if you teleport yourself to a location you haven't unlocked or discovered yet**)
+
+![Picture](assets/media/sd_warp.png)
+
+Parameters:
+- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
+- `locationName` *(string)* - the name of the location
+
+Variables: `none`
+
+Full List of Locations here: [**All Locations**](https://tawmae.github.io/stardew_valley_full_list.html#locations)
+
 ---
 
 ## **Custom Triggers**
@@ -318,250 +563,6 @@ Triggers when a festival ends.
 
 Variables:
 - `festivalName` *(string)* - the name of the festival
-
----
-
-## **Requests**
-
-The extension also comes with a bunch of requests
-
-### Apply Buff
-Applies a buff to the player.
-
-![Picture](assets/media/sd_apply_buff.png)
-
-Parameters:
-- `buffName` *(string)* - the name of the buff
-- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier)
-- `duration` *(int)* - the buff duration in seconds
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Full List of Buff Names here: [**All Buff Names**](https://tawmae.github.io/stardew_valley_full_list.html#buffs)
-
-*Note: Some of the buffs don't have an icon indicator (like CombatLevel or all the Multiplier buffs)*
-
----
-
-### Change Player's Energy By %
-Changes the player's energy by a specified percent value (-100 to 100). Uses the max stamina to adjust.
-
-![Picture](assets/media/sd_refill_energy.png)
-![Picture](assets/media/sd_reduce_energy.png)
-
-Parameters:
-- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
-- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for adding stamina)
-- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for reducing stamina)
-
-
----
-
-### Change Player's Health By %
-Changes the player's health by a specified percent value (-100 to 100). Uses the max health to adjust.
-
-![Picture](assets/media/sd_heal_player.png)
-![Picture](assets/media/sd_damage_player.png)
-
-Parameters:
-- `percent` *(int)* - the percentage (can be negative, from -100 to 100)
-- `hudMessage1` *(string)* - a notification message that shows which user redeemed which request (for healing)
-- `hudMessage2` *(string)* - a notification message that shows which user redeemed which request (for damaging)
-
----
-
-### Fully Heal Player
-Fully heals the player.
-
-![Picture](assets/media/sd_fully_heal_player.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-
----
-
-### Fully Refill Player's Energy
-Fully refills the player's energy.
-
-![Picture](assets/media/sd_fully_refill_energy.png)
-
-Parameters:
-- `largeHudMessage` *(string)* - shows a large text on screen with a specified message
-
-Variables: `none`
-
----
-
-### Get Player Info
-Fetches various player info.
-
-Variables:
-- `name` *(string)* - the name of the player
-- `displayName` *(string)* - the display name of the player
-- `farmName` *(string)* - the name of the farm
-- `money` *(string)* - the amount of money the player has
-- `stamina` *(string)* - the current stamina of the player
-- `maxStamina` *(string)* - the maximum stamina of the player
-- `health` *(string)* - the current health of the player
-- `maxHealth` *(string)* - the maximum health of the player
-- `location` *(string)* - the current location of the player
-- `dailyLuck` *(string)* - the daily luck value
-- `dailyLuckDescription` *(string)* - the description of the daily luck value
-- `skillName[i]` *(string)* - indexed name of the player's skill
-- `skillLevel[i]` *(string)* - indexed level of the player's skill
-- `skillProfessions[i]` *(string)* - indexed professions of the player's skill (comma-separated list)
-- `datingWith` *(string)* - comma-separated list of NPCs the player is dating
-- `engagedTo` *(string)* - comma-separated list of NPCs the player is engaged to
-- `marriedTo` *(string)* - comma-separated list of NPCs the player is married to
-- `roommateWith` *(string)* - comma-separated list of NPCs the player is a roommate with
-- `divorcedTo` *(string)* - comma-separated list of NPCs the player is divorced from
-
----
-
-### Get Player Inventory
-Fetches inventory info.
-
-Variables:
-- `item[i]Name` *(string)* - indexed name of the item in the inventory
-- `item[i]Quality` *(string)* - indexed quality of the item in the inventory
-- `item[i]StackSize` *(string)* - indexed stack size of the item in the inventory
-- `itemDictionary` *(string)* - JSON string representing the item dictionary, where the key is the item name and the value is a tuple of quality and stack size
-
----
-
-### Give Item By ID
-Gives the player one item of the specified ID.
-
-![Picture](assets/media/sd_give_item_by_id.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-
-Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
-
----
-
-### Give Item By Name
-Gives the player one item of the specified display name.
-
-![Picture](assets/media/sd_give_item_by_name.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-Full List of Items here: [**All Items**](https://tawmae.github.io/stardew_valley_full_list.html#items)
-
----
-
-### Give Money
-Gives the player gold of the specified amount.
-
-![Picture](assets/media/sd_give_money.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-- `amount` *(int)* - the amount of gold to give (can also be a negative value)
-
-Variables: `none`
-
----
-
-### Knockout Player
-Knocks the player out (essentially "kills" them).
-
-![Picture](assets/media/sd_knockout.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-
----
-
-### Pass Player Out
-Fully drains the player's energy, causing them to pass out.
-
-![Picture](assets/media/sd_passout.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Variables: `none`
-
----
-
-### Play Music Track
-Plays a specified music track.
-
-![Picture](assets/media/sd_play_music_track.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-- `music` *(string)* - the music track
-
-Variables: `none`
-
-Full List of Music Tracks here: [**All Music Tracks**](https://tawmae.github.io/stardew_valley_full_list.html#music-tracks)
-
----
-
-### Play Sound
-Plays a specified sound.
-
-![Picture](assets/media/sd_play_sound.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-- `sound` *(string)* - the sound name
-
-Variables: `none`
-Full List of Sounds here: [**All Sounds**](https://tawmae.github.io/stardew_valley_full_list.html#sounds)
-
----
-
-### Show Large HUD Message
-Shows a large HUD message by a specifiec input.
-
-![Picture](assets/media/sd_large_hud.png)
-
-Parameters:
-- `largeHudMessage` *(string)* - message to show
-
-Variables: `none`
-
----
-
-### Spawn Monster
-Spawns a specified monster next to the player.
-
-![Picture](assets/media/sd_spawn_monster.png)
-
-Parameters:
-- `monsterName` *(string)* - the name of the monster
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-
-Full List of Monster Names here: [**All Monster Names**](https://tawmae.github.io/stardew_valley_full_list.html#monsters)
-
-*Note: Monsters spawn randomly 1-3 tiles next to the player and it can happen that they spawn within another object and can't move*
-
----
-
-###  Warp Player
-Warps the player to a specified location (**Note: Can cause spoilers if you teleport yourself to a location you haven't unlocked or discovered yet**)
-
-![Picture](assets/media/sd_warp.png)
-
-Parameters:
-- `hudMessage` *(string)* - a notification message that shows which user redeemed which request
-- `locationName` *(string)* - the name of the location
-
-Variables: `none`
-
-Full List of Locations here: [**All Locations**](https://tawmae.github.io/stardew_valley_full_list.html#locations)
 
 ---
 

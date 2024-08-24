@@ -1,5 +1,5 @@
 ---
-title: Phasmophobia Log
+title: 3. Phasmophobia
 layout: default
 parent: Games
 ---

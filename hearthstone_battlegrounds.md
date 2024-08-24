@@ -1,5 +1,5 @@
 ---
-title: Hearthstone Battlegrounds MMR
+title: 2. Hearthstone Battlegrounds
 layout: default
 parent: Games
 ---

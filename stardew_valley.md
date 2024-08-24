@@ -1,5 +1,5 @@
 ---
-title: Stardew Valley
+title: 1. Stardew Valley
 layout: default
 parent: Games
 ---

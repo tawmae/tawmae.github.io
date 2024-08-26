@@ -7952,3 +7952,18 @@ Skeleton
 Spiker
 SquidKid
 ```
+
+# **Tools**
+
+```
+Hoe
+Pickaxe
+Axe
+Watering Can
+Trash Can
+Fishing Rod
+Pan
+Sword
+Dagger
+Club
+```

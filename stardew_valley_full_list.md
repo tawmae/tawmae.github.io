@@ -7901,6 +7901,21 @@ yoba
 # **Buffs**
 
 ```
+Nausea
+Burnt
+Slimed
+Jinxed
+Fear
+Frozen
+WarriorEnergy
+YobasBlessing
+AdrenalineRush
+OilOfGarlic
+MonsterMusk
+Darkness
+Weakness
+SquidInkRavioli
+
 Speed
 CombatLevel
 FarmingLevel

@@ -83,7 +83,7 @@ Applies a buff to the player.
 
 Parameters:
 - `buffName` *(string)* - the name of the buff
-- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier)
+- `buffValue` *(int)* - the value of the buff (e.g. `10` speed; multiplier buffs are automatically getting divided by 100, so 10 equals a 0.1 multiplier). The buff value only applies for non-unique buffs.
 - `duration` *(int)* - the buff duration in seconds
 - `hudMessage` *(string)* - a notification message that shows which user redeemed which request
 

@@ -84,12 +84,7 @@ You edit the content of your post in the `bskyText` subaction of the `Settings` 
 So this text input would result in the following post:
 
 bskyText:
-```
-Well hello there, || || we are live at <www.twitch.tv/%targetUserName%> || || We are playing %game% today! Hope to see you there! {%targetUserProfileImageUrl%}
-```
-
-|
-V
+`Well hello there, || || we are live at <www.twitch.tv/%targetUserName%> || || We are playing %game% today! Hope to see you there! {%targetUserProfileImageUrl%`
 
 ![Picture](assets/media/bsky_giver_title_2.png)
 

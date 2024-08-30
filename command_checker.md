@@ -57,7 +57,7 @@ You'll have a new settings menu that you can find in the `[Command Checker] 2 - 
 
 ![Picture](assets/media/command_check_menu.png)
 
-1. You can set the default command to a command of your choice, so it will just return the list without the `...does not exist` message. That one is not affected by the cooldown.
+1. You can set the default commands to commands of your choice, so it will just return the list without the `...does not exist` message. That one is not affected by the cooldown. One command per line.
    
 2. You can also set a cooldown duration of your choice in **seconds**. That means, if it's on `60`, the first wrong command will show the command list, but the second won't. Only if 60 seconds have passed, it will show the entire list in chat again whenever someone types in a wrong command.
 

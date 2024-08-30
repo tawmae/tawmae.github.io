@@ -52,7 +52,9 @@ U0JBRR+LCAAAAAAABADdXPuTosiW/n0j9n9we3/ZjRmreapM3LgbJe0DtezyBcrUxA0gESh5OAJaOHf+
 
 You edit the content of your post in the `bskyText` subaction of the `Settings` folder. It can just be plain text, but you can also have line breaks, embed images or make a URL clickable.
 
-1. Linebreaks
+---
+
+Linebreaks
 
 You create line breaks with two pipe symbols. Example:
 ```
@@ -69,7 +71,7 @@ my name is tawmae
 
 ---
 
-2. Emded images.
+Emded images.
 
 You can embed an image from a link with two curly brackets. Example:
 ```
@@ -83,7 +85,7 @@ You also also embed images from a filepath with square brackets. Example:
 
 ---
 
-3. Clickable URLs
+Clickable URLs
 
 To make URLs clickable, you can put them into angled brackets. Example:
 ```

@@ -91,7 +91,7 @@ bskyText:
 Well hello there, || || we are live at <www.twitch.tv/test> || || We are playing %game% today! Hope to see you there! {test}
 ```
 
-![Picture](assets/media/bsky_giver_title_2.png)
+![Picture](assets/media/bsky_title_2.png)
 
  {: .note }
  > You **can** embed multiple images at once

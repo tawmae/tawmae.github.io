@@ -96,8 +96,11 @@ To make URLs clickable, you can put them into angled brackets. Example:
 
 So this text input would result in the following post:
 
+{: .new }
+Pretent there are variables in the example text, github pages just won't let me populate them here KEKW
+
 bskyText:
-`Well hello there, || || we are live at <www.twitch.tv/%targetUserName%> || || We are playing %game% today! Hope to see you there! {%targetUserProfileImageUrl%}`
+`Well hello there, || || we are live at <www.twitch.tv/targetUserName> || || We are playing Game XY today! Hope to see you there! {targetUserProfileImageUrl}`
 
 ![Picture](assets/media/bsky_title_2.png)
 

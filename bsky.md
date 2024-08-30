@@ -22,7 +22,7 @@ StreamerBot
 ## Description
 Create a post on Bluesky.
 
-![Picture](assets/media/bsky_giver_title_2.png)
+![Picture](assets/media/bsky_title_2.png)
 
 ---
 
@@ -53,38 +53,43 @@ U0JBRR+LCAAAAAAABADdXPuTosiW/n0j9n9we3/ZjRmreapM3LgbJe0DtezyBcrUxA0gESh5OAJaOHf+
 You edit the content of your post in the `bskyText` subaction of the `Settings` folder. It can just be plain text, but you can also have line breaks, embed images or make a URL clickable.
 
 1. Linebreaks
-   - You create line breaks with two pipe symbols. Example:
-    ```csharp
-    Hello, || my name is tawmae.
-    ```
-    turns into
-    ```csharp
-    Hello,
-    my name is tawmae
-    ```
+You create line breaks with two pipe symbols. Example:
+```
+Hello, || || my name is tawmae
+```
+
+turns into
+
+```
+Hello,
+
+my name is tawmae
+```
 
 2. Emded images.
-   - You can embed an image from a link with two curly brackets. Example:
-    ```csharp
-    {https://www.example.com/image.png}
-    ```
+You can embed an image from a link with two curly brackets. Example:
+```
+{https://www.example.com/image.png}
+```
 
-  - You also also embed images from a filepath with square brackets. Example:
-    ```csharp
-    [C:\User\tawmae\Image.png]
-    ```
+You also also embed images from a filepath with square brackets. Example:
+```
+[C:\User\tawmae\Image.png]
+```
 
 3. Clickable URLs
-   - To make URLs clickable, you can put them into angled brackets. Example:
-    ```csharp
-    <www.twitch.tv/tawmae>
-    ```
+To make URLs clickable, you can put them into angled brackets. Example:
+```
+<www.twitch.tv/tawmae>
+```
 
 
 So this text input would result in the following post:
 
 bskyText:
-`Well hello there, || || we are live at <www.twitch.tv/test> || || We are playing %game% today! Hope to see you there! {test}`
+```
+Well hello there, || || we are live at <www.twitch.tv/test> || || We are playing %game% today! Hope to see you there! {test}
+```
 
 ![Picture](assets/media/bsky_giver_title_2.png)
 

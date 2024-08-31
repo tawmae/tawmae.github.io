@@ -7983,7 +7983,7 @@ Dagger
 Club
 ```
 
-# **Emotes
+# **Emotes**
 
 ```
 Happy
@@ -7998,14 +7998,4 @@ X
 Pause
 Blush
 Angry
-Yes
-No
-Sick
-Laugh
-Surprised
-Hi
-Taunt
-Uh
-Music
-Jar
 ```

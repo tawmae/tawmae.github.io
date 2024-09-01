@@ -13,6 +13,7 @@ Twitch
 StreamerBot
 {: .label .label-blue }
 
+![Picture](assets/media/stardew_valley_title_2.png)
 
 # Table of contents
 {: .no_toc .text-delta }

@@ -96,6 +96,13 @@ U0JBRR+LCAAAAAAABADtfXdvG8m25/8L7HfgncUF3mJuezqHwXsLiLSYJNEmKQb1eLCo1GSLzfAYRFF3
 
 - - - -
 
+- ## `!TRADE [USER] [OFFERED ITEM] <AMOUNT> | [WANTED ITEM] <AMOUNT>`
+  {: .no_toc } 
+
+    Trade items with a user. Only one trade request at the time. Amount is optional. Example: `!trade tawmae Health Potion <10> | Obsidian Sword` to trade 10 Health Potions for one Obsidian Sword.
+
+- - - -
+
 {: .new }
 Items are case-sensitive!
 

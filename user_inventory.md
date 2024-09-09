@@ -101,7 +101,9 @@ U0JBRR+LCAAAAAAABADtfXlzIkmy5/9rtt+B6bUxe2s9WZ330fbemglKXJKoEkgJoqttLa6EFMnxOITQ
 
     ![User Inventory](assets/media/user_inventory_trade_item.png)
 
-    Trade items with a user. Only one trade request at the time. Amount is optional. Example: `!trade tawmae Health Potion <10> | Obsidian Sword` to trade 10 Health Potions for one Obsidian Sword. If you don't enter a pipe symbol `|`, you can gift the item to the other user. Example: `trade tawmae Cookie`.
+    Trade items with a user. Only one trade request at the time. Amount is optional. Example: `!trade tawmae Health Potion <10> | Obsidian Sword` to trade 10 Health Potions for one Obsidian Sword.
+
+  If you don't enter a pipe symbol `|`, you can gift the item to the other user. Example: `!trade tawmae Cookie`.
 
 - - - -
 

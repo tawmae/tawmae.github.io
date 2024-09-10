@@ -381,6 +381,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|
+| September 10, 2024           | Changed the SettingsUI, no more dll required | 1.3.0 |
 | August 27, 2024           | Removed chat message responses if a command was disabled in settings | 1.2.2 |
 | August 21, 2024           | Allow the removal of recent followers the bot has not seen | 1.2.1 |
 | August 21, 2024           | Added a command to toggle AutoMod | 1.1.2 |

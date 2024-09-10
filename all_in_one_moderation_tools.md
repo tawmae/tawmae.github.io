@@ -111,14 +111,6 @@ All the other settings can be left at default if wanted. You can of course chang
 
 ![Picture](assets/media/aio_raidsandshoutouts.png)
 
-#### Commands
-{: .no_toc }
-
-![Picture](assets/media/aio_commands.png)
-   
-
-
-
 ---
 
 ## **Commands**

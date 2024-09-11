@@ -128,6 +128,20 @@ U0JBRR+LCAAAAAAABADtfXlzIkmy5/9rtt+B6bUxe2s9WZ330fbemglKXJKoEkgJoqttLa6EFMnxOITQ
 {: .new }
 Items are case-sensitive!
 
+- - - -
+
+## Example: Loot a random item
+
+The previous versions had a dedicated loot action. This one doesn't, but you can still achieve that. For that, you can simply create a new group in the `[User Item Inventory] 1 - Add Item` action and put the `Set Argument - itemName` subaction in there. You can then duplicate that `Set Argument` subaction as many times as you like - each subaction will be one item.
+
+![User Inventory](assets/media/user_inventory_loot_1.png)
+
+You then rightclick the group and select `Random`. This will pick one of the subactions at random. To specifiy the odds even more, you can rightclick the `Set Argument` subactions and set their weighting. Higher weight -> higher probability. 
+
+![User Inventory](assets/media/user_inventory_loot_2.png)
+
+The `!addItem` command is not affected by this. This only applies to any other trigger that is **not** a command (like a Channel Point Reward Redemption).
+
 - - - - 
 
 {: .highlight }

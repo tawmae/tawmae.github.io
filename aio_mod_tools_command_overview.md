@@ -20,11 +20,6 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **URL Filter**
 
-- ## `!urlBlock [on/off]`
-  {: .no_toc }
- 
-   Toggle the URL filter as a whole.
-
 - ## `!permit [User]`
   {: .no_toc }
  

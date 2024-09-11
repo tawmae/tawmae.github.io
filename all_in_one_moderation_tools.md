@@ -119,10 +119,6 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### URL Filter
 
-- `!urlBlock [on/off]`
- 
-   Toggle the URL filter as a whole.
-
 - `!permit [User]`
  
    Permit a specified user to post links to chat for a given amount of time.

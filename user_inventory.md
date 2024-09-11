@@ -132,6 +132,8 @@ Items are case-sensitive!
 
 ## Example: Loot a random item
 
+![User Inventory](assets/media/user_inventory_loot_3.png)
+
 The previous versions had a dedicated loot action. This one doesn't, but you can still achieve that. For that, you can simply create a new group in the `[User Item Inventory] 1 - Add Item` action and put the `Set Argument - itemName` subaction in there. You can then duplicate that `Set Argument` subaction as many times as you like - each subaction will be one item.
 
 ![User Inventory](assets/media/user_inventory_loot_1.png)

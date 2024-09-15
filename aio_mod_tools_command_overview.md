@@ -148,7 +148,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 - ## `!modTranslate [Text]`
   {: .no_toc }
  
-   Translates a given text into a chosen language.
+   Translates a given text into a chosen language (also works with just `!modTranslate` when used in a reply).
 
 - ## `!clearChat`
   {: .no_toc }

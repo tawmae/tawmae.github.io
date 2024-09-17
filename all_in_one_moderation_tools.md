@@ -105,6 +105,7 @@ All the other settings can be left at default if wanted. You can of course chang
 
 ![Picture](assets/media/aio_mod_blacklisted_words.png)
 ![Picture](assets/media/aio_mod_blacklisted_words2.png)
+![Picture](assets/media/aio_mod_blacklisted_words3.png)
 
 #### Raids and Shoutouts
 {: .no_toc }

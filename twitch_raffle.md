@@ -59,8 +59,63 @@ You can modify the settings like different amount of entries for subs, VIPs and 
 
 ![Picture](assets/media/twitch_raffle_settings_2.png)
 
+
 ---
 
+## Commands
+
+- ## `!RAFFLESTART [TITLE]`
+  {: .no_toc }
+
+   Create a raffle with the specified title (moderators only).
+
+---
+
+- ## `!RAFFLELOCK` / `!RAFFLEUNLOCK`
+  {: .no_toc }
+
+   Lock/Unlock a raffle. Locking won't allow for any more entries (moderators only).
+
+---
+
+- ## `!RAFFLEDELETE`
+  {: .no_toc }
+
+   Delete/End a raffle (moderators only).
+
+---
+
+- ## `!RAFFLEPICKWINNER`
+  {: .no_toc }
+
+   Pick a winner (moderators only). Only usable when the raffle has been locked.
+
+---
+
+- ## `!RAFFLE`
+  {: .no_toc }
+
+   Get the currently active raffle and your own entries.
+
+---
+
+- ## `!ENTER` / `!ENTER [NUMBER]`
+  {: .no_toc }
+
+   Enter a raffle. If no number is specified, it will be a single entry.
+
+---
+
+
+{: .new }
+Once you have picked a winner, you can pick another winner afterwards if you need. To "end" a raffle, you need to delete it.
+
+---
+
+{: .note }
+If you want to use a different trigger (that is not a command), you can create a new action. Then add a `Set Argument` subaction with `command` as the variable name and the command as the value (all lowercase), for example `!rafflepickwinner`. Then create a second subaction "Run Action" and choose the `[Twitch Raffle] 2 - Raffle Manager` action. In case the command needs an input, add a second `Set Argument` subaction with `rawInput` and the according input. 
+
+---
 
 ## Changelog
 

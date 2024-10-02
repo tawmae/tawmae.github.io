@@ -88,7 +88,7 @@ You can modify the settings like different amount of entries for subs, VIPs and 
 - ## `!RAFFLEPICKWINNER`
   {: .no_toc }
 
-   Pick a winner (moderators only). Only usable when the raffle has been locked.
+   Pick a winner (moderators only). Only usable if the raffle has been locked.
 
 
 {: .highlight }

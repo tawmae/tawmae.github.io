@@ -90,6 +90,10 @@ You can modify the settings like different amount of entries for subs, VIPs and 
 
    Pick a winner (moderators only). Only usable when the raffle has been locked.
 
+
+{: .highlight }
+Picking a winner will remove them from the entry pool.
+
 ---
 
 - ## `!RAFFLE`

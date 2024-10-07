@@ -53,7 +53,7 @@ U0JBRR+LCAAAAAAABADtfWlz4kyy7vcbcf+Db5+P79CvJMBGE3E+GMwibHCzCdDpiRPaABmxjFnFxPz3
 
 5. Head back into the `Actions` tab and navigate to the action `[Channel Point Auction] 1 - Settings`. Rightclick the "Test" trigger and hit "Test Trigger". This will open the settings menu. Paste your reward ID into the very top, then save and exit.
 
-  ![Picture](assets/media/channel_point_auction_reward_id.png)
+      ![Picture](assets/media/channel_point_auction_reward_id.png)
 
 6. Done! 🥳
 

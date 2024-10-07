@@ -95,12 +95,15 @@ Available variables:
 Here's an icon that you can use as the reward image :)
 
 112px:
+
 ![Picture](assets/media/cpauction_112px.png)
 
 56px:
+
 ![Picture](assets/media/cpauction_56px.png)
 
 28px:
+
 ![Picture](assets/media/cpauction_28px.png)
 
 - - - -

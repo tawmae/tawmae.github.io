@@ -24,7 +24,7 @@ StreamerBot
 
 
 ## Description
-Let your viewers take part in an auction where channel points are the currency. Every redemption adds up to their total bidding. After the auctions ends, the highest bidder wins and may receive a reward that you specified. You could for example give them a [VIP role for a month](https://tawmae.github.io/temporary_vip.html) or add an item to their [user inventory](https://tawmae.github.io/user_inventory.html) :) The channel points of everyone else except the winner are getting refunded.
+Let your viewers take part in an auction where channel points are the currency. Every redemption adds up to their total bidding. After the auctions ends, the highest bidder wins and may receive a reward that you specified. You could for example give them a [VIP role for a month](https://tawmae.github.io/temporary_vip.html) or add an item to their [user inventory](https://tawmae.github.io/user_inventory.html) :) The channel points of everyone else are getting refunded.
 
 ![Picture](assets/media/channel_point_auction_title_3.png)
 ![Picture](assets/media/channel_point_auction_title_2.png)

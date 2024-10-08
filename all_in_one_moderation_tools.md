@@ -81,7 +81,7 @@ All the other settings can be left at default if wanted. You can of course chang
 {: .highlight }
 **Note:** Restricted Messages are currently not handled by Streamer.bot and will hopefully be introduced in a future update. This affects the URL- and blacklisted terms filter. Restricted Messages are only visible for broadcaster and moderators, so your regular viewers won't notice them anyway.
 
-![Picture](assets/media/aio_mod_tools_restricted_messages.png)
+![Picture](assets/media/aio_mod_tools_restricted_message.png)
 
 
 #### General

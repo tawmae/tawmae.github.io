@@ -56,11 +56,11 @@ In the `[Extended Lurks] 0 - Settings` action, you can set rightclick the "Test"
 
 You will be able to customize chat responses, but also things like whether you want the unlurk to happen with every chat message or just with the `!unlurk` command, whether lurkers should be removed if they're not in the present viewers list anymore or how many ranks your leaderboard is supposed to show.
 
-![Picture](assets/media/lurk_settings_1.png)
+![Picture](assets/media/extended_lurks_settings_1.png)
 
-![Picture](assets/media/lurk_settings_2.png)
+![Picture](assets/media/extended_lurks_settings_2.png)
 
-![Picture](assets/media/lurk_settings_3.png)
+![Picture](assets/media/extended_lurks_settings_3.png)
 
 
 

@@ -164,6 +164,22 @@ A full command overview is also available with the `!modCommands` command that w
 
 ### Channel Management
 
+- `!addCommand [!command] [Command Text]`
+ 
+  Adds a custom command with a simple text output. Can contain `%user%` and `%userName%` variables.
+
+- `!editCommand [!command] [Command Text]`
+ 
+  Edits a custom command.
+
+- `!removeCommand [!command]`
+ 
+  Removes a custom command.
+
+- `!customCommands`
+ 
+  Shows all custom commands.
+
 - `!channelTitle [Title]`
  
    Set a channel title.

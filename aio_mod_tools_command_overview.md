@@ -65,6 +65,26 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 
 # **Channel Management**
 
+- ## `!addCommand [!command] [Command Text]`
+  {: .no_toc }
+ 
+  Adds a custom command with a simple text output. Can contain `%user%` and `%userName%` variables.
+
+- ## `!editCommand [!command] [Command Text]`
+  {: .no_toc }
+ 
+  Edits a custom command.
+
+- ## `!removeCommand [!command]`
+  {: .no_toc }
+ 
+  Removes a custom command.
+
+- ## `!customCommands`
+  {: .no_toc }
+ 
+  Shows all custom commands.
+
 - ## `!channelTitle [Title]`
   {: .no_toc }
  

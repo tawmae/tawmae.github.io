@@ -85,7 +85,7 @@ You also also embed images from a filepath with square brackets. Example:
 ---
 
 {: .new }
-You can also use Alt Text for images by using a pipe symbol `|` after the link/path - `{www.randompicture.com/picture.jpg|This is a picture of a cute orange cat}`
+You can also use Alt Text for images by using a pipe symbol after the URL/path
 
 
 {: .new }

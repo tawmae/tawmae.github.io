@@ -84,9 +84,8 @@ You also also embed images from a filepath with square brackets. Example:
 ```
 ---
 
-
-
-
+{: .new }
+You can also use Alt Text for images by using a pipe symbol `|` after the link/path. Example: `{www.randompicture.com/picture.jpg|This is a picture of a cute orange cat}`
 
 ---
 
@@ -114,8 +113,6 @@ bskyText:
  > You **cannot** create a URL preview
 
 
-{: .new }
-You can also use Alt Text for images by using a pipe symbol `|` after the link/path. Example: `{www.randompicture.com/picture.jpg|This is a picture of a cute orange cat}`
 
 ---
 

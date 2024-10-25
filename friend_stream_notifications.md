@@ -1,10 +1,10 @@
 ---
-title: Friend Stream Notification
+title: Friend Stream Notifications
 layout: default
 nav_order: 19
 ---
 
-![Picture](assets/media/friend_stream_notification_title_1.png)
+![Picture](assets/media/friend_stream_notifications_title_1.png)
 
 Twitch
 {: .label .label-purple }
@@ -25,7 +25,7 @@ StreamerBot
 ## Description
 Get a custom trigger whenever a streamer you follow goes live.
 
-![Picture](assets/media/friend_stream_notification_title_2.png)
+![Picture](assets/media/friend_stream_notifications_title_2.png)
 
 ---
 
@@ -53,9 +53,9 @@ U0JBRR+LCAAAAAAABADNWltzqlgWfp+q+Q+pM4892oi30FXzEI0gmpAjKCCTrilgb5G4uYyAilP932dt
 
 After setting the action up, you'll have a custom trigger called "Friend Stream Notifications" that will fire once one of your followed streamers goes live. You will have a bunch of variables available for use:
 
-![Picture](assets/media/friend_stream_notification_trigger.png)
+![Picture](assets/media/friend_stream_notifications_trigger.png)
 
-![Picture](assets/media/friend_stream_notification_variables.png)
+![Picture](assets/media/friend_stream_notifications_variables.png)
 
 - `%user%`
  

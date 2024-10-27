@@ -59,15 +59,15 @@ After setting the action up, you'll have a custom trigger called "Friend Stream 
 
 - `%user%`
  
-   The display name.
+   The user's display name.
 
 - `%userName%`
  
-   The login name.
+   The user's login name.
 
 - `%userId%`
  
-   The user ID.
+   The user's ID.
 
 - `%profileImageUrl%`
  

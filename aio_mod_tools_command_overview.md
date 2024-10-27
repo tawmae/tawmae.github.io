@@ -188,7 +188,12 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 - ## `!ban [User] [Reason]`
   {: .no_toc }
  
-   Timeout a specified user. The reason is optional.
+   Ban a specified user. The reason is optional.
+
+- ## `!unban [User]`
+  {: .no_toc }
+ 
+   Unban a specified user.
 
 - ## `!purge [User]`
   {: .no_toc }

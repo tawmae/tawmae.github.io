@@ -106,7 +106,10 @@ So this text input would result in the following post:
 
 
 bskyText:
-`This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || || Find more Streamer.bot extensions over at <https://tawmae.github.io/> 🔥 || || #Streamerbot ✨ || #Twitch ✨ {https://tawmae.github.io/assets/media/sb_title.png|This is an alt text. The image says 'StreamerBot extensions' and contains logos of Twitch, Tawmae, OBS and Streamerbot}`
+
+```
+This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || || Find more Streamer.bot extensions over at <https://tawmae.github.io/> 🔥 || || #Streamerbot ✨ || #Twitch ✨ {https://tawmae.github.io/assets/media/sb_title.png|This is an alt text. The image says 'StreamerBot extensions' and contains logos of Twitch, Tawmae, OBS and Streamerbot}
+```
 
 ![Picture](assets/media/bsky_title_2.png)
 

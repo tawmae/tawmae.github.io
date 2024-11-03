@@ -54,7 +54,7 @@ You edit the content of your post in the `bskyText` subaction of the `Settings` 
 
 ---
 
-Linebreaks
+### Linebreaks
 
 You create line breaks with two pipe symbols. Example:
 ```
@@ -71,7 +71,7 @@ my name is tawmae
 
 ---
 
-Emded images.
+### Emdedded images
 
 You can embed an image from a link with two curly brackets. Example:
 ```
@@ -92,7 +92,7 @@ You also also embed images from a filepath with square brackets. Example:
 
 ---
 
-Clickable URLs
+### URLs
 
 To make URLs clickable, you can put them into angled brackets. Example:
 ```
@@ -106,7 +106,7 @@ So this text input would result in the following post:
 
 
 bskyText:
-`Well hello there, || || we are live at <www.twitch.tv/targetUserName> || || We are playing Game XY today! Hope to see you there! {targetUserProfileImageUrl}`
+`This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || || Find more Streamer.bot extensions over at <https://tawmae.github.io/> 🔥 || || #Streamerbot ✨ || #Twitch ✨ {https://tawmae.github.io/assets/media/sb_title.png|This is an alt text. The image says 'StreamerBot extensions' and contains logos of Twitch, Tawmae, OBS and Streamerbot}`
 
 ![Picture](assets/media/bsky_title_2.png)
 

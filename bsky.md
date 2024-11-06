@@ -47,14 +47,18 @@ U0JBRR+LCAAAAAAABADtfetyIku23n9H+B2I7R/Hjj2o6wrUxLHDAnFHtMSlgDo9MVE3oERxGQFCMGfe
 
 ---
 
+## Features
 
-## Text Formatting
 
-You edit the content of your post in the `bskyText` subaction of the `Settings` folder. It can just be plain text, but you can also have line breaks, embed images or make a URL clickable.
+### 1. Create Posts
+
+To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[Bluesky] 1 - Create Post` action to your liking. You can also toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded.
+
+It also supports **text formatting** for linesbreaks, URLs and images:
 
 ---
 
-### Linebreaks
+#### 1. Linebreaks
 
 You create line breaks with two pipe symbols. Example:
 ```
@@ -71,7 +75,7 @@ my name is tawmae
 
 ---
 
-### Emdedded images
+#### 2. Emdedded images
 
 You can embed an image from a link with two curly brackets. Example:
 ```
@@ -92,7 +96,7 @@ You also also embed images from a filepath with square brackets. Example:
 
 ---
 
-### URLs
+#### 3. URLs
 
 To make URLs clickable, you can put them into angled brackets. Example:
 ```
@@ -100,6 +104,8 @@ To make URLs clickable, you can put them into angled brackets. Example:
 ```
 
 ---
+
+#### 4. Example
 
 So this text input would result in the following post:
 
@@ -112,6 +118,8 @@ This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || 
 ```
 
 ![Picture](assets/media/bsky_title_2.png)
+
+---
 
  {: .note }
  > Notes:

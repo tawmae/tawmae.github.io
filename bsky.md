@@ -123,7 +123,7 @@ This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || 
 
 ### 2. Update Profile Picture
 
-Update your profile picture.
+Update your profile picture. Can be a file path or a URL.
 
 ---
 
@@ -141,7 +141,7 @@ Update your bio.
 
 ### 5. Update Banner
 
-Update your banner picture.
+Update your banner picture. Can be a file path or a URL.
 
 ---
 

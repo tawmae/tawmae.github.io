@@ -121,6 +121,30 @@ This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || 
 
 ---
 
+### 2. Update Profile Picture
+
+Update your profile picture.
+
+---
+
+### 3. Update Display Name
+
+Update your display.
+
+---
+
+### 4. Update Bio
+
+Update your bio.
+
+---
+
+### 5. Update Banner
+
+Update your banner picture.
+
+---
+
  {: .note }
  > Notes:
  >

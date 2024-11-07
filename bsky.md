@@ -54,6 +54,8 @@ U0JBRR+LCAAAAAAABADtvelyKku2Jvi/zeodsFM/6padDO0YgUi7VdYCAWIQWwIRQNyddi0mIEQwHAFC
 
 To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[Bluesky] 1 - Create Post` action to your liking. You can also toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded. You can also set the language of your posts by editing the `Set Argument - %bskyLanguage` and typing the ISO language codes in there (e.g. `en-US` or `de-DE`). You can also type in multiple languages by seperating them with a comma and a space.
 
+![Picture](assets/media/bsky_action_1.png)
+
 It also supports **text formatting** for linesbreaks, URLs and images:
 
 ---
@@ -125,11 +127,15 @@ This is a test message for the Bluesky extension by @tawmae.bsky.social 🔵 || 
 
 Update your profile picture. Can be a file path or a URL.
 
+![Picture](assets/media/bsky_action_2.png)
+
 ---
 
 ### 3. Update Display Name
 
 Update your display.
+
+![Picture](assets/media/bsky_action_3.png)
 
 ---
 
@@ -137,11 +143,15 @@ Update your display.
 
 Update your bio.
 
+![Picture](assets/media/bsky_action_4.png)
+
 ---
 
 ### 5. Update Banner
 
 Update your banner picture. Can be a file path or a URL.
+
+![Picture](assets/media/bsky_action_5.png)
 
 ---
 

@@ -133,7 +133,7 @@ Update your profile picture. Can be a file path or a URL.
 
 ### 3. Update Display Name
 
-Update your display.
+Update your display name.
 
 ![Picture](assets/media/bsky_action_3.png)
 

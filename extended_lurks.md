@@ -112,7 +112,7 @@ If someone's still lurking when the stream goes offline, it will automatically r
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| November 09, 2024           | Fixed the leaderboard saying "hours" for "days" | 1.1.3 |
+| November 09, 2024           | Fixed the leaderboard saying "hours" for "days" (please open the settings menu again, go to "Translations" and put "day/days" in. Save afterwards | 1.1.3 |
 | October 19, 2024           | Added the %lurkerCount% variable to a few responses (idea by flipperflaps) | 1.1.2 |
 | October 18, 2024           | Fixed the lurkcheck chat output (didn't parse the preceding variable correctly) | 1.1.1 |
 | October 08, 2024           | Added a settings menu + chat responses, so they'll persist between updates // Added an action to remove lurkers if they're not in the present viewer list anymore | 1.1.0 |

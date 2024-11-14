@@ -43,7 +43,7 @@ U0JBRR+LCAAAAAAABADtPNly4ki27zfi/gNR93FaLq1Iqoj7YMCAsKHMJkDjjgnlosVIiEHsHf3vc1IC
 
     ![Import Actions](assets/media/import_actions.png)
 
-2. Restart StreamerBot or go into the `[Date Time Trigger] Code` action, rightclick the `Streamer.bot Started` trigger and click "Test Trigger".
+2. Restart StreamerBot or go into the `[Date Time Trigger] 2 - Code` action, rightclick the `Streamer.bot Started` trigger and click "Test Trigger".
 
 3. Done! 🥳
 
@@ -54,7 +54,7 @@ You need to restart / test the trigger only after the import. It will automatica
 
 ## Settings
 
-In the `[Date Time Trigger] Settings` action, you'll be able to set your times (and dates). You can have as many timers as you want. You can have it trigger on a certain time **each** day or at a certain time on a **specific** day. This day can be a date like the 8th May of 2024 (`05/08/2024`) or a specific day of the week (`Sunday`).
+In the `[Date Time Trigger] 1 - Settings` action, you'll be able to set your times (and dates). You can have as many timers as you want. You can have it trigger on a certain time **each** day or at a certain time on a **specific** day. This day can be a date like the 8th May of 2024 (`05/08/2024`) or a specific day of the week (`Sunday`).
 
 Each `Global (Set)` subaction is one timer. So `time_1` set at `00:00:00` will trigger at midnight. Now if `time_1` has a corresponding `date_1`, it will only trigger at midnight at the date of `date_1`. If you delete `date_1`, it will trigger at midnight of **every** day.
 

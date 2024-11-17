@@ -39,13 +39,13 @@ U0JBRR+LCAAAAAAABADtveluK0myJvh/gH4HIvtH30ZWnBMrGVG43RiR4iqJR+ISXCoLhVjJEINLiqQo
 
     ![Import Actions](assets/media/import_actions.png)
 
-2. (Optional) Instead of using your actual account's password (which works as well), you can create an **App Password** at: https://bsky.app/settings/app-passwords. Copy that created password for the next step.
+2. (Optional) Instead of using your actual account's password (which works as well), you can create an **App Password** at: https://bsky.app/settings/app-passwords. Give it a name of your choice and copy that created password for the next step.
 
     ![Picture](assets/media/bsky_app_pw_1.png)
 
-   ![Picture](assets/media/bsky_app_pw_2.png)
+    ![Picture](assets/media/bsky_app_pw_2.png)
 
-4. Go into the `[Bluesky] 0 - Credentials` action and replace the information in the `Bsky Login Information` folder with yours. If you created an App Password before, paste the app password in there. Be careful to not accidentally show this info on stream.
+4. Go into the `[Bluesky] 0 - Credentials` action and replace the information in the `Bsky Login Information` folder with yours. If you created an App Password before, paste the app password in there. **Be careful to not accidentally show this info on stream.**
 
     ![Picture](assets/media/bsky_settings.png)
 

@@ -1,1 +1,3 @@
-Added custom counters // optimized URL filter
+• Added custom counters
+• Optimized URL filter
+• Added version check on startup

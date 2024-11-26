@@ -1,2 +1,2 @@
 • Added video support
-• Added repost support
+• Added support to quote your previous post

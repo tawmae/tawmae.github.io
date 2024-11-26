@@ -113,6 +113,8 @@ You can embded a video from a filepath with section symbols. Example:
 §C:\User\tawmae\Video.mp4§
 ```
 
+Supported formats: .mp4, .mpeg, .webm, and .mov
+
 ---
 
  {: .note }

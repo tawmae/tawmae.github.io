@@ -1,7 +1,7 @@
 ---
 title: Recent Events
 layout: default
-nav_order: 4
+nav_order: 14
 ---
 
 ![Picture](assets/media/event_list_title_1.png)

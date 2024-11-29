@@ -10,16 +10,6 @@ favicon_ico: "/assets/media/favicon.ico"
 
 color_scheme: foo
 
-aux_links:
-  "Need help?":
-    - "discord_link_placeholder"
-
-
-#aux_links:
-  #"Need help? ↪️":
-   # - "https://discord.gg/gEm5UMSvYs"
-   
-
 back_to_top: true
 back_to_top_text: "Back to top"
 

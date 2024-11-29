@@ -4,7 +4,7 @@ layout: default
 nav_order: 3
 ---
 
-![User Inventory](assets/media/temporary_vip_title.png)
+![Picture](assets/general/title_tempvip.png)
 
 Twitch
 {: .label .label-purple }

@@ -14,7 +14,7 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 [![Picture](assets/general/github_kofi.png)](https://ko-fi.com/tawmae)
 
-[![Picture](assets/general/github_kofi.png)](https://bsky.app/profile/tawmae.xyz)
+[![Picture](assets/general/github_bluesky.png)](https://bsky.app/profile/tawmae.xyz)
 
 ---
 

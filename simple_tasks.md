@@ -1,7 +1,7 @@
 ---
 title: Simple Tasks
 layout: default
-nav_order: 9
+nav_order: 15
 ---
 
 ![Picture](assets/media/simple_tasks_title.png)

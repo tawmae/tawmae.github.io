@@ -8,6 +8,8 @@ url: https://tawmae.github.io/
 logo: "/assets/general/logo.png"
 favicon_ico: "/assets/media/favicon.ico"
 
+color_scheme: foo
+
 aux_links:
   "Need help? ↪️":
     - "https://discord.gg/gEm5UMSvYs"

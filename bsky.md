@@ -1,7 +1,7 @@
 ---
 title: Bluesky
 layout: default
-nav_order: 30
+nav_order: 3
 ---
 
 ![Picture](assets/general/title_bsky.png)

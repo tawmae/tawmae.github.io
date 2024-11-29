@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 
-![Picture](assets/media/movie_quiz_title_1.png)
+![Picture](assets/general/title_moviequiz.png)
 
 Twitch
 {: .label .label-purple }

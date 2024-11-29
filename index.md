@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-![Picture](assets/general/github_title.png)
+![Picture](assets/general/Github_Title.png)
 
 Here you'll find a collection of my personal StreamerBot extensions. If you run into any issues, you can join my or StreamerBot's discord server and ping me there.
 

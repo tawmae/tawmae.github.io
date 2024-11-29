@@ -5,7 +5,7 @@ nav_order: 3
 ---
 
 
-![Picture](assets/media/aio_mod_tools_title_1.png)
+![Picture](assets/general/title_aiomod.png)
 
 Twitch
 {: .label .label-purple }

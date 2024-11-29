@@ -4,7 +4,7 @@ layout: default
 nav_order: 30
 ---
 
-![Picture](assets/media/bsky_title_1.png)
+![Picture](assets/general/title_bsky.png)
 
 StreamerBot
 {: .label .label-blue }

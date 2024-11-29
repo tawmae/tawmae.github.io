@@ -5,7 +5,7 @@ nav_order: 2
 ---
 
 
-![Picture](assets/media/video_game_quiz_title_1.png)
+![Picture](assets/general/title_videogamequiz.png)
 
 Twitch
 {: .label .label-purple }

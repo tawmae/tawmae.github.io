@@ -130,6 +130,18 @@ Items are case-sensitive!
 
 - - - -
 
+## <span class="iconify" data-icon="material-symbols:family-star-outline" data-inline="false"></span> Example: Trigger an item effect
+
+As mentioned in the `!use [Item]` command, you can use the populated variables to trigger specific actions for specific items (and their amount). The easiest way is to create an if/else-subaction under `Core -> Logic -> If/Else`.
+
+You then check for `usedItem` -> `Equals` -> "The Name Of Your Item" and attach the action to it that you want to fire. For example playing a sound or triggering an OBS filter. In my example below, my item is called "Catnap", which triggers the "Catnip Sound" action.
+
+![User Inventory](assets/media/user_inventory_example_use.png)
+
+You can stack as many if/else-subactions as you want, ideally one for every item you have.
+
+- - - -
+
 ## <span class="iconify" data-icon="material-symbols:family-star-outline" data-inline="false"></span> Example: Loot a random item
 
 ![User Inventory](assets/media/user_inventory_loot_3.png)

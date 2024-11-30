@@ -10,7 +10,7 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 ---
 
-# Table of contents
+# Socials
 {: .no_toc .text-delta }
 
 1. TOC

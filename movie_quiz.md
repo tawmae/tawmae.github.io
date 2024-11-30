@@ -33,7 +33,7 @@ Have your chat guess the movie and/or TV show based on its description! Either w
 
 ---
 
-## API key
+## <span class="iconify" data-icon="material-symbols:vpn-key-outline" data-inline="false"></span> API key
 
 - This extension requires a The Movie Database API key. You can get yours for free at: [https://developer.themoviedb.org/reference/intro/getting-started](https://developer.themoviedb.org/reference/intro/getting-started)
 
@@ -46,7 +46,7 @@ U0JBRR+LCAAAAAAABADsvVlz4kq2MPp+I77/ULHvY3+u1gAu02+MsiiUbEBISGd33AAJgybgGDBIJ85/
 
 --- 
 
-## dll-Downloads
+## <span class="iconify" data-icon="material-symbols:cloud-download" data-inline="false"></span> dll-Downloads
 
 1. [DuoVia.FuzzyStrings.dll](assets/media/DuoVia.FuzzyStrings.dll)
 
@@ -62,7 +62,7 @@ U0JBRR+LCAAAAAAABADsvVlz4kq2MPp+I77/ULHvY3+u1gAu02+MsiiUbEBISGd33AAJgybgGDBIJ85/
 
 ---
 
-## Required OBS plugins (optional if you only want the chat version)
+## <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> Required OBS plugins (optional if you only want the chat version)
 
 1. [Stroke Glow Shadow Plugin](https://obsproject.com/forum/resources/stroke-glow-shadow.1800/)
 3. [Source Copy Plugin](https://obsproject.com/forum/resources/source-copy.1261/) 
@@ -73,7 +73,7 @@ Make sure you have the latest version of Source Copy `0.2.3` (or newer) and OBS 
 
 ---
 
-## Setup
+## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Setup
 1. (Optional) If you want the OBS overlay, download and install all **three OBS plugins**.
 
 2. Download both the `DuoVia.FuzzyStrings.dll` and `SettingsUI.dll` files and paste it into your `StreamerBot/dlls` folder
@@ -116,7 +116,7 @@ Make sure you have the latest version of Source Copy `0.2.3` (or newer) and OBS 
 
 ---
 
-## Settings
+## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> Settings
 
 Thanks to [TerrierDarts](https://terrierdarts.co.uk/en/home/), there's now a UI for the settings. You can customize general settings as well as the specific search parameters for movies and for TV shows individually. You can set your own quiz language, you can exclude certain genres, specify the release years / air dates, the user vote count and average user rating and the original languages of the movies / TV shows. You can also easily change or translate chat message responses without going into the code.
 
@@ -156,7 +156,7 @@ To avoid for duplicates, you cannot get the same TV show/movie within the same s
 
 ---
 
-## Commands
+## <span class="iconify" data-icon="rivet-icons:exclamation-mark-circle-solid" data-inline="false"></span> Commands
 
 - ## `!MOVIEQUIZ` or `!MQ`
   {: .no_toc }
@@ -186,7 +186,7 @@ To avoid for duplicates, you cannot get the same TV show/movie within the same s
 
 ---
 
-## Custom Triggers
+## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> Custom Triggers
 
 Under `Custom -> Movie Quiz` you will now be able to find two custom triggers to do actions based off of that (like distributing currency points for correct guesses or items, if you use my User Inventory extension).
 
@@ -240,7 +240,7 @@ If you upgrade to a newer version that contained OBS UI changes, delete the old 
 ---
 
 
-## Changelog
+## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
 
 | Date        | Changes          | Version | Requires OBS scene re-import |
 |:-------------|:------------------|:------------------|:-----|

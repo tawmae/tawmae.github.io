@@ -4,7 +4,7 @@ title: Stardew Valley All Parameters
 nav_exclude: true
 ---
 
-![Picture](assets/media/stardew_valley_title.png)
+![Picture](assets/general/title_stardew.png)
 
 Here's a full overview of all the available parameters.
 

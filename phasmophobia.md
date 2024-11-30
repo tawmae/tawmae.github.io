@@ -73,7 +73,7 @@ U0JBRR+LCAAAAAAABADtfVmT4kqy5vuYzX/IOfMyY7ep1oIyoc3mgVWIRMpik5Bu9YO2RAIJOMmutv7v
 
 6. Done! 🥳 
 
-<span class="iconify" data-icon="mdi:home" data-inline="false"></span>
+
 
 ---
 

@@ -4,7 +4,7 @@ layout: default
 nav_order: 15
 ---
 
-![Picture](assets/media/twitch_raffle_title_1.png)
+![Picture](assets/general/title_raffle.png)
 
 Twitch
 {: .label .label-purple }

@@ -5,7 +5,7 @@ nav_order: 5
 ---
 
 
-![Picture](assets/media/user_birthdays_title.png)
+![Picture](assets/general/title_userbirthdays.png)
 
 Twitch
 {: .label .label-purple }

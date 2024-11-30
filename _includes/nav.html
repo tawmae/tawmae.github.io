@@ -1,17 +1,18 @@
-<ul id="nav">
-  {% for item in site.pages %}
-    {% if item.nav_order %}
-      <li>
-        <a href="{{ item.url | relative_url }}">
-          {% if item.nav_icon %}
-            <span class="iconify" data-icon="{{ item.nav_icon }}" data-inline="false"></span>
-          {% endif %}
-          {{ item.title }}
-        </a>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-
-<p>DEBUG: Nav wird verwendet</p>
-
+{% assign nav_items = site.pages | sort: 'nav_order' %}
+<nav class="site-nav">
+  <ul class="site-nav-list">
+    {% for item in nav_items %}
+      {% if item.nav_order %}
+        <li>
+          <a href="{{ item.url | relative_url }}">
+            {% if item.icon %}
+              <!-- Icon wird aus Frontmatter geladen -->
+              <span class="iconify" data-icon="{{ item.icon }}" data-inline="false"></span>
+            {% endif %}
+            {{ item.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

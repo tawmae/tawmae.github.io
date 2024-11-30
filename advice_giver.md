@@ -4,7 +4,7 @@ layout: default
 nav_order: 18
 ---
 
-![Picture](assets/media/advice_giver_title_1.png)
+![Picture](assets/general/title_advice.png)
 
 Twitch
 {: .label .label-purple }

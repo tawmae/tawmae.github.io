@@ -20,8 +20,6 @@ enable_copy_code_button: true
 ga_tracking: G-E3GPLL6JPF
 ga_tracking_anonymize_ip: true
 
-icon_mapping:
-  Quick Maths: mdi:calculator
 
 #aux_links:
   #Template Repository: https://github.com/just-the-docs/just-the-docs-template

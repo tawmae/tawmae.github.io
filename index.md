@@ -18,6 +18,10 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 [![Picture](assets/general/github_bluesky.png)](https://bsky.app/profile/tawmae.xyz)
 
+[![Picture](assets/general/github_yt.png)](https://www.youtube.com/@tawmae)
+
+
+
 ---
 
 

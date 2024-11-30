@@ -4,7 +4,7 @@ layout: default
 parent: Games
 ---
 
-![Picture](assets/media/phasmo_title.png)
+![Picture](assets/general/title_phasmo.png)
 
 Twitch
 {: .label .label-purple }

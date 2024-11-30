@@ -2,6 +2,7 @@
 title: Quick Maths
 layout: default
 nav_order: 14
+icon: mdi:calculator
 ---
 
 

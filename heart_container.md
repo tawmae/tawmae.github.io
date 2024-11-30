@@ -4,7 +4,7 @@ layout: default
 nav_order: 112
 ---
 
-![Picture](assets/media/heart_container_title.png)
+![Picture](assets/general/title_heart.png)
 
 Twitch
 {: .label .label-purple }

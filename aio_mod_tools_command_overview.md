@@ -4,7 +4,7 @@ title: All-In-One Moderation Tools Command Overview
 nav_exclude: true
 ---
 
-![Picture](assets/media/aio_command_overview.png)
+![Picture](assets/general/title_aiomod.png)
 
 Here's a full command overview for the All-In-One Moderation Tools extension. Most of them have extra settings that are highly customizable within the Settings UI.
 

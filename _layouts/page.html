@@ -2,31 +2,19 @@
 layout: base
 ---
 
-{% include breadcrumbs.html %}
-
 <h1 id="page-title">
   {{ page.title }}
   {% if page.icon %}
-    <!-- Wenn ein Icon in der Frontmatter definiert ist -->
     <span class="iconify" data-icon="{{ page.icon }}" data-inline="false"></span>
   {% else %}
-    <!-- Standard-Icon, falls kein Icon definiert wurde -->
     <span class="iconify" data-icon="mdi:information" data-inline="false"></span>
   {% endif %}
 </h1>
-
-<!-- Debugging: Zeigt den aktuellen Wert von page.icon -->
-{% if page.icon %}
-<p class="debug-info">Icon: {{ page.icon }}</p>
-{% else %}
-<p class="debug-info">Kein Icon definiert, Standard-Icon wird verwendet.</p>
-{% endif %}
 
 <div id="content">
   {{ content }}
 </div>
 
-<!-- Sicherstellen, dass Iconify neu initialisiert wird -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     Iconify.scan();

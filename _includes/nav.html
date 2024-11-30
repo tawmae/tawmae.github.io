@@ -1,0 +1,14 @@
+<ul id="nav">
+  {% for item in site.pages %}
+    {% if item.nav_order %}
+      <li>
+        <a href="{{ item.url | relative_url }}">
+          {% if item.nav_icon %}
+            <span class="iconify" data-icon="{{ item.nav_icon }}" data-inline="false"></span>
+          {% endif %}
+          {{ item.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

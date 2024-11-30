@@ -4,7 +4,7 @@ layout: default
 nav_order: 16
 ---
 
-![Picture](assets/media/giphy_title_1.png)
+![Picture](assets/general/title_giphy.png)
 
 Twitch
 {: .label .label-purple }

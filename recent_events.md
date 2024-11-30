@@ -4,7 +4,7 @@ layout: default
 nav_order: 14
 ---
 
-![Picture](assets/media/event_list_title_1.png)
+![Picture](assets/general/title_recentevents.png)
 
 Twitch
 {: .label .label-purple }

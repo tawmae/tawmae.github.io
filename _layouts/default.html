@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main>
+    <div id="content">
+      {% if page.icon %}
+        <h1>
+          <span class="iconify" data-icon="{{ page.icon }}" data-inline="false"></span>
+          {{ page.title }}
+        </h1>
+      {% else %}
+        <h1>{{ page.title }}</h1>
+      {% endif %}
+      {{ content }}
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

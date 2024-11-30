@@ -25,11 +25,11 @@ pre code {
 
 .site-nav-list li {
   display: flex;
-  align-items: center; /* Text und Icon zentrieren */
+  align-items: center;
 }
 
 .site-nav-list li .iconify {
+  font-size: 1.2rem; /* Icon-Größe */
   margin-right: 0.5rem; /* Abstand zwischen Icon und Text */
-  font-size: 1.2rem;    /* Größe des Icons */
 }
 

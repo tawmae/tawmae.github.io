@@ -4,7 +4,7 @@ layout: default
 nav_order: 19
 ---
 
-![Picture](assets/media/friend_stream_notifications_title_1.png)
+![Picture](assets/general/title_friendstream.png)
 
 Twitch
 {: .label .label-purple }

@@ -4,7 +4,7 @@ layout: default
 nav_order: 14
 ---
 
-![Picture](assets/media/quick_maths_title.png)
+![Picture](assets/general/title_quickmaths.png)
 
 Twitch
 {: .label .label-purple }

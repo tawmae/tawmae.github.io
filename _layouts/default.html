@@ -4,16 +4,10 @@
   {% include head.html %}
 </head>
 <body>
-  <!-- Header einbinden -->
-  {% if site.header_custom %}
-    {% include header_custom.html %}
-  {% else %}
-    {% include header.html %}
-  {% endif %}
+  <!-- {% include header.html %} -->
 
   <main>
     <div id="content">
-      <!-- Dynamischer Titel mit Icon -->
       {% if page.page_icon %}
         <h1>
           <span class="iconify" data-icon="{{ page.page_icon }}" data-inline="false"></span>
@@ -22,13 +16,10 @@
       {% else %}
         <h1>{{ page.title }}</h1>
       {% endif %}
-      
-      <!-- Seiteninhalt -->
       {{ content }}
     </div>
   </main>
 
-  <!-- Footer einbinden -->
-  {% include footer.html %}
+  <!-- {% include footer.html %} -->
 </body>
 </html>

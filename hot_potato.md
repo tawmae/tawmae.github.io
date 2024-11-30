@@ -4,7 +4,7 @@ layout: default
 nav_order: 15
 ---
 
-![Picture](assets/media/hot_potato_title.png)
+![Picture](assets/general/title_hotpotato.png)
 
 Twitch
 {: .label .label-purple }

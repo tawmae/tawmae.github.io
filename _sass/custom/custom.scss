@@ -3,14 +3,18 @@
 }
 
 pre {
-  background-color: #2d2d2d; /* Dunkler Hintergrund */
-  color: #ffffff; /* Helle Schrift */
-  padding: 1rem; /* Abstand innerhalb des Blocks */
-  border-radius: 4px; /* Abgerundete Ecken */
-  overflow-x: auto; /* Ermöglicht horizontales Scrollen bei langen Codezeilen */
+  background-color: #2d2d2d; 
+  color: #ffffff; 
+  padding: 1rem; 
+  border-radius: 4px;
+  overflow-x: auto; 
 }
 
 code {
-  background-color: transparent; /* Kein Hintergrund für Inline-Code */
-  color: inherit; /* Vererbt die Farbe */
+  font-size: 1rem; 
+  background-color: #f5f5f5; 
+  color: #2d2d2d; 
+  padding: 0.2rem 0.4rem; 
+  border-radius: 4px; 
 }
+

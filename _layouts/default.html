@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <a class="skip-to-content" href="#main-content">{{ site.data.ui-text[site.lang].skip_to_main_content | default: "Skip to main content" }}</a>
+    <div id="site">
+      <header id="header" class="site-header" role="banner">
+        {% include header.html %}
+      </header>
+      <div id="content">
+        <aside class="site-sidebar">
+          <div class="sidebar-content">
+            <!-- Benutzerdefinierte Navigation -->
+            {% include nav.html %}
+          </div>
+        </aside>
+        <main id="main-content" class="site-main" role="main">
+          {{ content }}
+        </main>
+      </div>
+      <footer class="site-footer">
+        {% include footer.html %}
+      </footer>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

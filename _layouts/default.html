@@ -7,13 +7,12 @@
     <a class="skip-to-content" href="#main-content">{{ site.data.ui-text[site.lang].skip_to_main_content | default: "Skip to main content" }}</a>
     <div id="site">
       <header id="header" class="site-header" role="banner">
-        <!-- Standard-Header von Just the Docs -->
-        {% include default_header.html %}
+        {% include head_custom.html %}
       </header>
       <div id="content">
         <aside class="site-sidebar">
           <div class="sidebar-content">
-            <!-- Hier wird deine benutzerdefinierte Navigation verwendet -->
+            <!-- Benutzerdefinierte Navigation -->
             {% include nav.html %}
           </div>
         </aside>
@@ -22,8 +21,7 @@
         </main>
       </div>
       <footer class="site-footer">
-        <!-- Standard-Footer von Just the Docs -->
-        {% include default_footer.html %}
+        <small>{{ site.footer_content | default: "Powered by Just the Docs" }}</small>
       </footer>
     </div>
     {% include scripts.html %}

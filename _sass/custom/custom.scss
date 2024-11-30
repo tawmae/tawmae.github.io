@@ -22,3 +22,13 @@ pre code {
   background-color: #00ffff;
   color: #000000;
 }
+
+#nav li {
+  display: flex;
+  align-items: center;
+}
+
+#nav li .iconify {
+  margin-right: 0.5rem; /* Abstand zwischen Icon und Text */
+  font-size: 1.2rem;    /* Größe des Icons */
+}

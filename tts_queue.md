@@ -4,7 +4,7 @@ layout: default
 nav_order: 12
 ---
 
-![Picture](assets/media/tts_queue_title.png)
+![Picture](assets/general/title_ttsqueue.png)
 
 Twitch
 {: .label .label-purple }

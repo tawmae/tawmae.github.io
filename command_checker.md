@@ -4,7 +4,7 @@ layout: default
 nav_order: 19
 ---
 
-![Picture](assets/media/command_checker_title_1.png)
+![Picture](assets/general/title_commandchecker.png)
 
 Twitch
 {: .label .label-purple }

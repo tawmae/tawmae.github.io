@@ -4,7 +4,7 @@ layout: default
 nav_order: 17
 ---
 
-![Picture](assets/media/lurk_title_1.png)
+![Picture](assets/general/title_lurks.png)
 
 Twitch
 {: .label .label-purple }

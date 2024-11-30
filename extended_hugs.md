@@ -4,7 +4,7 @@ layout: default
 nav_order: 7
 ---
 
-![Picture](assets/media/extended_hugs_title_2.png)
+![Picture](assets/general/title_hugs.png)
 
 Twitch
 {: .label .label-purple }

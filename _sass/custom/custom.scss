@@ -23,12 +23,13 @@ pre code {
   color: #000000;
 }
 
-#nav li {
+.site-nav-list li {
   display: flex;
-  align-items: center;
+  align-items: center; /* Text und Icon zentrieren */
 }
 
-#nav li .iconify {
+.site-nav-list li .iconify {
   margin-right: 0.5rem; /* Abstand zwischen Icon und Text */
   font-size: 1.2rem;    /* Größe des Icons */
 }
+

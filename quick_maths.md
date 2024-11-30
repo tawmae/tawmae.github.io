@@ -1,6 +1,6 @@
 ---
 title: Quick Maths
-layout: page
+layout: default
 nav_order: 14
 icon: mdi:calculator
 ---

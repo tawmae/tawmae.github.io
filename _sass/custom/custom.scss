@@ -23,20 +23,8 @@ pre code {
   color: #000000;
 }
 
-.nav-item {
-  list-style: none;
-  margin: 0.5rem 0;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #ffffff; /* Navigationstextfarbe */
-}
-
 .nav-item .iconify {
-  vertical-align: middle;
+  font-size: 1.2rem;
   margin-left: 8px;
-  font-size: 1.2rem; /* Größe der Icons */
-  color: #7490c1; /* Icon-Farbe */
+  vertical-align: middle;
 }
-

@@ -4,7 +4,8 @@ og:image: https://tawmae.github.io/assets/media/sb_title.png
 theme: just-the-docs
 
 url: https://tawmae.github.io/
-
+just_the_docs:
+  generate_nav: false
 nav_custom: true
 
 logo: "/assets/general/logo.png"

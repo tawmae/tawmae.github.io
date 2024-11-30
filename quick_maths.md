@@ -1,6 +1,6 @@
 ---
 title: Quick Maths
-icon: "material-symbols:calculate"
+page_icon: "material-symbols:calculate"
 layout: default
 nav_order: 14
 ---

@@ -108,7 +108,7 @@ You also also embed images from a filepath with square brackets. Example:
 
 #### 3. Emdedded video
 
-You can embded a video from a filepath with section symbols. Example:
+You can embed a video from a filepath with section symbols. Example:
 ```
 §C:\User\tawmae\Video.mp4§
 ```

@@ -20,7 +20,12 @@ enable_copy_code_button: true
 ga_tracking: G-E3GPLL6JPF
 ga_tracking_anonymize_ip: true
 
-
+icon_mapping:
+  Quick Maths: mdi:calculator
+  Movie Quiz: mdi:movie
+  Video Game Quiz: mdi:gamepad
+  All-In-One Moderation Tools: mdi:shield-check
+  Bluesky: mdi:cloud
 #aux_links:
   #Template Repository: https://github.com/just-the-docs/just-the-docs-template
 

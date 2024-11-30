@@ -23,4 +23,15 @@ pre code {
   color: #000000;
 }
 
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-nav li a .iconify {
+  margin-right: 8px;  /* Abstand zwischen Icon und Titel */
+  width: 20px;        /* Breite des Icons */
+  height: 20px;       /* Höhe des Icons */
+}
+
 

@@ -4,7 +4,7 @@ layout: default
 nav_order: 17
 ---
 
-![Picture](assets/media/channel_point_auction_title.png)
+![Picture](assets/general/title_cpa.png)
 
 Twitch
 {: .label .label-purple }

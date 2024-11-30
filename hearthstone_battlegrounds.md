@@ -4,7 +4,7 @@ layout: default
 parent: Games
 ---
 
-![Picture](assets/media/bgs_title.png)
+![Picture](assets/general/title_bgs.png)
 
 Twitch
 {: .label .label-purple }

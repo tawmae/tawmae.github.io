@@ -1,0 +1,18 @@
+<!-- _includes/components/sidebar.html -->
+<ul class="sidebar-nav">
+  {% for page in site.pages %}
+    {% if page.title %}
+      <li>
+        <a href="{{ page.url }}">
+          <!-- Hier fügen wir das Icon für jede Seite basierend auf dem Titel hinzu -->
+          {% if page.title == "Quick Maths" %}
+            <span class="iconify" data-icon="mdi:calculator" data-inline="false"></span>
+          {% elsif page.title == "Another Page" %}
+            <span class="iconify" data-icon="mdi:pencil" data-inline="false"></span>
+          {% endif %}
+          {{ page.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

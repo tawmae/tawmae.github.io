@@ -1,13 +1,13 @@
 <nav class="nav">
   <ul>
-    {% assign sorted_pages = site.pages | sort: "nav_order" %}
-    {% for item in sorted_pages %}
-      {% if item.nav_order %}
-        <li class="nav-item">
-          <a href="{{ item.url | relative_url }}">
-            {{ item.title }}
-            {% assign icon = site.icon_mapping[item.title] | default: 'mdi:star' %}
-            <span class="iconify" data-icon="{{ icon }}" style="margin-left: 8px;"></span>
+    {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+    {% for page in sorted_pages %}
+      {% if page.nav_order %}
+        <li>
+          <a href="{{ page.url | relative_url }}">
+            {{ page.title }}
+            {% assign icon = site.icon_mapping[page.title] | default: 'mdi:star' %}
+            {% include icon.html icon=icon %}
           </a>
         </li>
       {% endif %}

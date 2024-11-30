@@ -1,8 +1,9 @@
 ---
-title: Quick Maths
 layout: default
 nav_order: 14
 ---
+
+## <span class="iconify" data-icon="material-symbols:calculate" data-inline="false"></span> Quick Maths
 
 ![Picture](assets/general/title_quickmaths.png)
 

@@ -5,7 +5,7 @@ parent: Games
 ---
 
 
-![Picture](assets/media/stardew_valley_title.png)
+![Picture](assets/general/title_stardew.png)
 
 Twitch
 {: .label .label-purple }

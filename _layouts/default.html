@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="{{ site.baseurl | default: '/' | relative_url }}">
+          {{ site.title | default: "Site Title" }}
+        </a>
+      </h1>
+    </header>
+    <aside>
+      {% include nav.html %}
+    </aside>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      {{ site.footer_content | default: "Footer Content" }}
+    </footer>
+  </body>
+</html>

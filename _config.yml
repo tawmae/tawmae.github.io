@@ -5,6 +5,8 @@ theme: just-the-docs
 
 url: https://tawmae.github.io/
 
+nav_custom: true
+
 logo: "/assets/general/logo.png"
 favicon_ico: "/assets/media/favicon.ico"
 

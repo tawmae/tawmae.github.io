@@ -7,10 +7,10 @@
   {% include header.html %}
   <main>
     <div id="content">
-      <!-- Titel mit Icon anzeigen, wenn 'page.icon' vorhanden -->
-      {% if page.icon %}
+      <!-- Titel mit Icon anzeigen, wenn 'page_icon' vorhanden -->
+      {% if page.page_icon %}
         <h1>
-          <span class="iconify" data-icon="{{ page.icon }}" data-inline="false"></span>
+          <span class="iconify" data-icon="{{ page.page_icon }}" data-inline="false"></span>
           {{ page.title }}
         </h1>
       {% else %}

@@ -1,0 +1,2 @@
+• Added version check
+• Added option to show excluded commands

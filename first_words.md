@@ -67,12 +67,22 @@ https://tawmae.github.io/FirstWords/Steam.html
 
 ---
 
-### 1. <span class="iconify" data-icon="mdi:minecraft" data-inline="false"></span> Minecraft
+### 2. <span class="iconify" data-icon="mdi:minecraft" data-inline="false"></span> Minecraft
 
 ![Picture](assets/media/notif_minecraft.gif)
 
 ```
 https://tawmae.github.io/FirstWords/Minecraft.html
+```
+
+---
+
+### 2. <span class="iconify" data-icon="game-icons:fairy-wand" data-inline="false"></span> Zelda Navi
+
+![Picture](assets/media/notif_zelda.gif)
+
+```
+https://tawmae.github.io/FirstWords/Zelda.html
 ```
 
 ---

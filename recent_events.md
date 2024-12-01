@@ -144,6 +144,8 @@ Replaces the username and avatar with placeholders for follow events.
 
 `anonymousfollows=true`
 
+![Picture](assets/media/recent_events_new_anon_follow.png)
+
 ---
 
 {: .new }

@@ -35,18 +35,22 @@ A collection of different first word notifications to use for your OBS overlay.
 
 ## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Setup
 
-1. Choose the notification style of your choice [here](https://tawmae.github.io/first_words.html#-styles).
-2. Copy the URL
+1. Go into Streamerbot and head to the tab `Servers/Clients -> WebSocket Server` and start the websocket server. Leave the adress at `127.0.0.1` and the port at `8080`. Check `Auto Start` as well. You can set a password, but you don't have to. If you do, make sur `Enforce for All Requests` stays unchecked.
+
+   [![Picture](assets/media/notif_sb.png)](https://tawmae.github.io/assets/media/notif_sb.png)
+   
+2. Choose the notification style of your choice [here](https://tawmae.github.io/first_words.html#-styles).
+3. Copy the URL
    
    [![Picture](assets/media/notif_obs_3.png)](https://tawmae.github.io/assets/media/notif_obs_3.png)
    
-3. Go into your OBS, create a browser source and paste the URL in there. Preferably set the resolution to your canvas size.
+4. Go into your OBS, create a browser source and paste the URL in there. Preferably set the resolution to your canvas size.
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    
    [![Picture](assets/media/notif_obs_2.png)](https://tawmae.github.io/assets/media/notif_obs_2.png)
    
-4. Done 🥳
+5. Done 🥳
 
 {: .new }
 To have the notification in multiple scenes, don't create an individual browser source into any scene, but instead create a new **nested** scene and put just a single browser source in there. Then place that scene into all your other scenes. This way you won't have to create 20 browser sources for 20 scenes.

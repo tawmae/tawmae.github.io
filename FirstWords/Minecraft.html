@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Minecraft-Style Notification</title>
-				<style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft-Style Notification</title>
+  <style>
     @font-face {
       font-family: "Minecraft";
       src: url("https://fonts.cdnfonts.com/s/43962/MinecraftRegular-Bmg3.ttf") format("truetype");
@@ -52,20 +52,19 @@
     }
 
     .notification-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9), 3px 3px 6px rgba(0, 0, 0, 0.8);
-  margin: 5px 0;
-}
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9), 3px 3px 6px rgba(0, 0, 0, 0.8);
+      margin: 5px 0;
+    }
 
-.notification-text {
-  font-size: 20px;
-  color: #eaeaea;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 0.8);
-  margin: 0;
-}
-
+    .notification-text {
+      font-size: 20px;
+      color: #eaeaea;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 0.8);
+      margin: 0;
+    }
 
     @keyframes slideIn {
       from {
@@ -89,14 +88,14 @@
       }
     }
   </style>
-			</head>
-			<body>
-				<div id="notification" class="notification-container">
-					<div class="notification-icon" id="notification-icon"/>
-					<p class="notification-title" id="notification-title"/>
-					<p class="notification-text" id="notification-text"/>
-				</div>
-				<script>
+</head>
+<body>
+  <div id="notification" class="notification-container">
+    <div class="notification-icon" id="notification-icon"></div>
+    <p class="notification-title" id="notification-title"></p>
+    <p class="notification-text" id="notification-text"></p>
+  </div>
+  <script>
     const avatars = new Map();
     const notificationQueue = [];
     let isProcessing = false;
@@ -184,5 +183,5 @@
       connectws();
     });
   </script>
-			</body>
-		</html>
+</body>
+</html>

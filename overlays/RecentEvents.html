@@ -114,6 +114,11 @@
       localStorage.setItem('storedEvents', JSON.stringify(storedEvents));
     }
 
+    function clearEvents() {
+      localStorage.removeItem('storedEvents');
+      eventContainer.innerHTML = '';
+    }
+
     function loadStoredEvents() {
       const storedEvents = getStoredEvents();
       storedEvents.forEach(event => {
@@ -250,6 +255,10 @@
         setTimeout(connectWebSocket, 10000);
       };
     }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') clearEvents();
+    });
 
     loadStoredEvents();
     connectWebSocket();

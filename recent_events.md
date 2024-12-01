@@ -58,10 +58,12 @@ To have the events in multiple scenes, don't create an individual browser source
 
 ## <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 
 
-To customize the event list, you can add URL parameters. The first parameter gets added with a `?`, every next one with `&`.
+To customize the event list, you can add URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
 
 Example:  
-`https://tawmae.github.io/overlays/RecentEvents.html?color=red&font=Arial&usernamesize=36px`
+```
+https://tawmae.github.io/overlays/RecentEvents.html?color=red&font=Arial&usernamesize=36px
+```
 
 {: .new }
 You can simulate events by creating a trigger (like a Twitch Follow trigger), then rightclick it and hit `Simulate Event`. 

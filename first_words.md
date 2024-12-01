@@ -55,6 +55,8 @@ To have the notification in multiple scenes, don't create an individual browser 
 
 ## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> Styles 
 
+---
+
 ### 1. <span class="iconify" data-icon="mdi:steam-box" data-inline="false"></span> Steam
 
 ![Picture](assets/media/steam_notif.gif)
@@ -62,6 +64,18 @@ To have the notification in multiple scenes, don't create an individual browser 
 ```
 https://tawmae.github.io/FirstWords/Steam.html
 ```
+
+---
+
+### 1. <span class="iconify" data-icon="mdi:minecraft" data-inline="false"></span> Minecraft
+
+![Picture](assets/media/notif_minecraft.gif)
+
+```
+https://tawmae.github.io/FirstWords/Minecraft.html
+```
+
+---
 
 - - - -
 

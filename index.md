@@ -18,6 +18,10 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 ---
 
+![Picture](assets/media/dogmeme.png)
+
+---
+
 # <span class="iconify" data-icon="ic:baseline-discord" data-inline="false"></span> Discord
 [![Picture](assets/general/github_discord.png)](https://discord.gg/gEm5UMSvYs)
 

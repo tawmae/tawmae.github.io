@@ -71,7 +71,17 @@ https://tawmae.github.io/FirstWords/Steam.html
 
 ---
 
-### 2. <span class="iconify" data-icon="mdi:minecraft" data-inline="false"></span> Minecraft
+### 2. <span class="iconify" data-icon="material-symbols:android" data-inline="false"></span> Streamerbot
+
+![Picture](assets/media/notif_sbb.gif)
+
+```
+https://tawmae.github.io/FirstWords/Streamerbot.html
+```
+
+---
+
+### 3. <span class="iconify" data-icon="mdi:minecraft" data-inline="false"></span> Minecraft
 
 ![Picture](assets/media/notif_minecraft.gif)
 
@@ -81,7 +91,7 @@ https://tawmae.github.io/FirstWords/Minecraft.html
 
 ---
 
-### 2. <span class="iconify" data-icon="game-icons:fairy-wand" data-inline="false"></span> Zelda Navi
+### 4. <span class="iconify" data-icon="game-icons:fairy-wand" data-inline="false"></span> Zelda Navi
 
 ![Picture](assets/media/notif_zelda.gif)
 

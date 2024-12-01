@@ -35,7 +35,7 @@ A collection of different first word notifications to use for your OBS overlay.
 
 ## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Setup
 
-1. Choose the notification style of your choice here.
+1. Choose the notification style of your choice [here](https://tawmae.github.io/first_words.html#-styles).
 2. Copy the URL
    
    [![Picture](assets/media/notif_obs_3.png)](https://tawmae.github.io/assets/media/notif_obs_3.png)

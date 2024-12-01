@@ -68,12 +68,14 @@
       font-size: 28px;
       font-weight: bold;
       margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
     .notification-text {
       font-size: 20px;
-      color: #b8b8b8;
+      color: white;
       margin: 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
 
     @keyframes fadeIn {
@@ -107,7 +109,7 @@
     </div>
     <div class="notification-content">
       <p class="notification-title" id="notification-title"></p>
-      <p class="notification-text" id="notification-text"></p>
+      <p class="notification-text" id="notification-text">Welcome in!</p>
     </div>
   </div>
 
@@ -187,7 +189,6 @@
 
         title.innerText = displayName;
         title.style.color = color;
-        text.innerText = "Welcome in!";
         profileIcon.style.backgroundImage = `url(${avatarUrl})`;
 
         notification.style.display = 'flex';

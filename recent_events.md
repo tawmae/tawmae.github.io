@@ -63,6 +63,9 @@ To customize the event list, you can add URL parameters. The first parameter get
 Example:  
 `https://tawmae.github.io/overlays/RecentEvents.html?color=red&font=Arial&usernamesize=36px`
 
+{: .new }
+You can simulate events by creating a trigger (like a Twitch Follow trigger), then rightclick it and hit `Simulate Event`. 
+
 ---
 
 ### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Background Color

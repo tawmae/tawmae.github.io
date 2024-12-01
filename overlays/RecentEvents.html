@@ -104,12 +104,16 @@
 
     function getURLParams() {
       const params = new URLSearchParams(window.location.search);
+      const normalizedParams = {};
+      for (const [key, value] of params.entries()) {
+        normalizedParams[key.toLowerCase()] = value; 
+      }
       return {
-        font: params.get('font') || 'Poppins',
-        color: params.get('color') || 'linear-gradient(135deg, #2a2a2a 0%, #3b3b3b 100%)',
-        usernameColor: params.get('usernamecolor') || '#5fa8ff',
-        eventColor: params.get('eventcolor') || '#b8b8b8',
-        anonymousFollows: params.get('anonymousfollows') === 'true',
+        font: normalizedParams['font'] || 'Poppins',
+        color: normalizedParams['color'] || 'linear-gradient(135deg, #2a2a2a 0%, #3b3b3b 100%)',
+        usernameColor: normalizedParams['usernamecolor'] || '#5fa8ff',
+        eventColor: normalizedParams['eventcolor'] || '#b8b8b8',
+        anonymousFollows: normalizedParams['anonymousfollows'] === 'true',
       };
     }
 

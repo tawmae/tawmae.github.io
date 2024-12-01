@@ -37,11 +37,16 @@ A collection of different first word notifications to use for your OBS overlay.
 
 1. Choose the notification style of your choice here.
 2. Copy the URL
+   
    [![Picture](assets/media/notif_obs_3.png)](https://tawmae.github.io/assets/media/notif_obs_3.png)
-4. Go into your OBS, create a browser source and paste the URL in there. Preferably set the resolution to your canvas size.
+   
+3. Go into your OBS, create a browser source and paste the URL in there. Preferably set the resolution to your canvas size.
+   
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
+   
    [![Picture](assets/media/notif_obs_2.png)](https://tawmae.github.io/assets/media/notif_obs_2.png)
-6. Done 🥳
+   
+4. Done 🥳
 
 
 - - - -

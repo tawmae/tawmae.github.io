@@ -124,13 +124,14 @@
       };
 
       ws.onmessage = function (event) {
-        try {
-          const data = JSON.parse(event.data);
-          if (data.data && data.data.message && data.data.message.username) {
-            enqueueNotification(data.data.message.username);
-          }
-        } catch {}
-      };
+  try {
+    const data = JSON.parse(event.data);
+    if (data.data && data.data.message && data.data.message.displayName) {
+      enqueueNotification(data.data.message.displayName);
+    }
+  } catch {}
+};
+
 
       ws.onclose = function () {
         setTimeout(connectws, 10000);

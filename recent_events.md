@@ -63,7 +63,7 @@ Example:
 
 ---
 
-### 1. <span class="iconify" data-icon="mdi:steam-box" data-inline="false"></span> Background Color
+### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Background Color
 
 Changes the background color of the individual event bars. Supports hex codes.
 
@@ -73,7 +73,7 @@ Changes the background color of the individual event bars. Supports hex codes.
 
 ---
 
-### 2. <span class="iconify" data-icon="mdi:format-font" data-inline="false"></span> Font Family
+### <span class="iconify" data-icon="mdi:format-font" data-inline="false"></span> Font Family
 
 Changes the font used for the event text. Supports standard fonts.
 
@@ -83,7 +83,7 @@ Changes the font used for the event text. Supports standard fonts.
 
 ---
 
-### 3. <span class="iconify" data-icon="mdi:account" data-inline="false"></span> Username Text Color
+### <span class="iconify" data-icon="mdi:account" data-inline="false"></span> Username Text Color
 
 Changes the color of the username displayed in the event.
 
@@ -93,7 +93,7 @@ Changes the color of the username displayed in the event.
 
 ---
 
-### 4. <span class="iconify" data-icon="mdi:format-color-text" data-inline="false"></span> Event Text Color
+### <span class="iconify" data-icon="mdi:format-color-text" data-inline="false"></span> Event Text Color
 
 Changes the color of the event description.
 
@@ -103,7 +103,7 @@ Changes the color of the event description.
 
 ---
 
-### 5. <span class="iconify" data-icon="mdi:format-size" data-inline="false"></span> Username Text Size
+### <span class="iconify" data-icon="mdi:format-size" data-inline="false"></span> Username Text Size
 
 Changes the font size of the username text.
 
@@ -113,7 +113,7 @@ Changes the font size of the username text.
 
 ---
 
-### 6. <span class="iconify" data-icon="mdi:format-size" data-inline="false"></span> Event Text Size
+### <span class="iconify" data-icon="mdi:format-size" data-inline="false"></span> Event Text Size
 
 Changes the font size of the event description text.
 
@@ -123,7 +123,7 @@ Changes the font size of the event description text.
 
 ---
 
-### 7. <span class="iconify" data-icon="mdi:view-column" data-inline="false"></span> Container Width
+### <span class="iconify" data-icon="mdi:view-column" data-inline="false"></span> Container Width
 
 Changes the width of the event container.
 
@@ -133,11 +133,16 @@ Changes the width of the event container.
 
 ---
 
-### 8. <span class="iconify" data-icon="mdi:account-circle-outline" data-inline="false"></span> Anonymous Follows
+### <span class="iconify" data-icon="mdi:account-circle-outline" data-inline="false"></span> Anonymous Follows
 
 Replaces the username and avatar with placeholders for follow events.
 
 `anonymousfollows=true`
+
+---
+
+{: .new }
+To clear the event list, you can hit the "Interact" button on the browser source and then press the `Escape` button on your keyboard.
 
 ---
 

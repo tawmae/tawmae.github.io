@@ -4,7 +4,7 @@ layout: default
 nav_order: 10
 ---
 
-
+![Picture](assets/media/first_words_title_1.png)
 
 Twitch
 {: .label .label-purple }

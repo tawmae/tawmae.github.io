@@ -29,7 +29,7 @@ StreamerBot
 ## <span class="iconify" data-icon="material-symbols:description-outline-sharp" data-inline="false"></span> Description
 Display the four recent Twitch events in your OBS overlay.
 
-![Picture](assets/general/recent_events_new_title_2.png)
+![Picture](assets/media/recent_events_new_title_2.png)
 
 - - - -
 

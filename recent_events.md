@@ -31,6 +31,8 @@ Display the four recent Twitch events in your OBS overlay.
 
 ![Picture](assets/media/recent_events_new_title_2.png)
 
+Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers and kofi donations.
+
 - - - -
 
 ## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Setup

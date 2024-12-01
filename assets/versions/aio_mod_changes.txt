@@ -1,4 +1,3 @@
-• Added custom counters
-• Optimized URL filter
-• Trigger change for URL filter
-• Optimized Blacklisted Words filter
+• Custom Counters only increment on '+' now
+• Translation text changes
+• Moved version check to settings action

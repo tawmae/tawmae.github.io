@@ -1,5 +1,5 @@
 ---
-title: Champion Of The Hill (Steal VIP)
+title: Champion Of The Hill
 layout: default
 nav_order: 8
 ---

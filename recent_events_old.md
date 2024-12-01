@@ -1,9 +1,3 @@
----
-title: Recent Events
-layout: default
-nav_order: 14
----
-
 ![Picture](assets/general/title_recentevents.png)
 
 Twitch

@@ -54,12 +54,12 @@ To have the events in multiple scenes, don't create an individual browser source
 
 - - - -
 
-## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> URL Parameters 
+## <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 
 
 To customize the event list, you can add URL parameters. The first parameter gets added with a `?`, every next one with `&`.
 
 Example:  
-`https://tawmae.github.io/overlays/RecentEvents.html?color=red&font=Arial`
+`https://tawmae.github.io/overlays/RecentEvents.html?color=red&font=Arial&usernamesize=36px`
 
 ---
 

@@ -102,6 +102,38 @@
     const eventQueue = [];
     let isProcessingQueue = false;
 
+    function getURLParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        font: params.get('font') || 'Poppins',
+        color: params.get('color') || 'linear-gradient(135deg, #2a2a2a 0%, #3b3b3b 100%)',
+        usernameColor: params.get('usernamecolor') || '#5fa8ff',
+        eventColor: params.get('eventcolor') || '#b8b8b8',
+        anonymousFollows: params.get('anonymousfollows') === 'true',
+      };
+    }
+
+    const urlParams = getURLParams();
+
+    function applyDynamicStyles() {
+      const dynamicStyle = document.createElement('style');
+      dynamicStyle.textContent = `
+        body {
+          font-family: ${urlParams.font}, Arial, sans-serif;
+        }
+        .event {
+          background: ${urlParams.color};
+        }
+        .event .content .username {
+          color: ${urlParams.usernameColor};
+        }
+        .event .content .event-info {
+          color: ${urlParams.eventColor};
+        }
+      `;
+      document.head.appendChild(dynamicStyle);
+    }
+
     function getStoredEvents() {
       const storedEvents = localStorage.getItem('storedEvents');
       return storedEvents ? JSON.parse(storedEvents) : [];
@@ -172,8 +204,13 @@
 
       switch (data.event.type) {
         case 'Follow':
-          username = `${data.data.user_name}`;
-          avatarUrl = await fetchAvatar(data.data.user_login);
+          if (urlParams.anonymousFollows) {
+            username = 'Unknown User';
+            avatarUrl = 'https://via.placeholder.com/70';
+          } else {
+            username = `${data.data.user_name}`;
+            avatarUrl = await fetchAvatar(data.data.user_login);
+          }
           eventInfo = 'FOLLOW';
           break;
         case 'Cheer':
@@ -260,6 +297,7 @@
       if (event.key === 'Escape') clearEvents();
     });
 
+    applyDynamicStyles();
     loadStoredEvents();
     connectWebSocket();
   </script>

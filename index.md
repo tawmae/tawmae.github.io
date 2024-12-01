@@ -18,7 +18,7 @@ Here you'll find a collection of my personal StreamerBot extensions. If you run 
 
 ---
 
-![Picture](assets/media/dogmeme.png) ![Picture](assets/media/dogmeme2.png)
+![Picture](assets/media/dogmeme2.png)
 
 ---
 

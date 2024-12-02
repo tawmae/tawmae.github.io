@@ -110,7 +110,7 @@
         const avatars = new Map();
         const notificationQueue = [];
         let isProcessing = false;
-        const audioCache = new Map(); // Audiocache hinzufügen
+        const audioCache = new Map();
 
         function connectws() {
             if ("WebSocket" in window) {
@@ -172,7 +172,7 @@
         }
 
         function getAudio() {
-            if (!audioCache.has('achievement-sound')) { // Nur laden, wenn nicht im Cache
+            if (!audioCache.has('achievement-sound')) { 
                 const audio = new Audio('https://tawmae.github.io/FirstWords/Steam_Achievement_Sound.mp3');
                 audioCache.set('achievement-sound', audio);
             }
@@ -190,7 +190,7 @@
                 text.innerText = `is now online`;
                 icon.style.backgroundImage = `url(${avatarUrl})`;
 
-                const audio = getAudio(); // Verwenden des gecachten Audios
+                const audio = getAudio(); 
                 audio.play();
 
                 notification.style.display = 'flex';

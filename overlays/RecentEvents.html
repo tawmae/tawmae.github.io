@@ -290,7 +290,7 @@
                 case 'Follow':
                     if (urlParams.anonymousFollows) {
                         username = 'SOMEONE';
-                        avatarUrl = 'https://raw.githubusercontent.com/tawmae/tawmae.github.io/refs/heads/main/assets/media/heart-png.webp';
+                        avatarUrl = 'https://raw.githubusercontent.com/tawmae/tawmae.github.io/refs/heads/main/assets/media/heart-png.png';
                     } else {
                         username = `${data.data.user_name}`;
                         avatarUrl = await fetchAvatar(data.data.user_login);

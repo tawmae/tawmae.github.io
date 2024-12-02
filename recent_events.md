@@ -47,7 +47,7 @@ Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers a
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    
-   [![Picture](assets/media/notif_obs_2.png)](https://tawmae.github.io/assets/media/recent_events_new_obs_1.png)
+   [![Picture](assets/media/recent_events_new_obs_1.png)](https://tawmae.github.io/assets/media/recent_events_new_obs_1.png)
    
 4. Done 🥳
 

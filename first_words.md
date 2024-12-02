@@ -53,7 +53,7 @@ A collection of different first word notifications to use for your OBS overlay.
 5. Done 🥳
 
 {: .new }
-To have the notification in multiple scenes, don't create an individual browser source into any scene, but instead create a new **nested** scene and put just a single browser source in there. Then place that scene into all your other scenes. This way you won't have to create 20 browser sources for 20 scenes.
+To have the notification in multiple scenes, don't create an individual browser source in every scene, but instead create a new **nested** scene and put just a single browser source in there. Then place that scene into all your other scenes. This way you won't have to create 20 browser sources for 20 scenes.
 
 - - - -
 

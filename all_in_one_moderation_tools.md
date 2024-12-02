@@ -1,7 +1,7 @@
 ---
 title: All-In-One Moderation Tools
 layout: default
-nav_order: 1
+nav_order: 2
 ---
 
 

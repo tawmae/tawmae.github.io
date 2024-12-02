@@ -29,7 +29,7 @@ StreamerBot
 ## <span class="iconify" data-icon="material-symbols:description-outline-sharp" data-inline="false"></span> Description
 A collection of different first word notifications to use for your OBS overlay.
 
-
+![Picture](assets/media/steam_notif.gif)
 
 - - - -
 

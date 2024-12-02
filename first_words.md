@@ -59,6 +59,8 @@ To have the notification in multiple scenes, don't create an individual browser 
 
 ## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> Styles 
 
+All styles are playing a notification sound.
+
 ---
 
 ### 1. <span class="iconify" data-icon="mdi:steam-box" data-inline="false"></span> Steam

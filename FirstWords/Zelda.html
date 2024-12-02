@@ -92,6 +92,7 @@
   <script>
     const notificationQueue = [];
     let isProcessing = false;
+    const audioCache = new Map(); 
 
     function connectws() {
       if ("WebSocket" in window) {
@@ -110,14 +111,13 @@
       };
 
       ws.onmessage = function (event) {
-  try {
-    const data = JSON.parse(event.data);
-    if (data.data && data.data.message && data.data.message.displayName) {
-      enqueueNotification(data.data.message.displayName);
-    }
-  } catch {}
-};
-
+        try {
+          const data = JSON.parse(event.data);
+          if (data.data && data.data.message && data.data.message.displayName) {
+            enqueueNotification(data.data.message.displayName);
+          }
+        } catch {}
+      };
 
       ws.onclose = function () {
         setTimeout(connectws, 10000);
@@ -149,6 +149,14 @@
       return avatarUrl;
     }
 
+    function getAudio() {
+      if (!audioCache.has('navi-sound')) { 
+        const audio = new Audio('https://tawmae.github.io/FirstWords/Zelda_Navi.mp3');
+        audioCache.set('navi-sound', audio);
+      }
+      return audioCache.get('navi-sound');
+    }
+
     function showNotification(username, avatarUrl) {
       return new Promise((resolve) => {
         const notification = document.getElementById('notification');
@@ -157,6 +165,9 @@
 
         text.innerHTML = `Hey! <span class="navi-highlight">${username}</span>, listen! You’ve joined the adventure!`;
         icon.style.backgroundImage = `url(${avatarUrl})`;
+
+        const audio = getAudio();
+        audio.play();
 
         notification.style.display = 'block';
         notification.style.animation = 'fadeInOut 5s ease-in-out forwards';

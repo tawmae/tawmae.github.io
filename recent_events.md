@@ -43,7 +43,10 @@ Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers a
 
    [![Picture](assets/media/notif_sb.png)](https://tawmae.github.io/assets/media/notif_sb.png)
    
-2. Copy the URL: `https://tawmae.github.io/overlays/RecentEvents.html`
+2. Copy the URL: 
+   ```
+   https://tawmae.github.io/overlays/RecentEvents.html
+   ```
    
 3. Go into your OBS, create a browser source and paste the URL in there. Preferably set the resolution to your canvas size.
    

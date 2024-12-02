@@ -67,7 +67,7 @@ To customize the event list, you can add URL parameters. The first parameter get
 
 Example:  
 ```
-https://tawmae.github.io/overlays/RecentEvents.html?width=800px&eventcolor=white&color=linear-gradient(135deg,%23a800ff,%23ff0080)&usernamecolor=white)
+https://tawmae.github.io/overlays/RecentEvents.html?width=800px&eventcolor=white&color=linear-gradient(135deg,%23a800ff,%23ff0080)&usernamecolor=white
 ```
 
 ![Picture](assets/media/recent_events_new_gradient.png)

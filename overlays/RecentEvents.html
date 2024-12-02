@@ -311,7 +311,7 @@
                     username = `${data.data.user.name}`;
                     avatarUrl = await fetchAvatar(data.data.user.login);
                     eventInfo = data.data.isPrime
-                        ? 'RESUB (PRIME)'
+                        ? 'RESUB X${data.data.cumulativeMonths} (PRIME)'
                         : `RESUB X${data.data.cumulativeMonths} (T${parseInt(data.data.subTier) / 1000})`;
                     break;
                 case 'GiftSub':

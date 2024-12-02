@@ -110,6 +110,7 @@
         const avatars = new Map();
         const notificationQueue = [];
         let isProcessing = false;
+        const audioCache = new Map(); // Audiocache hinzufügen
 
         function connectws() {
             if ("WebSocket" in window) {
@@ -135,7 +136,6 @@
                     }
                 } catch { }
             };
-
 
             ws.onclose = function () {
                 setTimeout(connectws, 10000);
@@ -171,6 +171,14 @@
             return avatarUrl;
         }
 
+        function getAudio() {
+            if (!audioCache.has('achievement-sound')) { // Nur laden, wenn nicht im Cache
+                const audio = new Audio('https://tawmae.github.io/FirstWords/Steam_Achievement_Sound.mp3');
+                audioCache.set('achievement-sound', audio);
+            }
+            return audioCache.get('achievement-sound');
+        }
+
         function showNotification(username, avatarUrl) {
             return new Promise((resolve) => {
                 const notification = document.getElementById('notification');
@@ -182,7 +190,7 @@
                 text.innerText = `is now online`;
                 icon.style.backgroundImage = `url(${avatarUrl})`;
 
-                const audio = new Audio('https://tawmae.github.io/FirstWords/Steam_Achievement_Sound.mp3');
+                const audio = getAudio(); // Verwenden des gecachten Audios
                 audio.play();
 
                 notification.style.display = 'flex';
@@ -194,7 +202,6 @@
                 }, 7000);
             });
         }
-
 
         window.addEventListener("load", () => {
             connectws();

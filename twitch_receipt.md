@@ -43,22 +43,25 @@ U0JBRR+LCAAAAAAABADtPNly4siW7xMx/0DUPHarOrVLHTEPBrPapm2wBei6YyI3gQoh0QiMcUf/+z0p
 
 ## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Setup
 
-1. Go into Streamerbot and head to the tab `Servers/Clients -> WebSocket Server` and start the websocket server. Leave the adress at `127.0.0.1` and the port at `8080`. Check `Auto Start` as well. You can set a password, but you don't have to. If you do, make sure `Enforce for All Requests` stays unchecked.
+1. Copy the import code from above and import the content
+
+    ![Import Actions](assets/media/import_actions.png)
+2. Go into Streamerbot and head to the tab `Servers/Clients -> WebSocket Server` and start the websocket server. Leave the adress at `127.0.0.1` and the port at `8080`. Check `Auto Start` as well. You can set a password, but you don't have to. If you do, make sure `Enforce for All Requests` stays unchecked.
 
    [![Picture](assets/media/notif_sb.png)](https://tawmae.github.io/assets/media/notif_sb.png)
    
-2. Copy the URL: 
+3. Copy the URL: 
    ```
    https://tawmae.github.io/overlays/TwitchReceipt.html
    ```
    
-3. Go into your OBS, create a browser source and paste the URL in there. Set the site to about 500x1100. You might want to fiddle around a little to see what fits.
+4. Go into your OBS, create a browser source and paste the URL in there. Set the site to about 500x1100. You might want to fiddle around a little to see what fits.
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    
    [![Picture](assets/media/twitch_receipt_obs.png)](https://tawmae.github.io/assets/media/twitch_receipt_obs.png)
    
-4. Done 🥳
+5. Done 🥳
 
 {: .new }
 To have the events in multiple scenes, don't create an individual browser source in every scene, but instead create a new **nested** scene and put just a single browser source in there. Then place that scene into all your other scenes. This way you won't have to create 20 browser sources for 20 scenes.

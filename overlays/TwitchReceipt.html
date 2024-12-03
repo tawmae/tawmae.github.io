@@ -116,17 +116,17 @@
         <hr>
         <h2>STREAM STATS</h2>
         <div class="data-row"><span>UPTIME:</span> <span id="uptime">N/A</span></div>
-		<div style="height: 5px;"></div>
+        <div style="height: 5px;"></div>
         <div class="data-row"><span>FOLLOWS:</span> <span id="follows">0</span></div>
         <div class="data-row"><span>SUBSCRIPTIONS:</span> <span id="subCount">0</span></div>
         <div class="data-row"><span>BITS CHEERED:</span> <span id="bits">0</span></div>
-		<div style="height: 5px;"></div>
+        <div style="height: 5px;"></div>
         <div class="data-row"><span>RAIDED VIEWERS:</span> <span id="raidViewers">0</span></div>
         <div class="data-row"><span>HYPE TRAINS:</span> <span id="hypetrainCount">0</span></div>
         <div class="sub-row"><span>CONTRIBUTORS:</span> <span id="hypetrainContributors">0</span></div>
-		<div style="height: 5px;"></div>
+        <div style="height: 5px;"></div>
         <div class="data-row"><span>WON PREDICTION POINTS:</span> <span id="predictionWonPoints">0</span></div>
-		<div style="height: 5px;"></div>
+        <div style="height: 5px;"></div>
         <div class="data-row"><span>TOTAL AD TIME:</span> <span><span id="adDuration">00:00:00</span></span></div>
         <hr>
         <h2>CHAT STATS</h2>
@@ -139,7 +139,7 @@
             </span>
         </div>
         <div class="sub-row"><span>COUNT:</span> <span id="emote-count">0</span></div>
-		<div style="height: 5px;"></div>
+        <div style="height: 5px;"></div>
         <div class="data-row"><span>TOP CHATTER:</span> <span id="topChatter">N/A</span></div>
         <div class="sub-row"><span>COUNT:</span> <span id="topChatterCount">0</span></div>
         <hr>
@@ -150,7 +150,8 @@
         <div class="data-row"><span>BANNED USERS:</span> <span id="bannedUsers">0</span></div>
         <hr>
         <p class="muted center">Served by: <span>tawmae</span></p>
-        <p class="muted center"><a class="no-link" href="https://tawmae.github.io" target="_blank">tawmae.github.io</a></p>
+        <p class="muted center"><a class="no-link" href="https://tawmae.github.io" target="_blank">tawmae.github.io</a>
+        </p>
         <p class="muted center" id="current-time"></p>
         <hr>
         <p class="center">CARD #: **** **** **** 6969</p>
@@ -222,7 +223,10 @@
 
             document.getElementById("deletedMessages").innerText = data.deletedMessages || 0;
             document.getElementById("timedoutCount").innerText = data.timedoutUsers?.timedoutCount || 0;
-            document.getElementById("timedoutDuration").innerText = data.timedoutUsers?.timedoutDuration || 0;
+            const timedoutDurationSeconds = data.timedoutUsers?.timedoutDuration || 0;
+            const timedoutDuration = new Date(timedoutDurationSeconds * 1000).toISOString().substr(11, 8);
+            document.getElementById("timedoutDuration").innerText = timedoutDuration;
+
             document.getElementById("bannedUsers").innerText = data.bannedUsers || 0;
             document.getElementById("current-time").innerText = now.toLocaleTimeString();
             document.getElementById("auth-code").innerText = Math.floor(10000 + Math.random() * 90000);

@@ -4,7 +4,7 @@ layout: default
 nav_order: 9
 ---
 
-![Picture](assets/general/ad_title_1.png)
+![Picture](assets/media/ad_title_1.png)
 
 Twitch
 {: .label .label-purple }

@@ -55,7 +55,7 @@ U0JBRR+LCAAAAAAABADtPNly4siW7xMx/0DUPHarOrVLHTEPBrPapm2wBei6YyI3gQoh0QiMcUf/+z0p
    https://tawmae.github.io/overlays/TwitchReceipt.html
    ```
    
-4. Go into your OBS, create a browser source and paste the URL in there. Set the site to about 500x1100. You might want to fiddle around a little to see what fits.
+4. Go into your OBS, create a browser source and paste the URL in there. Set the site to about 450x1200. You might want to fiddle around a little to see what fits.
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    

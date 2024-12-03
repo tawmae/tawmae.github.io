@@ -19,8 +19,11 @@
 
         #receipt {
             position: absolute;
-            top: -100%;
-            width: 350px;
+            top: -150%;
+            width: 90%;
+            max-width: 350px;
+            max-height: 95%;
+            height: auto;
             background: white;
             border: 1px solid #ddd;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -31,7 +34,7 @@
 
         @keyframes slide-in {
             from {
-                top: -100%;
+                top: -150%;
             }
 
             to {
@@ -71,12 +74,6 @@
 
         .highlight {
             font-weight: bold;
-        }
-
-        .emote-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .emote-container {
@@ -121,18 +118,14 @@
         <hr>
         <h2>STREAM STATS</h2>
         <div class="data-row"><span>UPTIME:</span> <span id="uptime">N/A</span></div>
-        <div style="height: 5px;"></div>
         <div class="data-row"><span>FOLLOWS:</span> <span id="follows">0</span></div>
         <div class="data-row"><span>SUBSCRIPTIONS:</span> <span id="subCount">0</span></div>
         <div class="data-row"><span>BITS CHEERED:</span> <span id="bits">0</span></div>
-        <div style="height: 5px;"></div>
         <div class="data-row"><span>RAIDED VIEWERS:</span> <span id="raidViewers">0</span></div>
         <div class="data-row"><span>HYPE TRAINS:</span> <span id="hypetrainCount">0</span></div>
         <div class="sub-row"><span>CONTRIBUTORS:</span> <span id="hypetrainContributors">0</span></div>
         <div class="data-row"><span>WON PREDICTION POINTS:</span> <span id="predictionWonPoints">0</span></div>
-        <div style="height: 5px;"></div>
-        <div class="data-row"><span>TOTAL AD TIME:</span> <span><span id="adDuration">0</span></span></div>
-
+        <div class="data-row"><span>TOTAL AD TIME:</span> <span><span id="adDuration">00:00:00</span></span></div>
         <hr>
         <h2>CHAT STATS</h2>
         <div class="data-row"><span>CHAT MESSAGES SENT:</span> <span id="messageCount">0</span></div>
@@ -144,7 +137,6 @@
             </span>
         </div>
         <div class="sub-row"><span>COUNT:</span> <span id="emote-count">0</span></div>
-        <div style="height: 5px;"></div>
         <div class="data-row"><span>TOP CHATTER:</span> <span id="topChatter">N/A</span></div>
         <div class="sub-row"><span>COUNT:</span> <span id="topChatterCount">0</span></div>
         <hr>
@@ -155,8 +147,7 @@
         <div class="data-row"><span>BANNED USERS:</span> <span id="bannedUsers">0</span></div>
         <hr>
         <p class="muted center">Served by: <span>tawmae</span></p>
-        <p class="muted center"><a class="no-link" href="https://tawmae.github.io" target="_blank">tawmae.github.io</a>
-        </p>
+        <p class="muted center"><a class="no-link" href="https://tawmae.github.io" target="_blank">tawmae.github.io</a></p>
         <p class="muted center" id="current-time"></p>
         <hr>
         <p class="center">CARD #: **** **** **** 6969</p>

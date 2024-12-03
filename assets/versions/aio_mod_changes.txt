@@ -1,3 +1,1 @@
-• Custom Counters only increment on '+' now
-• Translation text changes
-• Moved version check to settings action
+• Added 'Shared Chat Messages' as command sources

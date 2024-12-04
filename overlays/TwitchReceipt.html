@@ -121,7 +121,9 @@
         <div class="data-row"><span>SUBSCRIPTIONS:</span> <span id="subCount">0</span></div>
         <div class="data-row"><span>BITS CHEERED:</span> <span id="bits">0</span></div>
         <div style="height: 5px;"></div>
-        <div class="data-row"><span>RAIDED VIEWERS:</span> <span id="raidViewers">0</span></div>
+		<div class="data-row"><span>RAIDS:</span> <span id="raidCount">0</span></div>
+        <div class="sub-row"><span>RAIDED VIEWERS:</span> <span id="raidViewers">0</span></div>
+		<div style="height: 5px;"></div>
         <div class="data-row"><span>HYPE TRAINS:</span> <span id="hypetrainCount">0</span></div>
         <div class="sub-row"><span>CONTRIBUTORS:</span> <span id="hypetrainContributors">0</span></div>
         <div style="height: 5px;"></div>
@@ -203,6 +205,7 @@
             document.getElementById("follows").innerText = data.follows || 0;
             document.getElementById("subCount").innerText = data.subCount || 0;
             document.getElementById("bits").innerText = data.bits || 0;
+			document.getElementById("raidCount").innerText = data.raids?.raidCount || 0;
             document.getElementById("raidViewers").innerText = data.raids?.raidViewers || 0;
             document.getElementById("hypetrainCount").innerText = data.hypetrains?.hypetrainCount || 0;
             document.getElementById("hypetrainContributors").innerText = data.hypetrains?.hypetrainContributors || 0;

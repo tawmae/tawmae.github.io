@@ -140,15 +140,15 @@
                     events: { twitch: ["*"] },
                     id: "Poggers"
                 }));
-                logMessage("Sent: Subscribe to Twitch events.", "outgoing");
+                logMessage("Subscribed to Twitch events.", "outgoing");
             };
 
             ws.onmessage = (event) => {
-                logMessage(`Received: ${event.data}`, "incoming");
+                logMessage(`${event.data}`, "incoming");
             };
 
             ws.onerror = (error) => {
-                logMessage(`Error: ${error.message}`, "error");
+                logMessage(`${error.message}`, "error");
             };
 
             ws.onclose = () => {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch WebSocket Event Grabber</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -30,6 +31,13 @@
             height: 60px;
         }
 
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
         button {
             padding: 10px 20px;
             border: none;
@@ -37,7 +45,6 @@
             font-size: 14px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-right: 10px;
         }
 
         button:disabled {
@@ -63,24 +70,36 @@
             background-color: #d32f2f;
         }
 
+        label {
+            font-size: 14px;
+        }
+
+        #addressInput, #portInput {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            width: 100px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
         #output {
             border: 1px solid #333;
             padding: 15px;
-            height: 500px;
+            height: calc(100vh - 200px);
             overflow-y: auto;
             background-color: #1e1e1e;
             border-radius: 5px;
             font-size: 14px;
         }
 
-        #output div {
-            margin-bottom: 10px;
-            padding: 8px;
-            border-radius: 3px;
-        }
-
         .message {
             font-family: 'Fira Code', monospace;
+            padding: 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            position: relative;
         }
 
         .incoming {
@@ -98,8 +117,64 @@
             color: #ffffff;
         }
 
-        .button-container {
-            margin-bottom: 20px;
+        .message-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .message-body {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        .expanded .message-body {
+            display: block;
+        }
+
+        .expanded .arrow {
+            transform: rotate(90deg);
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            color: #ddd;
+        }
+
+        #copyIndicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #copyIndicator.show {
+            display: block;
+            opacity: 1;
         }
     </style>
 </head>
@@ -109,27 +184,99 @@
         <img src="https://cdn.7tv.app/emote/01F6FTE8B80008E39HFFQJ7MWS/4x.webp" alt="Animated Image">
     </div>
     <div class="button-container">
-        <button id="connectBtn" disabled>Connect</button>
+        <button id="connectBtn">Connect</button>
         <button id="disconnectBtn" disabled>Disconnect</button>
+        <label for="addressInput">Address:</label>
+        <input id="addressInput" type="text" value="localhost" placeholder="Address">
+        <label for="portInput">Port:</label>
+        <input id="portInput" type="number" value="8080" placeholder="Port">
     </div>
     <div id="output"></div>
+    <div id="copyIndicator">Copied to clipboard</div>
 
     <script>
         let ws;
         const output = document.getElementById("output");
         const connectBtn = document.getElementById("connectBtn");
         const disconnectBtn = document.getElementById("disconnectBtn");
+        const addressInput = document.getElementById("addressInput");
+        const portInput = document.getElementById("portInput");
+        const copyIndicator = document.getElementById("copyIndicator");
 
         function logMessage(message, type = "incoming") {
             const div = document.createElement("div");
             div.className = `message ${type}`;
-            div.textContent = message;
+            let headerText = "Unknown";
+            let bodyText = JSON.stringify(message, null, 2);
+
+            try {
+                const json = JSON.parse(message);
+
+                if (json.request === "Hello") {
+                    headerText = `Hello - ${json.info.name} - ${json.info.version}`;
+                } else if (json.status === "ok" && json.id === "Poggers") {
+                    headerText = "Status: Ok";
+                } else if (json.event && json.event.source && json.event.type) {
+                    headerText = `${json.event.source} - ${json.event.type}`;
+                } else {
+                    headerText = message.slice(0, 50);
+                }
+
+                bodyText = JSON.stringify(json, null, 2);
+            } catch {
+                if (type === "error") {
+                    headerText = "Error";
+                } else if (type === "outgoing") {
+                    headerText = message;
+                }
+            }
+
+            const arrow = document.createElement("span");
+            arrow.className = "arrow";
+            arrow.textContent = "▶"; // Pfeil-Indikator
+
+            const header = document.createElement("div");
+            header.className = "message-header";
+            header.appendChild(arrow);
+            header.appendChild(document.createTextNode(headerText));
+
+            header.addEventListener("click", () => {
+                div.classList.toggle("expanded");
+                arrow.textContent = div.classList.contains("expanded") ? "▼" : "▶";
+            });
+
+            div.appendChild(header);
+
+            const body = document.createElement("pre");
+            body.className = "message-body";
+            body.textContent = bodyText;
+            div.appendChild(body);
+
+            const copyButton = document.createElement("span");
+            copyButton.className = "material-symbols-outlined copy-button";
+            copyButton.textContent = "content_copy";
+            copyButton.title = "Copy to clipboard";
+            copyButton.addEventListener("click", () => {
+                navigator.clipboard.writeText(bodyText);
+                showCopyIndicator();
+            });
+            div.appendChild(copyButton);
+
             output.appendChild(div);
             output.scrollTop = output.scrollHeight;
         }
 
+        function showCopyIndicator() {
+            copyIndicator.classList.add("show");
+            setTimeout(() => {
+                copyIndicator.classList.remove("show");
+            }, 2000);
+        }
+
         function connectWebSocket() {
-            ws = new WebSocket("ws://localhost:8080/");
+            const address = addressInput.value || "localhost";
+            const port = portInput.value || 8080;
+            ws = new WebSocket(`ws://${address}:${port}/`);
 
             ws.onopen = () => {
                 logMessage("WebSocket connection established.", "outgoing");
@@ -144,11 +291,11 @@
             };
 
             ws.onmessage = (event) => {
-                logMessage(`${event.data}`, "incoming");
+                logMessage(event.data, "incoming");
             };
 
-            ws.onerror = (error) => {
-                logMessage(`${error.message}`, "error");
+            ws.onerror = () => {
+                logMessage("Error", "error");
             };
 
             ws.onclose = () => {

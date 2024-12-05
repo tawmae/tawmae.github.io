@@ -62,7 +62,7 @@ To enter the settings window, you can head to the `[All-In-One Moderation Tools]
 {: .new }
 Those settings will **persist** across updates!
 
-### Recommended Configurations
+### <span class="iconify" data-icon="material-symbols:settings-suggest" data-inline="false"></span> Recommended Configurations
 
 Usually this extension is import & go, but I highly suggest to configure two things beforehand:
 
@@ -74,7 +74,7 @@ Usually this extension is import & go, but I highly suggest to configure two thi
 
 ![Picture](assets/media/aio_hr.png)
 
-### Other Settings
+### <span class="iconify" data-icon="material-symbols:reset-settings" data-inline="false"></span> Other Settings
 
 All the other settings can be left at default if wanted. You can of course change everything to your liking there.
 

@@ -124,7 +124,7 @@ All the other settings can be left at default if wanted. You can of course chang
 
 A full command overview is also available with the `!modCommands` command that will redirect to this page: [All-In-One Moderation Tools: Command Overview](https://tawmae.github.io/aio_mod_tools_command_overview.html)
 
-### URL Filter
+### <span class="iconify" data-icon="line-md:link" data-inline="false"></span> URL Filter
 
 - `!permit [User]`
  
@@ -138,7 +138,7 @@ A full command overview is also available with the `!modCommands` command that w
  
    Removes a link from the whitelist.
 
-### Follow Bot Attacks
+### <span class="iconify" data-icon="material-symbols:android" data-inline="false"></span> Follow Bot Attacks
 
 - `!followShield [on/off]`
  
@@ -154,7 +154,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### Hate Raid
+### <span class="iconify" data-icon="mdi:skull-outline" data-inline="false"></span> Hate Raid
 
 - `!hateShield [on/off]` or `!hateRaid [on/off]`
  
@@ -162,7 +162,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### Channel Management
+### <span class="iconify" data-icon="material-symbols:tv-options-edit-channels" data-inline="false"></span> Channel Management
 
 - `!addCommand [!command] [Command Text]`
  
@@ -222,7 +222,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 ---
 
-### OBS Management
+### <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> OBS Management
 
 - `!scenes`
  
@@ -239,7 +239,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### Raids and Shoutouts
+### <span class="iconify" data-icon="mage:megaphone-a-fill" data-inline="false"></span> Raids and Shoutouts
 
 - `!raid [User]`
  
@@ -259,7 +259,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### Chat Management
+### <span class="iconify" data-icon="material-symbols:android-chat" data-inline="false"></span> Chat Management
 
 - `!modTranslate [Text]`
  
@@ -339,7 +339,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### Channel Point Rewards
+### <span class="iconify" data-icon="mdi:star-four-points-circle" data-inline="false"></span> Channel Point Rewards
 
 - `!rewardEnable [Reward Name]`
  
@@ -371,7 +371,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### Predictions
+### <span class="iconify" data-icon="tabler:coins" data-inline="false"></span> Predictions
 
 - `!predictionCreate [Title] | [Duration] | [Outcome1] | [Outcome2] ...`
  
@@ -391,7 +391,7 @@ A full command overview is also available with the `!modCommands` command that w
 
 --- 
 
-### Polls
+### <span class="iconify" data-icon="mdi:poll" data-inline="false"></span> Polls
 
 - `!pollCreate [Title] | [Duration] | [Option1] | [Option2] ...`
  

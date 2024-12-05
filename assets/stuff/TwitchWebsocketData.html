@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch WebSocket Event Grabber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title-container img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #connectBtn {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+
+        #connectBtn:hover {
+            background-color: #45a049;
+        }
+
+        #disconnectBtn {
+            background-color: #f44336;
+            color: #ffffff;
+        }
+
+        #disconnectBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        #addressInput, #portInput {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            width: 100px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        #output {
+            border: 1px solid #333;
+            padding: 15px;
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .message {
+            font-family: 'Fira Code', monospace;
+            padding: 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .incoming {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+
+        .outgoing {
+            background-color: #1565c0;
+            color: #ffffff;
+        }
+
+        .error {
+            background-color: #b71c1c;
+            color: #ffffff;
+        }
+
+        .message-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .message-body {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        .expanded .message-body {
+            display: block;
+        }
+
+        .expanded .arrow {
+            transform: rotate(90deg);
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            color: #ddd;
+        }
+
+        #copyIndicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #copyIndicator.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Streamer.bot WS Event Grabber for Twitch</h1>
+        <img src="https://cdn.7tv.app/emote/01F6FTE8B80008E39HFFQJ7MWS/4x.webp" alt="Animated Image">
+    </div>
+    <div class="button-container">
+        <button id="connectBtn">Connect</button>
+        <button id="disconnectBtn" disabled>Disconnect</button>
+        <label for="addressInput">Address:</label>
+        <input id="addressInput" type="text" value="localhost" placeholder="Address">
+        <label for="portInput">Port:</label>
+        <input id="portInput" type="number" value="8080" placeholder="Port">
+    </div>
+    <div id="output"></div>
+    <div id="copyIndicator">Copied to clipboard</div>
+
+    <script>
+        let ws;
+        const output = document.getElementById("output");
+        const connectBtn = document.getElementById("connectBtn");
+        const disconnectBtn = document.getElementById("disconnectBtn");
+        const addressInput = document.getElementById("addressInput");
+        const portInput = document.getElementById("portInput");
+        const copyIndicator = document.getElementById("copyIndicator");
+
+        function logMessage(message, type = "incoming") {
+            const div = document.createElement("div");
+            div.className = `message ${type}`;
+            let headerText = "Unknown";
+            let bodyText = JSON.stringify(message, null, 2);
+
+            try {
+                const json = JSON.parse(message);
+
+                if (json.request === "Hello") {
+                    headerText = `Hello - ${json.info.name} - ${json.info.version}`;
+                } else if (json.status === "ok" && json.id === "Poggers") {
+                    headerText = "Status: Ok";
+                } else if (json.event && json.event.source && json.event.type) {
+                    headerText = `${json.event.source} - ${json.event.type}`;
+                } else {
+                    headerText = message.slice(0, 50);
+                }
+
+                bodyText = JSON.stringify(json, null, 2);
+            } catch {
+                if (type === "error") {
+                    headerText = "Error";
+                } else if (type === "outgoing") {
+                    headerText = message;
+                }
+            }
+
+            const arrow = document.createElement("span");
+            arrow.className = "arrow";
+            arrow.textContent = "▶";
+
+            const header = document.createElement("div");
+            header.className = "message-header";
+            header.appendChild(arrow);
+            header.appendChild(document.createTextNode(headerText));
+
+            header.addEventListener("click", () => {
+                div.classList.toggle("expanded");
+                arrow.textContent = div.classList.contains("expanded") ? "▼" : "▶";
+            });
+
+            div.appendChild(header);
+
+            const body = document.createElement("pre");
+            body.className = "message-body";
+            body.textContent = bodyText;
+            div.appendChild(body);
+
+            const copyButton = document.createElement("span");
+            copyButton.className = "material-symbols-outlined copy-button";
+            copyButton.textContent = "content_copy";
+            copyButton.title = "Copy to clipboard";
+            copyButton.addEventListener("click", () => {
+                navigator.clipboard.writeText(bodyText);
+                showCopyIndicator();
+            });
+            div.appendChild(copyButton);
+
+            output.appendChild(div);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function showCopyIndicator() {
+            copyIndicator.classList.add("show");
+            setTimeout(() => {
+                copyIndicator.classList.remove("show");
+            }, 2000);
+        }
+
+        function connectWebSocket() {
+            const address = addressInput.value || "localhost";
+            const port = portInput.value || 8080;
+            ws = new WebSocket(`ws://${address}:${port}/`);
+
+            ws.onopen = () => {
+                logMessage("WebSocket connection established.", "outgoing");
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+                ws.send(JSON.stringify({
+                    request: "Subscribe",
+                    events: { twitch: ["*"] },
+                    id: "Poggers"
+                }));
+                logMessage("Subscribed to Twitch events.", "outgoing");
+            };
+
+            ws.onmessage = (event) => {
+                logMessage(event.data, "incoming");
+            };
+
+            ws.onerror = () => {
+                logMessage("Error", "error");
+            };
+
+            ws.onclose = () => {
+                logMessage("WebSocket connection closed.", "error");
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            };
+        }
+
+        function disconnectWebSocket() {
+            if (ws) {
+                ws.close();
+                ws = null;
+            }
+        }
+
+        connectBtn.addEventListener("click", () => {
+            if (!ws || ws.readyState === WebSocket.CLOSED) {
+                connectWebSocket();
+            }
+        });
+
+        disconnectBtn.addEventListener("click", disconnectWebSocket);
+
+        window.onload = () => {
+            connectWebSocket();
+        };
+    </script>
+</body>
+</html>

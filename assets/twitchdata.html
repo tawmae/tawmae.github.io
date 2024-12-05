@@ -6,41 +6,99 @@
     <title>Twitch WebSocket Event Grabber</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
         }
-        #output {
-            border: 1px solid #ccc;
-            padding: 10px;
-            height: 500px; 
-            overflow-y: auto;
-            background-color: #f9f9f9;
+
+        h1 {
+            font-weight: 300;
         }
-        #output div {
-            margin-bottom: 5px;
-        }
-        .message {
-            padding: 5px;
-            border-radius: 3px;
-        }
-        .incoming {
-            background-color: #e8f5e9;
-        }
-        .outgoing {
-            background-color: #e3f2fd;
-        }
-        .error {
-            background-color: #ffebee;
-            color: #b71c1c;
-        }
+
         .title-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
+
         .title-container img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #connectBtn {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+
+        #connectBtn:hover {
+            background-color: #45a049;
+        }
+
+        #disconnectBtn {
+            background-color: #f44336;
+            color: #ffffff;
+        }
+
+        #disconnectBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        #output {
+            border: 1px solid #333;
+            padding: 15px;
+            height: 500px;
+            overflow-y: auto;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #output div {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 3px;
+        }
+
+        .message {
+            font-family: 'Courier New', monospace;
+        }
+
+        .incoming {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+
+        .outgoing {
+            background-color: #1565c0;
+            color: #ffffff;
+        }
+
+        .error {
+            background-color: #b71c1c;
+            color: #ffffff;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -49,12 +107,16 @@
         <h1>Twitch WebSocket Event Grabber</h1>
         <img src="https://cdn.7tv.app/emote/01F6FTE8B80008E39HFFQJ7MWS/4x.webp" alt="Animated Image">
     </div>
-    <button id="disconnectBtn" disabled>Disconnect</button>
+    <div class="button-container">
+        <button id="connectBtn" disabled>Connect</button>
+        <button id="disconnectBtn" disabled>Disconnect</button>
+    </div>
     <div id="output"></div>
 
     <script>
         let ws;
         const output = document.getElementById("output");
+        const connectBtn = document.getElementById("connectBtn");
         const disconnectBtn = document.getElementById("disconnectBtn");
 
         function logMessage(message, type = "incoming") {
@@ -70,8 +132,8 @@
 
             ws.onopen = () => {
                 logMessage("WebSocket connection established.", "outgoing");
+                connectBtn.disabled = true;
                 disconnectBtn.disabled = false;
-
                 ws.send(JSON.stringify({
                     request: "Subscribe",
                     events: { twitch: ["*"] },
@@ -90,19 +152,29 @@
 
             ws.onclose = () => {
                 logMessage("WebSocket connection closed.", "error");
+                connectBtn.disabled = false;
                 disconnectBtn.disabled = true;
             };
         }
 
-        disconnectBtn.addEventListener("click", () => {
+        function disconnectWebSocket() {
             if (ws) {
                 ws.close();
                 ws = null;
             }
+        }
+
+        connectBtn.addEventListener("click", () => {
+            if (!ws || ws.readyState === WebSocket.CLOSED) {
+                connectWebSocket();
+            }
         });
 
-       
-        window.onload = connectWebSocket;
+        disconnectBtn.addEventListener("click", disconnectWebSocket);
+
+        window.onload = () => {
+            connectWebSocket();
+        };
     </script>
 </body>
 </html>

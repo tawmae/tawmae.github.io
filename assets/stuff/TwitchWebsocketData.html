@@ -121,11 +121,18 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            justify-content: flex-start;
         }
 
         .arrow {
             font-size: 18px;
             margin-right: 10px;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: #bbb;
+            margin-right: 10px; 
         }
 
         .message-body {
@@ -203,6 +210,14 @@
         const portInput = document.getElementById("portInput");
         const copyIndicator = document.getElementById("copyIndicator");
 
+        function formatTimestamp() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
         function logMessage(message, type = "incoming") {
             const div = document.createElement("div");
             div.className = `message ${type}`;
@@ -235,9 +250,14 @@
             arrow.className = "arrow";
             arrow.textContent = "▶";
 
+            const timestamp = document.createElement("span");
+            timestamp.className = "timestamp";
+            timestamp.textContent = `(${formatTimestamp()})`;
+
             const header = document.createElement("div");
             header.className = "message-header";
             header.appendChild(arrow);
+            header.appendChild(timestamp);
             header.appendChild(document.createTextNode(headerText));
 
             header.addEventListener("click", () => {

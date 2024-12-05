@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch WebSocket Event Grabber</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 500px; /* Box vergrößert */
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        #output div {
+            margin-bottom: 5px;
+        }
+        .message {
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .incoming {
+            background-color: #e8f5e9;
+        }
+        .outgoing {
+            background-color: #e3f2fd;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #b71c1c;
+        }
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .title-container img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <h1>WebSocket Debugger</h1>
+        <img src="https://cdn.7tv.app/emote/01F6FTE8B80008E39HFFQJ7MWS/4x.webp" alt="Animated Image">
+    </div>
+    <button id="disconnectBtn" disabled>Disconnect</button>
+    <div id="output"></div>
+
+    <script>
+        let ws;
+        const output = document.getElementById("output");
+        const disconnectBtn = document.getElementById("disconnectBtn");
+
+        function logMessage(message, type = "incoming") {
+            const div = document.createElement("div");
+            div.className = `message ${type}`;
+            div.textContent = message;
+            output.appendChild(div);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function connectWebSocket() {
+            ws = new WebSocket("ws://localhost:8080/");
+
+            ws.onopen = () => {
+                logMessage("WebSocket connection established.", "outgoing");
+                disconnectBtn.disabled = false;
+
+                ws.send(JSON.stringify({
+                    request: "Subscribe",
+                    events: { twitch: ["*"] },
+                    id: "Poggers"
+                }));
+                logMessage("Sent: Subscribe to Twitch events.", "outgoing");
+            };
+
+            ws.onmessage = (event) => {
+                logMessage(`Received: ${event.data}`, "incoming");
+            };
+
+            ws.onerror = (error) => {
+                logMessage(`Error: ${error.message}`, "error");
+            };
+
+            ws.onclose = () => {
+                logMessage("WebSocket connection closed.", "error");
+                disconnectBtn.disabled = true;
+            };
+        }
+
+        disconnectBtn.addEventListener("click", () => {
+            if (ws) {
+                ws.close();
+                ws = null;
+            }
+        });
+
+       
+        window.onload = connectWebSocket;
+    </script>
+</body>
+</html>

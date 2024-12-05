@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch WebSocket Event Grabber</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -121,7 +122,7 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: flex-start; 
         }
 
         .arrow {
@@ -132,7 +133,7 @@
         .timestamp {
             font-size: 12px;
             color: #bbb;
-            margin-right: 10px; 
+            margin-right: 10px;
         }
 
         .message-body {
@@ -145,10 +146,6 @@
 
         .expanded .message-body {
             display: block;
-        }
-
-        .expanded .arrow {
-            transform: rotate(90deg);
         }
 
         .copy-button {
@@ -247,8 +244,8 @@
             }
 
             const arrow = document.createElement("span");
-            arrow.className = "arrow";
-            arrow.textContent = "▶";
+            arrow.className = "arrow iconify";
+            arrow.setAttribute("data-icon", "ic:baseline-keyboard-arrow-right");
 
             const timestamp = document.createElement("span");
             timestamp.className = "timestamp";
@@ -262,7 +259,12 @@
 
             header.addEventListener("click", () => {
                 div.classList.toggle("expanded");
-                arrow.textContent = div.classList.contains("expanded") ? "▼" : "▶";
+                arrow.setAttribute(
+                    "data-icon",
+                    div.classList.contains("expanded")
+                        ? "ic:baseline-keyboard-arrow-down"
+                        : "ic:baseline-keyboard-arrow-right"
+                );
             });
 
             div.appendChild(header);
@@ -273,7 +275,7 @@
             div.appendChild(body);
 
             const copyButton = document.createElement("span");
-            copyButton.className = "material-symbols-outlined copy-button";
+            copyButton.className = "material-icons-outlined copy-button";
             copyButton.textContent = "content_copy";
             copyButton.title = "Copy to clipboard";
             copyButton.addEventListener("click", () => {

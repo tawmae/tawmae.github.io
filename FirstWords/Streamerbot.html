@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +34,8 @@
       height: 150px;
     }
 
-    .icon, .profile-icon {
+    .icon,
+    .profile-icon {
       position: absolute;
       top: 0;
       left: 0;
@@ -54,6 +56,7 @@
       0% {
         transform: rotate(0deg) translateX(60px) rotate(0deg);
       }
+
       100% {
         transform: rotate(360deg) translateX(60px) rotate(-360deg);
       }
@@ -83,6 +86,7 @@
         opacity: 0;
         transform: translateY(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -94,6 +98,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+
       to {
         opacity: 0;
         transform: translateY(-20px);
@@ -101,6 +106,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="notification" class="notification-container">
     <div class="notification-icons">
@@ -125,6 +131,12 @@
       }
     }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const excludeAccountsParam = urlParams.get("excludeaccounts") || "";
+    const excludeAccounts = new Set(
+      excludeAccountsParam.split("+").map(account => account.toLowerCase().trim())
+    );
+
     function bindEvents(ws) {
       ws.onopen = function () {
         ws.send(JSON.stringify({
@@ -137,20 +149,22 @@
       ws.onmessage = function (event) {
         try {
           const data = JSON.parse(event.data);
-          if (data.data && data.data.message && data.data.message.displayName) {
-            const displayName = data.data.message.displayName;
-            const color = data.data.message.color || "#5fa8ff";
-            enqueueNotification(displayName, color);
+          if (data.data && data.data.message && data.data.message.username) {
+            const username = data.data.message.username.toLowerCase();
+            if (!excludeAccounts.has(username)) {
+              enqueueNotification(data.data.message.displayName);
+            }
           }
-        } catch {}
+        } catch { }
       };
 
       ws.onclose = function () {
         setTimeout(connectws, 10000);
       };
 
-      ws.onerror = function () {};
+      ws.onerror = function () { };
     }
+
 
     function enqueueNotification(displayName, color) {
       notificationQueue.push({ displayName, color });
@@ -210,4 +224,5 @@
     });
   </script>
 </body>
+
 </html>

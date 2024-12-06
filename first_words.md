@@ -59,7 +59,7 @@ To have the notification in multiple scenes, don't create an individual browser 
 
 ## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> Styles 
 
-All styles are playing a notification sound.
+All styles are playing a notification sound. You can add `?excludedaccounts=streamelements+tawmaebot+sery_bot` at the end of the URL to not trigger for certain accounts.
 
 ---
 

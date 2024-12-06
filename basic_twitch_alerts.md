@@ -123,7 +123,7 @@ Changes the color of the event description text.
 
 ---
 
-### <span class="iconify" data-icon="mdi:format-size" data-inline="false"></span> Duration
+### <span class="iconify" data-icon="material-symbols:alarm" data-inline="false"></span> Duration
 
 Changes the duration until the alert disappears. Number in milliseconds. The default is 7000.
 
@@ -131,7 +131,7 @@ Changes the duration until the alert disappears. Number in milliseconds. The def
 
 ---
 
-### <span class="iconify" data-icon="mdi:view-column" data-inline="false"></span> Sound
+### <span class="iconify" data-icon="material-symbols:volume-up-rounded" data-inline="false"></span> Sound
 
 Toggles whether a sound is played when the overlay displays.
 

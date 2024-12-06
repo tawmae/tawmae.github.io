@@ -205,6 +205,60 @@
         #downloadLogBtn:hover {
             background-color: #303f9f;
         }
+
+        #clearLogsBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #d47800;
+            color: #ffffff;
+            margin-left: 20px;
+        }
+
+        #clearLogsBtn:hover {
+            background-color: #c05804d7;
+        }
+
+        #connectionStatus {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: #b71c1c;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes statusPulse {
+            0% {
+                transform: scale(1);
+            }
+
+            20% {
+                transform: scale(1.2);
+            }
+
+            40% {
+                transform: scale(0.9);
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+
+            80% {
+                transform: scale(0.95);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .status-changed {
+            animation: statusPulse 0.5s ease;
+        }
     </style>
 </head>
 
@@ -225,9 +279,11 @@
             Exclude Chat Message Events
         </label>
         <button id="downloadLogBtn">Download Log</button>
+        <button id="clearLogsBtn">Clear Logs</button>
     </div>
     <div id="output"></div>
     <div id="copyIndicator">Copied to clipboard</div>
+    <div id="connectionStatus">Disconnected</div>
 
     <script>
         let ws;
@@ -239,8 +295,37 @@
         const copyIndicator = document.getElementById("copyIndicator");
         const excludeChatCheckbox = document.getElementById("excludeChatCheckbox");
         const downloadLogBtn = document.getElementById("downloadLogBtn");
+        const clearLogsBtn = document.getElementById("clearLogsBtn");
+        const connectionStatus = document.getElementById("connectionStatus");
 
         let eventLog = [];
+
+        function saveEventLog() {
+            localStorage.setItem('eventLog', JSON.stringify(eventLog));
+        }
+
+        function saveSettings() {
+            const settings = {
+                address: addressInput.value,
+                port: portInput.value,
+                excludeChat: excludeChatCheckbox.checked
+            };
+            localStorage.setItem('settings', JSON.stringify(settings));
+        }
+
+        function loadSettings() {
+            const savedSettings = localStorage.getItem('settings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                addressInput.value = settings.address || 'localhost';
+                portInput.value = settings.port || '8080';
+                excludeChatCheckbox.checked = settings.excludeChat !== undefined ? settings.excludeChat : true;
+            }
+        }
+
+        addressInput.addEventListener('input', saveSettings);
+        portInput.addEventListener('input', saveSettings);
+        excludeChatCheckbox.addEventListener('change', saveSettings);
 
         function logMessage(message, type = "incoming") {
             let headerText = "Unknown";
@@ -251,33 +336,25 @@
                 const json = JSON.parse(message);
 
                 if (excludeChatCheckbox.checked && json.event?.type === "ChatMessage") return;
+                if (json.request === "Hello") return;
+                if (json.status === "ok" && json.id === "Poggers") return;
 
-                if (json.request === "Hello") {
-                    headerText = `Hello - ${json.info.name} - ${json.info.version}`;
-                } else if (json.status === "ok" && json.id === "Poggers") {
-                    headerText = "Status: Ok";
-                } else if (json.event && json.event.source && json.event.type) {
+                if (json.event && json.event.source && json.event.type) {
                     headerText = `${json.event.source} - ${json.event.type}`;
-                } else if (message === "WebSocket connection closed.") {
-                    headerText = "WebSocket connection closed.";
                 } else {
                     headerText = message.slice(0, 50);
                 }
 
                 bodyText = JSON.stringify(json, null, 2);
-
-
                 eventLog.push(`[${timestamp}] ${headerText}\n${bodyText}\n`);
             } catch {
                 if (message === "WebSocket connection closed.") {
-                    headerText = "WebSocket connection closed.";
+                    return;
                 } else if (type === "error") {
                     headerText = "Error";
                 } else if (type === "outgoing") {
                     headerText = message;
                 }
-
-
                 eventLog.push(`[${timestamp}] ${headerText}\n${message}\n`);
             }
 
@@ -329,9 +406,9 @@
 
             output.appendChild(div);
             output.scrollTop = output.scrollHeight;
+
+            saveEventLog();
         }
-
-
 
         function showCopyIndicator() {
             copyIndicator.classList.add("show");
@@ -340,21 +417,30 @@
             }, 2000);
         }
 
+        function triggerStatusAnimation() {
+            connectionStatus.classList.add("status-changed");
+            setTimeout(() => {
+                connectionStatus.classList.remove("status-changed");
+            }, 500);
+        }
+
         function connectWebSocket() {
             const address = addressInput.value || "localhost";
             const port = portInput.value || 8080;
             ws = new WebSocket(`ws://${address}:${port}/`);
 
             ws.onopen = () => {
-                logMessage("WebSocket connection established.", "outgoing");
                 connectBtn.disabled = true;
                 disconnectBtn.disabled = false;
+                connectionStatus.textContent = "Connected";
+                connectionStatus.style.backgroundColor = "#2e7d32";
+                triggerStatusAnimation();
+
                 ws.send(JSON.stringify({
                     request: "Subscribe",
                     events: { twitch: ["*"] },
                     id: "Poggers"
                 }));
-                logMessage("Subscribed to Twitch events.", "outgoing");
             };
 
             ws.onmessage = (event) => {
@@ -366,12 +452,12 @@
             };
 
             ws.onclose = () => {
-                logMessage("WebSocket connection closed.", "error");
                 connectBtn.disabled = false;
                 disconnectBtn.disabled = true;
+                connectionStatus.textContent = "Disconnected";
+                connectionStatus.style.backgroundColor = "#b71c1c";
+                triggerStatusAnimation();
             };
-
-
         }
 
         function disconnectWebSocket() {
@@ -391,6 +477,12 @@
             a.click();
         }
 
+        clearLogsBtn.addEventListener("click", () => {
+            eventLog = [];
+            output.innerHTML = '';
+            localStorage.removeItem('eventLog');
+        });
+
         connectBtn.addEventListener("click", () => {
             if (!ws || ws.readyState === WebSocket.CLOSED) {
                 connectWebSocket();
@@ -401,6 +493,75 @@
         downloadLogBtn.addEventListener("click", downloadLog);
 
         window.onload = () => {
+            loadSettings();
+            const savedLog = localStorage.getItem('eventLog');
+            if (savedLog) {
+                eventLog = JSON.parse(savedLog);
+                for (const entry of eventLog) {
+                    const lines = entry.split('\n');
+                    const headerLine = lines[0];
+                    const bodyLines = lines.slice(1).join('\n').trim();
+                    const timestampMatch = headerLine.match(/\[(.*?)\]/);
+                    let timestamp = '';
+                    let headerText = '';
+
+                    if (timestampMatch) {
+                        timestamp = timestampMatch[1];
+                        headerText = headerLine.replace(`[${timestamp}] `, '');
+                    } else {
+                        headerText = headerLine;
+                    }
+
+                    const div = document.createElement("div");
+                    div.className = `message incoming`;
+
+                    const arrow = document.createElement("span");
+                    arrow.className = "arrow";
+                    arrow.innerHTML = `<span class="iconify" data-icon="material-symbols-light:keyboard-double-arrow-right-rounded"></span>`;
+
+                    const header = document.createElement("div");
+                    header.className = "message-header";
+                    header.appendChild(arrow);
+
+                    const timeSpan = document.createElement("span");
+                    timeSpan.className = "timestamp";
+                    timeSpan.textContent = timestamp;
+                    header.appendChild(timeSpan);
+
+                    header.appendChild(document.createTextNode(headerText));
+
+                    header.addEventListener("click", () => {
+                        div.classList.toggle("expanded");
+                        const icon = arrow.querySelector(".iconify");
+                        icon.setAttribute(
+                            "data-icon",
+                            div.classList.contains("expanded")
+                                ? "material-symbols-light:keyboard-double-arrow-down-rounded"
+                                : "material-symbols-light:keyboard-double-arrow-right-rounded"
+                        );
+                    });
+
+                    div.appendChild(header);
+
+                    const body = document.createElement("pre");
+                    body.className = "message-body";
+                    body.textContent = bodyLines;
+                    div.appendChild(body);
+
+                    const copyButton = document.createElement("span");
+                    copyButton.className = "material-symbols-outlined copy-button";
+                    copyButton.textContent = "content_copy";
+                    copyButton.title = "Copy to clipboard";
+                    copyButton.addEventListener("click", () => {
+                        navigator.clipboard.writeText(bodyLines);
+                        showCopyIndicator();
+                    });
+                    div.appendChild(copyButton);
+
+                    output.appendChild(div);
+                }
+                output.scrollTop = output.scrollHeight;
+            }
             connectWebSocket();
         };
     </script>

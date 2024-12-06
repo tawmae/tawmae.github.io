@@ -108,6 +108,10 @@ You can simulate events by creating a trigger (`Twitch -> Ads`), then rightclick
 
 ---
 
+<span class="iconify" data-icon="twemoji:flag-germany" data-inline="false"></span> German version: `https://tawmae.github.io/overlays/Ads_GER.html`
+
+---
+
 ## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
 
 | Date        | Changes          | Version |

@@ -405,7 +405,8 @@
             <label><input type="checkbox" class="subscription-checkbox" data-type="Twitch">Twitch</label>
             <label><input type="checkbox" class="subscription-checkbox" data-type="YouTube">YouTube</label>
             <label><input type="checkbox" class="subscription-checkbox" data-type="Streamlabs">Streamlabs</label>
-            <label><input type="checkbox" class="subscription-checkbox" data-type="StreamElements">StreamElements</label>
+            <label><input type="checkbox" class="subscription-checkbox"
+                    data-type="StreamElements">StreamElements</label>
             <label><input type="checkbox" class="subscription-checkbox" data-type="Kofi">Kofi</label>
             <label><input type="checkbox" class="subscription-checkbox" data-type="DonorDrive">DonorDrive</label>
             <label><input type="checkbox" class="subscription-checkbox" data-type="Pulsoid">Pulsoid</label>
@@ -517,7 +518,7 @@
 
             try {
                 const json = JSON.parse(message);
-                if (excludeChatCheckbox.checked && json.event?.type === "ChatMessage") return;
+                if (excludeChatCheckbox.checked && (json.event?.type === "ChatMessage" || json.event?.type === "Message")) return;
                 if (json.request === "Hello") return;
                 if (json.status === "ok" && json.id === "Poggers") return;
                 if (json.event && json.event.source && json.event.type) {

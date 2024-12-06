@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@2.2.1/dist/iconify.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -130,6 +131,18 @@
         .arrow {
             font-size: 18px;
             margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: #aaa;
+            background-color: #333;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-family: 'Fira Code', monospace;
+            margin-right: 10px;
         }
 
         .message-body {
@@ -142,10 +155,6 @@
 
         .expanded .message-body {
             display: block;
-        }
-
-        .expanded .arrow {
-            transform: rotate(90deg);
         }
 
         .copy-button {
@@ -230,6 +239,7 @@
         function logMessage(message, type = "incoming") {
             let headerText = "Unknown";
             let bodyText = JSON.stringify(message, null, 2);
+            let timestamp = new Date().toLocaleTimeString();
 
             try {
                 const json = JSON.parse(message);
@@ -242,19 +252,27 @@
                     headerText = "Status: Ok";
                 } else if (json.event && json.event.source && json.event.type) {
                     headerText = `${json.event.source} - ${json.event.type}`;
+                } else if (message === "WebSocket connection closed.") {
+                    headerText = "WebSocket connection closed.";
                 } else {
                     headerText = message.slice(0, 50);
                 }
 
                 bodyText = JSON.stringify(json, null, 2);
 
-                eventLog.push(`[${new Date().toISOString()}] ${headerText}\n${bodyText}\n`);
+
+                eventLog.push(`[${timestamp}] ${headerText}\n${bodyText}\n`);
             } catch {
-                if (type === "error") {
+                if (message === "WebSocket connection closed.") {
+                    headerText = "WebSocket connection closed.";
+                } else if (type === "error") {
                     headerText = "Error";
                 } else if (type === "outgoing") {
                     headerText = message;
                 }
+
+
+                eventLog.push(`[${timestamp}] ${headerText}\n${message}\n`);
             }
 
             const div = document.createElement("div");
@@ -262,16 +280,28 @@
 
             const arrow = document.createElement("span");
             arrow.className = "arrow";
-            arrow.textContent = "▶";
+            arrow.innerHTML = `<span class="iconify" data-icon="material-symbols-light:keyboard-double-arrow-right-rounded"></span>`;
 
             const header = document.createElement("div");
             header.className = "message-header";
             header.appendChild(arrow);
+
+            const timeSpan = document.createElement("span");
+            timeSpan.className = "timestamp";
+            timeSpan.textContent = timestamp;
+            header.appendChild(timeSpan);
+
             header.appendChild(document.createTextNode(headerText));
 
             header.addEventListener("click", () => {
                 div.classList.toggle("expanded");
-                arrow.textContent = div.classList.contains("expanded") ? "▼" : "▶";
+                const icon = arrow.querySelector(".iconify");
+                icon.setAttribute(
+                    "data-icon",
+                    div.classList.contains("expanded")
+                        ? "material-symbols-light:keyboard-double-arrow-down-rounded"
+                        : "material-symbols-light:keyboard-double-arrow-right-rounded"
+                );
             });
 
             div.appendChild(header);
@@ -281,19 +311,11 @@
             body.textContent = bodyText;
             div.appendChild(body);
 
-            const copyButton = document.createElement("span");
-            copyButton.className = "material-symbols-outlined copy-button";
-            copyButton.textContent = "content_copy";
-            copyButton.title = "Copy to clipboard";
-            copyButton.addEventListener("click", () => {
-                navigator.clipboard.writeText(bodyText);
-                showCopyIndicator();
-            });
-            div.appendChild(copyButton);
-
             output.appendChild(div);
             output.scrollTop = output.scrollHeight;
         }
+
+
 
         function showCopyIndicator() {
             copyIndicator.classList.add("show");
@@ -332,12 +354,16 @@
                 connectBtn.disabled = false;
                 disconnectBtn.disabled = true;
             };
+
+
         }
 
         function disconnectWebSocket() {
             if (ws) {
                 ws.close();
                 ws = null;
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
             }
         }
 

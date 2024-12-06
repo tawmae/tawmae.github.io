@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>tawmae First Words Zelda Navi Style</title>
   <style>
     @keyframes fadeInOut {
-      0% { opacity: 0; transform: scale(0.8); }
-      15% { opacity: 1; transform: scale(1); }
-      85% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.8); }
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      15% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      85% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
     }
 
     @keyframes moveAndBlink {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-      50% { transform: translate(-40%, -60%) scale(1.2); opacity: 1; }
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: translate(-40%, -60%) scale(1.2);
+        opacity: 1;
+      }
     }
 
     body {
@@ -81,6 +106,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="notification" class="notification-container">
     <div class="notification-light">
@@ -92,7 +118,7 @@
   <script>
     const notificationQueue = [];
     let isProcessing = false;
-    const audioCache = new Map(); 
+    const audioCache = new Map();
 
     function connectws() {
       if ("WebSocket" in window) {
@@ -101,30 +127,40 @@
       }
     }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const excludeAccountsParam = urlParams.get("excludeaccounts") || "";
+    const excludeAccounts = new Set(
+      excludeAccountsParam.split("+").map(account => account.toLowerCase().trim())
+    );
+
     function bindEvents(ws) {
       ws.onopen = function () {
         ws.send(JSON.stringify({
           request: "Subscribe",
           events: { Twitch: ["FirstWord"] },
-          id: "naviFirstWord"
+          id: "firstWordSubscription"
         }));
       };
 
       ws.onmessage = function (event) {
         try {
           const data = JSON.parse(event.data);
-          if (data.data && data.data.message && data.data.message.displayName) {
-            enqueueNotification(data.data.message.displayName);
+          if (data.data && data.data.message && data.data.message.username) {
+            const username = data.data.message.username.toLowerCase();
+            if (!excludeAccounts.has(username)) {
+              enqueueNotification(data.data.message.displayName);
+            }
           }
-        } catch {}
+        } catch { }
       };
 
       ws.onclose = function () {
         setTimeout(connectws, 10000);
       };
 
-      ws.onerror = function () {};
+      ws.onerror = function () { };
     }
+
 
     function enqueueNotification(username) {
       notificationQueue.push(username);
@@ -150,7 +186,7 @@
     }
 
     function getAudio() {
-      if (!audioCache.has('navi-sound')) { 
+      if (!audioCache.has('navi-sound')) {
         const audio = new Audio('https://tawmae.github.io/FirstWords/Zelda_Navi.mp3');
         audioCache.set('navi-sound', audio);
       }
@@ -184,4 +220,5 @@
     });
   </script>
 </body>
+
 </html>

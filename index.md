@@ -51,6 +51,12 @@ Explore what other wonderful peeps are creating for Streamer.bot!
 
 - <span class="iconify" data-icon="material-symbols:brush" data-inline="false"></span> [mikoroonii](https://mikoroonii.com/)
 
+- <span class="iconify" data-icon="game-icons:santa-hat" data-inline="false"></span> [Haunter](https://github.com/Haunter56)
+
+- <span class="iconify" data-icon="mdi:sunglasses" data-inline="false"></span> [BlackyWhoElse](https://github.com/BlackyWhoElse/streamer.bot-actions)  
+
+- <span class="iconify" data-icon="tabler:square-letter-b-filled" data-inline="false"></span> [itsBarrex](https://barrex.stream/category/streamer-bot-erweiterung/) 
+
 - <span class="iconify" data-icon="hugeicons:virtual-reality-vr-01" data-inline="false"></span> [VRFlad](https://vrflad.com/)
 
 - <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> [streamUP](https://streamup.tips/)

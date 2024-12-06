@@ -289,7 +289,8 @@
             animation: statusPulse 0.5s ease;
         }
 
-        #subscriptionsModal {
+        #subscriptionsModal,
+        #clearLogsModal {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -301,11 +302,13 @@
             z-index: 9999;
         }
 
-        #subscriptionsModal h2 {
+        #subscriptionsModal h2,
+        #clearLogsModal h2 {
             margin-top: 0;
         }
 
-        #subscriptionsOverlay {
+        #subscriptionsOverlay,
+        #clearLogsOverlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -316,7 +319,8 @@
             z-index: 9998;
         }
 
-        #closeSubscriptionsBtn {
+        #closeSubscriptionsBtn,
+        #closeClearLogsBtn {
             background-color: #f44336;
             color: #fff;
             font-family: 'Poppins', Arial, sans-serif;
@@ -326,11 +330,13 @@
             cursor: pointer;
         }
 
-        #closeSubscriptionsBtn:hover {
+        #closeSubscriptionsBtn:hover,
+        #closeClearLogsBtn:hover {
             background-color: #d32f2f;
         }
 
-        #saveSubscriptionsBtn {
+        #saveSubscriptionsBtn,
+        #confirmClearLogsBtn {
             background-color: #4caf50;
             color: #fff;
             font-family: 'Poppins', Arial, sans-serif;
@@ -341,7 +347,8 @@
             margin-left: 10px;
         }
 
-        #saveSubscriptionsBtn:hover {
+        #saveSubscriptionsBtn:hover,
+        #confirmClearLogsBtn:hover {
             background-color: #388e3c;
         }
 
@@ -420,6 +427,13 @@
         <button id="saveSubscriptionsBtn">Save</button>
     </div>
 
+    <div id="clearLogsOverlay"></div>
+    <div id="clearLogsModal">
+        <h2>Are you sure you want to clear the logs?</h2>
+        <button id="closeClearLogsBtn">Cancel</button>
+        <button id="confirmClearLogsBtn">Yes, Clear</button>
+    </div>
+
     <script>
         let ws;
         const output = document.getElementById("output");
@@ -441,6 +455,11 @@
         const subscriptionsSavedIndicator = document.getElementById("subscriptionsSavedIndicator");
         const logsDownloadedIndicator = document.getElementById("logsDownloadedIndicator");
         const logsClearedIndicator = document.getElementById("logsClearedIndicator");
+
+        const clearLogsOverlay = document.getElementById("clearLogsOverlay");
+        const clearLogsModal = document.getElementById("clearLogsModal");
+        const closeClearLogsBtn = document.getElementById("closeClearLogsBtn");
+        const confirmClearLogsBtn = document.getElementById("confirmClearLogsBtn");
 
         let eventLog = [];
         let isConnected = false;
@@ -674,10 +693,23 @@
         }
 
         clearLogsBtn.addEventListener("click", () => {
+            
+            clearLogsModal.style.display = 'block';
+            clearLogsOverlay.style.display = 'block';
+        });
+
+        closeClearLogsBtn.addEventListener("click", () => {
+            clearLogsModal.style.display = 'none';
+            clearLogsOverlay.style.display = 'none';
+        });
+
+        confirmClearLogsBtn.addEventListener("click", () => {
             eventLog = [];
             output.innerHTML = '';
             localStorage.removeItem('eventLog');
             showLogsClearedIndicator();
+            clearLogsModal.style.display = 'none';
+            clearLogsOverlay.style.display = 'none';
         });
 
         connectBtn.addEventListener("click", () => {
@@ -712,6 +744,10 @@
                 if (subscriptionsModal.style.display === 'block') {
                     subscriptionsModal.style.display = 'none';
                     subscriptionsOverlay.style.display = 'none';
+                }
+                if (clearLogsModal.style.display === 'block') {
+                    clearLogsModal.style.display = 'none';
+                    clearLogsOverlay.style.display = 'none';
                 }
             }
         });

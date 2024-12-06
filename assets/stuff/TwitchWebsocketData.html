@@ -57,6 +57,7 @@
         }
 
         #connectBtn {
+            font-family: 'Poppins', Arial, sans-serif;
             background-color: #4caf50;
             color: #ffffff;
         }
@@ -66,6 +67,7 @@
         }
 
         #disconnectBtn {
+            font-family: 'Poppins', Arial, sans-serif;
             background-color: #f44336;
             color: #ffffff;
         }
@@ -80,6 +82,7 @@
 
         #addressInput,
         #portInput {
+            font-family: 'Poppins', Arial, sans-serif;
             padding: 8px;
             font-size: 14px;
             border-radius: 5px;
@@ -162,15 +165,16 @@
             top: 10px;
             right: 10px;
             font-size: 18px;
-            color: #fff;
+            color: #bebcbc;
             cursor: pointer;
         }
 
         .copy-button:hover {
-            color: #ddd;
+            color: #888787;
         }
 
         #copyIndicator {
+            font-family: 'Poppins', Arial, sans-serif;
             position: fixed;
             bottom: 20px;
             left: 50%;
@@ -191,6 +195,7 @@
         }
 
         #downloadLogBtn {
+            font-family: 'Poppins', Arial, sans-serif;
             margin-left: 20px;
             background-color: #3f51b5;
             color: #ffffff;
@@ -310,6 +315,16 @@
             body.className = "message-body";
             body.textContent = bodyText;
             div.appendChild(body);
+
+            const copyButton = document.createElement("span");
+            copyButton.className = "material-symbols-outlined copy-button";
+            copyButton.textContent = "content_copy";
+            copyButton.title = "Copy to clipboard";
+            copyButton.addEventListener("click", () => {
+                navigator.clipboard.writeText(bodyText);
+                showCopyIndicator();
+            });
+            div.appendChild(copyButton);
 
             output.appendChild(div);
             output.scrollTop = output.scrollHeight;

@@ -332,6 +332,41 @@
             gap: 20px;
             margin-bottom: 20px;
         }
+
+        .subscriptions-list label {
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .subscriptions-list input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+
+        #subscriptionsSavedIndicator {
+            font-family: 'Poppins', Arial, sans-serif;
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #subscriptionsSavedIndicator.show {
+            display: block;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -357,6 +392,7 @@
     </div>
     <div id="output"></div>
     <div id="copyIndicator">Copied to clipboard</div>
+    <div id="subscriptionsSavedIndicator">Subscriptions saved</div>
     <div id="connectionStatus">Disconnected</div>
 
     <div id="subscriptionsOverlay"></div>
@@ -401,8 +437,17 @@
         const closeSubscriptionsBtn = document.getElementById("closeSubscriptionsBtn");
         const saveSubscriptionsBtn = document.getElementById("saveSubscriptionsBtn");
         const subscriptionCheckboxes = document.querySelectorAll(".subscription-checkbox");
+        const subscriptionsSavedIndicator = document.getElementById("subscriptionsSavedIndicator");
 
         let eventLog = [];
+        let isConnected = false;
+
+        function showSubscriptionsSavedIndicator() {
+            subscriptionsSavedIndicator.classList.add("show");
+            setTimeout(() => {
+                subscriptionsSavedIndicator.classList.remove("show");
+            }, 2000);
+        }
 
         function saveEventLog() {
             localStorage.setItem('eventLog', JSON.stringify(eventLog));
@@ -562,6 +607,7 @@
             const port = portInput.value || 8080;
             ws = new WebSocket(`ws://${address}:${port}/`);
             ws.onopen = () => {
+                isConnected = true;
                 connectBtn.disabled = true;
                 disconnectBtn.disabled = false;
                 connectionStatus.textContent = "Connected";
@@ -581,6 +627,7 @@
                 logMessage("Error", "error");
             };
             ws.onclose = () => {
+                isConnected = false;
                 connectBtn.disabled = false;
                 disconnectBtn.disabled = true;
                 connectionStatus.textContent = "Disconnected";
@@ -595,6 +642,14 @@
                 ws = null;
                 connectBtn.disabled = false;
                 disconnectBtn.disabled = true;
+                isConnected = false;
+            }
+        }
+
+        function forceReconnect() {
+            if (isConnected) {
+                disconnectWebSocket();
+                connectWebSocket();
             }
         }
 
@@ -635,6 +690,17 @@
             saveSubscriptions();
             subscriptionsModal.style.display = 'none';
             subscriptionsOverlay.style.display = 'none';
+            showSubscriptionsSavedIndicator();
+            forceReconnect();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                if (subscriptionsModal.style.display === 'block') {
+                    subscriptionsModal.style.display = 'none';
+                    subscriptionsOverlay.style.display = 'none';
+                }
+            }
         });
 
         window.onload = () => {

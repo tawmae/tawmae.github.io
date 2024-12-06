@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tawmae Adge</title>
+    <title>tawmae Ad Notification</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body {
@@ -35,7 +35,7 @@
         .notification-title {
             font-size: 18px;
             font-weight: 900;
-            color: #ffd700;
+            color: var(--title-color, #ffd700);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin: 0 0 5px 0;
@@ -49,7 +49,7 @@
 
         .notification-description {
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 600;
             color: #bbb;
             margin: 0;
         }
@@ -76,7 +76,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: conic-gradient(#ffd700 var(--progress), #333 var(--progress) 100%);
+            background: conic-gradient(var(--loading-bar-color, #ffd700) var(--progress), #333 var(--progress) 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,7 +87,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #ffd700;
+            color: var(--loading-bar-color, #ffd700);
             background-color: #222;
             width: 48px;
             height: 48px;
@@ -141,9 +141,15 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
+        const color = urlParams.get("color") || "#ffd700";
+        const font = urlParams.get("font") || "Inter";
         const audioCache = new Map();
         const notificationQueue = [];
         let isNotificationActive = false;
+
+        document.documentElement.style.setProperty("--title-color", color);
+        document.documentElement.style.setProperty("--loading-bar-color", color);
+        document.body.style.fontFamily = font;
 
         function connectWebSocket() {
             const ws = new WebSocket("ws://localhost:8080/");
@@ -168,7 +174,7 @@
                 } else if (message.event?.type === "AdRun") {
                     enqueueNotification(
                         "Ads Running",
-                        "Ads are currently in progress..",
+                        "Ads are currently in progress",
                         message.data.length_seconds,
                         "https://tawmae.github.io/overlays/ads_1.mp3",
                         "https://raw.githubusercontent.com/tawmae/tawmae.github.io/refs/heads/main/overlays/ads_2.webp"
@@ -256,7 +262,6 @@
                         }, 1000);
                     }
                 }
-
 
                 requestAnimationFrame(updateProgress);
             });

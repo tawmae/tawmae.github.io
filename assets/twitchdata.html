@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch WebSocket Event Grabber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
         body {
@@ -74,7 +77,8 @@
             font-size: 14px;
         }
 
-        #addressInput, #portInput {
+        #addressInput,
+        #portInput {
             padding: 8px;
             font-size: 14px;
             border-radius: 5px;
@@ -178,6 +182,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="title-container">
         <h1>Streamer.bot WS Event Grabber for Twitch</h1>
@@ -190,6 +195,10 @@
         <input id="addressInput" type="text" value="localhost" placeholder="Address">
         <label for="portInput">Port:</label>
         <input id="portInput" type="number" value="8080" placeholder="Port">
+        <label>
+            <input type="checkbox" id="excludeChatCheckbox" checked>
+            Exclude Chat Message Events
+        </label>
     </div>
     <div id="output"></div>
     <div id="copyIndicator">Copied to clipboard</div>
@@ -202,6 +211,7 @@
         const addressInput = document.getElementById("addressInput");
         const portInput = document.getElementById("portInput");
         const copyIndicator = document.getElementById("copyIndicator");
+        const excludeChatCheckbox = document.getElementById("excludeChatCheckbox");
 
         function logMessage(message, type = "incoming") {
             const div = document.createElement("div");
@@ -211,6 +221,8 @@
 
             try {
                 const json = JSON.parse(message);
+
+                if (excludeChatCheckbox.checked && json.event?.type === "ChatMessage") return;
 
                 if (json.request === "Hello") {
                     headerText = `Hello - ${json.info.name} - ${json.info.version}`;
@@ -325,4 +337,5 @@
         };
     </script>
 </body>
+
 </html>

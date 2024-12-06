@@ -75,9 +75,11 @@ https://tawmae.github.io/overlays/Ads.html?sound=true&color=violet&font=lato
 
 ### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Color
 
-Changes the color of the title and progress bar.
+Changes the color of the title and progress bar. Supports hex codes too.
 
 `color=blue`
+
+`color=B81A56`
 
 ---
 
@@ -110,4 +112,5 @@ You can simulate events by creating a trigger (`Twitch -> Ads`), then rightclick
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
+| December 06, 2024           | Added color and font URL parameters | 1.0.1 |
 | December 03, 2024           | Release | 1.0.0 |

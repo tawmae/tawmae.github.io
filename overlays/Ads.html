@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tawmae Ad Notification</title>
+    <title>tawmae Adge</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body {
@@ -141,11 +141,18 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
-        const color = urlParams.get("color") || "#ffd700";
+        const rawColor = urlParams.get("color") || "ffd700";
         const font = urlParams.get("font") || "Inter";
         const audioCache = new Map();
         const notificationQueue = [];
         let isNotificationActive = false;
+
+        function normalizeColor(color) {
+            const hexPattern = /^[0-9a-f]{6}$/i;
+            return hexPattern.test(color) ? `#${color}` : color;
+        }
+
+        const color = normalizeColor(rawColor);
 
         document.documentElement.style.setProperty("--title-color", color);
         document.documentElement.style.setProperty("--loading-bar-color", color);

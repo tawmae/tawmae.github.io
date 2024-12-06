@@ -1,8 +1,4 @@
----
-title: Basic Twitch Alerts
-layout: default
-nav_order: 6
----
+
 
 ![Picture](assets/general/title_basictwitchalerts.png)
 

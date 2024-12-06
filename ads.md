@@ -62,7 +62,44 @@ To have the events in multiple scenes, don't create an individual browser source
 
 ## <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 
 
-You can add `?sound=true` at the end of the URL to get a "plop" sound whenever the overlay pops up.
+To customize the ad overlay, you can add URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
+
+Example:  
+```
+https://tawmae.github.io/overlays/Ads.html?sound=true&color=violet&font=lato
+```
+
+![Picture](assets/media/ads_custom.png)
+
+---
+
+### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Color
+
+Changes the color of the title and progress bar.
+
+`color=blue`
+
+---
+
+### <span class="iconify" data-icon="mdi:format-font" data-inline="false"></span> Font Family
+
+Changes the font used for the text. Supports standard fonts. Use `%20` to replace spaces.
+
+`font=Arial`
+
+`font=Poppins`
+
+`font=Comic%20Sans%20MS`
+
+---
+
+### <span class="iconify" data-icon="material-symbols:volume-up-rounded" data-inline="false"></span> Sound
+
+Toggles whether a sound is played when the overlay displays.
+
+`sound=true`
+
+---
 
 {: .new }
 You can simulate events by creating a trigger (`Twitch -> Ads`), then rightclick it and hit `Simulate Event`. 

@@ -149,7 +149,7 @@ Replaces the username and avatar with placeholders for follow events.
 
 ---
 
-🇩🇪 German version: `https://tawmae.github.io/overlays/BasicTwitchAlerts_GER.html`
+<span class="iconify" data-icon="twemoji:flag-germany" data-inline="false"></span> German version: `https://tawmae.github.io/overlays/BasicTwitchAlerts_GER.html`
 
 ---
 

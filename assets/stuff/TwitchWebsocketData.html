@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch WebSocket Event Grabber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -75,7 +77,8 @@
             font-size: 14px;
         }
 
-        #addressInput, #portInput {
+        #addressInput,
+        #portInput {
             padding: 8px;
             font-size: 14px;
             border-radius: 5px;
@@ -122,17 +125,10 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: flex-start; 
         }
 
         .arrow {
             font-size: 18px;
-            margin-right: 10px;
-        }
-
-        .timestamp {
-            font-size: 12px;
-            color: #bbb;
             margin-right: 10px;
         }
 
@@ -146,6 +142,10 @@
 
         .expanded .message-body {
             display: block;
+        }
+
+        .expanded .arrow {
+            transform: rotate(90deg);
         }
 
         .copy-button {
@@ -182,6 +182,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="title-container">
         <h1>Streamer.bot WS Event Grabber for Twitch</h1>
@@ -194,6 +195,10 @@
         <input id="addressInput" type="text" value="localhost" placeholder="Address">
         <label for="portInput">Port:</label>
         <input id="portInput" type="number" value="8080" placeholder="Port">
+        <label>
+            <input type="checkbox" id="excludeChatCheckbox" checked>
+            Exclude Chat Message Events
+        </label>
     </div>
     <div id="output"></div>
     <div id="copyIndicator">Copied to clipboard</div>
@@ -206,14 +211,7 @@
         const addressInput = document.getElementById("addressInput");
         const portInput = document.getElementById("portInput");
         const copyIndicator = document.getElementById("copyIndicator");
-
-        function formatTimestamp() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            return `${hours}:${minutes}:${seconds}`;
-        }
+        const excludeChatCheckbox = document.getElementById("excludeChatCheckbox");
 
         function logMessage(message, type = "incoming") {
             const div = document.createElement("div");
@@ -223,6 +221,8 @@
 
             try {
                 const json = JSON.parse(message);
+
+                if (excludeChatCheckbox.checked && json.event?.type === "ChatMessage") return;
 
                 if (json.request === "Hello") {
                     headerText = `Hello - ${json.info.name} - ${json.info.version}`;
@@ -244,27 +244,17 @@
             }
 
             const arrow = document.createElement("span");
-            arrow.className = "arrow iconify";
-            arrow.setAttribute("data-icon", "ic:baseline-keyboard-arrow-right");
-
-            const timestamp = document.createElement("span");
-            timestamp.className = "timestamp";
-            timestamp.textContent = `(${formatTimestamp()})`;
+            arrow.className = "arrow";
+            arrow.textContent = "▶";
 
             const header = document.createElement("div");
             header.className = "message-header";
             header.appendChild(arrow);
-            header.appendChild(timestamp);
             header.appendChild(document.createTextNode(headerText));
 
             header.addEventListener("click", () => {
                 div.classList.toggle("expanded");
-                arrow.setAttribute(
-                    "data-icon",
-                    div.classList.contains("expanded")
-                        ? "ic:baseline-keyboard-arrow-down"
-                        : "ic:baseline-keyboard-arrow-right"
-                );
+                arrow.textContent = div.classList.contains("expanded") ? "▼" : "▶";
             });
 
             div.appendChild(header);
@@ -275,7 +265,7 @@
             div.appendChild(body);
 
             const copyButton = document.createElement("span");
-            copyButton.className = "material-icons-outlined copy-button";
+            copyButton.className = "material-symbols-outlined copy-button";
             copyButton.textContent = "content_copy";
             copyButton.title = "Copy to clipboard";
             copyButton.addEventListener("click", () => {
@@ -347,4 +337,5 @@
         };
     </script>
 </body>
+
 </html>

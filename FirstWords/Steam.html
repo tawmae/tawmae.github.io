@@ -107,106 +107,119 @@
     </div>
 
     <script>
-        const avatars = new Map();
-        const notificationQueue = [];
-        let isProcessing = false;
-        const audioCache = new Map();
-
-        function connectws() {
-            if ("WebSocket" in window) {
-                const ws = new WebSocket("ws://localhost:8080/");
-                bindEvents(ws);
-            }
-        }
-
-        function bindEvents(ws) {
-            ws.onopen = function () {
-                ws.send(JSON.stringify({
-                    request: "Subscribe",
-                    events: { Twitch: ["FirstWord"] },
-                    id: "firstWordSubscription"
-                }));
-            };
-
-            ws.onmessage = function (event) {
-                try {
-                    const data = JSON.parse(event.data);
-                    if (data.data && data.data.message && data.data.message.displayName) {
-                        enqueueNotification(data.data.message.displayName);
-                    }
-                } catch { }
-            };
-
-            ws.onclose = function () {
-                setTimeout(connectws, 10000);
-            };
-
-            ws.onerror = function () { };
-        }
-
-        function enqueueNotification(username) {
-            notificationQueue.push(username);
-            if (!isProcessing) {
-                processQueue();
-            }
-        }
-
-        async function processQueue() {
-            isProcessing = true;
-            while (notificationQueue.length > 0) {
-                const username = notificationQueue.shift();
-                const avatarUrl = await fetchAvatar(username);
-                await showNotification(username, avatarUrl);
-            }
-            isProcessing = false;
-        }
-
-        async function fetchAvatar(username) {
-            if (avatars.has(username)) {
-                return avatars.get(username);
-            }
-            const response = await fetch(`https://decapi.me/twitch/avatar/${username}`);
-            const avatarUrl = await response.text();
-            avatars.set(username, avatarUrl);
-            return avatarUrl;
-        }
-
-        function getAudio() {
-            if (!audioCache.has('achievement-sound')) { 
-                const audio = new Audio('https://tawmae.github.io/FirstWords/Steam_Achievement_Sound.mp3');
-                audioCache.set('achievement-sound', audio);
-            }
-            return audioCache.get('achievement-sound');
-        }
-
-        function showNotification(username, avatarUrl) {
-            return new Promise((resolve) => {
-                const notification = document.getElementById('notification');
-                const icon = document.getElementById('notification-icon');
-                const title = document.getElementById('notification-title');
-                const text = document.getElementById('notification-text');
-
-                title.innerText = username;
-                text.innerText = `is now online`;
-                icon.style.backgroundImage = `url(${avatarUrl})`;
-
-                const audio = getAudio(); 
-                audio.play();
-
-                notification.style.display = 'flex';
-                notification.style.animation = 'slideIn 0.8s ease-out forwards, slideOut 0.8s ease-in 5.8s forwards';
-
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                    resolve();
-                }, 7000);
-            });
-        }
-
-        window.addEventListener("load", () => {
-            connectws();
-        });
-    </script>
+      const avatars = new Map();
+      const notificationQueue = [];
+      let isProcessing = false;
+      const audioCache = new Map();
+  
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const excludeAccountsParam = urlParams.get("excludeaccounts") || "";
+      const excludeAccounts = new Set(
+          excludeAccountsParam.split("+").map(account => account.toLowerCase().trim())
+      );
+  
+      function connectws() {
+          if ("WebSocket" in window) {
+              const ws = new WebSocket("ws://localhost:8080/");
+              bindEvents(ws);
+          }
+      }
+  
+      function bindEvents(ws) {
+          ws.onopen = function () {
+              ws.send(JSON.stringify({
+                  request: "Subscribe",
+                  events: { Twitch: ["FirstWord"] },
+                  id: "firstWordSubscription"
+              }));
+          };
+  
+          ws.onmessage = function (event) {
+              try {
+                  const data = JSON.parse(event.data);
+                  if (data.data && data.data.message && data.data.message.username) {
+                      const username = data.data.message.username.toLowerCase();
+                      if (!excludeAccounts.has(username)) { 
+                          enqueueNotification(data.data.message.displayName);
+                      }
+                  }
+              } catch (e) {
+                  console.error("Error parsing message:", e);
+              }
+          };
+  
+          ws.onclose = function () {
+              setTimeout(connectws, 10000);
+          };
+  
+          ws.onerror = function () { };
+      }
+  
+      function enqueueNotification(username) {
+          notificationQueue.push(username);
+          if (!isProcessing) {
+              processQueue();
+          }
+      }
+  
+      async function processQueue() {
+          isProcessing = true;
+          while (notificationQueue.length > 0) {
+              const username = notificationQueue.shift();
+              const avatarUrl = await fetchAvatar(username);
+              await showNotification(username, avatarUrl);
+          }
+          isProcessing = false;
+      }
+  
+      async function fetchAvatar(username) {
+          if (avatars.has(username)) {
+              return avatars.get(username);
+          }
+          const response = await fetch(`https://decapi.me/twitch/avatar/${username}`);
+          const avatarUrl = await response.text();
+          avatars.set(username, avatarUrl);
+          return avatarUrl;
+      }
+  
+      function getAudio() {
+          if (!audioCache.has('achievement-sound')) { 
+              const audio = new Audio('https://tawmae.github.io/FirstWords/Steam_Achievement_Sound.mp3');
+              audioCache.set('achievement-sound', audio);
+          }
+          return audioCache.get('achievement-sound');
+      }
+  
+      function showNotification(username, avatarUrl) {
+          return new Promise((resolve) => {
+              const notification = document.getElementById('notification');
+              const icon = document.getElementById('notification-icon');
+              const title = document.getElementById('notification-title');
+              const text = document.getElementById('notification-text');
+  
+              title.innerText = username;
+              text.innerText = `is now online`;
+              icon.style.backgroundImage = `url(${avatarUrl})`;
+  
+              const audio = getAudio(); 
+              audio.play();
+  
+              notification.style.display = 'flex';
+              notification.style.animation = 'slideIn 0.8s ease-out forwards, slideOut 0.8s ease-in 5.8s forwards';
+  
+              setTimeout(() => {
+                  notification.style.display = 'none';
+                  resolve();
+              }, 7000);
+          });
+      }
+  
+      window.addEventListener("load", () => {
+          connectws();
+      });
+  </script>
+  
 </body>
 
 </html>

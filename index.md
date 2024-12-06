@@ -49,7 +49,11 @@ Explore what other wonderful peeps are creating for Streamer.bot!
 
 - <span class="iconify" data-icon="game-icons:acorn" data-inline="false"></span> [nutty](https://malachite-arithmetic-3b1.notion.site/nutty-gg-79908eff88964dee9abea187392e597d)
 
-- <span class="iconify" data-icon="game-icons:acorn" data-inline="false"></span> [nutty](https://malachite-arithmetic-3b1.notion.site/nutty-gg-79908eff88964dee9abea187392e597d)
+- <span class="iconify" data-icon="material-symbols:brush" data-inline="false"></span> [mikoroonii](https://mikoroonii.com/)
+
+- <span class="iconify" data-icon="hugeicons:virtual-reality-vr-01" data-inline="false"></span> [VRFlad](https://vrflad.com/)
+
+- <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> [streamUP](https://streamup.tips/)
 
 ---
 

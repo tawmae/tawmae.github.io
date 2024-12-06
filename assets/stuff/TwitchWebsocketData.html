@@ -180,6 +180,16 @@
             display: block;
             opacity: 1;
         }
+
+        #downloadLogBtn {
+            margin-left: 20px;
+            background-color: #3f51b5;
+            color: #ffffff;
+        }
+
+        #downloadLogBtn:hover {
+            background-color: #303f9f;
+        }
     </style>
 </head>
 
@@ -199,6 +209,7 @@
             <input type="checkbox" id="excludeChatCheckbox" checked>
             Exclude Chat Message Events
         </label>
+        <button id="downloadLogBtn">Download Log</button>
     </div>
     <div id="output"></div>
     <div id="copyIndicator">Copied to clipboard</div>
@@ -212,10 +223,11 @@
         const portInput = document.getElementById("portInput");
         const copyIndicator = document.getElementById("copyIndicator");
         const excludeChatCheckbox = document.getElementById("excludeChatCheckbox");
+        const downloadLogBtn = document.getElementById("downloadLogBtn");
+
+        let eventLog = [];
 
         function logMessage(message, type = "incoming") {
-            const div = document.createElement("div");
-            div.className = `message ${type}`;
             let headerText = "Unknown";
             let bodyText = JSON.stringify(message, null, 2);
 
@@ -235,6 +247,8 @@
                 }
 
                 bodyText = JSON.stringify(json, null, 2);
+
+                eventLog.push(`[${new Date().toISOString()}] ${headerText}\n${bodyText}\n`);
             } catch {
                 if (type === "error") {
                     headerText = "Error";
@@ -242,6 +256,9 @@
                     headerText = message;
                 }
             }
+
+            const div = document.createElement("div");
+            div.className = `message ${type}`;
 
             const arrow = document.createElement("span");
             arrow.className = "arrow";
@@ -324,6 +341,14 @@
             }
         }
 
+        function downloadLog() {
+            const blob = new Blob(eventLog, { type: "text/plain" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "events_log.txt";
+            a.click();
+        }
+
         connectBtn.addEventListener("click", () => {
             if (!ws || ws.readyState === WebSocket.CLOSED) {
                 connectWebSocket();
@@ -331,6 +356,7 @@
         });
 
         disconnectBtn.addEventListener("click", disconnectWebSocket);
+        downloadLogBtn.addEventListener("click", downloadLog);
 
         window.onload = () => {
             connectWebSocket();

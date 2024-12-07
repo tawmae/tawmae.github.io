@@ -51,7 +51,7 @@ Duplicates within a single message count as a single word.
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    
-   [![Picture](assets/media/hot_words_obs_2.png)](https://tawmae.github.io/assets/media/hot_words_obs_2.png)
+   [![Picture](assets/media/hot_words_obs.png)](https://tawmae.github.io/assets/media/hot_words_obs.png)
    
 4. Done 🥳 Once you make the source visible (and it loads), it will start tracking chat. Refreshing the source (i.e. hiding it) resets it.
 

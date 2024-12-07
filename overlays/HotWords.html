@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tawmae Hot Words</title>
     <script>
-        const urlParams = new URLSearchParams(window.location.search)
-        const chosenFont = urlParams.get('font') || 'Poppins'
-        const chosenFontSize = parseInt(urlParams.get('fontsize')) || 24
-        const topCount = parseInt(urlParams.get('top')) || 5
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(chosenFont)}:wght@300;400;600&display=swap`
-        document.head.appendChild(link)
-        document.documentElement.style.setProperty('--fontSize', chosenFontSize + 'px')
-        document.documentElement.style.setProperty('--fontFamily', chosenFont)
+        const urlParams = new URLSearchParams(window.location.search);
+        const chosenFont = urlParams.get('font') || 'Poppins';
+        const chosenFontSize = parseInt(urlParams.get('fontsize')) || 24;
+        const topCount = parseInt(urlParams.get('top')) || 5;
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(chosenFont)}:wght@300;400;600&display=swap`;
+        document.head.appendChild(link);
+
+        document.documentElement.style.setProperty('--fontSize', chosenFontSize + 'px');
+        document.documentElement.style.setProperty('--fontFamily', chosenFont);
     </script>
     <style>
         :root {
@@ -48,6 +50,7 @@
         }
 
         .leaderboard {
+            position: relative;
             width: 900px;
             border-radius: 8px;
             background: #1f1f1f;
@@ -57,6 +60,65 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+        }
+
+        .connection-status {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.5em;
+            z-index: 100;
+        }
+
+
+        .disconnected {
+            color: #ff4d4d;
+        }
+
+        .disconnected .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+
+        .connected {
+            color: #00ff00;
+            display: none;
+        }
+
+
+        .connected .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0.5;
+            }
         }
 
         .word-entry {
@@ -131,131 +193,173 @@
 
 <body>
     <h1>HOT WORDS</h1>
-    <div class="leaderboard" id="leaderboard"></div>
+    <div class="leaderboard" id="leaderboard">
+
+        <div class="connection-status disconnected" id="connectionStatus">
+            <span class="dot"></span>
+            Disconnected
+        </div>
+
+        <div class="connection-status connected" id="connectedStatus">
+            <span class="dot"></span>
+            Connected
+        </div>
+    </div>
     <script>
-        const excludeAccountsParam = urlParams.get("excludeaccounts") || ""
-        const excludeAccounts = new Set(excludeAccountsParam.split("+").map(a => a.toLowerCase().trim()).filter(a => a !== ""))
-        const wordCounts = new Map()
-        const leaderboardEl = document.getElementById('leaderboard')
+        const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
+        const excludedUsersParam = urlParams.get("excludedusers") || "";
+        const excludeAccounts = new Set([
+            ...excludeAccountsParam.split(","),
+            ...excludedUsersParam.split(",")
+        ].map(a => a.toLowerCase().trim()).filter(a => a !== ""));
+
+        const wordCounts = new Map();
+        const leaderboardEl = document.getElementById('leaderboard');
+        const connectionStatusEl = document.getElementById('connectionStatus');
+        const connectedStatusEl = document.getElementById('connectedStatus');
 
         for (let i = 1; i <= topCount; i++) {
-            const entryEl = document.createElement('div')
-            entryEl.className = 'word-entry'
-            entryEl.dataset.rank = i.toString()
+            const entryEl = document.createElement('div');
+            entryEl.className = 'word-entry';
+            entryEl.dataset.rank = i.toString();
 
-            const labelEl = document.createElement('div')
-            labelEl.className = 'word-label'
-            labelEl.textContent = '-'
+            const labelEl = document.createElement('div');
+            labelEl.className = 'word-label';
+            labelEl.textContent = '-';
 
-            const imgEl = document.createElement('img')
-            imgEl.className = 'image-icon'
-            imgEl.src = 'https://github.com/tawmae/tawmae.github.io/blob/main/overlays/LogosFirebase.png?raw=true'
-            imgEl.decoding = 'async'
-            imgEl.loading = 'lazy'
-            labelEl.appendChild(imgEl)
-            entryEl.appendChild(labelEl)
+            const imgEl = document.createElement('img');
+            imgEl.className = 'image-icon';
+            imgEl.src = 'https://github.com/tawmae/tawmae.github.io/blob/main/overlays/LogosFirebase.png?raw=true';
+            imgEl.decoding = 'async';
+            imgEl.loading = 'lazy';
+            labelEl.appendChild(imgEl);
+            entryEl.appendChild(labelEl);
 
-            const barContainer = document.createElement('div')
-            barContainer.className = 'progress-bar-container'
-            const barEl = document.createElement('div')
-            barEl.className = 'progress-bar'
-            barContainer.appendChild(barEl)
-            entryEl.appendChild(barContainer)
+            const barContainer = document.createElement('div');
+            barContainer.className = 'progress-bar-container';
+            const barEl = document.createElement('div');
+            barEl.className = 'progress-bar';
+            barContainer.appendChild(barEl);
+            entryEl.appendChild(barContainer);
 
-            const countEl = document.createElement('div')
-            countEl.className = 'count-percentage'
-            countEl.textContent = '0x'
-            entryEl.appendChild(countEl)
+            const countEl = document.createElement('div');
+            countEl.className = 'count-percentage';
+            countEl.textContent = '0x';
+            entryEl.appendChild(countEl);
 
-            leaderboardEl.appendChild(entryEl)
+            leaderboardEl.appendChild(entryEl);
         }
 
         function connectws() {
             if ("WebSocket" in window) {
-                const ws = new WebSocket("ws://localhost:8080/")
-                bindEvents(ws)
+                const ws = new WebSocket("ws://localhost:8080/");
+                bindEvents(ws);
             }
         }
+
         function bindEvents(ws) {
             ws.onopen = function () {
                 ws.send(JSON.stringify({
                     request: "Subscribe",
                     events: { Twitch: ["ChatMessage"] },
                     id: "TwitchHotWords"
-                }))
-            }
-            ws.onmessage = function (evt) {
-                const data = JSON.parse(evt.data)
-                if (data.event && data.event.type === "ChatMessage") {
-                    handleChatMessage(data.data)
+                }));
+                if (connectionStatusEl) {
+                    connectionStatusEl.style.display = 'none';
                 }
-            }
+                if (connectedStatusEl) {
+                    connectedStatusEl.style.display = 'flex';
+                    setTimeout(() => {
+                        connectedStatusEl.style.display = 'none';
+                    }, 500);
+                }
+            };
+            ws.onmessage = function (evt) {
+                const data = JSON.parse(evt.data);
+                if (data.event && data.event.type === "ChatMessage") {
+                    handleChatMessage(data.data);
+                }
+            };
+            ws.onclose = function () {
+                if (connectionStatusEl) {
+                    connectionStatusEl.style.display = 'flex';
+                }
+                setTimeout(connectws, 1000);
+            };
+            ws.onerror = function () {
+                if (connectionStatusEl) {
+                    connectionStatusEl.style.display = 'flex';
+                }
+                ws.close();
+            };
         }
+
         function handleChatMessage(messageData) {
-            const userName = messageData.message.username.toLowerCase()
-            if (excludeAccounts.has(userName)) return
-            const text = messageData.message.message || ""
+            const userName = messageData.message.username.toLowerCase();
+            if (excludeAccounts.has(userName)) return;
+            const text = messageData.message.message || "";
             const words = text
                 .toLowerCase()
                 .replace(/[^a-z0-9äöüß]/g, ' ')
                 .split(/\s+/)
-                .filter(w => w.length > 0)
-            const uniqueWords = new Set(words)
+                .filter(w => w.length > 0);
+            const uniqueWords = new Set(words);
             for (const w of uniqueWords) {
-                wordCounts.set(w, (wordCounts.get(w) || 0) + 1)
+                wordCounts.set(w, (wordCounts.get(w) || 0) + 1);
             }
-            updateLeaderboard()
+            updateLeaderboard();
         }
+
         function updateLeaderboard() {
-            const sorted = Array.from(wordCounts.entries()).sort((a, b) => b[1] - a[1])
-            const topWords = sorted.slice(0, topCount)
-            renderLeaderboard(topWords)
+            const sorted = Array.from(wordCounts.entries()).sort((a, b) => b[1] - a[1]);
+            const topWords = sorted.slice(0, topCount);
+            renderLeaderboard(topWords);
         }
-        function renderLeaderboard(topWords) {
-            const total = topWords.reduce((sum, [_, count]) => sum + count, 0)
-            const entries = Array.from(leaderboardEl.querySelectorAll('.word-entry'))
 
-            let allEqual = false
+        function renderLeaderboard(topWords) {
+            const total = topWords.reduce((sum, [_, count]) => sum + count, 0);
+            const entries = Array.from(leaderboardEl.querySelectorAll('.word-entry')).slice(0, topCount);
+
+            let allEqual = false;
             if (topWords.length > 1 && topWords[0]) {
-                const firstCount = topWords[0][1]
-                allEqual = topWords.every(([_, c]) => c === firstCount)
+                const firstCount = topWords[0][1];
+                allEqual = topWords.every(([_, c]) => c === firstCount);
             }
 
-
-            let tieForFirst = false
+            let tieForFirst = false;
             if (topWords.length > 1 && topWords[0] && topWords[1] && topWords[0][1] === topWords[1][1]) {
-                tieForFirst = true
+                tieForFirst = true;
             }
 
             for (let i = 0; i < topCount; i++) {
-                const entryEl = entries[i]
-                const wordData = topWords[i]
-                const labelEl = entryEl.querySelector('.word-label')
-                const barEl = entryEl.querySelector('.progress-bar')
-                const countEl = entryEl.querySelector('.count-percentage')
-                let word = '-'
-                let count = 0
-                let percentage = 0
+                const entryEl = entries[i];
+                const wordData = topWords[i];
+                const labelEl = entryEl.querySelector('.word-label');
+                const barEl = entryEl.querySelector('.progress-bar');
+                const countEl = entryEl.querySelector('.count-percentage');
+                let word = '-';
+                let count = 0;
+                let percentage = 0;
                 if (wordData) {
-                    word = wordData[0].toUpperCase()
-                    count = wordData[1]
-                    percentage = total > 0 ? Math.round((count / total) * 100) : 0
+                    word = wordData[0].toUpperCase();
+                    count = wordData[1];
+                    percentage = total > 0 ? Math.round((count / total) * 100) : 0;
                 }
-                labelEl.firstChild.nodeValue = word
-                countEl.textContent = `${count}x`
-                barEl.style.width = percentage + '%'
-                entryEl.classList.remove('top1')
-
+                labelEl.childNodes[0].nodeValue = word;
+                countEl.textContent = `${count}x`;
+                barEl.style.width = percentage + '%';
+                entryEl.classList.remove('top1');
 
                 if (i === 0 && wordData && !allEqual && !tieForFirst) {
-                    entryEl.classList.add('top1')
+                    entryEl.classList.add('top1');
                 }
             }
 
-            const totalHeight = 80 + (topCount * 50) + ((topCount - 1) * 10)
-            leaderboardEl.style.height = totalHeight + 'px'
+            const totalHeight = 80 + (topCount * 50) + ((topCount - 1) * 10);
+            leaderboardEl.style.height = totalHeight + 'px';
         }
-        connectws()
+
+        connectws();
     </script>
 </body>
 

@@ -66,7 +66,7 @@ To customize the overlay, you can add URL parameters. The first parameter gets a
 
 Example:  
 ```
-https://tawmae.github.io/overlays/HotWords.html?top=8&font=Outfit
+https://tawmae.github.io/overlays/HotWords.html?top=8&font=Outfit&excludedusers=streamelements+tawmaebot
 ```
 
 ---
@@ -76,6 +76,16 @@ https://tawmae.github.io/overlays/HotWords.html?top=8&font=Outfit
 Changes the count of the displayed leaderboard. Leaving it empty defauls to 5.
 
 `top=10`
+
+---
+
+### <span class="iconify" data-icon="material-symbols:person-off-rounded" data-inline="false"></span> Excluded Accounts
+
+Exclude accounts from having their messages count, like bot accounts. Multiple accounts are seperated by a `+`
+
+`excludedaccounts=streamelements`
+
+`excludedaccounts=streamelements+nightbot`
 
 ---
 

@@ -71,7 +71,7 @@ https://tawmae.github.io/overlays/HotWords.html?top=8&font=Outfit
 
 ---
 
-### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Leaderboard Count
+### <span class="iconify" data-icon="material-symbols:leaderboard" data-inline="false"></span> Leaderboard Count
 
 Changes the count of the displayed leaderboard. Leaving it empty defauls to 5.
 

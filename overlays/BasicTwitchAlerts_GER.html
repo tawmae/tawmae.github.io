@@ -61,16 +61,12 @@
     }
 
     @keyframes wiggle {
-
-      0%,
-      100% {
+      0%,100% {
         transform: rotate(0deg);
       }
-
       25% {
         transform: rotate(-5deg);
       }
-
       50% {
         transform: rotate(5deg);
       }
@@ -95,16 +91,12 @@
     }
 
     @keyframes linger-wiggle {
-
-      0%,
-      100% {
+      0%,100% {
         transform: rotate(0deg);
       }
-
       25% {
         transform: rotate(-10deg);
       }
-
       50% {
         transform: rotate(10deg);
       }
@@ -144,9 +136,12 @@
     if (usernameColor) document.documentElement.style.setProperty('--username-color', usernameColor);
     if (eventTextColor) document.documentElement.style.setProperty('--event-text-color', eventTextColor);
 
-
     const duration = parseInt(params.get('duration')) || 7000;
     const anonymousFollows = params.get('anonymousfollows') === 'true';
+    
+    
+    let watchStreaksParam = params.get('watchstreaks');
+    const watchStreaksEnabled = (watchStreaksParam === null || watchStreaksParam === '') ? true : (watchStreaksParam.toLowerCase() !== 'false');
 
     document.body.style.fontFamily = font;
     if (boxColor) document.documentElement.style.setProperty('--box-color', boxColor);
@@ -165,8 +160,8 @@
       ws.send(JSON.stringify({
         request: 'Subscribe',
         events: {
-          Twitch: ['Follow', 'Cheer', 'Sub', 'ReSub', 'GiftSub', 'GiftBomb', 'Raid'],
-          Kofi: ['Donation'],
+          Twitch: ['Follow', 'Cheer', 'Sub', 'ReSub', 'GiftSub', 'GiftBomb', 'Raid', 'WatchStreak'],
+          Kofi: ['Donation']
         },
         id: 'BasicTwitchAlerts',
       }));
@@ -189,13 +184,22 @@
       isAnimating = true;
       const event = queue.shift();
       const { type } = event.event;
-      const username = extractUsername(event, type);
+
+      
+      if (type === 'WatchStreak' && !watchStreaksEnabled) {
+        
+        isAnimating = false;
+        processQueue();
+        return;
+      }
+
+      const usernameVal = extractUsername(event, type);
       const eventText = formatEventText(event);
-      const profilePicUrl = await fetchAvatarOrPlaceholder(username || 'default', type);
+      const profilePicUrl = await fetchAvatarOrPlaceholder(usernameVal || 'default', type);
       const eventIcon = determineIcon(type);
 
       const usernameElement = document.getElementById('username');
-      usernameElement.innerHTML = Array.from(username || 'Unknown User')
+      usernameElement.innerHTML = Array.from(usernameVal || 'Unknown User')
         .map(char => `<span>${char}</span>`).join('');
       document.getElementById('event-text').textContent = eventText;
       document.getElementById('profile-pic').style.backgroundImage = `url(${profilePicUrl})`;
@@ -226,6 +230,7 @@
       if (eventType.includes('GiftBomb')) return 'material-symbols:star';
       if (eventType.includes('Raid')) return 'ion:people-sharp';
       if (eventType.includes('Donation')) return 'material-symbols-light:money-bag-rounded';
+      if (eventType.includes('WatchStreak')) return 'material-symbols:visibility';
       return '';
     }
 
@@ -245,6 +250,7 @@
         case 'GiftBomb': return data.user?.name;
         case 'Raid': return data.from_broadcaster_user_name;
         case 'Donation': return data.from;
+        case 'WatchStreak': return data.displayName;
         default: return 'SOMEONE';
       }
     }
@@ -278,7 +284,8 @@
         currency,
         viewers,
         gifts,
-        bits
+        bits,
+        watchStreak
       } = event.data;
 
       let tier;
@@ -289,15 +296,16 @@
       }
 
       switch (type) {
-        case 'Follow': return 'folgt dem Channel jetzt!';
-        case 'Cheer': return `hat mit ${bits} Bits gecheert!`;
+        case 'Follow': return 'folgt dem Kanal jetzt!';
+        case 'Cheer': return `cheert mit ${bits} Bits!`;
         case 'Sub': return `hat mit einem ${tier} Sub abonniert!`;
         case 'ReSub': return `hat mit einem ${tier} Sub im ${cumulativeMonths}. Monat abonniert!`;
-        case 'GiftSub': return `hat ${recipient.name} einen ${tier} Sub geschenkt!`;
-        case 'GiftBomb': return `verschenkt ${gifts} ${tier} Subs!`;
+        case 'GiftSub': return `hat ein ${tier} Sub an ${recipient.name} verschenkt!`;
+        case 'GiftBomb': return `hat ${gifts} ${tier} Subs verschenkt!`;
         case 'Raid': return `raidet mit ${viewers} Zuschauern!`;
         case 'Donation': return `hat ${amount} ${currency} gespendet!`;
-        default: return 'hat was ganz wundervolles gemacht...';
+        case 'WatchStreak': return `hat eine ${watchStreak}x Watchstreak!`;
+        default: return 'hat etwas wunderbares gemacht!';
       }
     }
   </script>

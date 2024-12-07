@@ -77,7 +77,6 @@
             z-index: 100;
         }
 
-
         .disconnected {
             color: #ff4d4d;
         }
@@ -91,12 +90,10 @@
             animation: blink 1s infinite;
         }
 
-
         .connected {
             color: #00ff00;
             display: none;
         }
-
 
         .connected .dot {
             width: 8px;
@@ -108,7 +105,6 @@
         }
 
         @keyframes blink {
-
             0%,
             50%,
             100% {
@@ -209,8 +205,8 @@
         const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
         const excludedUsersParam = urlParams.get("excludedusers") || "";
         const excludeAccounts = new Set([
-            ...excludeAccountsParam.split(","),
-            ...excludedUsersParam.split(",")
+            ...excludeAccountsParam.split(/[,+\s]+/),
+            ...excludedUsersParam.split(/[,+\s]+/)
         ].map(a => a.toLowerCase().trim()).filter(a => a !== ""));
 
         const wordCounts = new Map();
@@ -271,7 +267,7 @@
                     connectedStatusEl.style.display = 'flex';
                     setTimeout(() => {
                         connectedStatusEl.style.display = 'none';
-                    }, 500);
+                    }, 1000);
                 }
             };
             ws.onmessage = function (evt) {
@@ -284,7 +280,7 @@
                 if (connectionStatusEl) {
                     connectionStatusEl.style.display = 'flex';
                 }
-                setTimeout(connectws, 1000);
+                setTimeout(connectws, 5000);
             };
             ws.onerror = function () {
                 if (connectionStatusEl) {

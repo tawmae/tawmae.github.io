@@ -33,7 +33,7 @@ Display the four recent Twitch events in your OBS overlay. You can customize it 
 
 ![Picture](assets/media/recent_events_new_example.gif)
 
-Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers and kofi donations.
+Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers, watchstreaks and kofi donations.
 
 - - - -
 
@@ -156,6 +156,16 @@ Changes the width of the event container.
 Replaces the username and avatar with placeholders for follow events.
 
 `anonymousfollows=true`
+
+![Picture](assets/media/recent_events_new_anon_follow.png)
+
+---
+
+### <span class="iconify" data-icon="mdi:fire" data-inline="false"></span> Watchstreaks
+
+Disables watchstreaks from showing in the event list.
+
+`watchstreaks=false`
 
 ![Picture](assets/media/recent_events_new_anon_follow.png)
 

@@ -35,7 +35,7 @@ And it's customizable!
 
 ![Picture](assets/media/basic_alerts_title_3.gif)
 
-Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers and kofi donations.
+Supported events are follows, raids, subs, resubs, giftsubs, giftbombs, cheers, watchstreaks and kofi donations.
 
 - - - -
 
@@ -149,9 +149,20 @@ Replaces the username and avatar with placeholders for follow events.
 
 ---
 
+### <span class="iconify" data-icon="mdi:fire" data-inline="false"></span> Watchstreaks
+
+Disables watchstreaks from being displayed as an alert.
+
+`watchstreaks=false`
+
+
+---
+
 <span class="iconify" data-icon="twemoji:flag-germany" data-inline="false"></span> German version: `https://tawmae.github.io/overlays/BasicTwitchAlerts_GER.html`
 
 ---
+
+
 
 ## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
 

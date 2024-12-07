@@ -296,16 +296,16 @@
       }
 
       switch (type) {
-        case 'Follow': return 'acaba de seguir el canal!';
-        case 'Cheer': return `animó con ${bits} bits!`;
-        case 'Sub': return `se ha suscrito con un sub de ${tier}!`;
-        case 'ReSub': return `ha renovado su sub de ${tier} siendo este el  mes número ${cumulativeMonths}!`;
-        case 'GiftSub': return `regaló una sub de ${tier} a ${recipient.name}!`;
-        case 'GiftBomb': return `ha regalado ${gifts} subs de ${tier}!`;
-        case 'Raid': return `hizo una raid con ${viewers} espectadores!`;
-        case 'Donation': return `donó ${amount} ${currency}!`;
-        case 'WatchStreak': return `lleva una racha de ${watchStreak}x viendo el canal!`;
-        default: return 'hizo algo realmente increíble!';
+        case 'Follow': return 'acaba de seguir el canal';
+        case 'Cheer': return `animó con ${bits} bits`;
+        case 'Sub': return `se ha suscrito con un sub de ${tier}`;
+        case 'ReSub': return `ha renovado su sub de ${tier} siendo este el  mes número ${cumulativeMonths}`;
+        case 'GiftSub': return `regaló una sub de ${tier} a ${recipient.name}`;
+        case 'GiftBomb': return `ha regalado ${gifts} subs de ${tier}`;
+        case 'Raid': return `hizo una raid con ${viewers} espectadores`;
+        case 'Donation': return `donó ${amount} ${currency}`;
+        case 'WatchStreak': return `lleva una racha de ${watchStreak}x viendo el canal`;
+        default: return 'hizo algo realmente increíble';
       }
     }
   </script>

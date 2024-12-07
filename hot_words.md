@@ -4,7 +4,7 @@ layout: default
 nav_order: 8
 ---
 
-![Picture](assets/general/hot_words_title_1.png)
+![Picture](assets/media/hot_words_title_1.png)
 
 Twitch
 {: .label .label-purple }
@@ -30,6 +30,9 @@ StreamerBot
 An OBS overlay that displays the top words used in your chat in a dynamic leaderboard.
 
 ![Picture](assets/media/hot_words_title_2.gif)
+
+{: .note }
+Duplicates within a single message count as a single word.
 
 - - - -
 

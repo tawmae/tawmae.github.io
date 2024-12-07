@@ -1,0 +1,10 @@
+%userName% just followed the channel!
+%userName% cheered with %bits% bits!
+%userName% subscribed with a %tier% sub!
+%userName% resubbed with a %tier% sub for the %cumulativeMonths%. month!
+%userName% gifted a %tier% sub to %recipient.name%!
+%userName% gifted %gifts% %tier% subs!
+%userName% raided with %viewers% viewers!
+%userName% donated %amount% %currency%!
+%userName% is on a %watchStreak%x watchstreak!
+%userName% did something truly amazing!

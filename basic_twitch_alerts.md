@@ -160,6 +160,9 @@ Disables watchstreaks from being displayed as an alert.
 
 <span class="iconify" data-icon="twemoji:flag-germany" data-inline="false"></span> German version: `https://tawmae.github.io/overlays/BasicTwitchAlerts_GER.html`
 
+<span class="iconify" data-icon="twemoji:flag-spain" data-inline="false"></span> Spanish version: `https://tawmae.github.io/overlays/BasicTwitchAlerts_ES.html`
+*(Thanks to [Jkrilin](https://www.twitch.tv/jkrilin) for the translation)*
+
 ---
 
 

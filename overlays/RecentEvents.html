@@ -199,7 +199,7 @@
                 if (eventInfo.includes('GIFTBOMB')) iconName = 'material-symbols:star';
                 if (eventInfo.includes('RAID')) iconName = 'ion:people-sharp';
                 if (eventInfo.includes('KOFI')) iconName = 'material-symbols-light:money-bag-rounded';
-                if (eventInfo.includes('WATCHSTREAK')) iconName = 'material-symbols:visibility';
+                if (eventInfo.includes('WATCHSTREAK')) iconName = 'icon-park-outline:fire';
                 const iconSvg = await fetchIcon(iconName);
                 eventElement.innerHTML = `
                     <div class="avatar" style="background-image: url('${avatarUrl}');"></div>

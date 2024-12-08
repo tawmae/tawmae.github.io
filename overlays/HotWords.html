@@ -105,6 +105,7 @@
         }
 
         @keyframes blink {
+
             0%,
             50%,
             100% {
@@ -296,9 +297,10 @@
             const text = messageData.message.message || "";
             const words = text
                 .toLowerCase()
-                .replace(/[^a-z0-9äöüß]/g, ' ')
+                .replace(/[^\p{L}0-9]/gu, ' ')
                 .split(/\s+/)
                 .filter(w => w.length > 0);
+
             const uniqueWords = new Set(words);
             for (const w of uniqueWords) {
                 wordCounts.set(w, (wordCounts.get(w) || 0) + 1);

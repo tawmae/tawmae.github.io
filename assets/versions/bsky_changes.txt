@@ -1,2 +1,1 @@
-• Added video support
-• Added support to quote your previous post
+• Added handling for image aspect ratio on previews

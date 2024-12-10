@@ -1,1 +1,2 @@
 • Added cuter debugging
+• Added version check

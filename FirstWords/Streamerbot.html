@@ -132,7 +132,7 @@
     }
 
     const urlParams = new URLSearchParams(window.location.search);
-    const excludeAccountsParam = urlParams.get("excludeaccounts") || "";
+    const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
     const excludeAccounts = new Set(
       excludeAccountsParam.split("+").map(account => account.toLowerCase().trim())
     );

@@ -205,15 +205,16 @@
     <script>
         const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
         const excludedUsersParam = urlParams.get("excludedusers") || "";
-        const excludeAccounts = new Set([
+        const singleUserVote = urlParams.get("singleuservote") === "true";
+        const excludedUsersSet = new Set([
             ...excludeAccountsParam.split(/[,+\s]+/),
             ...excludedUsersParam.split(/[,+\s]+/)
         ].map(a => a.toLowerCase().trim()).filter(a => a !== ""));
-
         const wordCounts = new Map();
         const leaderboardEl = document.getElementById('leaderboard');
         const connectionStatusEl = document.getElementById('connectionStatus');
         const connectedStatusEl = document.getElementById('connectedStatus');
+        const usersVoted = singleUserVote ? new Set() : null;
 
         for (let i = 1; i <= topCount; i++) {
             const entryEl = document.createElement('div');
@@ -293,7 +294,9 @@
 
         function handleChatMessage(messageData) {
             const userName = messageData.message.username.toLowerCase();
-            if (excludeAccounts.has(userName)) return;
+            if (excludedUsersSet.has(userName)) return;
+            if (singleUserVote && usersVoted.has(userName)) return;
+            if (singleUserVote) usersVoted.add(userName);
             const text = messageData.message.message || "";
             const words = text
                 .toLowerCase()

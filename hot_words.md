@@ -89,6 +89,14 @@ Exclude accounts from having their messages count, like bot accounts. Multiple a
 
 ---
 
+### <span class="iconify" data-icon="pepicons-print:repeat-off" data-inline="false"></span> Single User Vote
+
+Only count the first message of each user.
+
+`singleuservote=true`
+
+---
+
 ### <span class="iconify" data-icon="mdi:format-font" data-inline="false"></span> Font Family
 
 Changes the font used for the overlay. Supports standard fonts.

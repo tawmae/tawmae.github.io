@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Twitch Chat Viewer</title>
+    <title>tawmae Twitch Chat Overlay</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
         rel="stylesheet">
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -587,6 +587,7 @@
                 const { text, messageId } = d;
                 const el = document.createElement('div');
                 el.classList.add('announcement');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const hd = document.createElement('div');
                 hd.classList.add('announcement-header');
                 const ic = document.createElement('div');
@@ -615,6 +616,7 @@
                     st = `Tier ${tn}`;
                 }
                 const el = createSubscriptionElement('SUBSCRIPTION', '#FFD700', 'material-symbols:kid-star-outline-sharp');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
                 const tN = document.createTextNode(`${dn} subscribed with a ${st} Sub!`);
@@ -632,6 +634,7 @@
                     st = `Tier ${tn}`;
                 }
                 const el = createSubscriptionElement('RESUBSCRIPTION', '#FFD700', 'material-symbols:kid-star-outline-sharp');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
                 const tN = document.createTextNode(`${dn} resubscribed with a ${st} sub for the ${cumulativeMonths}. month!`);
@@ -653,6 +656,7 @@
                 let tn = Math.floor(parseInt(subTier, 10) / 1000);
                 let tt = `Tier ${tn}`;
                 const el = createSubscriptionElement('GIFT SUBSCRIPTION', '#FFD700', 'iconamoon:gift-light');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
                 const tN = document.createTextNode(`${dn} gifted a ${tt} sub to ${rn}!`);
@@ -665,7 +669,8 @@
                 const { user, reward, user_input, messageId } = d;
                 const { name: dn } = user;
                 const { title, cost } = reward;
-                const el = createSubscriptionElement('REWARD REDEMPTION', '#F5AE03', 'mdi:star-four-points-circle-outline');
+                const el = createSubscriptionElement('REWARD REDEMPTION', '#64d419', 'mdi:star-four-points-circle-outline');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
                 const tN = document.createTextNode(`${dn} redeemed ${title} for ${cost} channel points!`);
@@ -682,7 +687,7 @@
             }
             function handleWatchStreak(d) {
                 const { displayName, watchStreak, message, msgId } = d;
-                const el = createSubscriptionElement('WATCH STREAK', '#FFD700', 'lucide:flame');
+                const el = createSubscriptionElement('WATCH STREAK', '#ff6b4a', 'lucide:flame');
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
@@ -721,7 +726,7 @@
             function handleRaid(d) {
                 const { from_broadcaster_user_name, viewers } = d;
                 const msgId = d.messageId ? d.messageId : Math.random().toString(36);
-                const el = createSubscriptionElement('RAID', '#FFD700', 'lsicon:user-crowd-outline');
+                const el = createSubscriptionElement('RAID', '#10e094', 'lsicon:user-crowd-outline');
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
@@ -734,7 +739,7 @@
             function handleDonation(d) {
                 const { from, isPublic, messageId, message, amount, currency } = d;
                 let df = isPublic ? from : 'Someone';
-                const el = createSubscriptionElement('DONATION', '#FFD700', 'hugeicons:money-03');
+                const el = createSubscriptionElement('DONATION', '#26acff', 'hugeicons:money-03');
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
@@ -764,7 +769,7 @@
                 }
                 if (replyPreviewsMap.has(msgId)) {
                     const p = replyPreviewsMap.get(msgId);
-                    p.forEach(v => { v.innerHTML = '<em>message deleted</em>'; });
+                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
                     replyPreviewsMap.delete(msgId);
                 }
             }
@@ -782,7 +787,7 @@
                 }
                 if (replyPreviewsMap.has(msgId)) {
                     const p = replyPreviewsMap.get(msgId);
-                    p.forEach(v => { v.innerHTML = '<em>message deleted</em>'; });
+                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
                     replyPreviewsMap.delete(msgId);
                 }
             }

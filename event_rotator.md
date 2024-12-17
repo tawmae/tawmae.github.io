@@ -79,7 +79,7 @@ To have the events in multiple scenes, don't create an individual browser source
 
 ## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> **Settings**
 
-The rotator comes with a fully customizable settings UI. You can customize its look, which events are supposed to show on there, what the duration for each rotation is and even define your own events. To initialize the rotator, you will need to run the settings UI at least once and save the settings.
+The rotator comes with a fully customizable settings UI. You can customize its looks, which events are supposed to show on there, what the duration for each rotation is and even define your own events. To initialize the rotator, you will need to run the settings UI at least once and save the settings.
 
 [![Picture](assets/media/event_rotator_settings_1.png)](https://tawmae.github.io/assets/media/event_rotator_settings_1.png)
 
@@ -95,6 +95,8 @@ You can add `?adress=` or  `?port` at the end of the URL in case you are using d
 
 ---
 
+{: .new }
+Data for followers, subs, cheers and donations persist across sessions. If you want to clear them, interact with the browser source and hit the ESC key.
 
 ## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
 

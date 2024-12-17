@@ -87,6 +87,10 @@ The rotator comes with a fully customizable settings UI. You can customize its l
 
 [![Picture](assets/media/event_rotator_settings_3.png)](https://tawmae.github.io/assets/media/event_rotator_settings_3.png)
 
+Here's how it can look with different colors:
+
+![Picture](assets/media/event_rotator_example.gif)
+
 ---
 
 ## <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 

@@ -1,0 +1,19 @@
+<!-- _includes/nav_icons.html -->
+{% assign icons = {
+  "Quick Maths" : "mdi:calculator"
+} %}
+
+<ul class="main-nav">
+  {% for page in site.pages %}
+    {% if page.title %}
+      <li>
+        <a href="{{ page.url }}">
+          {% if icons[page.title] %}
+            <span class="iconify" data-icon="{{ icons[page.title] }}" data-inline="false"></span>
+          {% endif %}
+          {{ page.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

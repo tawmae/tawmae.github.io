@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamer.bot Websocket Data Grabber</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@2.2.1/dist/iconify.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title-container img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #connectBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+
+        #connectBtn:hover {
+            background-color: #45a049;
+        }
+
+        #disconnectBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f44336;
+            color: #ffffff;
+        }
+
+        #disconnectBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        #addressInput,
+        #portInput {
+            font-family: 'Poppins', Arial, sans-serif;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            width: 100px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        #output {
+            border: 1px solid #333;
+            padding: 15px;
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .message {
+            font-family: 'Fira Code', monospace;
+            padding: 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .incoming {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+
+        .outgoing {
+            background-color: #1565c0;
+            color: #ffffff;
+        }
+
+        .error {
+            background-color: #b71c1c;
+            color: #ffffff;
+        }
+
+        .message-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 18px;
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: #aaa;
+            background-color: #333;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-family: 'Fira Code', monospace;
+            margin-right: 10px;
+        }
+
+        .message-body {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        .expanded .message-body {
+            display: block;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #bebcbc;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            color: #888787;
+        }
+
+        #copyIndicator,
+        #subscriptionsSavedIndicator,
+        #logsDownloadedIndicator,
+        #logsClearedIndicator {
+            font-family: 'Poppins', Arial, sans-serif;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #3dcf92;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 800;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #subscriptionsSavedIndicator {
+            bottom: 60px;
+        }
+
+        #logsDownloadedIndicator {
+            bottom: 100px;
+        }
+
+        #logsClearedIndicator {
+            bottom: 140px;
+        }
+
+        #copyIndicator.show,
+        #subscriptionsSavedIndicator.show,
+        #logsDownloadedIndicator.show,
+        #logsClearedIndicator.show {
+            display: block;
+            opacity: 1;
+        }
+
+        #downloadLogBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin-left: 10px;
+            background-color: #3f51b5;
+            color: #ffffff;
+        }
+
+        #downloadLogBtn:hover {
+            background-color: #303f9f;
+        }
+
+        #clearLogsBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #d47800;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        #clearLogsBtn:hover {
+            background-color: #c05804d7;
+        }
+
+        #subscriptionsBtn {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #6a1b9a;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        #subscriptionsBtn:hover {
+            background-color: #4a148c;
+        }
+
+        #connectionStatus {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: #b71c1c;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes statusPulse {
+            0% {
+                transform: scale(1);
+            }
+
+            20% {
+                transform: scale(1.2);
+            }
+
+            40% {
+                transform: scale(0.9);
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+
+            80% {
+                transform: scale(0.95);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .status-changed {
+            animation: statusPulse 0.5s ease;
+        }
+
+        #subscriptionsModal,
+        #clearLogsModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 9999;
+        }
+
+        #subscriptionsModal h2,
+        #clearLogsModal h2 {
+            margin-top: 0;
+        }
+
+        #subscriptionsOverlay,
+        #clearLogsOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 9998;
+        }
+
+        #closeSubscriptionsBtn,
+        #closeClearLogsBtn {
+            background-color: #f44336;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #closeSubscriptionsBtn:hover,
+        #closeClearLogsBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        #saveSubscriptionsBtn,
+        #confirmClearLogsBtn {
+            background-color: #4caf50;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #saveSubscriptionsBtn:hover,
+        #confirmClearLogsBtn:hover {
+            background-color: #388e3c;
+        }
+
+        .subscriptions-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .subscriptions-list label {
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .subscriptions-list input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-container">
+        <h1>Streamer.bot Websocket Data Grabber</h1>
+        <img src="https://cdn.7tv.app/emote/01F6FTE8B80008E39HFFQJ7MWS/4x.webp" alt="Animated Image">
+    </div>
+    <div class="button-container">
+        <button id="connectBtn">Connect</button>
+        <button id="disconnectBtn" disabled>Disconnect</button>
+        <label for="addressInput">Address:</label>
+        <input id="addressInput" type="text" value="localhost" placeholder="Address">
+        <label for="portInput">Port:</label>
+        <input id="portInput" type="number" value="8080" placeholder="Port">
+        <label>
+            <input type="checkbox" id="excludeChatCheckbox" checked>
+            Exclude Chat Message Events
+        </label>
+        <button id="downloadLogBtn">Download Log</button>
+        <button id="clearLogsBtn">Clear Logs</button>
+        <button id="subscriptionsBtn">Event Subscriptions</button>
+    </div>
+    <div id="output"></div>
+    <div id="copyIndicator">Copied to clipboard</div>
+    <div id="subscriptionsSavedIndicator">Event Subscriptions saved</div>
+    <div id="logsDownloadedIndicator">Logs downloaded</div>
+    <div id="logsClearedIndicator">Logs cleared</div>
+    <div id="connectionStatus">Disconnected</div>
+
+    <div id="subscriptionsOverlay"></div>
+    <div id="subscriptionsModal">
+        <h2>Event Subscriptions</h2>
+        <div class="subscriptions-list">
+            <label><input type="checkbox" class="subscription-checkbox" data-type="General">General</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Twitch">Twitch</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="YouTube">YouTube</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Command">Command</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Streamlabs">Streamlabs</label>
+            <label><input type="checkbox" class="subscription-checkbox"
+                    data-type="StreamElements">StreamElements</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Kofi">Kofi</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="DonorDrive">DonorDrive</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Pulsoid">Pulsoid</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Patreon">Patreon</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="TipeeeStream">TipeeeStream</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="TreatStream">TreatStream</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Shopify">Shopify</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Fourthwall">Fourthwall</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Trovo">Trovo</label>
+            <label><input type="checkbox" class="subscription-checkbox" data-type="Pallygg">Pallygg</label>
+        </div>
+        <button id="closeSubscriptionsBtn">Close</button>
+        <button id="saveSubscriptionsBtn">Save</button>
+    </div>
+
+    <div id="clearLogsOverlay"></div>
+    <div id="clearLogsModal">
+        <h2>Are you sure you want to clear the logs?</h2>
+        <button id="closeClearLogsBtn">Cancel</button>
+        <button id="confirmClearLogsBtn">Yes, Clear</button>
+    </div>
+
+    <script>
+        let ws;
+        const output = document.getElementById("output");
+        const connectBtn = document.getElementById("connectBtn");
+        const disconnectBtn = document.getElementById("disconnectBtn");
+        const addressInput = document.getElementById("addressInput");
+        const portInput = document.getElementById("portInput");
+        const copyIndicator = document.getElementById("copyIndicator");
+        const excludeChatCheckbox = document.getElementById("excludeChatCheckbox");
+        const downloadLogBtn = document.getElementById("downloadLogBtn");
+        const clearLogsBtn = document.getElementById("clearLogsBtn");
+        const connectionStatus = document.getElementById("connectionStatus");
+        const subscriptionsBtn = document.getElementById("subscriptionsBtn");
+        const subscriptionsModal = document.getElementById("subscriptionsModal");
+        const subscriptionsOverlay = document.getElementById("subscriptionsOverlay");
+        const closeSubscriptionsBtn = document.getElementById("closeSubscriptionsBtn");
+        const saveSubscriptionsBtn = document.getElementById("saveSubscriptionsBtn");
+        const subscriptionCheckboxes = document.querySelectorAll(".subscription-checkbox");
+        const subscriptionsSavedIndicator = document.getElementById("subscriptionsSavedIndicator");
+        const logsDownloadedIndicator = document.getElementById("logsDownloadedIndicator");
+        const logsClearedIndicator = document.getElementById("logsClearedIndicator");
+
+        const clearLogsOverlay = document.getElementById("clearLogsOverlay");
+        const clearLogsModal = document.getElementById("clearLogsModal");
+        const closeClearLogsBtn = document.getElementById("closeClearLogsBtn");
+        const confirmClearLogsBtn = document.getElementById("confirmClearLogsBtn");
+
+        let eventLog = [];
+        let isConnected = false;
+
+        function showIndicator(indicatorElement) {
+            indicatorElement.classList.add("show");
+            setTimeout(() => {
+                indicatorElement.classList.remove("show");
+            }, 2000);
+        }
+
+        function showSubscriptionsSavedIndicator() {
+            showIndicator(subscriptionsSavedIndicator);
+        }
+
+        function showLogsDownloadedIndicator() {
+            showIndicator(logsDownloadedIndicator);
+        }
+
+        function showLogsClearedIndicator() {
+            showIndicator(logsClearedIndicator);
+        }
+
+        function saveEventLog() {
+            localStorage.setItem('eventLog', JSON.stringify(eventLog));
+        }
+
+        function saveSettings() {
+            const settings = {
+                address: addressInput.value,
+                port: portInput.value,
+                excludeChat: excludeChatCheckbox.checked
+            };
+            localStorage.setItem('settings', JSON.stringify(settings));
+        }
+
+        function loadSettings() {
+            const savedSettings = localStorage.getItem('settings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                addressInput.value = settings.address || 'localhost';
+                portInput.value = settings.port || '8080';
+                excludeChatCheckbox.checked = settings.excludeChat !== undefined ? settings.excludeChat : true;
+            }
+        }
+
+        addressInput.addEventListener('input', saveSettings);
+        portInput.addEventListener('input', saveSettings);
+        excludeChatCheckbox.addEventListener('change', saveSettings);
+
+        function saveSubscriptions() {
+            const subs = {};
+            subscriptionCheckboxes.forEach(cb => {
+                subs[cb.dataset.type] = cb.checked;
+            });
+            localStorage.setItem('subscriptions', JSON.stringify(subs));
+        }
+
+        function loadSubscriptions() {
+            const subs = localStorage.getItem('subscriptions');
+            if (subs) {
+                const parsed = JSON.parse(subs);
+                subscriptionCheckboxes.forEach(cb => {
+                    cb.checked = !!parsed[cb.dataset.type];
+                });
+            } else {
+                subscriptionCheckboxes.forEach(cb => {
+                    cb.checked = cb.dataset.type === "Twitch";
+                });
+            }
+        }
+
+        function getSelectedSubscriptions() {
+            const selected = {};
+            subscriptionCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    selected[cb.dataset.type] = ["*"];
+                }
+            });
+            return selected;
+        }
+
+        function logMessage(message, type = "incoming") {
+            let headerText = "Unknown";
+            let bodyText = JSON.stringify(message, null, 2);
+            let timestamp = new Date().toLocaleTimeString();
+
+            try {
+                const json = JSON.parse(message);
+                if (excludeChatCheckbox.checked && (json.event?.type === "ChatMessage" || json.event?.type === "Message")) return;
+                if (json.request === "Hello") return;
+                if (json.status === "ok" && json.id === "Poggers") return;
+                if (json.event && json.event.source && json.event.type) {
+                    headerText = `${json.event.source} - ${json.event.type}`;
+                } else {
+                    headerText = message.slice(0, 50);
+                }
+                bodyText = JSON.stringify(json, null, 2);
+                eventLog.push(`[${timestamp}] ${headerText}\n${bodyText}\n`);
+            } catch {
+                if (message === "WebSocket connection closed.") {
+                    return;
+                } else if (type === "error") {
+                    headerText = "Error";
+                } else if (type === "outgoing") {
+                    headerText = message;
+                }
+                eventLog.push(`[${timestamp}] ${headerText}\n${message}\n`);
+            }
+
+            const div = document.createElement("div");
+            div.className = `message ${type}`;
+
+            const arrow = document.createElement("span");
+            arrow.className = "arrow";
+            arrow.innerHTML = `<span class="iconify" data-icon="material-symbols-light:keyboard-double-arrow-right-rounded"></span>`;
+
+            const header = document.createElement("div");
+            header.className = "message-header";
+            header.appendChild(arrow);
+
+            const timeSpan = document.createElement("span");
+            timeSpan.className = "timestamp";
+            timeSpan.textContent = timestamp;
+            header.appendChild(timeSpan);
+
+            header.appendChild(document.createTextNode(headerText));
+
+            header.addEventListener("click", () => {
+                div.classList.toggle("expanded");
+                const icon = arrow.querySelector(".iconify");
+                icon.setAttribute(
+                    "data-icon",
+                    div.classList.contains("expanded")
+                        ? "material-symbols-light:keyboard-double-arrow-down-rounded"
+                        : "material-symbols-light:keyboard-double-arrow-right-rounded"
+                );
+            });
+
+            div.appendChild(header);
+
+            const body = document.createElement("pre");
+            body.className = "message-body";
+            body.textContent = bodyText;
+            div.appendChild(body);
+
+            const copyButton = document.createElement("span");
+            copyButton.className = "material-symbols-outlined copy-button";
+            copyButton.textContent = "content_copy";
+            copyButton.title = "Copy to clipboard";
+            copyButton.addEventListener("click", () => {
+                navigator.clipboard.writeText(bodyText);
+                copyIndicator.classList.add("show");
+                setTimeout(() => {
+                    copyIndicator.classList.remove("show");
+                }, 2000);
+            });
+            div.appendChild(copyButton);
+
+            output.appendChild(div);
+            output.scrollTop = output.scrollHeight;
+
+            saveEventLog();
+        }
+
+        function triggerStatusAnimation() {
+            connectionStatus.classList.add("status-changed");
+            setTimeout(() => {
+                connectionStatus.classList.remove("status-changed");
+            }, 500);
+        }
+
+        function connectWebSocket() {
+            const address = addressInput.value || "localhost";
+            const port = portInput.value || 8080;
+            ws = new WebSocket(`ws://${address}:${port}/`);
+            ws.onopen = () => {
+                isConnected = true;
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+                connectionStatus.textContent = "Connected";
+                connectionStatus.style.backgroundColor = "#2e7d32";
+                triggerStatusAnimation();
+                const selected = getSelectedSubscriptions();
+                ws.send(JSON.stringify({
+                    request: "Subscribe",
+                    events: selected,
+                    id: "Poggers"
+                }));
+            };
+            ws.onmessage = (event) => {
+                logMessage(event.data, "incoming");
+            };
+            ws.onerror = () => {
+                logMessage("Error", "error");
+            };
+            ws.onclose = () => {
+                isConnected = false;
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+                connectionStatus.textContent = "Disconnected";
+                connectionStatus.style.backgroundColor = "#b71c1c";
+                triggerStatusAnimation();
+            };
+        }
+
+        function disconnectWebSocket() {
+            if (ws) {
+                ws.close();
+                ws = null;
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+                isConnected = false;
+            }
+        }
+
+        function forceReconnect() {
+            if (isConnected) {
+                disconnectWebSocket();
+                connectWebSocket();
+            }
+        }
+
+        function downloadLog() {
+            const blob = new Blob(eventLog, { type: "text/plain" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "events_log.txt";
+            a.click();
+            showLogsDownloadedIndicator();
+        }
+
+        clearLogsBtn.addEventListener("click", () => {
+            
+            clearLogsModal.style.display = 'block';
+            clearLogsOverlay.style.display = 'block';
+        });
+
+        closeClearLogsBtn.addEventListener("click", () => {
+            clearLogsModal.style.display = 'none';
+            clearLogsOverlay.style.display = 'none';
+        });
+
+        confirmClearLogsBtn.addEventListener("click", () => {
+            eventLog = [];
+            output.innerHTML = '';
+            localStorage.removeItem('eventLog');
+            showLogsClearedIndicator();
+            clearLogsModal.style.display = 'none';
+            clearLogsOverlay.style.display = 'none';
+        });
+
+        connectBtn.addEventListener("click", () => {
+            if (!ws || ws.readyState === WebSocket.CLOSED) {
+                connectWebSocket();
+            }
+        });
+
+        disconnectBtn.addEventListener("click", disconnectWebSocket);
+        downloadLogBtn.addEventListener("click", downloadLog);
+
+        subscriptionsBtn.addEventListener("click", () => {
+            subscriptionsModal.style.display = 'block';
+            subscriptionsOverlay.style.display = 'block';
+        });
+
+        closeSubscriptionsBtn.addEventListener("click", () => {
+            subscriptionsModal.style.display = 'none';
+            subscriptionsOverlay.style.display = 'none';
+        });
+
+        saveSubscriptionsBtn.addEventListener("click", () => {
+            saveSubscriptions();
+            subscriptionsModal.style.display = 'none';
+            subscriptionsOverlay.style.display = 'none';
+            showSubscriptionsSavedIndicator();
+            forceReconnect();
+        });
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                if (subscriptionsModal.style.display === 'block') {
+                    subscriptionsModal.style.display = 'none';
+                    subscriptionsOverlay.style.display = 'none';
+                }
+                if (clearLogsModal.style.display === 'block') {
+                    clearLogsModal.style.display = 'none';
+                    clearLogsOverlay.style.display = 'none';
+                }
+            }
+        });
+
+        window.onload = () => {
+            loadSettings();
+            loadSubscriptions();
+            const savedLog = localStorage.getItem('eventLog');
+            if (savedLog) {
+                eventLog = JSON.parse(savedLog);
+                for (const entry of eventLog) {
+                    const lines = entry.split('\n');
+                    const headerLine = lines[0];
+                    const bodyLines = lines.slice(1).join('\n').trim();
+                    const timestampMatch = headerLine.match(/\[(.*?)\]/);
+                    let timestamp = '';
+                    let headerText = '';
+                    if (timestampMatch) {
+                        timestamp = timestampMatch[1];
+                        headerText = headerLine.replace(`[${timestamp}] `, '');
+                    } else {
+                        headerText = headerLine;
+                    }
+                    const div = document.createElement("div");
+                    div.className = `message incoming`;
+                    const arrow = document.createElement("span");
+                    arrow.className = "arrow";
+                    arrow.innerHTML = `<span class="iconify" data-icon="material-symbols-light:keyboard-double-arrow-right-rounded"></span>`;
+                    const header = document.createElement("div");
+                    header.className = "message-header";
+                    header.appendChild(arrow);
+                    const timeSpan = document.createElement("span");
+                    timeSpan.className = "timestamp";
+                    timeSpan.textContent = timestamp;
+                    header.appendChild(timeSpan);
+                    header.appendChild(document.createTextNode(headerText));
+                    header.addEventListener("click", () => {
+                        div.classList.toggle("expanded");
+                        const icon = arrow.querySelector(".iconify");
+                        icon.setAttribute(
+                            "data-icon",
+                            div.classList.contains("expanded")
+                                ? "material-symbols-light:keyboard-double-arrow-down-rounded"
+                                : "material-symbols-light:keyboard-double-arrow-right-rounded"
+                        );
+                    });
+                    div.appendChild(header);
+                    const body = document.createElement("pre");
+                    body.className = "message-body";
+                    body.textContent = bodyLines;
+                    div.appendChild(body);
+                    const copyButton = document.createElement("span");
+                    copyButton.className = "material-symbols-outlined copy-button";
+                    copyButton.textContent = "content_copy";
+                    copyButton.title = "Copy to clipboard";
+                    copyButton.addEventListener("click", () => {
+                        navigator.clipboard.writeText(bodyLines);
+                        copyIndicator.classList.add("show");
+                        setTimeout(() => {
+                            copyIndicator.classList.remove("show");
+                        }, 2000);
+                    });
+                    div.appendChild(copyButton);
+                    output.appendChild(div);
+                }
+                output.scrollTop = output.scrollHeight;
+            }
+            connectWebSocket();
+        };
+    </script>
+</body>
+
+</html>

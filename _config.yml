@@ -1,14 +1,16 @@
 title: tawmae
+description: A collection of Streamer.bot extensions
+og:image: https://tawmae.github.io/assets/media/sb_title.png
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://tawmae.github.io/
 
+
+
+logo: "/assets/general/logo.png"
 favicon_ico: "/assets/media/favicon.ico"
 
-aux_links:
-  "Need help? ↪️":
-    - "https://discord.gg/gEm5UMSvYs"
-   
+color_scheme: foo
 
 back_to_top: true
 back_to_top_text: "Back to top"
@@ -20,10 +22,16 @@ enable_copy_code_button: true
 ga_tracking: G-E3GPLL6JPF
 ga_tracking_anonymize_ip: true
 
+icon_mapping:
+  Quick Maths: mdi:calculator
+  Movie Quiz: mdi:movie
+  Video Game Quiz: mdi:gamepad
+  All-In-One Moderation Tools: mdi:shield-check
+  Bluesky: mdi:cloud
 #aux_links:
   #Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-color_scheme: dark
+
 
 callouts_level: quiet # or loud
 callouts:

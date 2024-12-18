@@ -1,0 +1,2 @@
+• Added a Settings UI
+• Enhanced debugging

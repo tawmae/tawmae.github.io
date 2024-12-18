@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tawmae First Words Minecraft Style</title>
+  <link href="https://db.onlinewebfonts.com/c/6ab539c6fc2b21ff0b149b3d06d7f97c?family=Minecraft+Regular"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Minecraft Regular', Arial, sans-serif;
+      background-color: #1b2838;
+    }
+
+    .notification-container {
+      position: fixed;
+      top: 20px;
+      right: -650px;
+      width: 600px;
+      height: 100px;
+      background-color: #2E2E2E;
+      border: 4px solid #4c4c4c;
+      border-radius: 15px;
+      overflow: hidden;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 0 3px #000;
+      z-index: 1000;
+    }
+
+    .notification-picture {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      background: url('https://www.freeiconspng.com/thumbs/minecraft-png-icon/minecraft-icon-0.png') no-repeat center center;
+      background-size: cover;
+      border-radius: 10px;
+    }
+
+    .notification-content {
+      flex-grow: 1;
+      padding: 10px;
+      color: #ffec19;
+      font-family: 'Minecraft Regular', Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .notification-avatar {
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      background: url('https://via.placeholder.com/40') no-repeat center center;
+      background-size: cover;
+      border-radius: 50%;
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        right: -650px;
+        opacity: 0;
+      }
+
+      to {
+        right: 20px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOutToRight {
+      from {
+        right: 20px;
+        opacity: 1;
+      }
+
+      to {
+        right: -650px;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="notification" class="notification-container">
+    <div class="notification-picture"></div>
+    <div class="notification-content" id="notification-content">Username joined the game</div>
+    <div class="notification-avatar" id="notification-avatar"></div>
+  </div>
+
+  <script>
+    const avatars = new Map();
+    const notificationQueue = [];
+    let isProcessing = false;
+    const audioCache = new Map();
+
+    function connectws() {
+      if ("WebSocket" in window) {
+        const ws = new WebSocket("ws://localhost:8080/");
+        bindEvents(ws);
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
+    const excludeAccounts = new Set(
+      excludeAccountsParam.split(/\s+/).map(account => account.toLowerCase().trim())
+    );
+
+    function bindEvents(ws) {
+      ws.onopen = function () {
+        ws.send(JSON.stringify({
+          request: "Subscribe",
+          events: { Twitch: ["FirstWord"] },
+          id: "firstWordSubscription"
+        }));
+      };
+
+      ws.onmessage = function (event) {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.data && data.data.message && data.data.message.username) {
+            const username = data.data.message.username.toLowerCase();
+            if (!excludeAccounts.has(username)) {
+              enqueueNotification(data.data.message.displayName);
+            }
+          }
+        } catch { }
+      };
+
+      ws.onclose = function () {
+        setTimeout(connectws, 10000);
+      };
+
+      ws.onerror = function () { };
+    }
+
+
+    function enqueueNotification(username) {
+      notificationQueue.push(username);
+      if (!isProcessing) {
+        processQueue();
+      }
+    }
+
+    async function processQueue() {
+      isProcessing = true;
+      while (notificationQueue.length > 0) {
+        const username = notificationQueue.shift();
+        const avatarUrl = await fetchAvatar(username);
+        await showNotification(username, avatarUrl);
+      }
+      isProcessing = false;
+    }
+
+    async function fetchAvatar(username) {
+      if (avatars.has(username)) {
+        return avatars.get(username);
+      }
+      const response = await fetch(`https://decapi.me/twitch/avatar/${username}`);
+      const avatarUrl = await response.text();
+      avatars.set(username, avatarUrl);
+      return avatarUrl;
+    }
+
+    function getAudio() {
+      if (!audioCache.has('minecraft-click')) {
+        const audio = new Audio('https://tawmae.github.io/FirstWords/Minecraft_Click.mp3');
+        audioCache.set('minecraft-click', audio);
+      }
+      return audioCache.get('minecraft-click');
+    }
+
+    function showNotification(username, avatarUrl) {
+      return new Promise((resolve) => {
+        const notification = document.getElementById('notification');
+        const avatar = document.getElementById('notification-avatar');
+        const content = document.getElementById('notification-content');
+
+        content.innerText = `${username} joined the game`;
+        avatar.style.backgroundImage = `url(${avatarUrl})`;
+
+        const audio = getAudio();
+        audio.play();
+
+        notification.style.display = 'flex';
+        notification.style.animation = 'slideInFromRight 0.8s ease-out forwards, slideOutToRight 0.8s ease-in 5.8s forwards';
+
+        setTimeout(() => {
+          notification.style.display = 'none';
+          resolve();
+        }, 7000);
+      });
+    }
+
+    window.addEventListener("load", () => {
+      connectws();
+    });
+  </script>
+</body>
+
+</html>

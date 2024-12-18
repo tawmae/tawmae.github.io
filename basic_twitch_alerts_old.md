@@ -1,0 +1,108 @@
+
+
+![Picture](assets/general/title_basictwitchalerts.png)
+
+Twitch
+{: .label .label-purple }
+
+OBS
+{: .label .label-yellow }
+
+StreamerBot
+{: .label .label-blue }
+
+
+# Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## <span class="iconify" data-icon="material-symbols:description-outline-sharp" data-inline="false"></span> Description
+A simple OBS overlay for your Twitch alerts (supports Ko-Fi, StreamElements and StreamLabs donations too).
+
+![Picture](assets/media/basic_twitch_alerts_title_2.gif)
+
+---
+
+## <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> Required OBS Plugins
+1. [Stroke Glow Shadow Plugin](https://obsproject.com/forum/resources/stroke-glow-shadow.1800/)
+2. [Source Copy Plugin](https://obsproject.com/forum/resources/source-copy.1261/) 
+
+
+{: .highlight }
+Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on version `30.1.1` or newer
+
+---
+
+## <span class="iconify" data-icon="material-symbols:content-copy-outline-sharp" data-inline="false"></span> Import Code
+```
+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
+```
+
+---
+
+## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Installation
+
+1. Download and install both OBS plugins.
+
+2. Copy the import code from above and import the content
+
+    ![Import Actions](assets/media/import_actions.png)
+
+
+3. Head into the `Basic Alerts` action, rightclick the `Test` trigger and hit "Test Trigger". This will create the scene and sources in OBS for you. You will get a confirmation in your chat afterwards.
+
+  ![Picture](assets/media/basic_twitch_alerts_test_trigger.png)
+   
+  ![Picture](assets/media/basic_twitch_alerts_setup_completed.png)
+
+4. Done 🥳
+
+---
+
+## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> Settings
+
+- Set `anonymousFollows` to `True` for follows to be displayed as anonymous
+- Customize `alertDuration` with a the amount of milliseconds you want the alert to last (the follow duration is always half of the set time)
+
+- The color of the alert bar is randomized by default. You can set `randomColors` to `False` and then pick a color of your choice in the `Pick Color` subaction below
+
+- You can have the messages of the different alerts spoken out loud by SpeakerBot. Just replace `ttsVoiceAlias` with the voice  alias of your choice.
+
+   ![Picture](assets/media/basic_twitch_alerts_settings.png)
+
+---
+
+## <span class="iconify" data-icon="material-symbols:family-star-outline" data-inline="false"></span> Extras (totally optional)
+
+-  If you want a sound to be played on the alert, you can simply add the sound of your choice as a `Media Source` into the `# Basic Alerts` group in OBS. Leave it visible in there, it will automatically be played when the alert shows.
+
+   ![Picture](assets/media/basic_twitch_alerts_sources.png)
+
+- If you want the color of the alert bar to match the user's chat color, you can create a second action with a `Twitch -> Chat -> Chat Message` trigger. You then create a single `Core -> Globals -> Global (Set)` subaction and have it like this:
+
+  ![Picture](assets/media/basic_twitch_alerts_global.png)
+
+   Then rightclick the action and exclude it from history.
+   
+  ![Picture](assets/media/basic_twitch_alerts_exclude.png)
+ 
+  {: .note }
+  The user needs to have chatted at least once in your channel for StreamerBot to save their color.
+
+
+## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
+
+| Date        | Changes          | Version |
+|:-------------|:------------------|:------------------|
+| September 6, 2024           | Fixed a typo with the connection number that prevented the setup to complete | 1.0.4 |
+| September 3, 2024           | Added Watch Streaks | 1.0.3 |
+| August 28, 2024           | Added an OBS connection check and the default font | 1.0.2 |
+| June 27, 2024           | Fixed a breaking issue on 0.2.3 with StreamElements and KoFi | 1.0.1 |
+| May 12, 2024           | Fixed a breaking issue on 0.2.3 with the color variable | 1.0.0 |
+
+
+

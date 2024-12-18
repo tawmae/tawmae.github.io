@@ -1,0 +1,2 @@
+• Added improved debugging
+• Added version check

@@ -1,0 +1,1 @@
+• Added 'Shared Chat Messages' as command sources

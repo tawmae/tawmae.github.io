@@ -4,7 +4,7 @@ title: All-In-One Moderation Tools Command Overview
 nav_exclude: true
 ---
 
-![Picture](assets/media/aio_command_overview.png)
+![Picture](assets/general/title_aiomod.png)
 
 Here's a full command overview for the All-In-One Moderation Tools extension. Most of them have extra settings that are highly customizable within the Settings UI.
 
@@ -19,11 +19,6 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 ---
 
 # **URL Filter**
-
-- ## `!urlBlock [on/off]`
-  {: .no_toc }
- 
-   Toggle the URL filter as a whole.
 
 - ## `!permit [User]`
   {: .no_toc }
@@ -69,6 +64,26 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 ---
 
 # **Channel Management**
+
+- ## `!addCommand [!command] [Command Text]`
+  {: .no_toc }
+ 
+  Adds a custom command with a simple text output. Can contain `%user%` and `%userName%` variables.
+
+- ## `!editCommand [!command] [Command Text]`
+  {: .no_toc }
+ 
+  Edits a custom command.
+
+- ## `!removeCommand [!command]`
+  {: .no_toc }
+ 
+  Removes a custom command.
+
+- ## `!customCommands`
+  {: .no_toc }
+ 
+  Shows all custom commands.
 
 - ## `!channelTitle [Title]`
   {: .no_toc }
@@ -153,7 +168,7 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 - ## `!modTranslate [Text]`
   {: .no_toc }
  
-   Translates a given text into a chosen language.
+   Translates a given text into a chosen language (also works with just `!modTranslate` when used in a reply).
 
 - ## `!clearChat`
   {: .no_toc }
@@ -173,7 +188,12 @@ Here's a full command overview for the All-In-One Moderation Tools extension. Mo
 - ## `!ban [User] [Reason]`
   {: .no_toc }
  
-   Timeout a specified user. The reason is optional.
+   Ban a specified user. The reason is optional.
+
+- ## `!unban [User]`
+  {: .no_toc }
+ 
+   Unban a specified user.
 
 - ## `!purge [User]`
   {: .no_toc }

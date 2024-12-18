@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tawmae Twitch Chat Overlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            text-shadow: none;
+        }
+
+        #chat-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+        }
+
+        #messages {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #message-list {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transform: translateY(0);
+            will-change: transform;
+        }
+
+        .message,
+        .announcement,
+        .subscription {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slide-in-right 0.5s forwards;
+            color: #ffffff;
+        }
+
+        .slide-in-left {
+            transform: translateX(-100%);
+            animation: slide-in-left 0.5s forwards;
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .message-header,
+        .announcement-header,
+        .subscription-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+            flex-shrink: 0;
+        }
+
+        .shared-chat-icon {
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .badges img {
+            height: 16px;
+            width: 16px;
+            margin-right: 2px;
+            margin-bottom: -3px;
+        }
+
+        .username {
+            font-weight: 700;
+            margin-right: 5px;
+            margin-left: 5px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .pronouns-box {
+            font-size: 10px;
+            color: #cccccc;
+            background: #333333;
+            padding: 0 3px;
+            border-radius: 3px;
+            margin-left: 5px;
+            margin-top: 3px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .new-chatter {
+            font-size: 12px;
+            color: #00FFFF;
+            font-weight: 600;
+            margin-left: 5px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .message-text {
+            word-wrap: break-word;
+            margin: 1px 0 5px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .announcement-text,
+        .subscription-text {
+            word-wrap: break-word;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .message-text img,
+        .announcement-text img,
+        .subscription-text img {
+            height: 20px;
+            width: auto;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        .gigantified-emote {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        .reply-preview {
+            padding: 1px 3px;
+            margin: 1px 0 5px 0px;
+            font-size: 12px;
+            color: #dddddd;
+            max-width: 100%;
+            word-wrap: break-word;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+        }
+
+        .reply-preview img {
+            height: 12px;
+            width: auto;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        .announcement .icon,
+        .subscription .icon {
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
+            flex-shrink: 0;
+            margin-bottom: 5px;
+        }
+
+        .announcement .icon svg,
+        .subscription .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        .announcement-title,
+        .subscription-title {
+            font-weight: 900;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="messages">
+            <div id="message-list"></div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const font = params.get('font') || 'Poppins';
+            const fontsize = params.get('fontsize') || '16px';
+            const dropshadow = params.get('dropshadow') === 'true';
+            const excludedaccounts = params.get('excludedaccounts') ? params.get('excludedaccounts').split(/[,+\s]+/).map(acc => acc.trim().toLowerCase()) : [];
+            const excludecommands = params.get('excludecommands') === 'true';
+            const enterDirection = params.get('enter') === 'left' ? 'left' : 'right';
+            const excludeEventsParam = params.get('excludeevents') ? params.get('excludeevents').split(/[,+\s]+/).map(e => e.trim().toLowerCase()) : [];
+            const address = params.get('adress') || 'localhost';
+            const port = params.get('port') || '8080';
+            document.body.style.fontFamily = `'${font}', sans-serif`;
+            document.body.style.fontSize = fontsize;
+            if (dropshadow) {
+                document.body.style.textShadow = '1.3px 1.3px 1.3px rgba(0,0,0,1)';
+            }
+            document.body.style.backgroundColor = 'transparent';
+            const wsUrl = `ws://${address}:${port}/`;
+            const ws = new WebSocket(wsUrl);
+            const messagesContainer = document.getElementById('messages');
+            const messageList = document.getElementById('message-list');
+            const messagesMap = new Map();
+            const userMessagesMap = new Map();
+            const avatarCache = new Map();
+            const sharedChatAvatarCache = new Map();
+            const replyPreviewsMap = new Map();
+            const msgEmotesMap = new Map();
+            const userColorCache = new Map();
+            const pronounCache = new Map();
+            const pronounMap = { "hehim": "he/him", "sheher": "she/her", "theythem": "they/them", "itits": "it/its", "any": "any", "other": "other", "avoid": "avoid/avoid", "ask": "ask/ask", "xiexier": "xie/xier" };
+            let offset = 0;
+            let animating = false;
+            let eventQueue = Promise.resolve();
+            ws.onopen = () => {
+                const subscribeMessage = JSON.stringify({
+                    request: 'Subscribe',
+                    events: {
+                        Twitch: [
+                            'ChatMessage',
+                            'ChatMessageDeleted',
+                            'UserTimedOut',
+                            'UserBanned',
+                            'ChatCleared',
+                            'AutomaticRewardRedemption',
+                            'Announcement',
+                            'Sub',
+                            'ReSub',
+                            'GiftSub',
+                            'RewardRedemption',
+                            'WatchStreak',
+                            'Cheer',
+                            'Raid'
+                        ],
+                        Kofi: [
+                            'Donation'
+                        ]
+                    },
+                    id: 'eventSubscriptions'
+                });
+                ws.send(subscribeMessage);
+            };
+            ws.onmessage = (event) => {
+                try {
+                    const payload = JSON.parse(event.data);
+                    if (!payload.event || !payload.event.type) return;
+                    const type = payload.event.type.toLowerCase();
+                    if (excludeEventsParam.includes(type)) return;
+                    let action;
+                    switch (type) {
+                        case 'chatmessage': action = () => processEvent(() => addChatMessage(payload.data.message, payload.data.user, payload.data.emotes, payload.data.isSharedChat, payload.data.sharedChat)); break;
+                        case 'chatmessagedeleted': action = () => processEvent(() => deleteChatMessage(payload.data.messageId)); break;
+                        case 'usertimedout':
+                        case 'userbanned': action = () => processEvent(() => removeUserMessages(payload.data.user_id)); break;
+                        case 'chatcleared': action = () => processEvent(() => clearAllMessages()); break;
+                        case 'automaticrewardredemption': action = () => processEvent(() => handleAutomaticRewardRedemption(payload.data)); break;
+                        case 'announcement': action = () => processEvent(() => handleAnnouncement(payload.data)); break;
+                        case 'sub': action = () => processEvent(() => handleSubscription(payload.data)); break;
+                        case 'resub': action = () => processEvent(() => handleReSubscription(payload.data)); break;
+                        case 'giftsub': action = () => processEvent(() => handleGiftSubscription(payload.data)); break;
+                        case 'rewardredemption': action = () => processEvent(() => handleRewardRedemption(payload.data)); break;
+                        case 'watchstreak': action = () => processEvent(() => handleWatchStreak(payload.data)); break;
+                        case 'cheer': action = () => processEvent(() => handleCheer(payload.data)); break;
+                        case 'raid': action = () => processEvent(() => handleRaid(payload.data)); break;
+                        case 'donation': action = () => processEvent(() => handleDonation(payload.data)); break;
+                        default: return;
+                    }
+                    eventQueue = eventQueue.then(action);
+                } catch (error) { }
+            };
+            ws.onclose = () => { };
+            function processEvent(fn) {
+                return new Promise(resolve => {
+                    fn();
+                    adjustOffset().then(() => resolve());
+                });
+            }
+            function adjustOffset() {
+                return new Promise(resolve => {
+                    const containerHeight = messagesContainer.clientHeight;
+                    const contentHeight = messageList.scrollHeight;
+                    const desiredOffset = Math.max(0, contentHeight - containerHeight);
+                    if (desiredOffset === offset) {
+                        resolve();
+                        return;
+                    }
+                    animateOffsetChange(offset, desiredOffset).then(() => {
+                        offset = desiredOffset;
+                        resolve();
+                    });
+                });
+            }
+            function animateOffsetChange(from, to) {
+                return new Promise(resolve => {
+                    if (animating) {
+                        requestAnimationFrame(() => {
+                            animateOffsetChange(from, to).then(resolve);
+                        });
+                        return;
+                    }
+                    animating = true;
+                    messageList.style.transition = 'transform 0.5s ease';
+                    messageList.addEventListener('transitionend', onEnd);
+                    requestAnimationFrame(() => {
+                        messageList.style.transform = `translateY(-${to}px)`;
+                    });
+                    function onEnd() {
+                        messageList.removeEventListener('transitionend', onEnd);
+                        animating = false;
+                        resolve();
+                    }
+                });
+            }
+            async function fetchPronouns(username) {
+                if (pronounCache.has(username)) return pronounCache.get(username);
+                try {
+                    const res = await fetch(`https://api.pronouns.alejo.io/v1/users/${encodeURIComponent(username)}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data && data.pronoun_id && pronounMap[data.pronoun_id]) {
+                            pronounCache.set(username, pronounMap[data.pronoun_id]);
+                            return pronounMap[data.pronoun_id];
+                        }
+                    }
+                } catch (e) { }
+                pronounCache.set(username, null);
+                return null;
+            }
+            function addChatMessage(m, u, e, isShared, sharedData) {
+                const { msgId, displayName, color, badges, message, parts, isReply, reply, firstMessage } = m;
+                const { id: userId, username, login, name } = u;
+                const actualUsername = (username || login || name || '').toLowerCase();
+                if (!actualUsername) return;
+                if (excludedaccounts.includes(actualUsername)) return;
+                if (excludecommands && message.startsWith('!')) return;
+                const el = document.createElement('div');
+                el.classList.add('message');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                el.dataset.msgId = msgId;
+                el.dataset.userId = userId;
+                const header = document.createElement('div');
+                header.classList.add('message-header');
+                const avatar = document.createElement('img');
+                avatar.classList.add('avatar');
+                if (avatarCache.has(actualUsername)) {
+                    avatar.src = avatarCache.get(actualUsername);
+                } else {
+                    const aUrl = `https://decapi.me/twitch/avatar/${actualUsername}`;
+                    fetch(aUrl).then(r => r.text()).then(u => { avatar.src = u; avatarCache.set(actualUsername, u); }).catch(() => avatar.src = '');
+                }
+                header.appendChild(avatar);
+                const badCont = document.createElement('div');
+                badCont.classList.add('badges');
+                if (badges && badges.length > 0) {
+                    badges.forEach(b => {
+                        const bImg = document.createElement('img');
+                        bImg.src = b.imageUrl;
+                        bImg.alt = b.name;
+                        badCont.appendChild(bImg);
+                    });
+                }
+                header.appendChild(badCont);
+                const unameSpan = document.createElement('span');
+                unameSpan.classList.add('username');
+                unameSpan.textContent = displayName;
+                unameSpan.style.color = color || '#ffffff';
+                header.appendChild(unameSpan);
+                fetchPronouns(actualUsername).then(pronouns => {
+                    if (pronouns) {
+                        const pronounSpan = document.createElement('span');
+                        pronounSpan.classList.add('pronouns-box');
+                        pronounSpan.textContent = pronouns;
+                        header.appendChild(pronounSpan);
+                    }
+                });
+                if (isShared && sharedData && sharedData.primarySource === false) {
+                    const sL = (sharedData.sourceRoom && sharedData.sourceRoom.login) ? sharedData.sourceRoom.login.toLowerCase() : null;
+                    if (sL) {
+                        const sImg = document.createElement('img');
+                        sImg.classList.add('shared-chat-icon');
+                        if (sharedChatAvatarCache.has(sL)) {
+                            sImg.src = sharedChatAvatarCache.get(sL);
+                        } else {
+                            const sUrl = `https://decapi.me/twitch/avatar/${sL}`;
+                            fetch(sUrl).then(r => r.text()).then(u => { sImg.src = u; sharedChatAvatarCache.set(sL, u); }).catch(() => sImg.src = '');
+                        }
+                        header.appendChild(sImg);
+                    }
+                }
+                if (firstMessage === true) {
+                    const nc = document.createElement('span');
+                    nc.classList.add('new-chatter');
+                    nc.textContent = 'NEW CHATTER';
+                    header.appendChild(nc);
+                }
+                el.appendChild(header);
+                if (color) userColorCache.set(userId, color);
+                if (isReply && reply && reply.msgBody) {
+                    const rp = document.createElement('div');
+                    rp.classList.add('reply-preview');
+                    const maxLen = 50;
+                    let pv = '↪  «' + reply.msgBody + '»';
+                    if (pv.length > maxLen) pv = pv.substring(0, maxLen) + '...»';
+                    const orgE = msgEmotesMap.get(reply.msgId) || [];
+                    rp.innerHTML = replaceEmotesInText(pv, orgE);
+                    el.appendChild(rp);
+                    if (reply.msgId) {
+                        if (!replyPreviewsMap.has(reply.msgId)) replyPreviewsMap.set(reply.msgId, []);
+                        replyPreviewsMap.get(reply.msgId).push(rp);
+                    }
+                }
+                const msgText = document.createElement('div');
+                msgText.classList.add('message-text');
+                if (Array.isArray(parts)) {
+                    const eMap = new Map();
+                    if (Array.isArray(e)) {
+                        e.forEach(em => eMap.set(em.name.toLowerCase(), em.imageUrl));
+                    }
+                    parts.forEach(pt => {
+                        if (pt.type === 'text') {
+                            msgText.appendChild(document.createTextNode(pt.text));
+                        } else if (pt.type === 'emote') {
+                            let iUrl = pt.imageUrl;
+                            if (!iUrl && pt.text) iUrl = eMap.get(pt.text.toLowerCase());
+                            if (iUrl) {
+                                const i = document.createElement('img');
+                                i.src = iUrl; i.alt = pt.text;
+                                msgText.appendChild(i);
+                            } else {
+                                msgText.appendChild(document.createTextNode(pt.text));
+                            }
+                        }
+                    });
+                } else if (message && Array.isArray(e) && e.length > 0) {
+                    let proc = message;
+                    e.sort((a, b) => b.startIndex - a.startIndex);
+                    e.forEach(em => {
+                        const { name, imageUrl, startIndex, endIndex } = em;
+                        const tag = ` <img src="${imageUrl}" alt="${name}"> `;
+                        if (typeof startIndex === 'number' && typeof endIndex === 'number') {
+                            const bef = proc.substring(0, startIndex);
+                            const aft = proc.substring(endIndex + 1);
+                            proc = bef + tag + aft;
+                        } else {
+                            const reg = new RegExp(`\\b${escapeRegExp(name)}\\b`, 'gi');
+                            proc = proc.replace(reg, tag);
+                        }
+                    });
+                    msgText.innerHTML = proc;
+                } else if (message) {
+                    msgText.appendChild(document.createTextNode(message));
+                }
+                el.appendChild(msgText);
+                messageList.appendChild(el);
+                messagesMap.set(msgId, el);
+                msgEmotesMap.set(msgId, e || []);
+                if (!userMessagesMap.has(userId)) userMessagesMap.set(userId, new Set());
+                userMessagesMap.get(userId).add(msgId);
+            }
+            function handleAutomaticRewardRedemption(d) {
+                const { id, user_id, user_login, user_name, user_input, reward_type, message_text, message_emotes } = d;
+                const dn = user_name;
+                const un = user_login;
+                const msg = user_input || message_text;
+                const eU = (un || '').toLowerCase();
+                if (excludedaccounts.includes(eU)) return;
+                if (excludecommands && msg.startsWith('!')) return;
+                const el = document.createElement('div');
+                el.classList.add('message', 'automatic-reward');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                el.dataset.msgId = id;
+                el.dataset.userId = user_id;
+                const hd = document.createElement('div');
+                hd.classList.add('message-header');
+                const av = document.createElement('img');
+                av.classList.add('avatar');
+                if (avatarCache.has(eU)) {
+                    av.src = avatarCache.get(eU);
+                } else {
+                    const aU = `https://decapi.me/twitch/avatar/${eU}`;
+                    fetch(aU).then(r => r.text()).then(u => { av.src = u; avatarCache.set(eU, u); }).catch(() => av.src = '');
+                }
+                hd.appendChild(av);
+                const badC = document.createElement('div');
+                badC.classList.add('badges');
+                hd.appendChild(badC);
+                const uS = document.createElement('span');
+                uS.classList.add('username');
+                uS.textContent = dn;
+                uS.style.color = '#FFD700';
+                hd.appendChild(uS);
+                el.appendChild(hd);
+                const mt = document.createElement('div');
+                mt.classList.add('message-text');
+                if (reward_type === 'gigantify_an_emote' && message_emotes) {
+                    if (Array.isArray(message_emotes)) {
+                        message_emotes.forEach(em => {
+                            const i = document.createElement('img');
+                            i.src = em.imageUrl; i.alt = em.name;
+                            if (d.gigantified_emote && em.id === d.gigantified_emote.id) {
+                                i.classList.add('gigantified-emote');
+                            }
+                            mt.appendChild(i);
+                        });
+                    }
+                } else {
+                    if (Array.isArray(message_emotes)) {
+                        message_emotes.forEach(em => {
+                            const i = document.createElement('img');
+                            i.src = em.imageUrl; i.alt = em.name;
+                            mt.appendChild(i);
+                        });
+                    }
+                    mt.appendChild(document.createTextNode(msg));
+                }
+                el.appendChild(mt);
+                messageList.appendChild(el);
+                messagesMap.set(id, el);
+                msgEmotesMap.set(id, message_emotes || []);
+                if (!userMessagesMap.has(user_id)) userMessagesMap.set(user_id, new Set());
+                userMessagesMap.get(user_id).add(id);
+            }
+            function handleAnnouncement(d) {
+                const { text, messageId } = d;
+                const el = document.createElement('div');
+                el.classList.add('announcement');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const hd = document.createElement('div');
+                hd.classList.add('announcement-header');
+                const ic = document.createElement('div');
+                ic.classList.add('icon');
+                ic.innerHTML = '<span class="iconify" data-icon="ri:megaphone-line" data-inline="false"></span>';
+                hd.appendChild(ic);
+                const tt = document.createElement('span');
+                tt.classList.add('announcement-title');
+                tt.style.color = "#FF43D1";
+                tt.textContent = 'ANNOUNCEMENT';
+                hd.appendChild(tt);
+                el.appendChild(hd);
+                const at = document.createElement('div');
+                at.classList.add('announcement-text');
+                at.innerHTML = replaceEmotesInText(text, []);
+                el.appendChild(at);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleSubscription(d) {
+                const { sub_tier, is_prime, user, messageId } = d;
+                const { name: dn } = user;
+                let st = '';
+                if (is_prime) st = 'Prime'; else {
+                    const tn = Math.floor(parseInt(sub_tier, 10) / 1000);
+                    st = `Tier ${tn}`;
+                }
+                const el = createSubscriptionElement('SUBSCRIPTION', '#FFD700', 'material-symbols:kid-star-outline-sharp');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} subscribed with a ${st} Sub!`);
+                tx.appendChild(tN);
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleReSubscription(d) {
+                const { subTier, isPrime, cumulativeMonths, text, user, messageId } = d;
+                const { name: dn } = user;
+                let st = '';
+                if (isPrime) st = 'Prime'; else {
+                    const tn = Math.floor(parseInt(subTier, 10) / 1000);
+                    st = `Tier ${tn}`;
+                }
+                const el = createSubscriptionElement('RESUBSCRIPTION', '#FFD700', 'material-symbols:kid-star-outline-sharp');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} resubscribed with a ${st} sub for the ${cumulativeMonths}. month!`);
+                tx.appendChild(tN);
+                if (text && text.trim() !== '') {
+                    const br = document.createElement('br');
+                    tx.appendChild(br);
+                    const uT = document.createTextNode('↪  «' + text + '»');
+                    tx.appendChild(uT);
+                }
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleGiftSubscription(d) {
+                const { subTier, user, recipient, messageId } = d;
+                const { name: dn } = user;
+                const { name: rn } = recipient;
+                let tn = Math.floor(parseInt(subTier, 10) / 1000);
+                let tt = `Tier ${tn}`;
+                const el = createSubscriptionElement('GIFT SUBSCRIPTION', '#FFD700', 'iconamoon:gift-light');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} gifted a ${tt} sub to ${rn}!`);
+                tx.appendChild(tN);
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleRewardRedemption(d) {
+                const { user, reward, user_input, messageId } = d;
+                const { name: dn } = user;
+                const { title, cost } = reward;
+                const el = createSubscriptionElement('REWARD REDEMPTION', '#64d419', 'mdi:star-four-points-circle-outline');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} redeemed ${title} for ${cost} channel points!`);
+                tx.appendChild(tN);
+                if (user_input && user_input.trim() !== '') {
+                    const br = document.createElement('br');
+                    tx.appendChild(br);
+                    const uT = document.createTextNode('↪  «' + user_input + '»');
+                    tx.appendChild(uT);
+                }
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleWatchStreak(d) {
+                const { displayName, watchStreak, message, msgId } = d;
+                const el = createSubscriptionElement('WATCH STREAK', '#ff6b4a', 'lucide:flame');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${displayName} is on a ${watchStreak}x watch streak!`);
+                tx.appendChild(tN);
+                if (message && message.trim() !== '') {
+                    const br = document.createElement('br');
+                    tx.appendChild(br);
+                    const uT = document.createTextNode('↪  «' + message + '»');
+                    tx.appendChild(uT);
+                }
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(msgId, el);
+            }
+            function handleCheer(d) {
+                const { bits, user, messageId, message } = d;
+                const { name: dn } = user;
+                let cm = message.message.replace(/Cheer\d+/gi, '');
+                const el = createSubscriptionElement('CHEER', '#FFD700', 'mingcute:diamond-square-line');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} cheered with ${bits} bits!`);
+                tx.appendChild(tN);
+                if (cm && cm.trim() !== '') {
+                    const br = document.createElement('br');
+                    tx.appendChild(br);
+                    const uT = document.createTextNode('↪  «' + cm.trim() + '»');
+                    tx.appendChild(uT);
+                }
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleRaid(d) {
+                const { from_broadcaster_user_name, viewers } = d;
+                const msgId = d.messageId ? d.messageId : Math.random().toString(36);
+                const el = createSubscriptionElement('RAID', '#10e094', 'lsicon:user-crowd-outline');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${from_broadcaster_user_name} raided with ${viewers} viewers!`);
+                tx.appendChild(tN);
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(msgId, el);
+            }
+            function handleDonation(d) {
+                const { from, isPublic, messageId, message, amount, currency } = d;
+                let df = isPublic ? from : 'Someone';
+                const el = createSubscriptionElement('DONATION', '#26acff', 'hugeicons:money-03');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${df} donated ${currency} ${amount}`);
+                tx.appendChild(tN);
+                if (message && message.trim() !== '') {
+                    const br = document.createElement('br');
+                    tx.appendChild(br);
+                    const uT = document.createTextNode('↪  «' + message + '»');
+                    tx.appendChild(uT);
+                }
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function deleteChatMessage(msgId) {
+                const el = messagesMap.get(msgId);
+                if (el) {
+                    const uid = el.dataset.userId;
+                    messageList.removeChild(el);
+                    messagesMap.delete(msgId);
+                    msgEmotesMap.delete(msgId);
+                    if (userMessagesMap.has(uid)) {
+                        userMessagesMap.get(uid).delete(msgId);
+                        if (userMessagesMap.get(uid).size === 0) userMessagesMap.delete(uid);
+                    }
+                }
+                if (replyPreviewsMap.has(msgId)) {
+                    const p = replyPreviewsMap.get(msgId);
+                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
+                    replyPreviewsMap.delete(msgId);
+                }
+            }
+            function removeMessageById(msgId) {
+                const el = messagesMap.get(msgId);
+                if (el) {
+                    const uid = el.dataset.userId;
+                    messageList.removeChild(el);
+                    messagesMap.delete(msgId);
+                    msgEmotesMap.delete(msgId);
+                    if (userMessagesMap.has(uid)) {
+                        userMessagesMap.get(uid).delete(msgId);
+                        if (userMessagesMap.get(uid).size === 0) userMessagesMap.delete(uid);
+                    }
+                }
+                if (replyPreviewsMap.has(msgId)) {
+                    const p = replyPreviewsMap.get(msgId);
+                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
+                    replyPreviewsMap.delete(msgId);
+                }
+            }
+            function removeUserMessages(uid) {
+                if (userMessagesMap.has(uid)) {
+                    const mIds = Array.from(userMessagesMap.get(uid));
+                    mIds.forEach(i => removeMessageById(i));
+                    userMessagesMap.delete(uid);
+                }
+            }
+            function clearAllMessages() {
+                messageList.innerHTML = '';
+                messagesMap.clear();
+                userMessagesMap.clear();
+                replyPreviewsMap.clear();
+                msgEmotesMap.clear();
+                offset = 0;
+                messageList.style.transition = 'none';
+                messageList.style.transform = 'translateY(0)';
+            }
+            function escapeRegExp(s) {
+                return s.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
+            }
+            function replaceEmotesInText(t, ea) {
+                if (!ea || ea.length === 0) return t;
+                ea.sort((a, b) => b.startIndex - a.startIndex);
+                ea.forEach(em => {
+                    const { name, imageUrl } = em;
+                    const reg = new RegExp(`\\b${escapeRegExp(name)}\\b`, 'gi');
+                    const tag = ` <img src="${imageUrl}" alt="${name}"> `;
+                    t = t.replace(reg, tag);
+                });
+                return t;
+            }
+            function createSubscriptionElement(title, color, icon) {
+                const el = document.createElement('div');
+                el.classList.add('subscription');
+                const hd = document.createElement('div');
+                hd.classList.add('subscription-header');
+                const ic = document.createElement('div');
+                ic.classList.add('icon');
+                ic.innerHTML = `<span class="iconify" data-icon="${icon}" data-inline="false"></span>`;
+                hd.appendChild(ic);
+                const tt = document.createElement('span');
+                tt.classList.add('subscription-title');
+                tt.textContent = title;
+                tt.style.color = color;
+                hd.appendChild(tt);
+                el.appendChild(hd);
+                return el;
+            }
+        })();
+    </script>
+</body>
+
+</html>

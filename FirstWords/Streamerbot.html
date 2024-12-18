@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingering Notification</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1b2838;
+      color: white;
+    }
+
+    .notification-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 250px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .notification-icons {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+
+    .icon,
+    .profile-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: url('https://streamer.bot/logo.png') no-repeat center center;
+      background-size: cover;
+      animation: orbit 8s linear infinite;
+      box-shadow: 0 0 15px 5px rgba(95, 168, 255, 0.6);
+    }
+
+    .profile-icon {
+      animation-delay: -4s;
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(60px) rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg) translateX(60px) rotate(-360deg);
+      }
+    }
+
+    .notification-content {
+      text-align: center;
+      color: #dcdcdc;
+    }
+
+    .notification-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .notification-text {
+      font-size: 20px;
+      color: white;
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="notification" class="notification-container">
+    <div class="notification-icons">
+      <div class="icon"></div>
+      <div class="profile-icon"></div>
+    </div>
+    <div class="notification-content">
+      <p class="notification-title" id="notification-title"></p>
+      <p class="notification-text" id="notification-text">Welcome in!</p>
+    </div>
+  </div>
+
+  <script>
+    const avatars = new Map();
+    const notificationQueue = [];
+    let isProcessing = false;
+
+    function connectws() {
+      if ("WebSocket" in window) {
+        const ws = new WebSocket("ws://localhost:8080/");
+        bindEvents(ws);
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const excludeAccountsParam = urlParams.get("excludedaccounts") || "";
+    const excludeAccounts = new Set(
+      excludeAccountsParam.split(/\s+/).map(account => account.toLowerCase().trim())
+    );
+
+    function bindEvents(ws) {
+      ws.onopen = function () {
+        ws.send(JSON.stringify({
+          request: "Subscribe",
+          events: { Twitch: ["FirstWord"] },
+          id: "firstWordSubscription"
+        }));
+      };
+
+      ws.onmessage = function (event) {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.data && data.data.message && data.data.message.username) {
+            const username = data.data.message.username.toLowerCase();
+            if (!excludeAccounts.has(username)) {
+              enqueueNotification(data.data.message.displayName);
+            }
+          }
+        } catch { }
+      };
+
+      ws.onclose = function () {
+        setTimeout(connectws, 10000);
+      };
+
+      ws.onerror = function () { };
+    }
+
+
+    function enqueueNotification(displayName, color) {
+      notificationQueue.push({ displayName, color });
+      if (!isProcessing) {
+        processQueue();
+      }
+    }
+
+    async function processQueue() {
+      isProcessing = true;
+      while (notificationQueue.length > 0) {
+        const { displayName, color } = notificationQueue.shift();
+        const avatarUrl = await fetchAvatar(displayName);
+        await showNotification(displayName, avatarUrl, color);
+      }
+      isProcessing = false;
+    }
+
+    async function fetchAvatar(displayName) {
+      if (avatars.has(displayName)) {
+        return avatars.get(displayName);
+      }
+      const response = await fetch(`https://decapi.me/twitch/avatar/${displayName}`);
+      const avatarUrl = await response.text();
+      avatars.set(displayName, avatarUrl);
+      return avatarUrl;
+    }
+
+    function showNotification(displayName, avatarUrl, color) {
+      return new Promise((resolve) => {
+        const notification = document.getElementById('notification');
+        const icon = document.querySelector('.icon');
+        const profileIcon = document.querySelector('.profile-icon');
+        const title = document.getElementById('notification-title');
+        const text = document.getElementById('notification-text');
+
+        title.innerText = displayName;
+        title.style.color = color;
+        profileIcon.style.backgroundImage = `url(${avatarUrl})`;
+
+        notification.style.display = 'flex';
+        notification.style.animation = 'fadeIn 1s forwards';
+
+        setTimeout(() => {
+          notification.style.animation = 'fadeOut 1s forwards';
+          setTimeout(() => {
+            notification.style.display = 'none';
+            notification.style.animation = '';
+            resolve();
+          }, 1000);
+        }, 7000);
+      });
+    }
+
+    window.addEventListener("load", () => {
+      connectws();
+    });
+  </script>
+</body>
+
+</html>

@@ -46,7 +46,7 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    just-the-docs (0.9.0)
+    just-the-docs (0.10.0)
       jekyll (>= 3.8.5)
       jekyll-include-cache
       jekyll-seo-tag (>= 2.0)
@@ -69,6 +69,7 @@ GEM
       ffi (~> 1.0)
     rexml (3.3.7)
     rouge (4.4.0)
+
     safe_yaml (1.0.5)
     sass-embedded (1.78.0-arm64-darwin)
       google-protobuf (~> 4.27)
@@ -84,8 +85,9 @@ PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
-  jekyll (~> 4.3.4)
-  just-the-docs (= 0.9.0)
+  jekyll (~> 4.3.3)
+  just-the-docs (= 0.10.0)
+
 
 BUNDLED WITH
    2.5.9

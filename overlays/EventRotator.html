@@ -29,7 +29,7 @@
             top: 3px;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: #000000;
             color: white;
             padding: 3px 12px;
             border-radius: 25px;
@@ -154,7 +154,7 @@
 
 <body>
     <div class="lava-container">
-        <div class="header">
+        <div class="header" id="header">
             <span class="header-text" id="header-text">LATEST EVENT</span>
         </div>
         <div class="lava-box" id="lava-box">
@@ -217,7 +217,6 @@
             updateActiveEvents();
         }
 
-
         function saveEvents() {
             const dataToSave = {};
             ['follow', 'sub', 'cheer', 'kofi'].forEach(eventType => {
@@ -229,7 +228,6 @@
             sessionStorage.setItem("eventsMap", JSON.stringify(dataToSave));
         }
 
-
         function updateActiveEvents() {
             activeEvents = eventOrder.filter(
                 key => eventsMap[key].show && eventsMap[key].displayName !== "Unknown User"
@@ -238,7 +236,6 @@
                 currentIndex = 0;
             }
         }
-
 
         const client = new StreamerbotClient({
             host: address,
@@ -251,7 +248,6 @@
         function onConnect() {
             client.getGlobal("tawmae_Settings_Event_Rotator").then(settings => {
                 if (!settings?.variable?.value || settings.variable.value.trim() === "") {
-
                     document.getElementById("text").textContent = "Please run the Event Rotator Settings UI first";
                     document.getElementById("icon").querySelector("img").src = "https://blog.cdn.own3d.tv/resize=fit:crop,height:400,width:600/sRCQA0GiQWC5lhIFNwZw";
                     document.getElementById("header-text").textContent = "OH NO!";
@@ -260,14 +256,12 @@
                     return;
                 }
 
-
                 const parsedSettings = JSON.parse(settings.variable.value);
                 rotationSettings = configureSettings(parsedSettings);
                 initializeActiveEvents(parsedSettings);
                 loadSavedEvents();
                 startRotator();
             }).catch(err => {
-
                 console.error("Error fetching global settings:", err);
                 document.getElementById("text").textContent = "Please run the Event Rotator Settings UI first";
                 document.getElementById("header-text").textContent = "OH NO!";
@@ -277,11 +271,19 @@
             });
         }
 
-
         function configureSettings(settings) {
             const font = settings.tab1.rotationFont || "Poppins";
             const fontSize = settings.tab1.rotationFontSize || 20;
             const fontColor = settings.tab1.rotationFontColor || "#ffffff";
+            const fontColorHeader = settings.tab1.rotationFontColorHeader || "#ffffff";
+
+            const roundedCornersBubbleRaw = parseInt(settings.tab1.rotationRoundedCornersBubble, 10);
+            const roundedCornersBubble = !isNaN(roundedCornersBubbleRaw) ? Math.max(0, Math.min(roundedCornersBubbleRaw, 100)) : 50;
+
+            const roundedCornersHeaderRaw = parseInt(settings.tab1.rotationRoundedCornersHeader, 10);
+            const roundedCornersHeader = !isNaN(roundedCornersHeaderRaw) ? Math.max(0, Math.min(roundedCornersHeaderRaw, 100)) : 25;
+
+            const rotationHeaderBackgroundColor = settings.tab1.rotationHeaderBackgroundColor || "#000000";
             const gradientColors = [
                 settings.tab1.rotationColor1,
                 settings.tab1.rotationColor2,
@@ -297,7 +299,12 @@
             const lavaBox = document.getElementById("lava-box");
             lavaBox.style.background = `linear-gradient(270deg, ${gradientColors.join(", ")})`;
             lavaBox.style.animationDuration = `${duration}s`;
+            lavaBox.style.borderRadius = `${roundedCornersBubble}px`;
 
+            const header = document.getElementById("header");
+            header.style.backgroundColor = rotationHeaderBackgroundColor;
+            header.style.borderRadius = `${roundedCornersHeader}px`;
+            document.getElementById("header-text").style.color = fontColorHeader;
 
             const preloadIcon = (key, url) => {
                 if (url) {
@@ -339,14 +346,11 @@
             return { duration };
         }
 
-
         function initializeActiveEvents(settings) {
-
             eventsMap.follow.show = settings.tab2.followsShow || false;
             eventsMap.sub.show = settings.tab2.subsShow || false;
             eventsMap.cheer.show = settings.tab2.cheersShow || false;
             eventsMap.kofi.show = settings.tab2.kofiShow || false;
-
 
             for (let i = 1; i <= 6; i++) {
                 const key = `custom${i}`;
@@ -358,7 +362,6 @@
 
             updateActiveEvents();
         }
-
 
         ws.onopen = () => {
             ws.send(JSON.stringify({
@@ -387,8 +390,6 @@
             }
         };
 
-
-
         function updateEvent(eventType, displayName, amount = null) {
             if (eventsMap[eventType] && eventsMap[eventType].show) {
                 eventsMap[eventType].displayName = displayName || "Unknown User";
@@ -397,9 +398,6 @@
                 updateActiveEvents();
             }
         }
-
-
-
 
         function startRotator() {
             setInterval(updateContent, rotationSettings.duration);
@@ -423,7 +421,6 @@
 
                 const amountBox = document.getElementById("amount-box");
 
-
                 if (eventKey === "cheer" && event.amount) {
                     amountBox.textContent = `${event.amount} Bits`;
                     amountBox.classList.add("visible");
@@ -441,9 +438,6 @@
                 document.getElementById("content").classList.add("visible");
             }, 1000);
         }
-
-
-
 
         window.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {

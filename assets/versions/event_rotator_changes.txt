@@ -1,2 +1,1 @@
-• Added Rounded Corner settings
-• Added Header Font and Background Color settings
+• Settings UI optimization

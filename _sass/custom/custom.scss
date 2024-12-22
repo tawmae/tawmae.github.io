@@ -30,6 +30,28 @@ pre code {
   display: inline-block;
 }
 
+.new-icon {
+  display: inline-block;
+  background-color: #ff4500; 
+  color: white; 
+  font-size: 0.8rem; 
+  font-weight: bold;
+  padding: 0.2rem 0.4rem; 
+  margin-left: 0.5rem; 
+  border-radius: 0.25rem; 
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.6); 
+  animation: glow 1.5s infinite; 
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 69, 0, 0.8);
+  }
+}
+
 
 
 

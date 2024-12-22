@@ -1,7 +1,7 @@
 ---
 title: TTS Queue
 layout: default
-nav_order: 12
+parent: Utility
 ---
 
 ![Picture](assets/general/title_ttsqueue.png)

@@ -1,7 +1,7 @@
 ---
 title: Twitch Raffle
 layout: default
-nav_order: 15
+parent: Utility
 ---
 
 ![Picture](assets/general/title_raffle.png)

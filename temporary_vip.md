@@ -1,7 +1,7 @@
 ---
 title: Temporary VIP
 layout: default
-nav_order: 3
+parent: Utility
 ---
 
 ![Picture](assets/general/title_tempvip.png)

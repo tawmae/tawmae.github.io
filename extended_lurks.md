@@ -1,7 +1,7 @@
 ---
 title: Extended Lurks
 layout: default
-nav_order: 17
+parent: Utility
 ---
 
 ![Picture](assets/general/title_lurks.png)

@@ -1,7 +1,6 @@
 ---
 title: First Words Notification
 layout: default
-nav_order: 10
 parent: OBS Widgets
 ---
 

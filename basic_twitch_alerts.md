@@ -1,7 +1,6 @@
 ---
 title: Basic Twitch Alerts
 layout: default
-nav_order: 7
 parent: OBS Widgets
 ---
 

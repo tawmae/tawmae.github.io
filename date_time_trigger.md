@@ -1,7 +1,7 @@
 ---
 title: Date Time Trigger
 layout: default
-nav_order: 20
+parent: Utility
 ---
 
 ![Picture](assets/general/title_dt.png)

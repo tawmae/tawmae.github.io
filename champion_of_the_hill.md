@@ -1,7 +1,7 @@
 ---
 title: Champion Of The Hill
 layout: default
-nav_order: 8
+parent: Chat Games
 ---
 
 ![Picture](assets/general/title_coth.png)

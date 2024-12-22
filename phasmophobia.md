@@ -1,7 +1,7 @@
 ---
 title: 3. Phasmophobia
 layout: default
-parent: Games
+parent: Videogame Integrations
 ---
 
 ![Picture](assets/general/title_phasmo.png)

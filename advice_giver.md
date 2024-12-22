@@ -1,7 +1,7 @@
 ---
 title: Advice Giver
 layout: default
-nav_order: 18
+parent: Chat Games
 ---
 
 ![Picture](assets/general/title_advice.png)

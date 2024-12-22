@@ -1,7 +1,7 @@
 ---
 title: Quick Maths
 layout: default
-nav_order: 14
+parent: Chat Games
 ---
 
 

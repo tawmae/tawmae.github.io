@@ -69,7 +69,7 @@ U0JBRR+LCAAAAAAABADsvVlz4li2KPx+I+5/yKgT8b3UcZUQ4DQdcR8MZhAG0kwCdLIfkIRBRgxtJosT
 
    ![How To Enable Commands](assets/media/enable_commands.png)
 
-3. Go to (https://developer.spotify.com/)[https://developer.spotify.com/] and log in with your account. Then on the top right, click your user profile and go to "Dashboard".
+3. Go to [https://developer.spotify.com/](https://developer.spotify.com/) and log in with your account. Then on the top right, click your user profile and go to "Dashboard".
 
       [![Picture](assets/media/spotify_setup_1.png)](https://tawmae.github.io/assets/media/spotify_setup_1.png)
 

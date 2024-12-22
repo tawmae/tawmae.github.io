@@ -1,7 +1,7 @@
 ---
 title: 2. Hearthstone Battlegrounds
 layout: default
-parent: Games
+parent: Videogame Integrations
 ---
 
 ![Picture](assets/general/title_bgs.png)

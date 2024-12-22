@@ -1,5 +1,5 @@
 ---
-title: Bluesky
+title: BLUESKY & SB
 layout: default
 parent: Utility
 ---
@@ -45,7 +45,7 @@ U0JBRR+LCAAAAAAABADsvelyKtuSJvi/zOodsFN/suxk7B0jENcyy1ogRiG2BCKAyHMtLSYgRDAcMQlu
 
     ![Picture](assets/media/bsky_app_pw_2.png)
 
-4. Go into the `[Bluesky] 0 - Credentials` action and replace the information in the `Bsky Login Information` folder with yours. If you created an App Password before, paste the app password in there. **Be careful to not accidentally show this info on stream.**
+4. Go into the `[BLUESKY & SB] 0 - Credentials` action and replace the information in the `Bsky Login Information` folder with yours. If you created an App Password before, paste the app password in there. **Be careful to not accidentally show this info on stream.**
 
     ![Picture](assets/media/bsky_settings.png)
 
@@ -60,7 +60,7 @@ U0JBRR+LCAAAAAAABADsvelyKtuSJvi/zOodsFN/suxk7B0jENcyy1ogRiG2BCKAyHMtLSYgRDAcMQlu
 
 ### 1. Create Posts
 
-To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[Bluesky] 1 - Create Post` action to your liking. You can also toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded. You can also set the language of your posts by editing the `Set Argument - %bskyLanguage` and typing the ISO language codes in there (e.g. `en-US` or `de-DE`). You can also type in multiple languages by seperating them with a comma and a space. If you set `bskyQuotePost` to `True`, the new post will have your most recent post (that's been created by the extension) as a quote. Note that quoting vía the API currently does not allow for image or video embeds due to a Bluesky API limitation.
+To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[BLUESKY & SB] 1 - Create Post` action to your liking. You can also toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded. You can also set the language of your posts by editing the `Set Argument - %bskyLanguage` and typing the ISO language codes in there (e.g. `en-US` or `de-DE`). You can also type in multiple languages by seperating them with a comma and a space. If you set `bskyQuotePost` to `True`, the new post will have your most recent post (that's been created by the extension) as a quote. Note that quoting vía the API currently does not allow for image or video embeds due to a Bluesky API limitation.
 
 ![Picture](assets/media/bsky_action_1.png)
 

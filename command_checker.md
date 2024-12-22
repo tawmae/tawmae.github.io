@@ -1,7 +1,7 @@
 ---
 title: Command Checker
 layout: default
-nav_order: 19
+parent: Utility
 ---
 
 ![Picture](assets/general/title_commandchecker.png)

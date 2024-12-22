@@ -1,7 +1,7 @@
 ---
 title: User Inventory
 layout: default
-nav_order: 3
+parent: Utility
 ---
 
 ![Picture](assets/general/title_inventory.png)

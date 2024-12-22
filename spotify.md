@@ -131,9 +131,6 @@ You can also customize the messages that are being posted into chat on requests.
 
 ## <span class="iconify" data-icon="rivet-icons:exclamation-mark-circle-solid" data-inline="false"></span> **Commands**
 
-
-### <span class="iconify" data-icon="line-md:link" data-inline="false"></span> URL Filter
-
 - `!sr [Song]`
  
    Adds a song to the queue. Can be the song name, the direct Spotify link and even a YouTube link. Spotify links are the only method to get the 100%ly correct request in.
@@ -218,7 +215,7 @@ You can use a custom OBS widget to add into your OBS.
 
 ![Picture](assets/media/spotify_title_3.gif)
 
-### ## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> **Setup**
+### <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> **Setup**
 
 1. Go into Streamerbot and head to the tab `Servers/Clients -> WebSocket Server` and start the websocket server. Leave the adress at `127.0.0.1` and the port at `8080`. Check `Auto Start` as well. You can set a password, but you don't have to. If you do, make sure `Enforce for All Requests` stays unchecked.
 
@@ -240,6 +237,8 @@ You can use a custom OBS widget to add into your OBS.
 
 {: .new }
 To have the notification in multiple scenes, don't create an individual browser source in every scene, but instead create a new **nested** scene and put just a single browser source in there. Then place that scene into all your other scenes. This way you won't have to create 20 browser sources for 20 scenes.
+
+---
 
 ### <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 
 

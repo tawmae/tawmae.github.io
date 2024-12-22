@@ -2,6 +2,7 @@
 title: First Words Notification
 layout: default
 nav_order: 10
+parent: OBS Widgets
 ---
 
 ![Picture](assets/media/first_words_title_1.png)

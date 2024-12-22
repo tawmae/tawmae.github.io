@@ -248,9 +248,11 @@ You can customize the widget with a few URL parameters. The first parameter gets
 
 #### <span class="iconify" data-icon="ion:color-palette" data-inline="false"></span> Background Color
 
-Changes the background color of the background box.
+Changes the background color of the background box. Supports hex colors, but then you need to replace the `#` with `%23`
 
 `backgroundcolor=pink`
+
+`backgroundcolor=%23ffc0cb`
 
 ---
 
@@ -266,17 +268,21 @@ Changes the font used for the text. Supports standard and google fonts.
 
 #### <span class="iconify" data-icon="mdi:account" data-inline="false"></span> Font Color
 
-Changes the color of the font.
+Changes the color of the font. Supports hex colors, but then you need to replace the `#` with `%23`
 
 `fontcolor=black`
+
+`fontcolor=%23000000`
 
 ---
 
 #### <span class="iconify" data-icon="mdi:format-color-text" data-inline="false"></span> Progress Bar Color
 
-Changes the color of the progress bar.
+Changes the color of the progress bar. Supports hex colors, but then you need to replace the `#` with `%23`
 
-`progressbarcolor=green`
+`progressbarcolor=pink`
+
+`progressbarcolor=%23ffc0cb`
 
 ---
 

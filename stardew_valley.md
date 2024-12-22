@@ -1,7 +1,7 @@
 ---
 title: 1. Stardew Valley
 layout: default
-parent: Games
+parent: Videogame Integrations
 ---
 
 

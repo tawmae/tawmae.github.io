@@ -1,7 +1,7 @@
 ---
 title: Simple Tasks
 layout: default
-nav_order: 15
+parent: OBS Widgets
 ---
 
 ![Picture](assets/general/title_simpletasks.png)

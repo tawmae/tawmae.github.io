@@ -1,7 +1,7 @@
 ---
 title: Friend Stream Notifications
 layout: default
-nav_order: 19
+parent: Utility
 ---
 
 ![Picture](assets/general/title_friendstream.png)

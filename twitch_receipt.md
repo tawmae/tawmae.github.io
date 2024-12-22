@@ -1,7 +1,7 @@
 ---
 title: Twitch Receipt
 layout: default
-nav_order: 6
+parent: OBS Widgets
 ---
 
 ![Picture](assets/media/twitch_receipt_title.png)

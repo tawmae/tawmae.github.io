@@ -1,7 +1,7 @@
 ---
 title: Channel Point Auction
 layout: default
-nav_order: 17
+parent: Utility
 ---
 
 ![Picture](assets/general/title_cpa.png)

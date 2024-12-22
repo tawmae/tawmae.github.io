@@ -1,7 +1,7 @@
 ---
 title: Random OBS Source Position
 layout: default
-nav_order: 10
+parent: Utility
 ---
 
 ![Picture](assets/general/title_randomsourceposition.png)

@@ -1,7 +1,7 @@
 ---
 title: GIPHY gifs
 layout: default
-nav_order: 16
+parent: OBS Widgets
 ---
 
 ![Picture](assets/general/title_giphy.png)

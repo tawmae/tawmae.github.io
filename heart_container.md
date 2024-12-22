@@ -1,8 +1,4 @@
----
-title: Heart Containers
-layout: default
-nav_order: 112
----
+
 
 ![Picture](assets/general/title_heart.png)
 

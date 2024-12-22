@@ -1,7 +1,7 @@
 ---
 title: Hot Words
 layout: default
-nav_order: 8
+parent: OBS Widgets
 ---
 
 ![Picture](assets/media/hot_words_title_1.png)

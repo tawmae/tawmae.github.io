@@ -1,7 +1,7 @@
 ---
 title: Hot Potato
 layout: default
-nav_order: 15
+parent: Chat Games
 ---
 
 ![Picture](assets/general/title_hotpotato.png)

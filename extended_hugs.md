@@ -1,7 +1,7 @@
 ---
 title: Extended Hugs
 layout: default
-nav_order: 7
+parent: Utility
 ---
 
 ![Picture](assets/general/title_hugs.png)

@@ -1,7 +1,6 @@
 ---
 title: Ad Notification
 layout: default
-nav_order: 9
 parent: OBS Widgets
 ---
 

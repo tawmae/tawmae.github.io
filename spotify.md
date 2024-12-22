@@ -83,9 +83,9 @@ U0JBRR+LCAAAAAAABADsvVlz4li2KPx+I+5/yKgT8b3UcZUQ4DQdcR8MZhAG0kwCdLIfkIRBRgxtJosT
     http://127.0.0.1:1312/tawmaeSpotify/
     ```
 
-  **The redirect URI has to match.** Accept the TOS and hit "Save".
+     **The redirect URI has to match.** Accept the TOS and hit "Save".
 
-   [![Picture](assets/media/spotify_setup_3.png)](https://tawmae.github.io/assets/media/spotify_setup_3.png)
+      [![Picture](assets/media/spotify_setup_3.png)](https://tawmae.github.io/assets/media/spotify_setup_3.png)
 
 6. After the app has been created, click on "Settings" in the top right.
 

@@ -1,7 +1,7 @@
 ---
 title: Channel Reward Discount
 layout: default
-nav_order: 24
+parent: Utility
 ---
 
 ![Picture](assets/general/title_discount.png)

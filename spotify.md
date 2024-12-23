@@ -294,6 +294,64 @@ You can make the overlay only show whenever a new song begins.
 
 ---
 
+## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> Custom Triggers
+
+Under `Custom -> SPOTIFY  SB` you will be able to find three triggers that populate variables with the track info.
+
+![Picture](assets/media/spotify_custom_triggers_1.png)
+
+1. New Song
+
+   Fires when a new song starts *(won't fire if the exact same song replays)*.
+
+   Available variables:
+   - `trackId` *(string)* - the ID of the track
+   - `trackName` *(string)* - the name of the song
+   - `artists` *(string)* - the artist(s) of the song
+   - `coverImageURL` *(string)* - the image URL of the cover art
+   - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
+   - `progressMs` *(int)* - the new song's progress in milliseconds
+   - `durationMs` *(int)* - the new song's total duration in milliseconds
+   - `isRequested` *(bool)* - indicator whether the new song has been requested or not
+   - `user` *(string)* - the display name of the requester *(`<null>` if not requested)*
+   - `userName` *(string)* - the user login of the requester *(`<null>` if not requested)*
+   - `userId` *(string)* - the user ID of the requester *(`<null>` if not requested)*
+   - `userProfileImageUrl` *(string)* - the  profile picture URL of the requester *(`<null>` if not requested)*
+
+2. Song Continued
+
+      Fires when a song gets resumed.
+
+      Available variables:
+      - `trackId` *(string)* - the ID of the track
+      - `trackName` *(string)* - the name of the song
+      - `artists` *(string)* - the artist(s) of the song
+      - `coverImageURL` *(string)* - the image URL of the cover art
+      - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
+      - `progressMs` *(int)* - the new song's progress in milliseconds
+      - `durationMs` *(int)* - the new song's total duration in milliseconds
+
+3. Song Paused
+
+      Fires when a song gets paused.
+
+      Available variables:
+      - `trackId` *(string)* - the ID of the track
+      - `trackName` *(string)* - the name of the song
+      - `artists` *(string)* - the artist(s) of the song
+      - `coverImageURL` *(string)* - the image URL of the cover art
+      - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
+      - `progressMs` *(int)* - the new song's progress in milliseconds
+      - `durationMs` *(int)* - the new song's total duration in milliseconds
+
+
+![Picture](assets/media/spotify_custom_triggers_2.png)
+
+{: .note }
+Only the **New Song** trigger provides actual requester data. The other two technically show it too in action history, but they will always have `isRequested` set to `False` with empty user data.
+
+---
+
 ## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> **Changelog**
 
 | Date        | Changes          | Version |

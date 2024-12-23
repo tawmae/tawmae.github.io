@@ -361,5 +361,5 @@ Only the **New Song** trigger provides actual requester data. The other two tech
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|
-| December 23, 2024           | Added a method to remove songs from queue | 1.0.1 |
+| December 23, 2024           | Added a method to remove songs from queue. Restart SB if you are trying the new feature right after updating. | 1.0.1 |
 | December 22, 2024           | Release | 1.0.0 |

@@ -210,7 +210,7 @@ You can also customize the messages that are being posted into chat on requests.
 
 - `!removeFromQueue [Songname]`
  
-   Removes the requested song from the queue. Once the song starts, it will automatically skip it. The name doesn't have to be exact, it will just check if the actual track name contains the input. So "emptiness" for "The Emptiness Machine" is enough. Just make sure it's precise enough to not accidentally remove a wrong one.
+   Removes the requested song from the queue. Once the song starts, it will automatically skip it. The name doesn't have to be exact, it will just check if the actual track name contains the input. So "emptiness" for "The Emptiness Machine" is enough. Just make sure it's precise enough to not accidentally remove a wrong one. The action also populates variables to perform refunds or whatever: `removedSong_user`, `removedSong_userName` and `removedSong_userId`.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Start
+title: '<span class="iconify" data-icon="mdi:home"></span> Startseite'
 layout: home
 nav_order: 1
 ---

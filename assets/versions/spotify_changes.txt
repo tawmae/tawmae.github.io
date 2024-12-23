@@ -1,1 +1,1 @@
-• CATJAM
+• Added a method to remove requests from the queue

@@ -1,6 +1,7 @@
 ---
 title: 'BLUESKY & SB <span class="iconify" data-icon="material-symbols:fiber-new-rounded" style="color: #ffd700; font-size: 28px;"></span>'
-layout: defaul
+layout: default
+nav_order: 2
 ---
 
 ![Picture](assets/general/title_bsky.png)

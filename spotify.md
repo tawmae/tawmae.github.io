@@ -134,7 +134,7 @@ You can also customize the messages that are being posted into chat on requests.
 
 - `!sr [Song]`
  
-   Adds a song to the queue. Can be the song name, the direct Spotify link and even a YouTube link. Spotify links are the only method to get the 100%ly correct request in.
+   Adds a song to the queue. Can be the song name, the direct Spotify link and even a YouTube link (for YouTube links, the video title will be used as the query). Spotify links are the only method to get the 100%ly correct request in.
 
 - `!song`
  

@@ -1,6 +1,7 @@
 ---
 title: 'SPOTIFY & SB <span class="iconify" data-icon="material-symbols:fiber-new-rounded" style="color: #ffd700; font-size: 28px;"></span>'
 layout: default
+nav_order: 2
 ---
 
 

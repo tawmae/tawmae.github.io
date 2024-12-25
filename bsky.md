@@ -1,5 +1,5 @@
 ---
-title: 'BLUESKY & SB <span class="iconify" data-icon=fluent:star-emphasis-32-filled" style="color: #ffd700; font-size: 28px;"></span>'
+title: 'BLUESKY & SB <span class="iconify" data-icon="fluent:star-emphasis-32-filled" style="color: #ffd700; font-size: 28px;"></span>'
 layout: default
 nav_order: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Video Game Quiz
+title: 'Video Game Quiz <span class="iconify" data-icon="fxemoji:videogame" style="color: #E005B9; font-size: 18px;"></span>'
 layout: default
 parent: Chat Games
 ---

@@ -1,5 +1,5 @@
 ---
-title: 'BLUESKY & SB <span class="iconify" data-icon="mdi:star-check" style="color: #ffd700; font-size: 22px;"></span>'
+title: 'BLUESKY & SB <span class="iconify" data-icon="logos:bluesky" style="color: #ffd700; font-size: 22px;"></span> <span class="iconify" data-icon="mdi:star-check" style="color: #ffd700; font-size: 22px;"></span>'
 layout: default
 nav_order: 2
 ---

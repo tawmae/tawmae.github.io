@@ -1,5 +1,5 @@
 ---
-title: All-In-One Moderation Tools
+title: 'All-In-One Moderation Tools <span class="iconify" data-icon="pepicons-pop:sword-circle-filled" style="color: #1CB96A; font-size: 18px;"></span>'
 layout: default
 parent: Utility
 ---

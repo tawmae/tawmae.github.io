@@ -1,5 +1,5 @@
 ---
-title: Temporary VIP
+title: 'Temporary VIP <span class="iconify" data-icon="ri:vip-diamond-fill" style="color: #E005B9; font-size: 18px;"></span>'
 layout: default
 parent: Utility
 ---

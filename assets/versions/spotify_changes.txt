@@ -1,1 +1,3 @@
-• Added a method to remove requests from the queue
+• Added a method to get queue positions of requests
+• Added a method to get all requests
+• Added %remaingTime% variables for messages

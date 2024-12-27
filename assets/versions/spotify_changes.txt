@@ -1,3 +1,1 @@
-• Added a method to get queue positions of requests
-• Added a method to get all requests
-• Added %remaingTime% variables for messages
+• Fixed an issue with requester names not showing in the !queue request

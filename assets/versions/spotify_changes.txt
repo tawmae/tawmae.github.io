@@ -1,1 +1,1 @@
-• Removing songs from queue not auto-refund channel points
+• Removing songs from queue now auto-refunds channel points

@@ -1,1 +1,1 @@
-• Fixed an issue with requester names not showing in the !queue request
+• Removing songs from queue not auto-refund channel points

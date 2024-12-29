@@ -1,7 +1,7 @@
 ---
 title: 'All-In-One Moderation Tools <span class="iconify" data-icon="pepicons-pop:sword-circle-filled" style="color: #1CB96A; font-size: 18px;"></span>'
 layout: default
-parent: Utility
+nav_order: 3
 ---
 
 
@@ -121,8 +121,6 @@ All the other settings can be left at default if wanted. You can of course chang
 ---
 
 ## <span class="iconify" data-icon="rivet-icons:exclamation-mark-circle-solid" data-inline="false"></span> **Commands**
-
-A full command overview is also available with the `!modCommands` command that will redirect to this page: [All-In-One Moderation Tools: Command Overview](https://tawmae.github.io/aio_mod_tools_command_overview.html)
 
 ### <span class="iconify" data-icon="line-md:link" data-inline="false"></span> URL Filter
 

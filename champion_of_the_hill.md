@@ -70,6 +70,9 @@ Make sure `Redemption Skips Queue` stays **unchecked**.
 
 By triggering the "Test" trigger in the `[Champion Of The Hill] 0 - Settings` action, you'll be able to configure the game to your needs and set the prompts / chat responses.
 
+{: .highlight }
+Be aware of the 200 character limit of prompts of which 25 can be taken by the user's name.
+
 ![Picture](assets/media/coth_settings_1.png)
 
 ![Picture](assets/media/coth_settings_2.png)

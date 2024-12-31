@@ -1,1 +1,2 @@
-• Removing songs from queue now auto-refunds channel points
+• Added a toggle button for chat replies
+• Queued Songs now allow for a number input

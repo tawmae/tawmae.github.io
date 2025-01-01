@@ -53,35 +53,30 @@ Timed Actions are deactivated on Import as well. It will enable itself the next 
 
 - - - -
 
-## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> Settings (optional)
+## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> Settings 
 
-- In the `[Temporary VIP] 1 - Add Time` action, you can set a default time. The `defaultTime` is either used when no time is specified in a command or when you use a channel point reward. So a default time of `1d` would add 1 day if used with a channel point reward.
+- In the `[Temporary VIP] 0 - Settings` action, you can open a settings menu by rightclicking the "Test" trigger and hitting "Test Trigger".
 
-{: .new }
-Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
 
-![Import Actions](assets/media/temporary_vip_settings.png)
+![Picture](assets/media/temp_vip_settings_1.png)
 
-- `allowStacking` will, as the name already suggests, allow that time is being stacked. So if you redeem it here twice, you will get 1 day + 1 day, so a total of 2 days of VIP. If set to false, it will just "refresh" to 1 day upon a new redemption.
+![Picture](assets/media/temp_vip_settings_2.png)
 
-- `maxSlots` is the maximum amount of available concurrent temporary VIPs. If it set to 5 and you have 5 temporary VIPs, then noone else will be able to become a new temporary VIP. You can however still stack additional time if you already are a temporary VIP.
-
-- If you have **permanent VIPs**, you can add them to a group called `Permanent VIPs`. To create a group, go to `Settings -> Groups` and type in the name of the group down under "Add Group". In the `Viewers` tab, you can then rightclick a user and add them to the group.
-
-- If you use the extension with a **Channel Point Reward**, make sure the reward is owned by StreamerBot, so it can be automatically be refunded whenever someone redeems it who wasn't supposed to do so. Also make sure `Redemption Skips Queue` stays unchecked in the reward's settings.
-
-  ![Import Actions](assets/media/temporary_vip_cpr_settings.png)
 
 - - - -
 
 ## <span class="iconify" data-icon="rivet-icons:exclamation-mark-circle-solid" data-inline="false"></span> Commands
+
+{: .new }
+Allowed time formats:  1y / 2mo / 3w / 4d / 5h / 6min / 7s
+
 
 - ## `!ADDVIP [USERNAME] [TIME]`
   {: .no_toc }
 
   ![Picture](assets/media/temporary_vip_add_vip.png)
 
-  Adds VIP time to the specified user. If `[Time]` has been left blank, it will pick the default time that is set in the action. See the available time formats above.
+  Adds VIP time to the specified user. If `[Time]` has been left blank, it will pick the default time from the settings menu, unless a `defaultTime` argument has been provided. See the available time formats above.
 
 
 - - - -

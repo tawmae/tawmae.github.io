@@ -1,5 +1,5 @@
 ---
-title: 'SPOTIFY & SB <span class="iconify" data-icon="logos:spotify-icon" style="color: #83ee83; font-size: 18px; margin-left: 2px;"></span> <span class="iconify" data-icon="material-symbols-light:fiber-new-outline" style="color: #e8b923; font-size: 26px;"></span>'
+title: 'SPOTIFY & SB <span class="iconify" data-icon="logos:spotify-icon" style="color: #83ee83; font-size: 18px; margin-left: 2px;"></span> <span class="iconify" data-icon="material-symbols-light:fiber-new-outline" style="color: #e8b923; font-size: 30px;"></span>'
 layout: default
 nav_order: 1
 ---

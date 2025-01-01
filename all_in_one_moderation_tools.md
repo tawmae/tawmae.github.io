@@ -1,5 +1,5 @@
 ---
-title: 'MOD TOOLS <span class="iconify" data-icon="pepicons-pop:sword-circle-filled" style="color: #1CB96A; font-size: 18px;"></span>'
+title: 'MOD TOOLS <span class="iconify" data-icon="tabler:sword" style="color: #1CB96A; font-size: 18px;"></span>'
 layout: default
 nav_order: 3
 ---

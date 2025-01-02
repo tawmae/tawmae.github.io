@@ -364,7 +364,7 @@ Changes the stroke color.
 
 ---
 
-## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> Custom Triggers
+## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> **Custom Triggers**
 
 Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that populate variables with the track info.
 

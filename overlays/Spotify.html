@@ -222,8 +222,6 @@
             const val = '2px 2px 2px rgba(0,0,1,1)'
             artistsEl.style.textShadow = val
             trackNameEl.style.textShadow = val
-            requestedByText.style.textShadow = val
-            remainingTime.style.textShadow = val
         }
         function applyOuterStroke(el, sw, sc) {
             if (sw <= 0) return
@@ -240,8 +238,7 @@
         if (dropshadowParam) applyDropShadow()
         applyOuterStroke(artistsEl, strokeWidthParam, strokeColorParam)
         applyOuterStroke(trackNameEl, strokeWidthParam, strokeColorParam)
-        applyOuterStroke(requestedByText, strokeWidthParam, strokeColorParam)
-        applyOuterStroke(remainingTime, strokeWidthParam, strokeColorParam)
+        applyOuterStroke(requestedByText, Math.max(1, Math.floor(strokeWidthParam * 0.5)), strokeColorParam)
         let currentCoverUrl = ''
         let inactivityTimeout = null
         let lastTrackId = null

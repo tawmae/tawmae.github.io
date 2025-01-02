@@ -79,14 +79,12 @@
         }
         #artists {
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100%;
         }
         #trackName {
             font-weight: bold;
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100%;
         }
@@ -100,11 +98,12 @@
             margin-right: 10px;
         }
         #userProfileImage {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
             transition: opacity 1s ease;
         }
-
         #progressBarContainer {
             position: absolute;
             bottom: 0;
@@ -146,24 +145,23 @@
         </div>
     </div>
     <script type="text/javascript">
-        const params = new URLSearchParams(window.location.search)
-        const port = params.get('port') || '8080'
-        const adress = params.get('adress') || '127.0.0.1'
-        const password = params.get('password') || ''
-        const backgroundcolor = params.get('backgroundcolor') || 'linear-gradient(135deg, #2a2a2a 0%, #3b3b3b 100%)'
-        const fontcolor = params.get('fontcolor') || '#fff'
-        const font = params.get('font') || 'Poppins'
-        const progressbarcolor = params.get('progressbarcolor') || '#fff'
-        const alwayson = params.get('alwayson') !== 'false'
-        const opacityParam = parseInt(params.get('opacity') || '100')
-        const dropshadowParam = params.get('dropshadow') === 'true'
-        const fontsizeParam = parseInt(params.get('fontsize') || '56')
-        const widthParam = parseInt(params.get('width') || '900')
-        let progressbarParam = params.get('progressbar')
-        if (!progressbarParam) {
-            progressbarParam = 'true'
-        }
-
+        const p = new URLSearchParams(window.location.search)
+        const port = p.get('port') || '8080'
+        const adress = p.get('adress') || '127.0.0.1'
+        const password = p.get('password') || ''
+        const backgroundcolor = p.get('backgroundcolor') || 'linear-gradient(135deg, #2a2a2a 0%, #3b3b3b 100%)'
+        const fontcolor = p.get('fontcolor') || '#fff'
+        const font = p.get('font') || 'Poppins'
+        const progressbarcolor = p.get('progressbarcolor') || '#fff'
+        const alwayson = p.get('alwayson') !== 'false'
+        const opacityParam = parseInt(p.get('opacity') || '100')
+        const dropshadowParam = p.get('dropshadow') === 'true'
+        const fontsizeParam = parseInt(p.get('fontsize') || '56')
+        const widthParam = parseInt(p.get('width') || '900')
+        let progressbarParam = p.get('progressbar')
+        if (!progressbarParam) progressbarParam = 'true'
+        const strokeWidthParam = parseInt(p.get('stroke') || '0')
+        const strokeColorParam = p.get('strokecolor') || '#000000'
         if (font !== 'Poppins') {
             const link = document.createElement('link')
             link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(font)}&display=swap`
@@ -171,18 +169,10 @@
             document.head.appendChild(link)
             document.body.style.fontFamily = `${font}, sans-serif`
         }
-
-        const client = new StreamerbotClient({
-            host: adress,
-            port: parseInt(port),
-            endpoint: '/',
-            password: password,
-            onConnect
-        })
-
+        const client = new StreamerbotClient({host: adress, port: parseInt(port), endpoint: '/', password, onConnect})
         const songOverlay = document.getElementById('songOverlay')
-        const songOverlayBackground = document.getElementById('songOverlayBackground')
-        const songOverlayContent = document.getElementById('songOverlayContent')
+        const bg = document.getElementById('songOverlayBackground')
+        const content = document.getElementById('songOverlayContent')
         const coverImageContainer = document.getElementById('coverImageContainer')
         const coverImage = document.getElementById('coverImage')
         const remainingTime = document.getElementById('remainingTime')
@@ -192,151 +182,131 @@
         const userProfileImage = document.getElementById('userProfileImage')
         const progressBar = document.getElementById('progressBar')
         const progressBarContainer = document.getElementById('progressBarContainer')
-
         songOverlay.style.width = widthParam + 'px'
-        songOverlayBackground.style.background = backgroundcolor
-        songOverlayBackground.style.opacity = (opacityParam / 100).toString()
-        songOverlayContent.style.color = fontcolor
+        bg.style.background = backgroundcolor
+        bg.style.opacity = (opacityParam / 100).toString()
+        content.style.color = fontcolor
         progressBar.style.background = progressbarcolor
-
-        if (opacityParam === 100) {
-            songOverlay.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)'
-        } else {
-            songOverlay.style.boxShadow = 'none'
-        }
-
-        if (progressbarParam === 'false') {
-            progressBarContainer.style.display = 'none'
-        } else {
-            progressBarContainer.style.display = 'block'
-        }
-
+        if (opacityParam === 100) songOverlay.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)'
+        else songOverlay.style.boxShadow = 'none'
+        if (progressbarParam === 'false') progressBarContainer.style.display = 'none'
+        else progressBarContainer.style.display = 'block'
         function setFontSizes(baseSize) {
-            const ratio = baseSize / 56
-            trackNameEl.style.fontSize = `${baseSize}px`
-            artistsEl.style.fontSize = `${Math.round(baseSize * (44/56))}px`
-            requestedByText.style.fontSize = `${Math.round(baseSize * (26/56))}px`
-            remainingTime.style.fontSize = `${Math.round(baseSize * (24/56))}px`
-
-            const newPadding = Math.round(20 * ratio)
-            songOverlayContent.style.padding = `${newPadding}px`
-            coverImageContainer.style.marginRight = `${Math.round(20 * ratio)}px`
-            progressBarContainer.style.height = `${Math.round(10 * ratio)}px`
-
-            const coverSize = Math.round(200 * ratio)
+            const r = baseSize / 56
+            trackNameEl.style.fontSize = baseSize + 'px'
+            artistsEl.style.fontSize = Math.round(baseSize * 44/56) + 'px'
+            requestedByText.style.fontSize = Math.round(baseSize * 26/56) + 'px'
+            remainingTime.style.fontSize = Math.round(baseSize * 24/56) + 'px'
+            const pad = Math.round(20 * r)
+            content.style.padding = pad + 'px'
+            coverImageContainer.style.marginRight = Math.round(20 * r) + 'px'
+            progressBarContainer.style.height = Math.round(10 * r) + 'px'
+            const coverSize = Math.round(200 * r)
             coverImageContainer.style.width = coverSize + 'px'
             coverImageContainer.style.height = coverSize + 'px'
-
-            const timeOffset = Math.round(10 * ratio)
-            remainingTime.style.bottom = timeOffset + 'px'
-            remainingTime.style.right = timeOffset + 'px'
-            remainingTime.style.padding = `${Math.round(3 * ratio)}px ${Math.round(5 * ratio)}px`
+            const tOff = Math.round(10 * r)
+            remainingTime.style.bottom = tOff + 'px'
+            remainingTime.style.right = tOff + 'px'
+            remainingTime.style.padding = Math.round(3 * r) + 'px ' + Math.round(5 * r) + 'px'
         }
-
         function applyDropShadow() {
-            const shadowValue = '2px 2px 2px rgba(0,0,1,1)'
-            artistsEl.style.textShadow = shadowValue
-            trackNameEl.style.textShadow = shadowValue
-            requestedByText.style.textShadow = shadowValue
-            remainingTime.style.textShadow = shadowValue
+            const val = '2px 2px 2px rgba(0,0,1,1)'
+            artistsEl.style.textShadow = val
+            trackNameEl.style.textShadow = val
+            requestedByText.style.textShadow = val
+            remainingTime.style.textShadow = val
         }
-
+        function applyOuterStroke(el, sw, sc) {
+            if (sw <= 0) return
+            const base = el.style.textShadow ? el.style.textShadow + ',' : ''
+            let sh = []
+            for (let r = 1; r <= sw; r++) {
+                for (let angle = 0; angle < 360; angle += 12) {
+                    const x = Math.round(r * Math.cos(angle * Math.PI / 180))
+                    const y = Math.round(r * Math.sin(angle * Math.PI / 180))
+                    sh.push(`${x}px ${y}px 0 ${sc}`)
+                }
+            }
+            el.style.textShadow = base + sh.join(',')
+        }
         setFontSizes(fontsizeParam)
-
-        if (dropshadowParam) {
-            applyDropShadow()
-        }
-
+        if (dropshadowParam) applyDropShadow()
+        applyOuterStroke(artistsEl, strokeWidthParam, strokeColorParam)
+        applyOuterStroke(trackNameEl, strokeWidthParam, strokeColorParam)
+        applyOuterStroke(requestedByText, strokeWidthParam, strokeColorParam)
         let currentCoverUrl = ''
         let inactivityTimeout = null
         let lastTrackId = null
         let lastIsRequested = null
-
         function onConnect() {}
-
         client.on('Misc.GlobalVariableUpdated', ({ data }) => {
             if (data.name === 'tawmae_SPOTIFY_AND_SB_INFO') {
                 try {
-                    const parsedData = typeof data.newValue === 'string' ? JSON.parse(data.newValue) : data.newValue
-                    updateSongInfo(parsedData)
-                } catch (e) {}
+                    const parsed = typeof data.newValue === 'string' ? JSON.parse(data.newValue) : data.newValue
+                    updateSongInfo(parsed)
+                } catch(e){}
             }
         })
-
-        function updateSongInfo(data) {
+        function updateSongInfo(d) {
             resetInactivityTimeout()
-            if (data.songInfo && data.songInfo.isPlaying) {
-                const songInfo = data.songInfo
-                const isNewTrack = songInfo.trackId !== lastTrackId
-                const isRequestedChanged = songInfo.isRequested !== lastIsRequested
-                if (isNewTrack || isRequestedChanged) {
-                    lastTrackId = songInfo.trackId
-                    lastIsRequested = songInfo.isRequested
+            if (d.songInfo && d.songInfo.isPlaying) {
+                const s = d.songInfo
+                const newTrack = s.trackId !== lastTrackId
+                const reqChanged = s.isRequested !== lastIsRequested
+                if (newTrack || reqChanged) {
+                    lastTrackId = s.trackId
+                    lastIsRequested = s.isRequested
                     fadeOutContent().then(() => {
-                        updateContent(songInfo)
+                        updateContent(s)
                         fadeInContent()
                         songOverlay.classList.add('visible')
                     })
-                } else {
-                    updateDynamicContent(songInfo)
-                }
+                } else updateDynamicContent(s)
             } else {
                 songOverlay.classList.remove('visible')
                 lastTrackId = null
                 lastIsRequested = null
             }
         }
-
-        function truncateText(text, maxLength) {
-            return text.length > maxLength ? text.substring(0, maxLength) + '...' : text
+        function truncateText(t, m) {
+            return t.length > m ? t.substring(0, m) + '...' : t
         }
-
-        function updateContent(songInfo) {
-            if (songInfo.coverImageUrl && songInfo.coverImageUrl !== currentCoverUrl) {
-                coverImage.src = songInfo.coverImageUrl
-                currentCoverUrl = songInfo.coverImageUrl
+        function updateContent(s) {
+            if (s.coverImageUrl && s.coverImageUrl !== currentCoverUrl) {
+                coverImage.src = s.coverImageUrl
+                currentCoverUrl = s.coverImageUrl
             }
-            artistsEl.textContent = truncateText(songInfo.artists || 'Unknown', 25)
-            trackNameEl.textContent = truncateText(songInfo.trackName || 'Unknown', 25)
-
-            if (songInfo.isRequested && songInfo.user) {
-                requestedByText.textContent = `requested by ${songInfo.user}`
-                userProfileImage.src = songInfo.userProfileImageUrl
+            artistsEl.textContent = truncateText(s.artists || 'Unknown', 25)
+            trackNameEl.textContent = truncateText(s.trackName || 'Unknown', 25)
+            if (s.isRequested && s.user) {
+                requestedByText.textContent = `requested by ${s.user}`
+                userProfileImage.src = s.userProfileImageUrl
                 userProfileImage.style.display = 'block'
             } else {
                 requestedByText.textContent = ''
                 userProfileImage.src = ''
                 userProfileImage.style.display = 'none'
             }
-
-            updateDynamicContent(songInfo)
+            updateDynamicContent(s)
         }
-
-        function updateDynamicContent(songInfo) {
-            const remainingMs = songInfo.durationMs - songInfo.progressMs
-            const remainingSeconds = Math.floor((remainingMs / 1000) % 60)
-            const remainingMinutes = Math.floor((remainingMs / (1000 * 60)) % 60)
-            remainingTime.textContent = `${remainingMinutes}:${remainingSeconds.toString().padStart(2, '0')}`
-
-            const remainingPercentage = (remainingMs / songInfo.durationMs) * 100
-            if (progressbarParam !== 'false') {
-                progressBar.style.width = `${remainingPercentage}%`
-            }
+        function updateDynamicContent(s) {
+            const remMs = s.durationMs - s.progressMs
+            const sec = Math.floor((remMs / 1000) % 60)
+            const min = Math.floor((remMs / (1000 * 60)) % 60)
+            remainingTime.textContent = `${min}:${sec.toString().padStart(2,'0')}`
+            const pct = (remMs / s.durationMs) * 100
+            if (progressbarParam !== 'false') progressBar.style.width = pct + '%'
         }
-
         function fadeOutContent() {
-            return new Promise((resolve) => {
+            return new Promise(r => {
                 coverImageContainer.style.opacity = '0'
                 songDetails.style.opacity = '0'
                 requestedByText.style.opacity = '0'
                 userProfileImage.style.opacity = '0'
                 remainingTime.style.opacity = '0'
-                setTimeout(() => {
-                    resolve()
-                }, 1000)
+                setTimeout(r, 1000)
             })
         }
-
         function fadeInContent() {
             coverImageContainer.style.opacity = '1'
             songDetails.style.opacity = '1'
@@ -344,21 +314,13 @@
             userProfileImage.style.opacity = '1'
             remainingTime.style.opacity = '1'
         }
-
         function resetInactivityTimeout() {
-            if (inactivityTimeout) {
-                clearTimeout(inactivityTimeout)
-            }
+            if (inactivityTimeout) clearTimeout(inactivityTimeout)
             inactivityTimeout = setTimeout(() => {
-                if (!alwayson) {
-                    songOverlay.classList.remove('visible')
-                }
+                if (!alwayson) songOverlay.classList.remove('visible')
             }, 30000)
         }
-
-        if (!alwayson) {
-            resetInactivityTimeout()
-        }
+        if (!alwayson) resetInactivityTimeout()
     </script>
 </body>
 </html>

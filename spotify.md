@@ -357,6 +357,13 @@ Changes the stroke color.
 
 ---
 
+**Example:** `https://tawmae.github.io/overlays/Spotify.html?opacity=0&stroke=3&strokecolor=black&progressbar=false&fontsize=100&width=1800&fontcolor=%23d4af37&font=Helvetica`
+
+![Picture](assets/media/spotify_overlay_example.png)
+
+
+---
+
 ## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> Custom Triggers
 
 Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that populate variables with the track info.

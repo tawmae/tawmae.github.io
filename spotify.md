@@ -351,7 +351,9 @@ Applies a stroke to the text.
 
 Changes the width of the container.
 
-`width=1500`
+`strokecolor=pink`
+
+`strokecolor=%23000000`
 
 ---
 

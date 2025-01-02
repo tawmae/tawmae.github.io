@@ -307,6 +307,54 @@ You can make the overlay only show whenever a new song begins.
 
 ---
 
+#### <span class="iconify" data-icon="material-symbols:progress-activity" data-inline="false"></span> Progessbar Toggle
+
+Removes the progress bar.
+
+`progressbar=false`
+
+---
+
+#### <span class="iconify" data-icon="mdi:circle-opacity" data-inline="false"></span> Opacity
+
+Changes the opacity of the background.
+
+`opacity=69`
+
+---
+
+#### <span class="iconify" data-icon="material-symbols:format-size" data-inline="false"></span> Font Size
+
+Changes the font size (also scales the height of the container). You might need to change the width accordingly (see below).
+
+`fontsize=69`
+
+---
+
+#### <span class="iconify" data-icon="material-symbols:width" data-inline="false"></span> Width
+
+Changes the width of the container.
+
+`width=1500`
+
+---
+
+#### <span class="iconify" data-icon="material-symbols:stroke-full" data-inline="false"></span> Stroke
+
+Applies a stroke to the text.
+
+`stroke=10`
+
+---
+
+#### <span class="iconify" data-icon="ic:baseline-color-lens" data-inline="false"></span> Stroke Color
+
+Changes the width of the container.
+
+`width=1500`
+
+---
+
 ## <span class="iconify" data-icon="material-symbols:notifications-unread-outline" data-inline="false"></span> Custom Triggers
 
 Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that populate variables with the track info.

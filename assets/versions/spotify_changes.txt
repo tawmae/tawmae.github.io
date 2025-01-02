@@ -1,2 +1,2 @@
-• Added a toggle button for chat replies
-• Queued Songs now allow for a number input
+• '!vol' without an input returns current volume
+• Added formatted time variables to custom triggers

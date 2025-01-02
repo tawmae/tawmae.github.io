@@ -31,7 +31,8 @@ icon_mapping:
 #aux_links:
   #Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-
+plugins:
+  - jekyll-seo-tag
 
 callouts_level: quiet # or loud
 callouts:

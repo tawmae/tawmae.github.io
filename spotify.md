@@ -349,7 +349,7 @@ Applies a stroke to the text.
 
 #### <span class="iconify" data-icon="ic:baseline-color-lens" data-inline="false"></span> Stroke Color
 
-Changes the width of the container.
+Changes the stroke color.
 
 `strokecolor=pink`
 

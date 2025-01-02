@@ -343,7 +343,7 @@ Changes the width of the container.
 
 Applies a stroke to the text.
 
-`stroke=10`
+`stroke=3`
 
 ---
 

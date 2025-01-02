@@ -164,10 +164,10 @@
         const strokeColorParam = p.get('strokecolor') || '#000000'
         if (font !== 'Poppins') {
             const link = document.createElement('link')
-            link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(font)}&display=swap`
+            link.href = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent(font) + '&display=swap'
             link.rel = 'stylesheet'
             document.head.appendChild(link)
-            document.body.style.fontFamily = `${font}, sans-serif`
+            document.body.style.fontFamily = font + ', sans-serif'
         }
         const client = new StreamerbotClient({host: adress, port: parseInt(port), endpoint: '/', password, onConnect})
         const songOverlay = document.getElementById('songOverlay')
@@ -228,11 +228,11 @@
         function applyOuterStroke(el, sw, sc) {
             if (sw <= 0) return
             let shadows = []
-            for (let i = 0; i < 360; i += 15) {
+            for (let i = 0; i < 360; i += 6) {
                 const rad = i * Math.PI / 180
                 const x = Math.round(sw * Math.cos(rad))
                 const y = Math.round(sw * Math.sin(rad))
-                shadows.push(x + 'px ' + y + 'px 0 ' + sc)
+                shadows.push(x + 'px ' + y + 'px 1px ' + sc)
             }
             el.style.textShadow = shadows.join(',')
         }

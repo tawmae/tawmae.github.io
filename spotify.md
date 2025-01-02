@@ -222,7 +222,7 @@ You can also customize the messages that are being posted into chat on requests.
 
 ---
 
-## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> OBS Widget 
+## <span class="iconify" data-icon="streamline:travel-places-painting-painting-entertainment-display-museum-event-hobby-exhibit" data-inline="false"></span> **OBS Widget** 
 
 You can use a custom OBS widget to add into your OBS.
 
@@ -253,7 +253,7 @@ To have the notification in multiple scenes, don't create an individual browser 
 
 ---
 
-### <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> URL Parameters 
+### <span class="iconify" data-icon="material-symbols:dataset-linked-sharp" data-inline="false"></span> **URL Parameters** 
 
 You can customize the widget with a few URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
 

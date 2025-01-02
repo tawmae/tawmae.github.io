@@ -1,1 +1,2 @@
-• Settings UI optimization
+• Icons from local file path 
+• Moved latest gifter to own event

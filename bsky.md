@@ -1,5 +1,6 @@
 ---
 title: 'BLUESKY & SB <span class="iconify" data-icon="logos:bluesky" style="color: #ffd700; font-size: 18px;"></span>'
+description: A full Bluesky integration for Streamer.bot
 layout: default
 nav_order: 2
 ---

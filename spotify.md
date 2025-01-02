@@ -1,5 +1,6 @@
 ---
 title: 'SPOTIFY & SB <span class="iconify" data-icon="logos:spotify-icon" style="color: #83ee83; font-size: 18px; margin-left: 2px;"></span>'
+description: A full Spotify integration for Streamer.bot
 layout: default
 nav_order: 1
 ---

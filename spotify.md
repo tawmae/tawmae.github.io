@@ -194,7 +194,7 @@ You can also customize the messages that are being posted into chat on requests.
 
 - `!vol [Number]`
  
-   Sets the volume of the player. Can also be a number like `+10` or `-10` to add/subtract to/from the current volume.
+   Sets the volume of the player. Can also be a number like `+10` or `-10` to add/subtract to/from the current volume. Not entering `[Number]` will output the current volume to chat.
 
 - `!devices`
  

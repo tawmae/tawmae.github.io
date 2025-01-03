@@ -61,7 +61,6 @@
     }
 
     @keyframes wiggle {
-
       0%,
       100% {
         transform: rotate(0deg);
@@ -95,7 +94,6 @@
     }
 
     @keyframes linger-wiggle {
-
       0%,
       100% {
         transform: rotate(0deg);
@@ -304,21 +302,30 @@
       } else if (type === 'GiftBomb') {
         tier = `Tier ${sub_tier?.charAt(0)}`;
       }
-    }
 
-    switch (type) {
-      case 'Follow': return 'just followed the channel!';
-      case 'Cheer': return `cheered with ${bits} bits!`;
-      case 'Sub': return `subscribed with a ${tier} sub!`;
-      case 'ReSub': return `resubbed with a ${tier} sub for the ${cumulativeMonths}. month!`;
-      case 'GiftSub': return `gifted a ${tier} sub to ${recipient.name}!`;
-      case 'GiftBomb': return `gifted ${total} ${tier} subs!`;
-      case 'Raid': return `raided with ${viewers} viewers!`;
-      case 'Donation': return `donated ${amount} ${currency}!`;
-      case 'WatchStreak': return `is on a ${watchStreak}x watchstreak!`;
-      default: return 'did something truly amazing!';
+      switch (type) {
+        case 'Follow':
+          return 'just followed the channel!';
+        case 'Cheer':
+          return `cheered with ${bits} bits!`;
+        case 'Sub':
+          return `subscribed with a ${tier} sub!`;
+        case 'ReSub':
+          return `resubbed with a ${tier} sub for the ${cumulativeMonths}. month!`;
+        case 'GiftSub':
+          return `gifted a ${tier} sub to ${recipient.name}!`;
+        case 'GiftBomb':
+          return `gifted ${total} ${tier} subs!`;
+        case 'Raid':
+          return `raided with ${viewers} viewers!`;
+        case 'Donation':
+          return `donated ${amount} ${currency}!`;
+        case 'WatchStreak':
+          return `is on a ${watchStreak}x watchstreak!`;
+        default:
+          return 'did something truly amazing!';
+      }
     }
-
   </script>
 </body>
 

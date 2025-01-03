@@ -296,11 +296,11 @@
 
       let tier;
       if (type === 'Sub' || type === 'ReSub') {
-        tier = is_prime || isPrime ? 'Prime' : `Tier ${sub_tier?.charAt(0) || subTier?.charAt(0)}`;
+        tier = is_prime || isPrime ? 'Prime' : `T${sub_tier?.charAt(0) || subTier?.charAt(0)}`;
       } else if (type === 'GiftSub') {
-        tier = `Tier ${subTier?.charAt(0)}`;
+        tier = `T${subTier?.charAt(0)}`;
       } else if (type === 'GiftBomb') {
-        tier = `Tier ${sub_tier?.charAt(0)}`;
+        tier = `T${sub_tier?.charAt(0)}`;
       }
 
       switch (type) {

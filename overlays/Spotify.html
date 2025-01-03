@@ -91,7 +91,6 @@
         #requestedByContainer {
             display: flex;
             align-items: center;
-            color: #ccc;
             transition: opacity 1s ease;
         }
         #requestedByText {
@@ -236,9 +235,11 @@
         }
         setFontSizes(fontsizeParam)
         if (dropshadowParam) applyDropShadow()
-        applyOuterStroke(artistsEl, strokeWidthParam, strokeColorParam)
-        applyOuterStroke(trackNameEl, strokeWidthParam, strokeColorParam)
-        applyOuterStroke(requestedByText, Math.max(1, Math.floor(strokeWidthParam * 0.5)), strokeColorParam)
+        if (strokeWidthParam > 0) {
+            applyOuterStroke(artistsEl, strokeWidthParam, strokeColorParam)
+            applyOuterStroke(trackNameEl, strokeWidthParam, strokeColorParam)
+            applyOuterStroke(requestedByText, Math.floor(strokeWidthParam * 0.5), strokeColorParam)
+        }
         let currentCoverUrl = ''
         let inactivityTimeout = null
         let lastTrackId = null

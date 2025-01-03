@@ -275,8 +275,8 @@
                 case 'GiftBomb':
                     username = `${data.data.user.name}`;
                     avatarUrl = await fetchAvatar(data.data.user.login);
-                    const tier = parseInt(data.data.sub_tier, 10) / 1000;
-                    eventInfo = `GIFTBOMB (${data.data.total} T${tier})`;
+                    const _tier = parseInt(data.data.sub_tier, 10) / 1000;
+                    eventInfo = `GIFTBOMB (${data.data.total} T${_tier})`;
                     break;
                 case 'Raid':
                     username = `${data.data.from_broadcaster_user_name}`;

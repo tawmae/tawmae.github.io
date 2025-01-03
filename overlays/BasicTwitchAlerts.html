@@ -283,7 +283,7 @@
         amount,
         currency,
         viewers,
-        gifts,
+        total,
         bits,
         watchStreak
       } = event.data;
@@ -291,8 +291,11 @@
       let tier;
       if (type === 'Sub' || type === 'ReSub') {
         tier = is_prime || isPrime ? 'Prime' : `Tier ${sub_tier?.charAt(0) || subTier?.charAt(0)}`;
-      } else if (type === 'GiftSub' || type === 'GiftBomb') {
-        tier = `Tier ${subTier?.charAt(0)}`;
+      } else if (type === 'GiftSub') {
+    tier = `Tier ${subTier?.charAt(0)}`;
+  } else if (type === 'GiftBomb') {
+    tier = `Tier ${sub_tier?.charAt(0)}`;
+  }
       }
 
       switch (type) {
@@ -301,7 +304,7 @@
         case 'Sub': return `subscribed with a ${tier} sub!`;
         case 'ReSub': return `resubbed with a ${tier} sub for the ${cumulativeMonths}. month!`;
         case 'GiftSub': return `gifted a ${tier} sub to ${recipient.name}!`;
-        case 'GiftBomb': return `gifted ${gifts} ${tier} subs!`;
+        case 'GiftBomb': return `gifted ${total} ${tier} subs!`;
         case 'Raid': return `raided with ${viewers} viewers!`;
         case 'Donation': return `donated ${amount} ${currency}!`;
         case 'WatchStreak': return `is on a ${watchStreak}x watchstreak!`;

@@ -283,7 +283,7 @@
         amount,
         currency,
         viewers,
-        gifts,
+        total,
         bits,
         watchStreak
       } = event.data;
@@ -291,9 +291,12 @@
       let tier;
       if (type === 'Sub' || type === 'ReSub') {
         tier = is_prime || isPrime ? 'Prime' : `Tier ${sub_tier?.charAt(0) || subTier?.charAt(0)}`;
-      } else if (type === 'GiftSub' || type === 'GiftBomb') {
+      } else if (type === 'GiftSub') {
         tier = `Tier ${subTier?.charAt(0)}`;
+      } else if (type === 'GiftBomb') {
+        tier = `Tier ${sub_tier?.charAt(0)}`;
       }
+    }
 
       switch (type) {
         case 'Follow': return 'acaba de seguir el canal';
@@ -301,7 +304,7 @@
         case 'Sub': return `se ha suscrito con un sub de ${tier}`;
         case 'ReSub': return `ha renovado su sub de ${tier} siendo este el  mes número ${cumulativeMonths}`;
         case 'GiftSub': return `regaló una sub de ${tier} a ${recipient.name}`;
-        case 'GiftBomb': return `ha regalado ${gifts} subs de ${tier}`;
+        case 'GiftBomb': return `ha regalado ${total} subs de ${tier}`;
         case 'Raid': return `hizo una raid con ${viewers} espectadores`;
         case 'Donation': return `donó ${amount} ${currency}`;
         case 'WatchStreak': return `lleva una racha de ${watchStreak}x viendo el canal`;

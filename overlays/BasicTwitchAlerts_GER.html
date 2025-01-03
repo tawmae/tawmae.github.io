@@ -61,12 +61,16 @@
     }
 
     @keyframes wiggle {
-      0%,100% {
+
+      0%,
+      100% {
         transform: rotate(0deg);
       }
+
       25% {
         transform: rotate(-5deg);
       }
+
       50% {
         transform: rotate(5deg);
       }
@@ -91,12 +95,16 @@
     }
 
     @keyframes linger-wiggle {
-      0%,100% {
+
+      0%,
+      100% {
         transform: rotate(0deg);
       }
+
       25% {
         transform: rotate(-10deg);
       }
+
       50% {
         transform: rotate(10deg);
       }
@@ -138,8 +146,8 @@
 
     const duration = parseInt(params.get('duration')) || 7000;
     const anonymousFollows = params.get('anonymousfollows') === 'true';
-    
-    
+
+
     let watchStreaksParam = params.get('watchstreaks');
     const watchStreaksEnabled = (watchStreaksParam === null || watchStreaksParam === '') ? true : (watchStreaksParam.toLowerCase() !== 'false');
 
@@ -185,9 +193,9 @@
       const event = queue.shift();
       const { type } = event.event;
 
-      
+
       if (type === 'WatchStreak' && !watchStreaksEnabled) {
-        
+
         isAnimating = false;
         processQueue();
         return;
@@ -298,7 +306,7 @@
       }
     }
 
-      switch (type) {
+    switch (type) {
         case 'Follow': return 'folgt dem Kanal jetzt!';
         case 'Cheer': return `cheert mit ${bits} Bits!`;
         case 'Sub': return `hat mit einem ${tier} Sub abonniert!`;
@@ -310,7 +318,7 @@
         case 'WatchStreak': return `hat eine ${watchStreak}x Watchstreak!`;
         default: return 'hat etwas wunderbares gemacht!';
       }
-    }
+
   </script>
 </body>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>tawmae - SPOTIFY & SB Overlay</title>
-    <link id="fontLink" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
     <style>
         * {
@@ -54,6 +54,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 10px;
         }
         #coverImage {
             display: block;
@@ -83,7 +84,7 @@
             max-width: 100%;
         }
         #trackName {
-            font-weight: bold;
+            font-weight: 700;
             white-space: nowrap;
             text-overflow: ellipsis;
             max-width: 100%;
@@ -155,8 +156,8 @@
         const alwayson = p.get('alwayson') !== 'false'
         const opacityParam = parseInt(p.get('opacity') || '100')
         const dropshadowParam = p.get('dropshadow') === 'true'
-        const fontsizeParam = parseInt(p.get('fontsize') || '56')
-        const widthParam = parseInt(p.get('width') || '900')
+        const fontsizeParam = parseInt(p.get('fontsize') || '48')
+        const widthParam = parseInt(p.get('width') || '800')
         let progressbarParam = p.get('progressbar')
         if (!progressbarParam) progressbarParam = 'true'
         const strokeWidthParam = parseInt(p.get('stroke') || '0')
@@ -200,8 +201,8 @@
         function setFontSizes(baseSize) {
             const r = baseSize / 56
             trackNameEl.style.fontSize = baseSize + 'px'
-            artistsEl.style.fontSize = Math.round(baseSize * 44/56) + 'px'
-            requestedByText.style.fontSize = Math.round(baseSize * 26/56) + 'px'
+            artistsEl.style.fontSize = Math.round(baseSize * 40/56) + 'px'
+            requestedByText.style.setProperty('font-size', Math.round(baseSize * 22 / 56) + 'px', 'important');
             remainingTime.style.fontSize = Math.round(baseSize * 24/56) + 'px'
             const pad = Math.round(20 * r)
             content.style.padding = pad + 'px'
@@ -284,8 +285,8 @@
                 coverImage.src = s.coverImageUrl
                 currentCoverUrl = s.coverImageUrl
             }
-            artistsEl.textContent = truncateText(s.artists || 'Unknown', 25)
-            trackNameEl.textContent = truncateText(s.trackName || 'Unknown', 25)
+            artistsEl.textContent = truncateText(s.artists || 'Unknown', 35)
+            trackNameEl.textContent = truncateText(s.trackName || 'Unknown', 30)
             if (s.isRequested && s.user) {
                 requestedByText.textContent = 'requested by ' + s.user
                 userProfileImage.src = s.userProfileImageUrl

@@ -1,2 +1,1 @@
-• '!vol' without an input returns current volume
-• Added formatted time variables to custom triggers
+• Added 'Followers Only Songrequests' to the settings menu

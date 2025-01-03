@@ -290,6 +290,7 @@
                             'Sub',
                             'ReSub',
                             'GiftSub',
+                            'GiftBomb',
                             'RewardRedemption',
                             'WatchStreak',
                             'Cheer',
@@ -321,6 +322,7 @@
                         case 'sub': action = () => processEvent(() => handleSubscription(payload.data)); break;
                         case 'resub': action = () => processEvent(() => handleReSubscription(payload.data)); break;
                         case 'giftsub': action = () => processEvent(() => handleGiftSubscription(payload.data)); break;
+                        case 'giftbomb': action = () => processEvent(() => handleGiftBombSubscription(payload.data)); break;    
                         case 'rewardredemption': action = () => processEvent(() => handleRewardRedemption(payload.data)); break;
                         case 'watchstreak': action = () => processEvent(() => handleWatchStreak(payload.data)); break;
                         case 'cheer': action = () => processEvent(() => handleCheer(payload.data)); break;
@@ -660,6 +662,22 @@
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
                 const tN = document.createTextNode(`${dn} gifted a ${tt} sub to ${rn}!`);
+                tx.appendChild(tN);
+                el.appendChild(tx);
+                messageList.appendChild(el);
+                messagesMap.set(messageId, el);
+            }
+            function handleGiftBombSubscription(d) {
+                const { sub_tier, user, total, messageId } = d;
+                const { name: dn } = user;
+                const { name: gfts } = total;
+                let tn = Math.floor(parseInt(sub_tier, 10) / 1000);
+                let tt = `Tier ${tn}`;
+                const el = createSubscriptionElement('GIFT BOMB', '#FFD700', 'iconamoon:gift-light');
+                if (enterDirection === 'left') el.classList.add('slide-in-left');
+                const tx = document.createElement('div');
+                tx.classList.add('subscription-text');
+                const tN = document.createTextNode(`${dn} gifted ${gfts} ${tt} subs to the community!`);
                 tx.appendChild(tN);
                 el.appendChild(tx);
                 messageList.appendChild(el);

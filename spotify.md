@@ -383,8 +383,8 @@ Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that popu
    - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
    - `progressMs` *(int)* - the new song's progress in milliseconds
    - `durationMs` *(int)* - the new song's total duration in milliseconds
-   - `progressFormattedTime` *(string)* - the new song's progress time in a mm:ss format
-   - `durationFormattedTime` *(string)* - the new song's total duration in a mm:ss format
+   - `progressTimeFormatted` *(string)* - the new song's progress time in a mm:ss format
+   - `durationTimeFormatted` *(string)* - the new song's total duration in a mm:ss format
    - `isRequested` *(bool)* - indicator whether the new song has been requested or not
    - `user` *(string)* - the display name of the requester *(`<null>` if not requested)*
    - `userName` *(string)* - the user login of the requester *(`<null>` if not requested)*
@@ -403,8 +403,8 @@ Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that popu
       - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
       - `progressMs` *(int)* - the song's progress in milliseconds
       - `durationMs` *(int)* - the song's total duration in milliseconds
-      - `progressFormattedTime` *(string)* - the song's progress time in a mm:ss format
-      - `durationFormattedTime` *(string)* - the song's total duration in a mm:ss format
+      - `progressTimeFormatted` *(string)* - the song's progress time in a mm:ss format
+      - `durationTimeFormatted` *(string)* - the song's total duration in a mm:ss format
 
 3. Song Paused
 
@@ -418,8 +418,8 @@ Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that popu
       - `isPlaying` *(bool)* - indicator whether the new song is playing when it comes up
       - `progressMs` *(int)* - the new song's progress in milliseconds
       - `durationMs` *(int)* - the new song's total duration in milliseconds
-      - `progressFormattedTime` *(string)* - the song's progress time in a mm:ss format
-      - `durationFormattedTime` *(string)* - the song's total duration in a mm:ss format
+      - `progressTimeFormatted` *(string)* - the song's progress time in a mm:ss format
+      - `durationTimeFormatted` *(string)* - the song's total duration in a mm:ss format
 
 
 ![Picture](assets/media/spotify_custom_triggers_2.png)

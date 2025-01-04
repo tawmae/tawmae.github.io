@@ -373,7 +373,7 @@ Under `Custom -> SPOTIFY & SB` you will be able to find three triggers that popu
 
 1. New Song
 
-   Fires when a new song starts *(won't fire if the exact same song replays)*.
+   Fires when a new song starts *(also fires if the same song gets played over/reset)*.
 
    Available variables:
    - `trackId` *(string)* - the ID of the track

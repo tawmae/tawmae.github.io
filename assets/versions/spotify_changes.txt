@@ -1,1 +1,1 @@
-• Added 'Followers Only Songrequests' to the settings menu
+• Added 'Followers Only Songrequests' and 'Allow Duplicate Requests' to the settings menu

@@ -1,1 +1,2 @@
-• Code Optimizations
+• Improved ASCII detection pattern
+• Bug fix for warning the wrong user on URL detection

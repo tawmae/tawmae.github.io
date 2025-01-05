@@ -1,0 +1,2 @@
+• Added Version Check
+• Redone Settings UI

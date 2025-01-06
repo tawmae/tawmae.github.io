@@ -1,8 +1,4 @@
----
-title: Advice Giver
-layout: default
-parent: Chat Games
----
+
 
 ![Picture](assets/general/title_advice.png)
 

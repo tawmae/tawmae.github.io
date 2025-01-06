@@ -1,1 +1,1 @@
-• Added 'Followers Only Songrequests' and 'Allow Duplicate Requests' to the settings menu
+• Fixed a bug when handling covers for local files

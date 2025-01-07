@@ -358,6 +358,14 @@ Changes the stroke color.
 
 ---
 
+#### <span class="iconify" data-icon="mdi:scissors-cutting" data-inline="false"></span> Strip Track Name
+
+The default strips certain parts (text after a hyphen or within brackets) of the track name that are usually unnecessary, e.g. `In The Air Tonight - 2015 Remaster` -> `In The Air Tonight` or `Stairway to Heaven - (Live at MSG 1973) [Remaster]` -> `Stairway to Heaven`. You can turn that stripping off.
+
+`?striptrackname=false`
+
+---
+
 **Example:** `https://tawmae.github.io/overlays/Spotify.html?opacity=0&stroke=3&strokecolor=black&progressbar=false&fontsize=100&width=1800&fontcolor=%23d4af37&font=Helvetica`
 
 ![Picture](assets/media/spotify_overlay_example.png)

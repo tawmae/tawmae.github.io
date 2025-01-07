@@ -340,6 +340,15 @@ Changes the width of the container.
 
 ---
 
+#### <span class="iconify" data-icon="tabler:inner-shadow-right" data-inline="false"></span> Dropshadow
+
+Deactivates the dropshadow for the text.
+
+`dropshadow=false`
+
+---
+
+
 #### <span class="iconify" data-icon="material-symbols:stroke-full" data-inline="false"></span> Stroke
 
 Applies a stroke to the text.

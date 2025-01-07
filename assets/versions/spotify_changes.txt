@@ -1,1 +1,2 @@
-• Fixed a bug when handling covers for local files
+• Added 'Current Volume' text to settings
+• Entering a single hyphen as a text for chat responses will not post message

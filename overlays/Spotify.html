@@ -117,7 +117,7 @@
         #progressBar {
             background: #fff;
             opacity: 0.7;
-            transition: width 0.5s linear;
+            transition: width 1s linear;
             height: 100%;
             width: 100%;
         }
@@ -162,6 +162,7 @@
         if (!progressbarParam) progressbarParam = 'true'
         const strokeWidthParam = parseInt(p.get('stroke') || '0')
         const strokeColorParam = p.get('strokecolor') || '#000000'
+        const striptrackname = p.get('striptrackname') || 'true'
         if (font !== 'Poppins') {
             const link = document.createElement('link')
             link.href = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent(font) + '&display=swap'
@@ -254,6 +255,9 @@
                 } catch(e){}
             }
         })
+        function stripTrackName(t) {
+            return t.replace(/\s-\s.*$/, '').replace(/\(.*?\)/g, '').trim()
+        }
         function updateSongInfo(d) {
             resetInactivityTimeout()
             if (d.songInfo && d.songInfo.isPlaying) {
@@ -286,7 +290,11 @@
                 currentCoverUrl = s.coverImageUrl
             }
             artistsEl.textContent = truncateText(s.artists || 'Unknown', 35)
-            trackNameEl.textContent = truncateText(s.trackName || 'Unknown', 30)
+            let displayedTrackName = s.trackName || 'Unknown'
+            if (striptrackname === 'true') {
+                displayedTrackName = stripTrackName(displayedTrackName)
+            }
+            trackNameEl.textContent = truncateText(displayedTrackName, 30)
             if (s.isRequested && s.user) {
                 requestedByText.textContent = 'requested by ' + s.user
                 userProfileImage.src = s.userProfileImageUrl

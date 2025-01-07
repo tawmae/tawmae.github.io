@@ -61,7 +61,11 @@ U0JBRR+LCAAAAAAABADsvWluK8uSJvi/gNoDcQsoZOFmnBMjyXjILLRIcRTFI5FikIy8D4mYSIYYHK44
 
 ### 1. Create Posts
 
-To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[BLUESKY & SB] 1 - Create Post` action to your liking. You can also toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded. You can also set the language of your posts by editing the `Set Argument - %bskyLanguage` and typing the ISO language codes in there (e.g. `en-US` or `de-DE`). You can also type in multiple languages by seperating them with a comma and a space. If you set `bskyQuotePost` to `True`, the new post will have your most recent post (that's been created by the extension) as a quote. Note that quoting vía the API currently does not allow for image or video embeds due to a Bluesky API limitation.
+- To edit the content of your post, simply edit the `Set Argument - %bskyText%` subaction in the `[BLUESKY & SB] 1 - Create Post` action to your liking.
+- You can toggle `Set Argument - %bskyURLPreview` to generate a preview of your link. Previews only work if no other images are embedded.
+- You can also set the language of your posts by editing the `Set Argument - %bskyLanguage` and typing the ISO language codes in there (e.g. `en-US` or `de-DE`). You can also type in multiple languages by seperating them with a comma and a space.
+- If you set `bskyQuotePost` to `True`, the new post will have your most recent post (that's been created by the extension) as a quote.
+- Note that quoting vía the API currently does not allow for image or video embeds due to a Bluesky API limitation.
 
 ![Picture](assets/media/bsky_action_1.png)
 

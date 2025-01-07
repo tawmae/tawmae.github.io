@@ -125,7 +125,7 @@ Those settings will **persist** across updates!
 
 [![Picture](assets/media/spotify_settings_1.png)](https://tawmae.github.io/assets/media/spotify_settings_1.png)
 
-You can also customize the messages that are being posted into chat on requests.
+You can also customize the messages that are being posted into chat on requests. **If you don't want any message to be posted, you can enter a single hyphen as the message `-`.**
 
 [![Picture](assets/media/spotify_settings_2.png)](https://tawmae.github.io/assets/media/spotify_settings_2.png)
 

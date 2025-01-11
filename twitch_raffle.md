@@ -55,9 +55,8 @@ U0JBRR+LCAAAAAAABADsvWlz4liWMPx9IuY/+Mn52E2WJBCGjpgPBrPakMkmQJ0Vb2gDyUhAGzCGifnv
 
 You can modify the settings like different amount of entries for subs, VIPs and mods, chat responses and more in the settings menu by going into the `[Twitch Raffle] 1 - Settings` action, rightclicking the "Test" trigger and hitting "Test Trigger".
 
-![Picture](assets/media/twitch_raffle_settings_1.png)
+![Picture](assets/media/raffle_settings.png)
 
-![Picture](assets/media/twitch_raffle_settings_2.png)
 
 
 ---

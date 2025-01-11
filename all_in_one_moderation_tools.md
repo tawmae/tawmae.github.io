@@ -87,36 +87,32 @@ All the other settings can be left at default if wanted. You can of course chang
 #### General
 {: .no_toc }
 
-![Picture](assets/media/aio_general.png)
+![Picture](assets/media/aio_settings_1.png)
 
-#### URL Blocking
+#### URL Filter
 {: .no_toc }
 
-![Picture](assets/media/aio_urlblocking.png)
-![Picture](assets/media/aio_urlblocking2.png)
+![Picture](assets/media/aio_settings_2.png)
 
 #### Follow Bot Attacks
 {: .no_toc }
 
-![Picture](assets/media/aio_followbotattack.png)
-
-#### Hate Raids
-{: .no_toc }
-
-![Picture](assets/media/aio_hateraid.png)
-![Picture](assets/media/aio_hateraid2.png)
+![Picture](assets/media/aio_settings_3.png)
 
 #### Blacklisted Words
 {: .no_toc }
 
-![Picture](assets/media/aio_mod_blacklisted_words.png)
-![Picture](assets/media/aio_mod_blacklisted_words2.png)
-![Picture](assets/media/aio_mod_blacklisted_words3.png)
+![Picture](assets/media/aio_settings_4.png)
 
-#### Raids and Shoutouts
+#### Raids & Shoutouts
 {: .no_toc }
 
-![Picture](assets/media/aio_raidsandshoutouts.png)
+![Picture](assets/media/aio_settings_5.png)
+
+#### Hate Raids
+{: .no_toc }
+
+![Picture](assets/media/aio_settings_6.png)
 
 ---
 

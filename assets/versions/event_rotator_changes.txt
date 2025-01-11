@@ -1,2 +1,1 @@
-• Icons from local file path 
-• Moved latest gifter to own event
+• Code Optimization

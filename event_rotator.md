@@ -81,6 +81,9 @@ To have the events in multiple scenes, don't create an individual browser source
 
 The rotator comes with a fully customizable settings UI. You can customize its looks, which events are supposed to show on there, what the duration for each rotation is and even define your own events. To initialize the rotator, you will need to run the settings UI at least once and save the settings.
 
+{: .new }
+To use local images instead of URLs, you will have to save the HTML locally to your PC and use the file in the browser source (with 'Local File' unchecked)
+
 [![Picture](assets/media/event_rotator_settings_1.png)](https://tawmae.github.io/assets/media/event_rotator_settings_1.png)
 
 [![Picture](assets/media/event_rotator_settings_2.png)](https://tawmae.github.io/assets/media/event_rotator_settings_2.png)

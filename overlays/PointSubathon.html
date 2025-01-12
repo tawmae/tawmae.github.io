@@ -107,6 +107,31 @@
       display: inline-block;
       min-width: 200px;
     }
+    .floating-points {
+      position: absolute;
+      font-size: 62px;
+      font-weight: bold;
+      animation: floatFade 1.5s forwards;
+      opacity: 0;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .floating-points.green {
+      color: rgb(107, 185, 91);
+    }
+    .floating-points.red {
+      color: rgb(248, 100, 100);
+    }
+    @keyframes floatFade {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>

@@ -1,140 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Point Subathon</title>
-    <script type="text/javascript" src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        background: transparent;
+<head>
+  <meta charset="utf-8">
+  <title>Point Subathon</title>
+  <script type="text/javascript" src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: transparent;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden; 
+    }
+    .container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row; 
+      align-items: flex-start;
+      padding: 20px;
+      gap: 10px; 
+      box-sizing: border-box;
+    }
+    #points {
+      font-size: 138px;
+      font-weight: bold;
+      text-align: right;
+      color: #ffd579;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      transition: transform 0.5s ease, color 0.5s ease;
+      padding: 10px;
+      display: inline-block;
+      position: relative;
+      white-space: nowrap;
+    }
+    #milestones {
+      width: auto;
+      max-width: 100%;
+      color: rgb(255, 255, 255);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      text-align: right;
+    }
+    .milestone {
+      font-size: 38px;
+      margin: 5px 0;
+      position: relative;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .milestone span {
+      position: relative;
+      display: inline-block;
+    }
+    .achieved {
+      color: grey;
+      opacity: 0.8;
+      animation: fadeOut 0.5s forwards;
+    }
+    .achieved span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 2px;
+      background-color: grey;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    .next {
+      font-size: 42px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      animation: highlightNext 0.5s ease;
+    }
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
       }
-      body {
-        font-family: 'Segoe UI', sans-serif;
-      }
-      .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 50px;
-        gap: 10px;
-      }
-      #points {
-        font-size: 138px;
-        font-weight: bold;
-        text-align: center;
-        color: #ffd579;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        transition: transform 0.5s ease, color 0.5s ease;
-        padding: 10px;
-        display: inline-block;
-        position: relative;
-        white-space: nowrap;
-      }
-      #milestones {
-        margin-top: 0;
-        width: auto;
-        max-width: 100%;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-      }
-      .milestone {
-        font-size: 38px;
-        margin: 5px 0;
-        position: relative;
-        line-height: 1.2;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-      .milestone span {
-        position: relative;
-        display: inline-block;
-      }
-      .achieved {
-        color: grey;
+      100% {
         opacity: 0.8;
-        animation: fadeOut 0.5s forwards;
       }
-      .achieved span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        height: 2px;
-        background-color: grey;
-        width: 100%;
-        transform: translateY(-50%);
+    }
+    @keyframes highlightNext {
+      0% {
+        transform: scale(1);
       }
-      .next {
-        font-size: 42px;
-        font-weight: bold;
-        color: rgb(255, 255, 255);
-        animation: highlightNext 0.5s ease;
+      50% {
+        transform: scale(1.1);
       }
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0.8;
-        }
+      100% {
+        transform: scale(1);
       }
-      @keyframes highlightNext {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      .box {
-        padding: 20px;
-        border-radius: 15px;
-        background: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        display: inline-block;
-        min-width: 200px;
-      }
-      .floating-points {
-        position: absolute;
-        font-size: 62px;
-        font-weight: bold;
-        animation: floatFade 1.5s forwards;
-        opacity: 0;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      .floating-points.green {
-        color: rgb(107, 185, 91);
-      }
-      .floating-points.red {
-        color: rgb(248, 100, 100);
-      }
-      @keyframes floatFade {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-50px);
-          opacity: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div id="points" class="box">0</div>
-      <div id="milestones" class="box"></div>
-    </div>
+    }
+    .box {
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      min-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="points" class="box">0</div>
+    <div id="milestones" class="box"></div>
+  </div>
     <script type="text/javascript">
       function getQueryParams() {
         const params = {};

@@ -1,2 +1,2 @@
-• Added 'Current Volume' text to settings
-• Entering a single hyphen as a text for chat responses will not post message
+• Settings UI design changes
+• Improved debugging

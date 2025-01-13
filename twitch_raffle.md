@@ -1,5 +1,5 @@
 ---
-title: Twitch Raffle
+title: 'Twitch Raffle <span class="iconify" data-icon="streamline-emojis:game-dice" style="font-size: 24px;"></span>'
 layout: default
 parent: Utility
 ---

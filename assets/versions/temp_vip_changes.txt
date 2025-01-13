@@ -1,1 +1,2 @@
-• Added a settings menu
+• UI design changes
+• Improved debugging

@@ -1,2 +1,2 @@
-• Added Version Check
-• Redone Settings UI
+• UI design changes
+• Improved debugging

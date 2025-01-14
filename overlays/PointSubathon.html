@@ -54,7 +54,6 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  color: #ffffff;
 }
 .milestone span {
   position: relative;
@@ -211,6 +210,7 @@ function updateMilestones() {
     el.style.fontSize = milestoneFontSize + 'px';
     if(m.value <= currentPoints) {
       el.className = "milestone achieved";
+      el.style.color = ""; 
     } else if(nextMilestone && m.value === nextMilestone.value) {
       el.className = "milestone next";
       el.style.color = milestoneColor;

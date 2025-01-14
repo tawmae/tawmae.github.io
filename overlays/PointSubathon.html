@@ -1,333 +1,336 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Point Subathon</title>
-  <script type="text/javascript" src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      background: transparent;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden; 
-    }
-    .container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: flex;
-      flex-direction: row; 
-      align-items: flex-start;
-      padding: 20px;
-      gap: 10px; 
-      box-sizing: border-box;
-    }
-    #points {
-      font-size: 138px;
-      font-weight: bold;
-      text-align: center;
-      color: #ffffff;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-      transition: transform 0.5s ease, color 0.5s ease;
-      padding: 10px;
-      display: inline-block;
-      position: relative;
-      white-space: nowrap;
-    }
-    #milestones {
-      width: auto;
-      max-width: 100%;
-      color: rgb(255, 255, 255);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-      text-align: right;
-    }
-    .milestone {
-      font-size: 38px;
-      margin: 5px 0;
-      position: relative;
-      line-height: 1.2;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .milestone span {
-      position: relative;
-      display: inline-block;
-    }
-    .achieved {
-      color: grey;
-      opacity: 0.8;
-      animation: fadeOut 0.5s forwards;
-    }
-    .achieved span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      height: 2px;
-      background-color: grey;
-      width: 100%;
-      transform: translateY(-50%);
-    }
-    .next {
-      font-size: 42px;
-      font-weight: bold;
-      color: rgb(255, 255, 255);
-      animation: highlightNext 0.5s ease;
-    }
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0.8;
-      }
-    }
-    @keyframes highlightNext {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    .box {
-      padding: 20px;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      display: inline-block;
-      min-width: 200px;
-    }
-    .floating-points {
-      position: absolute;
-      font-size: 62px;
-      font-weight: bold;
-      animation: floatFade 1.5s forwards;
-      opacity: 0;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    .floating-points.green {
-      color: rgb(107, 185, 91);
-    }
-    .floating-points.red {
-      color: rgb(248, 100, 100);
-    }
-    @keyframes floatFade {
-      0% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<title>Point Subathon</title>
+<script type="text/javascript" src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+#points {
+  font-size: 138px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  transition: transform 0.5s ease, color 0.5s ease;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+#milestones {
+  width: auto;
+  max-width: 100%;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  text-align: right;
+}
+.milestone {
+  font-size: 38px;
+  margin: 5px 0;
+  position: relative;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  color: #ffffff;
+}
+.milestone span {
+  position: relative;
+  display: inline-block;
+}
+.achieved {
+  color: grey;
+  opacity: 0.8;
+  animation: fadeOut 0.5s forwards;
+}
+.achieved span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background-color: grey;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.next {
+  font-weight: bold;
+  color: #ffffff;
+  animation: highlightNext 0.5s ease;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes highlightNext {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.box {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  min-width: 200px;
+}
+.floating-points {
+  position: absolute;
+  font-size: 62px;
+  font-weight: bold;
+  animation: floatFade 1.5s forwards;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.floating-points.green {
+  color: rgb(107, 185, 91);
+}
+.floating-points.red {
+  color: rgb(248, 100, 100);
+}
+@keyframes floatFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div id="points" class="box">0</div>
-    <div id="milestones" class="box"></div>
-  </div>
-    <script type="text/javascript">
-      function getQueryParams() {
-        const params = {};
-        location.search.substring(1).split("&").forEach(pair => {
-          if(pair) {
-            const parts = pair.split("=");
-            params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || "");
-          }
-        });
-        return params;
-      }
-      const query = getQueryParams();
-      const defaultHost = '127.0.0.1';
-      const defaultPort = 8080;
-      const defaultPassword = '';
-      const defaultFontNumber = "Segoe UI";
-      const defaultFontDescription = "Segoe UI";
-      const host = query.adress || defaultHost;
-      const port = query.port || defaultPort;
-      const password = query.password || defaultPassword;
-      document.getElementById('points').style.fontFamily = query.fontnumber || defaultFontNumber;
-      document.getElementById('milestones').style.fontFamily = query.fontdescription || defaultFontDescription;
-      document.getElementById('points').style.color = query.color;
-      document.getElementById('milestones').style.color = query.color;
-
-      let settings = {}, milestoneList = [];
-      let currentPoints = 0;
-      let previousPoints = 0;
-      let isAnimating = false;
-      let eventQueue = [];
-      let initialLoad = true;
-
-      function createFloatingPoints(value) {
-        const pointsElement = document.createElement('div');
-        pointsElement.className = `floating-points ${value > 0 ? 'green' : 'red'}`;
-        pointsElement.innerText = `${value > 0 ? '+' : ''}${value}`;
-        document.body.appendChild(pointsElement);
-        const rect = document.getElementById('points').getBoundingClientRect();
-        pointsElement.style.left = `${rect.left + rect.width / 2}px`;
-        pointsElement.style.top = `${rect.top - 20}px`;
-        setTimeout(() => pointsElement.remove(), 1500);
-      }
-
-      function updateMilestones() {
-        const container = document.getElementById('milestones');
-        let sorted = milestoneList.slice().sort((a, b) => a.value - b.value);
-        let nextMilestone = sorted.find(m => m.value > currentPoints);
-        sorted.forEach(m => {
-          let el = container.querySelector('[data-value="'+m.value+'"]');
-          if (!el) {
-            el = document.createElement("div");
-            el.classList.add("milestone");
-            el.setAttribute("data-value", m.value);
-            let span = document.createElement("span");
-            el.appendChild(span);
-            container.appendChild(el);
-            setTimeout(() => {
-              el.style.opacity = 1;
-              el.style.transform = "translateY(0)";
-            }, 100);
-          }
-          let span = el.querySelector("span");
-          span.innerText = m.title + " (" + m.value + ")";
-          if(m.value <= currentPoints) {
-            el.className = "milestone achieved";
-          } else if(nextMilestone && m.value === nextMilestone.value) {
-            el.className = "milestone next";
-          } else {
-            el.className = "milestone";
-          }
-        });
-        Array.from(container.children).forEach(child => {
-          const val = parseInt(child.getAttribute("data-value"));
-          if (!sorted.find(m => m.value === val)) {
-            container.removeChild(child);
-          }
-        });
-      }
-
-      function animatePoints(targetPoints) {
-        const diff = targetPoints - currentPoints;
-        createFloatingPoints(diff);
-        isAnimating = true;
-        const duration = Math.min(10000, Math.max(500, Math.abs(diff) * 4));
-        const start = currentPoints;
-        const change = targetPoints - start;
-        let startTime = null;
-        function animate(time) {
-          if (!startTime) startTime = time;
-          let progress = (time - startTime) / duration;
-          if (progress > 1) progress = 1;
-          let value = Math.floor(start + change * progress);
-          document.getElementById('points').innerText = value;
-          currentPoints = value;
-          if (progress < 1) {
-            requestAnimationFrame(animate);
-          } else {
-            previousPoints = start;
-            currentPoints = targetPoints;
-            updateMilestones();
-            isAnimating = false;
-            processQueue();
-          }
+<div class="container">
+  <div id="points" class="box">0</div>
+  <div id="milestones" class="box"></div>
+</div>
+<script type="text/javascript">
+function getQueryParams() {
+  const params = {};
+  location.search.substring(1).split("&").forEach(pair => {
+    if(pair) {
+      const parts = pair.split("=");
+      params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || "");
+    }
+  });
+  return params;
+}
+const query = getQueryParams();
+const defaultHost = '127.0.0.1';
+const defaultPort = 8080;
+const defaultPassword = '';
+const host = query.adress || defaultHost;
+const port = query.port || defaultPort;
+const password = query.password || defaultPassword;
+const defaultNumberFont = 'Segoe UI';
+const defaultMilestoneFont = 'Segoe UI';
+const numberFont = query.numberfont || defaultNumberFont;
+const milestoneFont = query.milestonefont || defaultMilestoneFont;
+const numberColor = query.numbercolor || '#ffffff';
+const milestoneColor = query.milestonecolor || '#ffffff';
+const numberFontSize = query.numberfontsize || 138;
+const milestoneFontSize = query.milestonefontsize || 38;
+document.getElementById('points').style.fontFamily = numberFont;
+document.getElementById('points').style.fontSize = numberFontSize + 'px';
+document.getElementById('points').style.color = numberColor;
+document.getElementById('milestones').style.fontFamily = milestoneFont;
+Array.from(document.querySelectorAll('.box')).forEach(b=>{
+  if(query.background==='false') b.style.background='rgba(0,0,0,0)';
+});
+let settings = {}, milestoneList = [];
+let currentPoints = 0;
+let previousPoints = 0;
+let isAnimating = false;
+let eventQueue = [];
+let initialLoad = true;
+function createFloatingPoints(value) {
+  const pointsElement = document.createElement('div');
+  pointsElement.className = 'floating-points ' + (value > 0 ? 'green' : 'red');
+  pointsElement.innerText = (value > 0 ? '+' : '') + value;
+  document.body.appendChild(pointsElement);
+  const rect = document.getElementById('points').getBoundingClientRect();
+  pointsElement.style.left = (rect.left + rect.width / 2) + 'px';
+  pointsElement.style.top = (rect.top - 20) + 'px';
+  setTimeout(() => pointsElement.remove(), 1500);
+}
+function updateMilestones() {
+  const container = document.getElementById('milestones');
+  let sorted = milestoneList.slice().sort((a, b) => a.value - b.value);
+  let nextMilestone = sorted.find(m => m.value > currentPoints);
+  sorted.forEach(m => {
+    let el = container.querySelector('[data-value="'+m.value+'"]');
+    if (!el) {
+      el = document.createElement("div");
+      el.classList.add("milestone");
+      el.setAttribute("data-value", m.value);
+      let span = document.createElement("span");
+      el.appendChild(span);
+      container.appendChild(el);
+      setTimeout(() => {
+        el.style.opacity = 1;
+        el.style.transform = "translateY(0)";
+      }, 100);
+    }
+    let span = el.querySelector("span");
+    span.innerText = m.title + " (" + m.value + ")";
+    el.style.fontSize = milestoneFontSize + 'px';
+    if(m.value <= currentPoints) {
+      el.className = "milestone achieved";
+    } else if(nextMilestone && m.value === nextMilestone.value) {
+      el.className = "milestone next";
+      el.style.color = milestoneColor;
+    } else {
+      el.className = "milestone";
+      el.style.color = milestoneColor;
+    }
+  });
+  Array.from(container.children).forEach(child => {
+    const val = parseInt(child.getAttribute("data-value"));
+    if (!sorted.find(m => m.value === val)) {
+      container.removeChild(child);
+    }
+  });
+}
+function animatePoints(targetPoints) {
+  const diff = targetPoints - currentPoints;
+  createFloatingPoints(diff);
+  isAnimating = true;
+  const duration = Math.min(10000, Math.max(500, Math.abs(diff) * 4));
+  const start = currentPoints;
+  const change = targetPoints - start;
+  let startTime = null;
+  function animate(time) {
+    if (!startTime) startTime = time;
+    let progress = (time - startTime) / duration;
+    if (progress > 1) progress = 1;
+    let value = Math.floor(start + change * progress);
+    document.getElementById('points').innerText = value;
+    currentPoints = value;
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      previousPoints = start;
+      currentPoints = targetPoints;
+      updateMilestones();
+      isAnimating = false;
+      processQueue();
+    }
+  }
+  requestAnimationFrame(animate);
+}
+function processQueue() {
+  if(eventQueue.length > 0 && !isAnimating) {
+    const next = eventQueue.shift();
+    animatePoints(next);
+  }
+}
+const client = new StreamerbotClient({
+  host: host,
+  port: port,
+  endpoint: '/',
+  onConnect: async () => {
+    try {
+      const globalSettings = await client.getGlobal('tawmae_Settings_POINT_SUBATHON');
+      let parsedSettings = {};
+      if(globalSettings) {
+        if(globalSettings.variable && typeof globalSettings.variable.value === "string") {
+          parsedSettings = JSON.parse(globalSettings.variable.value.trim());
+        } else if(typeof globalSettings === "string") {
+          parsedSettings = JSON.parse(globalSettings.trim());
+        } else {
+          parsedSettings = globalSettings;
         }
-        requestAnimationFrame(animate);
       }
-
-      function processQueue() {
-        if(eventQueue.length > 0 && !isAnimating) {
-          const next = eventQueue.shift();
-          animatePoints(next);
+      settings = parsedSettings;
+      if(settings.tab1 && Array.isArray(settings.tab1.milestones) && settings.tab1.milestones.length > 0) {
+        milestoneList = settings.tab1.milestones.map(m => ({
+          title: m.title,
+          value: parseInt(m.value)
+        }));
+      } else {
+        milestoneList = [{}];
+      }
+      updateMilestones();
+      const globalData = await client.getGlobal('tawmae_Data_POINT_SUBATHON');
+      let dataParsed = {};
+      if(globalData) {
+        if(globalData.variable && typeof globalData.variable.value === "string") {
+          dataParsed = JSON.parse(globalData.variable.value.trim());
+        } else if(typeof globalData === "string") {
+          dataParsed = JSON.parse(globalData.trim());
+        } else {
+          dataParsed = globalData;
         }
       }
-      
-      const client = new StreamerbotClient({
-        host: host,
-        port: port,
-        endpoint: '/',
-        onConnect: async () => {
-          try {
-            const globalSettings = await client.getGlobal('tawmae_Settings_POINT_SUBATHON');
-            let parsedSettings = {};
-            if(globalSettings) {
-              if(globalSettings.variable && typeof globalSettings.variable.value === "string") {
-                parsedSettings = JSON.parse(globalSettings.variable.value.trim());
-              } else if(typeof globalSettings === "string") {
-                parsedSettings = JSON.parse(globalSettings.trim());
-              } else {
-                parsedSettings = globalSettings;
-              }
-            }
-            settings = parsedSettings;
-            if(settings.tab1 && Array.isArray(settings.tab1.milestones) && settings.tab1.milestones.length > 0) {
-              milestoneList = settings.tab1.milestones.map(m => ({
-                title: m.title,
-                value: parseInt(m.value)
-              }));
-            } else {
-              milestoneList = [
-                {}
-              ];
-            }
-            updateMilestones();
-            const globalData = await client.getGlobal('tawmae_Data_POINT_SUBATHON');
-            let dataParsed = {};
-            if(globalData) {
-              if(globalData.variable && typeof globalData.variable.value === "string") {
-                dataParsed = JSON.parse(globalData.variable.value.trim());
-              } else if(typeof globalData === "string") {
-                dataParsed = JSON.parse(globalData.trim());
-              } else {
-                dataParsed = globalData;
-              }
-            }
-            let totalPoints = 0;
-            if(dataParsed.subathonData && dataParsed.subathonData.totalPoints !== undefined && dataParsed.subathonData.totalPoints !== null) {
-              totalPoints = parseInt(dataParsed.subathonData.totalPoints) || 0;
-            }
-            previousPoints = 0;
-            currentPoints = totalPoints;
-            document.getElementById('points').innerText = totalPoints;
-            updateMilestones();
-            initialLoad = false;
-          } catch(err) {
-            currentPoints = 0;
-            document.getElementById('points').innerText = "0";
-            initialLoad = false;
-          }
-        }
-      });
-
-      client.on('General.Custom', (payload) => {
-        if(payload.data && payload.data.eventName === "PointSubathon") {
-          const subData = payload.data.payload.subathonData;
-          const newTotal = subData.totalPoints;
-          if(isAnimating) {
-            eventQueue.push(newTotal);
-          } else {
-            animatePoints(newTotal);
-          }
-          if(payload.data.payload.milestones) {
-            milestoneList = payload.data.payload.milestones.map(m => ({
-              title: m.Title || m.title,
-              value: parseInt(m.Value || m.value)
-            }));
-            updateMilestones();
-          }
-        }
-      });
-    </script>
-  </body>
+      let totalPoints = 0;
+      if(dataParsed.subathonData && dataParsed.subathonData.totalPoints !== undefined && dataParsed.subathonData.totalPoints !== null) {
+        totalPoints = parseInt(dataParsed.subathonData.totalPoints) || 0;
+      }
+      previousPoints = 0;
+      currentPoints = totalPoints;
+      document.getElementById('points').innerText = totalPoints;
+      updateMilestones();
+      initialLoad = false;
+    } catch(err) {
+      currentPoints = 0;
+      document.getElementById('points').innerText = "0";
+      initialLoad = false;
+    }
+  }
+});
+client.on('General.Custom', (payload) => {
+  if(payload.data && payload.data.eventName === "PointSubathon") {
+    const subData = payload.data.payload.subathonData;
+    const newTotal = subData.totalPoints;
+    if(isAnimating) {
+      eventQueue.push(newTotal);
+    } else {
+      animatePoints(newTotal);
+    }
+    if(payload.data.payload.milestones) {
+      milestoneList = payload.data.payload.milestones.map(m => ({
+        title: m.Title || m.title,
+        value: parseInt(m.Value || m.value)
+      }));
+      updateMilestones();
+    }
+  }
+});
+</script>
+</body>
 </html>

@@ -151,8 +151,14 @@
         return params;
       }
       const query = getQueryParams();
+      const defaultHost = '127.0.0.1';
+      const defaultPort = 8080;
+      const defaultPassword = '';
       const defaultFontNumber = "Segoe UI";
       const defaultFontDescription = "Segoe UI";
+      const host = query.adress || defaultHost;
+      const port = query.port || defaultPort;
+      const password = query.password || defaultPassword;
       document.getElementById('points').style.fontFamily = query.fontnumber || defaultFontNumber;
       document.getElementById('milestones').style.fontFamily = query.fontdescription || defaultFontDescription;
       document.getElementById('points').style.color = query.color;
@@ -246,8 +252,11 @@
           animatePoints(next);
         }
       }
-
+      
       const client = new StreamerbotClient({
+        host: host,
+        port: port,
+        endpoint: '/',
         onConnect: async () => {
           try {
             const globalSettings = await client.getGlobal('tawmae_Settings_POINT_SUBATHON');

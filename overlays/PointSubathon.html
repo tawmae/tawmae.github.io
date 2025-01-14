@@ -144,7 +144,8 @@ function getQueryParams() {
   location.search.substring(1).split("&").forEach(pair => {
     if(pair) {
       const parts = pair.split("=");
-      params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || "");
+      const key = decodeURIComponent(parts[0]).toLowerCase();
+      params[key] = decodeURIComponent(parts[1] || "");
     }
   });
   return params;
@@ -169,7 +170,10 @@ document.getElementById('points').style.fontSize = numberFontSize + 'px';
 document.getElementById('points').style.color = numberColor;
 document.getElementById('milestones').style.fontFamily = milestoneFont;
 Array.from(document.querySelectorAll('.box')).forEach(b=>{
-  if(query.background==='false') b.style.background='rgba(0,0,0,0)';
+  if(query.background === 'false') {
+    b.style.background = 'rgba(0,0,0,0)';
+    b.style.boxShadow = 'none';
+  }
 });
 let settings = {}, milestoneList = [];
 let currentPoints = 0;
@@ -210,7 +214,7 @@ function updateMilestones() {
     el.style.fontSize = milestoneFontSize + 'px';
     if(m.value <= currentPoints) {
       el.className = "milestone achieved";
-      el.style.color = ""; 
+      el.style.color = "";
     } else if(nextMilestone && m.value === nextMilestone.value) {
       el.className = "milestone next";
       el.style.color = milestoneColor;

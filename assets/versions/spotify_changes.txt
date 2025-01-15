@@ -1,2 +1,1 @@
-• Settings UI design changes
-• Improved debugging
+• Improved update notification

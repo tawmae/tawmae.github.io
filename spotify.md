@@ -49,6 +49,8 @@ A full spotify integration in Streamer.bot in a user-friendly environment!
 
 ![Picture](assets/media/spotify_title_3.gif)
 
+![Picture](assets/media/spotify_overlay_example.png)
+
 {: .new }
 This extension requires a Spotify premium account.
 
@@ -375,7 +377,7 @@ The default strips certain parts (text after a hyphen or within brackets) of the
 
 ---
 
-**Example:** `https://tawmae.github.io/overlays/Spotify.html?opacity=0&stroke=3&strokecolor=black&progressbar=false&fontsize=100&width=1800&fontcolor=%23d4af37&font=Helvetica`
+**Example:** `https://tawmae.github.io/overlays/Spotify.html?backgroundcolor=black&opacity=80&font=segoe%20ui`
 
 ![Picture](assets/media/spotify_overlay_example.png)
 

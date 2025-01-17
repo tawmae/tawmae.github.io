@@ -184,6 +184,14 @@ Toggle the dropshadow for the text. Default is `true`.
 
 ---
 
+### <span class="iconify" data-icon="material-symbols:send-money" data-inline="false"></span> Minimum Reward Cost
+
+Set the minimum cost of channel point rewards to show in the overlay, so you can exclude cheap high-frequency rewards.
+
+`minRewardCost=250`
+
+---
+
 ## **FAQ**
 
 ![image](https://github.com/user-attachments/assets/c28e2f87-08d7-48d5-a7da-164c6b97b876)

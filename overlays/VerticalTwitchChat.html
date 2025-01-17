@@ -271,6 +271,13 @@
     </div>
     <script>
         (function () {
+            const MAX_CACHE_SIZE = 1000;
+            function cacheSet(map, key, value) {
+                if (map.size >= MAX_CACHE_SIZE) {
+                    map.delete(map.keys().next().value);
+                }
+                map.set(key, value);
+            }
             const params = new URLSearchParams(window.location.search);
             const caseInsensitiveParams = {};
             for (const [key, value] of params.entries()) {
@@ -282,18 +289,10 @@
             const font = getParam('font', 'Poppins');
             const fontsize = getParam('fontsize', '16px');
             const dropshadow = getParam('dropshadow', 'true') !== 'false';
-            const excludedaccounts = getParam('excludeaccounts')
-                ? getParam('excludeaccounts')
-                    .split(/[,+\s]+/)
-                    .map(acc => acc.trim().toLowerCase())
-                : [];
+            const excludedaccounts = getParam('excludeaccounts') ? getParam('excludeaccounts').split(/[,+\s]+/).map(acc => acc.trim().toLowerCase()) : [];
             const excludecommands = getParam('excludecommands') === 'true';
             const enterDirection = getParam('enter', 'right') === 'left' ? 'left' : 'right';
-            const excludeEventsParam = getParam('excludeevents')
-                ? getParam('excludeevents')
-                    .split(/[,+\s]+/)
-                    .map(e => e.trim().toLowerCase())
-                : [];
+            const excludeEventsParam = getParam('excludeevents') ? getParam('excludeevents').split(/[,+\s]+/).map(e => e.trim().toLowerCase()) : [];
             const address = getParam('adress', 'localhost');
             const port = getParam('port', '8080');
             const backgroundEnabled = getParam('background') === 'true';
@@ -445,6 +444,12 @@
             }
             function animateOffsetChange(from, to) {
                 return new Promise(resolve => {
+                    if (document.hidden) {
+                        messageList.style.transition = 'none';
+                        messageList.style.transform = `translateY(-${to}px)`;
+                        resolve();
+                        return;
+                    }
                     if (animating) {
                         requestAnimationFrame(() => {
                             animateOffsetChange(from, to).then(resolve);
@@ -472,12 +477,12 @@
                     if (res.ok) {
                         const data = await res.json();
                         if (data && data.pronoun_id && pronounMap[data.pronoun_id]) {
-                            pronounCache.set(username, pronounMap[data.pronoun_id]);
+                            cacheSet(pronounCache, username, pronounMap[data.pronoun_id]);
                             return pronounMap[data.pronoun_id];
                         }
                     }
                 } catch (e) { }
-                pronounCache.set(username, null);
+                cacheSet(pronounCache, username, null);
                 return null;
             }
             function updateExistingGigantify(key, gigantifiedEmote) {
@@ -523,7 +528,10 @@
                         avatar.src = avatarCache.get(actualUsername);
                     } else {
                         const aUrl = `https://decapi.me/twitch/avatar/${actualUsername}`;
-                        fetch(aUrl).then(r => r.text()).then(u => { avatar.src = u; avatarCache.set(actualUsername, u); }).catch(() => avatar.src = '');
+                        fetch(aUrl).then(r => r.text()).then(u => {
+                            avatar.src = u;
+                            cacheSet(avatarCache, actualUsername, u);
+                        }).catch(() => avatar.src = '');
                     }
                     header.appendChild(avatar);
                 }
@@ -575,7 +583,10 @@
                             sImg.src = sharedChatAvatarCache.get(sL);
                         } else {
                             const sUrl = `https://decapi.me/twitch/avatar/${sL}`;
-                            fetch(sUrl).then(r => r.text()).then(u => { sImg.src = u; sharedChatAvatarCache.set(sL, u); }).catch(() => sImg.src = '');
+                            fetch(sUrl).then(r => r.text()).then(u => {
+                                sImg.src = u;
+                                cacheSet(sharedChatAvatarCache, sL, u);
+                            }).catch(() => sImg.src = '');
                         }
                         header.appendChild(sImg);
                     }
@@ -639,7 +650,9 @@
                     msgText.appendChild(document.createTextNode(message));
                 }
                 el.appendChild(msgText);
-                messageList.appendChild(el);
+                const frag = document.createDocumentFragment();
+                frag.appendChild(el);
+                messageList.appendChild(frag);
                 messagesMap.set(msgId, el);
                 msgEmotesMap.set(msgId, e || []);
                 if (!userMessagesMap.has(userId)) userMessagesMap.set(userId, new Set());
@@ -861,37 +874,27 @@
             function deleteChatMessage(msgId) {
                 const el = messagesMap.get(msgId);
                 if (el) {
-                    const uid = el.dataset.userId;
                     messageList.removeChild(el);
                     messagesMap.delete(msgId);
                     msgEmotesMap.delete(msgId);
-                    if (userMessagesMap.has(uid)) {
-                        userMessagesMap.get(uid).delete(msgId);
-                        if (userMessagesMap.get(uid).size === 0) userMessagesMap.delete(uid);
-                    }
-                }
-                if (replyPreviewsMap.has(msgId)) {
-                    const p = replyPreviewsMap.get(msgId);
-                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
                     replyPreviewsMap.delete(msgId);
+                    userMessagesMap.forEach((msgIds, userId) => {
+                        msgIds.delete(msgId);
+                        if (msgIds.size === 0) userMessagesMap.delete(userId);
+                    });
                 }
             }
             function removeMessageById(msgId) {
                 const el = messagesMap.get(msgId);
                 if (el) {
-                    const uid = el.dataset.userId;
                     messageList.removeChild(el);
                     messagesMap.delete(msgId);
                     msgEmotesMap.delete(msgId);
-                    if (userMessagesMap.has(uid)) {
-                        userMessagesMap.get(uid).delete(msgId);
-                        if (userMessagesMap.get(uid).size === 0) userMessagesMap.delete(uid);
-                    }
-                }
-                if (replyPreviewsMap.has(msgId)) {
-                    const p = replyPreviewsMap.get(msgId);
-                    p.forEach(v => { v.innerHTML = '↪  <em>message deleted</em>'; });
                     replyPreviewsMap.delete(msgId);
+                    userMessagesMap.forEach((msgIds, userId) => {
+                        msgIds.delete(msgId);
+                        if (msgIds.size === 0) userMessagesMap.delete(userId);
+                    });
                 }
             }
             function removeUserMessages(uid) {

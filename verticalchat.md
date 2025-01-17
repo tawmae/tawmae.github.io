@@ -72,7 +72,7 @@ A customizable vertical Twitch chat overlay for OBS!
 You can customize the chat with URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
 
 **Example:**
-`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false`
+`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false&excludecommands=true&excludeaccounts=tawmaebot+kofibot`
 
 ---
 

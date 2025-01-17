@@ -303,6 +303,7 @@
             const showTimestamp = getParam('showtimestamp', 'false') === 'true';
             const showAvatars = getParam('showavatars', 'true') !== 'false';
             const minRewardCost = parseInt(getParam('minrewardcost', '0'), 10);
+            const hideAfterSec = getParam('hideafter') ? parseInt(getParam('hideafter'), 10) : null;
             document.body.style.fontFamily = font + ', sans-serif';
             document.body.style.fontSize = fontsize;
             if (dropshadow) {
@@ -337,6 +338,18 @@
             }
             function hideStatus() {
                 statusIndicator.classList.add('hidden');
+            }
+            function scheduleHide(el) {
+                if (!hideAfterSec) return;
+                setTimeout(() => {
+                    el.style.transition = 'opacity 1s';
+                    el.style.opacity = '0';
+                    setTimeout(() => {
+                        if (el.parentNode) {
+                            el.parentNode.removeChild(el);
+                        }
+                    }, 1000);
+                }, hideAfterSec * 1000);
             }
             function connectWebSocket() {
                 const wsUrl = `ws://${address}:${port}/`;
@@ -631,6 +644,7 @@
                 msgEmotesMap.set(msgId, e || []);
                 if (!userMessagesMap.has(userId)) userMessagesMap.set(userId, new Set());
                 userMessagesMap.get(userId).add(msgId);
+                scheduleHide(el);
             }
             function handleAutomaticRewardRedemption(d) {
                 if (d.reward_type === 'gigantify_an_emote') {
@@ -668,6 +682,7 @@
                 el.appendChild(at);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleSubscription(d) {
                 const { sub_tier, is_prime, user, messageId } = d;
@@ -686,6 +701,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleReSubscription(d) {
                 const { subTier, isPrime, cumulativeMonths, text, user, messageId } = d;
@@ -710,6 +726,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleGiftSubscription(d) {
                 const { subTier, user, recipient, messageId } = d;
@@ -726,6 +743,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleGiftBombSubscription(d) {
                 const { sub_tier, user, total, messageId } = d;
@@ -742,11 +760,12 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleRewardRedemption(d) {
                 const { user, reward, user_input, messageId } = d;
                 const { title, cost } = reward;
-                if (cost < minrewardcost) return;
+                if (cost < minRewardCost) return;
                 const { name: dn } = user;
                 const el = createSubscriptionElement('REWARD REDEMPTION', '#64d419', 'mdi:star-four-points-circle-outline');
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
@@ -763,6 +782,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleWatchStreak(d) {
                 const { displayName, watchStreak, message, msgId } = d;
@@ -781,6 +801,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(msgId, el);
+                scheduleHide(el);
             }
             function handleCheer(d) {
                 const { bits, user, messageId, message } = d;
@@ -801,6 +822,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function handleRaid(d) {
                 const { from_broadcaster_user_name, viewers } = d;
@@ -814,6 +836,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(msgId, el);
+                scheduleHide(el);
             }
             function handleDonation(d) {
                 const { from, isPublic, messageId, message, amount, currency } = d;
@@ -833,6 +856,7 @@
                 el.appendChild(tx);
                 messageList.appendChild(el);
                 messagesMap.set(messageId, el);
+                scheduleHide(el);
             }
             function deleteChatMessage(msgId) {
                 const el = messagesMap.get(msgId);
@@ -923,7 +947,6 @@
                     ts.textContent = timestampText;
                     hd.appendChild(ts);
                 }
-
                 el.appendChild(hd);
                 return el;
             }

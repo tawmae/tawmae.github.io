@@ -5,10 +5,10 @@ layout: default
 nav_order: 2
 ---
 
+![Picture](assets/media/vchat_title_1.png)
+
 {: .highlight }
 This overlay is still in a testing phase, so you may experience some hickups. Since I am not a Twitch affiliate, I have a hard time testing everything properly. So if you catch anything or feel like a key feature is missing, let me know in my discord!
-
-![Picture](assets/media/vchat_title_1.png)
 
 Twitch
 {: .label .label-purple }

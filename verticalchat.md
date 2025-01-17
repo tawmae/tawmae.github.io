@@ -1,5 +1,5 @@
 ---
-title: 'Vertical Chat <span class="iconify" data-icon="material-symbols-light:mark-unread-chat-alt-rounded" style="color: #d4af37; font-size: 18px; margin-left: 2px;"></span>'
+title: 'Vertical Twitch Chat <span class="iconify" data-icon="material-symbols-light:mark-unread-chat-alt-rounded" style="color: #d4af37; font-size: 18px; margin-left: 2px;"></span>'
 description: A customizable vertical Twitch chat overlay for OBS
 layout: default
 nav_order: 4
@@ -32,6 +32,7 @@ A customizable vertical Twitch chat overlay for OBS!
 - Pronouns
 - Timestamps
 - Profile Pictures
+- Removes Deleted Messages
 - Twitch Events (including Watch Streaks, Gigantify, Announcements, Channel Rewards)
 - Kofi Donations
 - Replies
@@ -72,15 +73,15 @@ You can customize the chat with URL parameters. The first parameter gets added w
 
 ### <span class="iconify" data-icon="material-symbols:alarm-off" data-inline="false"></span> Timestamp
 
-Hide the timestamp.
+Toggle the timestamp. Default is `false`.
 
-`showTimestamp=false`
+`showTimestamp=true`
 
 ---
 
 ### <span class="iconify" data-icon="ic:twotone-transgender" data-inline="false"></span> Pronouns
 
-Hide pronouns.
+Toggle pronouns. Default is `true`.
 
 `showPronouns=false`
 
@@ -88,7 +89,7 @@ Hide pronouns.
 
 ### <span class="iconify" data-icon="tdesign:user-avatar-filled" data-inline="false"></span> Avatars
 
-Hide user avatars / profile pictures.
+Hide user avatars / profile pictures. Default is `true`.
 
 `showAvatars=false`
 
@@ -102,7 +103,7 @@ Exclude specified Twitch events from appearing in the chat overlay. Seperate mul
 
 `excludeEvents=sub+resub+watchstreak+donation+raid`
 
-All excludable events: `sub, resub, giftsub, giftbomb, rewardredemption, watchstreak, cheer, raid, donation`
+All excludable events: `sub, resub, giftsub, giftbomb, rewardredemption, watchstreak, cheer, raid, donation, announcement`
 
 ---
 
@@ -166,19 +167,34 @@ Changes the font size and also scales all other elements according to it.
 
 `fontsize=10px`
 
-`fontsize=30px`
+`fontsize=26px`
 
 ---
 
 ### <span class="iconify" data-icon="tabler:inner-shadow-right" data-inline="false"></span> Dropshadow
 
-Enables dropshadow for the text.
+Toggle the dropshadow for the text. Default is `true`.
 
-`dropshadow=true`
+`dropshadow=false`
 
 ---
 
+**Example:**
+`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false` 
 
+---
+
+## FAQ
+
+![image](https://github.com/user-attachments/assets/c28e2f87-08d7-48d5-a7da-164c6b97b876)
+
+### 1. Can I make the chat horizontal?
+   - No, the Vertical Twitch Chat has no option to make it horizontal.
+
+### 2. Does it support YouTube, Kick, Tiktok and Trovo?
+   - No, the Vertical Twitch Chat does not support any other platforms.
+
+---
 
 ## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> **Changelog**
 

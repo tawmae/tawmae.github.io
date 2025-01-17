@@ -213,9 +213,26 @@ body {
     font-weight: 900;
     font-size: 16px;
 }
+#status-indicator {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 9999;
+    transition: background 0.5s, opacity 0.5s;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 </style>
 </head>
 <body>
+<div id="status-indicator">DISCONNECTED</div>
 <div id="chat-container">
     <div id="messages">
         <div id="message-list"></div>
@@ -263,8 +280,72 @@ body {
         chatContainer.style.right = '0';
         chatContainer.style.left = 'auto';
     }
-    const wsUrl = `ws://${address}:${port}/`;
-    const ws = new WebSocket(wsUrl);
+    const statusIndicator = document.getElementById('status-indicator');
+    let ws;
+    let reconnectTimeout = 2000;
+    function updateStatus(text, color) {
+        statusIndicator.textContent = text;
+        statusIndicator.style.background = color;
+        statusIndicator.classList.remove('hidden');
+    }
+    function hideStatus() {
+        statusIndicator.classList.add('hidden');
+    }
+    function connectWebSocket() {
+        const wsUrl = `ws://${address}:${port}/`;
+        ws = new WebSocket(wsUrl);
+        ws.onopen = () => {
+            updateStatus('CONNECTED', 'green');
+            setTimeout(hideStatus, 2000);
+            const subscribeMessage = JSON.stringify({
+                request: 'Subscribe',
+                events: {
+                    Twitch: ['ChatMessage','ChatMessageDeleted','UserTimedOut','UserBanned','ChatCleared','AutomaticRewardRedemption','Announcement','Sub','ReSub','GiftSub','GiftBomb','RewardRedemption','WatchStreak','Cheer','Raid'],
+                    Kofi: ['Donation']
+                },
+                id: 'eventSubscriptions'
+            });
+            ws.send(subscribeMessage);
+        };
+        ws.onmessage = (event) => {
+            try {
+                const payload = JSON.parse(event.data);
+                if (!payload.event || !payload.event.type) return;
+                const type = payload.event.type.toLowerCase();
+                if (excludeEventsParam.includes(type)) return;
+                let action;
+                switch (type) {
+                    case 'chatmessage': action = () => processEvent(() => addChatMessage(payload.data.message, payload.data.user, payload.data.emotes, payload.data.isSharedChat, payload.data.sharedChat)); break;
+                    case 'chatmessagedeleted': action = () => processEvent(() => deleteChatMessage(payload.data.messageId)); break;
+                    case 'usertimedout':
+                    case 'userbanned': action = () => processEvent(() => removeUserMessages(payload.data.user_id)); break;
+                    case 'chatcleared': action = () => processEvent(() => clearAllMessages()); break;
+                    case 'automaticrewardredemption': action = () => processEvent(() => handleAutomaticRewardRedemption(payload.data)); break;
+                    case 'announcement': action = () => processEvent(() => handleAnnouncement(payload.data)); break;
+                    case 'sub': action = () => processEvent(() => handleSubscription(payload.data)); break;
+                    case 'resub': action = () => processEvent(() => handleReSubscription(payload.data)); break;
+                    case 'giftsub': action = () => processEvent(() => handleGiftSubscription(payload.data)); break;
+                    case 'giftbomb': action = () => processEvent(() => handleGiftBombSubscription(payload.data)); break;
+                    case 'rewardredemption': action = () => processEvent(() => handleRewardRedemption(payload.data)); break;
+                    case 'watchstreak': action = () => processEvent(() => handleWatchStreak(payload.data)); break;
+                    case 'cheer': action = () => processEvent(() => handleCheer(payload.data)); break;
+                    case 'raid': action = () => processEvent(() => handleRaid(payload.data)); break;
+                    case 'donation': action = () => processEvent(() => handleDonation(payload.data)); break;
+                    default: return;
+                }
+                eventQueueCount++;
+                eventQueue = eventQueue.then(() => action().then(() => { eventQueueCount--; }));
+            } catch (error) { }
+        };
+        ws.onclose = () => {
+            updateStatus('DISCONNECTED', 'red');
+            setTimeout(connectWebSocket, reconnectTimeout);
+        };
+        ws.onerror = () => {
+            ws.close();
+        };
+    }
+    connectWebSocket();
     const messagesContainer = document.getElementById('messages');
     const messageList = document.getElementById('message-list');
     const messagesMap = new Map();
@@ -281,41 +362,6 @@ body {
     let animating = false;
     let eventQueue = Promise.resolve();
     let eventQueueCount = 0;
-    ws.onopen = () => {
-        const subscribeMessage = JSON.stringify({request: 'Subscribe',events: {Twitch: ['ChatMessage','ChatMessageDeleted','UserTimedOut','UserBanned','ChatCleared','AutomaticRewardRedemption','Announcement','Sub','ReSub','GiftSub','GiftBomb','RewardRedemption','WatchStreak','Cheer','Raid'],Kofi: ['Donation']},id: 'eventSubscriptions'});
-        ws.send(subscribeMessage);
-    };
-    ws.onmessage = (event) => {
-        try {
-            const payload = JSON.parse(event.data);
-            if (!payload.event || !payload.event.type) return;
-            const type = payload.event.type.toLowerCase();
-            if (excludeEventsParam.includes(type)) return;
-            let action;
-            switch (type) {
-                case 'chatmessage': action = () => processEvent(() => addChatMessage(payload.data.message, payload.data.user, payload.data.emotes, payload.data.isSharedChat, payload.data.sharedChat)); break;
-                case 'chatmessagedeleted': action = () => processEvent(() => deleteChatMessage(payload.data.messageId)); break;
-                case 'usertimedout':
-                case 'userbanned': action = () => processEvent(() => removeUserMessages(payload.data.user_id)); break;
-                case 'chatcleared': action = () => processEvent(() => clearAllMessages()); break;
-                case 'automaticrewardredemption': action = () => processEvent(() => handleAutomaticRewardRedemption(payload.data)); break;
-                case 'announcement': action = () => processEvent(() => handleAnnouncement(payload.data)); break;
-                case 'sub': action = () => processEvent(() => handleSubscription(payload.data)); break;
-                case 'resub': action = () => processEvent(() => handleReSubscription(payload.data)); break;
-                case 'giftsub': action = () => processEvent(() => handleGiftSubscription(payload.data)); break;
-                case 'giftbomb': action = () => processEvent(() => handleGiftBombSubscription(payload.data)); break;
-                case 'rewardredemption': action = () => processEvent(() => handleRewardRedemption(payload.data)); break;
-                case 'watchstreak': action = () => processEvent(() => handleWatchStreak(payload.data)); break;
-                case 'cheer': action = () => processEvent(() => handleCheer(payload.data)); break;
-                case 'raid': action = () => processEvent(() => handleRaid(payload.data)); break;
-                case 'donation': action = () => processEvent(() => handleDonation(payload.data)); break;
-                default: return;
-            }
-            eventQueueCount++;
-            eventQueue = eventQueue.then(() => action().then(() => { eventQueueCount--; }));
-        } catch (error) { }
-    };
-    ws.onclose = () => { };
     function processEvent(fn) {
         return new Promise(resolve => {
             fn();

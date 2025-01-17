@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Vertical Twitch Chat – tawmae</title>
+<title>Vertical Twitch Chat</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <style>
@@ -241,21 +241,36 @@ body {
 <script>
 (function () {
     const params = new URLSearchParams(window.location.search);
-    const font = params.get('font') || 'Poppins';
-    const fontsize = params.get('fontsize') || '16px';
-    const dropshadow = params.get('dropshadow') === 'true';
-    const excludedaccounts = params.get('excludedaccounts') ? params.get('excludedaccounts').split(/[,+\s]+/).map(acc => acc.trim().toLowerCase()) : [];
-    const excludecommands = params.get('excludecommands') === 'true';
-    const enterDirection = params.get('enter') === 'left' ? 'left' : 'right';
-    const excludeEventsParam = params.get('excludeevents') ? params.get('excludeevents').split(/[,+\s]+/).map(e => e.trim().toLowerCase()) : [];
-    const address = params.get('adress') || 'localhost';
-    const port = params.get('port') || '8080';
-    const backgroundEnabled = params.get('background') === 'true';
-    const backgroundOpacity = params.get('backgroundopacity') ? Number(params.get('backgroundopacity')) : 90;
-    const backgroundColor = params.get('backgroundcolor') || 'black';
-    const showPronouns = params.get('showpronouns') !== 'false';
-    const showTimestamp = params.get('showtimestamp') !== 'false';
-    const showAvatars = params.get('showavatars') !== 'false';
+    const caseInsensitiveParams = {};
+    for (const [key, value] of params.entries()) {
+        caseInsensitiveParams[key.toLowerCase()] = value;
+    }
+    function getParam(key, defaultValue = null) {
+        return caseInsensitiveParams[key.toLowerCase()] || defaultValue;
+    }
+    const font = getParam('font', 'Poppins');
+    const fontsize = getParam('fontsize', '16px');
+    const dropshadow = getParam('dropshadow') === 'true';
+    const excludedaccounts = getParam('excludeaccounts')
+        ? getParam('excludeaccounts')
+              .split(/[,+\s]+/)
+              .map(acc => acc.trim().toLowerCase())
+        : [];
+    const excludecommands = getParam('excludecommands') === 'true';
+    const enterDirection = getParam('enter', 'right') === 'left' ? 'left' : 'right';
+    const excludeEventsParam = getParam('excludeevents')
+        ? getParam('excludeevents')
+              .split(/[,+\s]+/)
+              .map(e => e.trim().toLowerCase())
+        : [];
+    const address = getParam('adress', 'localhost');
+    const port = getParam('port', '8080');
+    const backgroundEnabled = getParam('background') === 'true';
+    const backgroundOpacity = getParam('backgroundopacity', '90');
+    const backgroundColor = getParam('backgroundcolor', 'black');
+    const showPronouns = getParam('showpronouns', 'true') !== 'false';
+    const showTimestamp = getParam('showtimestamp', 'true') !== 'false';
+    const showAvatars = getParam('showavatars', 'true') !== 'false';
     document.body.style.fontFamily = font + ', sans-serif';
     document.body.style.fontSize = fontsize;
     if(dropshadow) {

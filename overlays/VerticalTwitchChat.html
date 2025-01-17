@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>tawmae Twitch Chat Overlay</title>
+<title>Vertical Twitch Chat – tawmae</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <style>
@@ -37,7 +37,7 @@ body {
 }
 #messages {
     flex: 1;
-    padding: 10px;
+    padding: 0.625em;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -53,7 +53,7 @@ body {
 .message,
 .announcement,
 .subscription {
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -90,55 +90,55 @@ body {
 .subscription-header {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125em;
 }
 .avatar {
-    height: 40px;
-    width: 40px;
+    height: 2.5em;
+    width: 2.5em;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 0.3125em;
     flex-shrink: 0;
 }
 .shared-chat-icon {
-    height: 16px;
-    width: 16px;
+    height: 1em;
+    width: 1em;
     border-radius: 50%;
-    margin-left: 5px;
+    margin-left: 0.3125em;
 }
 .badges img {
-    height: 16px;
-    width: 16px;
-    margin-right: 2px;
-    margin-top: 6px;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.125em;
+    margin-top: 0.375em;
 }
 .username {
     font-weight: 700;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 0.3125em;
+    margin-left: 0.3125em;
     display: inline-flex;
     align-items: center;
 }
 .pronouns-box {
-    font-size: 10px;
+    font-size: 0.625em;
     color: #cccccc;
     background: #333333;
-    padding: 0 3px;
-    border-radius: 3px;
-    margin-left: 5px;
+    padding: 0 0.1875em;
+    border-radius: 0.1875em;
+    margin-left: 0.3125em;
     display: inline-flex;
     align-items: center;
 }
 .new-chatter {
-    font-size: 12px;
+    font-size: 0.75em;
     color: #00FFFF;
     font-weight: 600;
-    margin-left: 5px;
+    margin-left: 0.3125em;
     display: inline-flex;
     align-items: center;
 }
 .message-text {
     word-wrap: break-word;
-    margin: 1px 0 5px 0px;
+    margin: 0.0625em 0 0.3125em 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,25 +157,25 @@ body {
 .message-text img,
 .announcement-text img,
 .subscription-text img {
-    height: 20px;
+    height: 1.25em;
     width: auto;
     object-fit: contain;
     vertical-align: middle;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
 }
 .gigantified-emote {
-    width: 100px !important;
-    height: 100px !important;
+    width: 6.25em !important;
+    height: 6.25em !important;
     object-fit: contain;
     vertical-align: middle;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
 }
 .reply-preview {
-    padding: 1px 3px;
-    margin: 1px 0 5px 0px;
-    font-size: 12px;
+    padding: 0.0625em 0.1875em;
+    margin: 0.0625em 0 0.3125em 0;
+    font-size: 0.75em;
     color: #dddddd;
     max-width: 100%;
     word-wrap: break-word;
@@ -187,20 +187,20 @@ body {
     align-items: center;
 }
 .reply-preview img {
-    height: 12px;
+    height: 0.75em;
     width: auto;
     object-fit: contain;
     vertical-align: middle;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0.125em;
+    margin-right: 0.125em;
 }
 .announcement .icon,
 .subscription .icon {
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.3125em;
     flex-shrink: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125em;
 }
 .announcement .icon svg,
 .subscription .icon svg {
@@ -211,17 +211,17 @@ body {
 .announcement-title,
 .subscription-title {
     font-weight: 900;
-    font-size: 16px;
+    font-size: 1em;
 }
 #status-indicator {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 0.625em;
+    right: 0.625em;
     background: red;
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 0.3125em 0.625em;
+    border-radius: 0.25em;
+    font-size: 0.875em;
     z-index: 9999;
     transition: background 0.5s, opacity 0.5s;
 }
@@ -256,7 +256,7 @@ body {
     const showPronouns = params.get('showpronouns') !== 'false';
     const showTimestamp = params.get('showtimestamp') !== 'false';
     const showAvatars = params.get('showavatars') !== 'false';
-    document.body.style.fontFamily = `'${font}', sans-serif`;
+    document.body.style.fontFamily = font + ', sans-serif';
     document.body.style.fontSize = fontsize;
     if(dropshadow) {
         document.body.style.textShadow = '1.3px 1.3px 1.3px rgba(0,0,0,1)';
@@ -563,8 +563,8 @@ body {
             e.sort((a, b) => b.startIndex - a.startIndex);
             e.forEach(em => {
                 const tag = (m.gigantifyEmote && em.name === m.gigantifyEmote.name) ?
-                    ` <img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}"> ` :
-                    ` <img src="${em.imageUrl}" alt="${em.name}"> `;
+                     `<img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}">`  :
+                     `<img src="${em.imageUrl}" alt="${em.name}">`;
                 if (typeof em.startIndex === 'number' && typeof em.endIndex === 'number') {
                     const bef = proc.substring(0, em.startIndex);
                     const aft = proc.substring(em.endIndex + 1);
@@ -848,8 +848,8 @@ body {
         ea.forEach(em => {
             const reg = new RegExp(`\\b${escapeRegExp(em.name)}\\b`, 'gi');
             const tag = (t.includes('gigantified-emote')) ?
-                ` <img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}"> ` :
-                ` <img src="${em.imageUrl}" alt="${em.name}"> `;
+                 `<img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}">`  :
+                 `<img src="${em.imageUrl}" alt="${em.name}">`;
             t = t.replace(reg, tag);
         });
         return t;

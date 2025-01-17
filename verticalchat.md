@@ -200,6 +200,14 @@ Set the minimum cost of channel point rewards to show in the overlay, so you can
 
 ---
 
+### <span class="iconify" data-icon="ri:expand-left-right-line" data-inline="false"></span> Enter Direction
+
+Change the entry direction of the chat messages. Default is `right`.
+
+`enter=left`
+
+---
+
 ## **FAQ**
 
 ![image](https://github.com/user-attachments/assets/c28e2f87-08d7-48d5-a7da-164c6b97b876)

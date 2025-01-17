@@ -165,8 +165,8 @@ body {
     margin-right: 4px;
 }
 .gigantified-emote {
-    height: 60px;
-    width: auto;
+    width: 100px !important;
+    height: 100px !important;
     object-fit: contain;
     vertical-align: middle;
     margin-left: 4px;
@@ -239,7 +239,6 @@ body {
     const showPronouns = params.get('showpronouns') !== 'false';
     const showTimestamp = params.get('showtimestamp') !== 'false';
     const showAvatars = params.get('showavatars') !== 'false';
-
     document.body.style.fontFamily = `'${font}', sans-serif`;
     document.body.style.fontSize = fontsize;
     if(dropshadow) {
@@ -277,6 +276,7 @@ body {
     const userColorCache = new Map();
     const pronounCache = new Map();
     const pronounMap = { "hehim": "he/him", "sheher": "she/her", "theythem": "they/them", "itits": "it/its", "any": "any", "other": "other", "avoid": "avoid/avoid", "ask": "ask/ask", "xiexier": "xie/xier" };
+    const pendingGigantify = new Map();
     let offset = 0;
     let animating = false;
     let eventQueue = Promise.resolve();
@@ -381,6 +381,11 @@ body {
         if (!actualUsername) return;
         if (excludedaccounts.includes(actualUsername)) return;
         if (excludecommands && message.startsWith('!')) return;
+        const key = (u.user_name || displayName) + '|' + (message || '');
+        if(pendingGigantify.has(key)) {
+            m.gigantifyEmote = pendingGigantify.get(key);
+            pendingGigantify.delete(key);
+        }
         const el = document.createElement('div');
         el.classList.add('message');
         if (enterDirection === 'left') el.classList.add('slide-in-left');
@@ -477,37 +482,32 @@ body {
         const msgText = document.createElement('div');
         msgText.classList.add('message-text');
         if (Array.isArray(parts)) {
-            const eMap = new Map();
-            if (Array.isArray(e)) {
-                e.forEach(em => eMap.set(em.name.toLowerCase(), em.imageUrl));
-            }
             parts.forEach(pt => {
                 if (pt.type === 'text') {
                     msgText.appendChild(document.createTextNode(pt.text));
                 } else if (pt.type === 'emote') {
-                    let iUrl = pt.imageUrl;
-                    if (!iUrl && pt.text) iUrl = eMap.get(pt.text.toLowerCase());
-                    if (iUrl) {
-                        const i = document.createElement('img');
-                        i.src = iUrl; i.alt = pt.text;
-                        msgText.appendChild(i);
-                    } else {
-                        msgText.appendChild(document.createTextNode(pt.text));
+                    const img = document.createElement('img');
+                    img.src = pt.imageUrl;
+                    img.alt = pt.text;
+                    if(m.gigantifyEmote && pt.text === m.gigantifyEmote.name) {
+                        img.classList.add('gigantified-emote');
                     }
+                    msgText.appendChild(img);
                 }
             });
         } else if (message && Array.isArray(e) && e.length > 0) {
             let proc = message;
             e.sort((a, b) => b.startIndex - a.startIndex);
             e.forEach(em => {
-                const { name, imageUrl, startIndex, endIndex } = em;
-                const tag = ` <img src="${imageUrl}" alt="${name}"> `;
-                if (typeof startIndex === 'number' && typeof endIndex === 'number') {
-                    const bef = proc.substring(0, startIndex);
-                    const aft = proc.substring(endIndex + 1);
+                const tag = (m.gigantifyEmote && em.name === m.gigantifyEmote.name) ?
+                    ` <img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}"> ` :
+                    ` <img src="${em.imageUrl}" alt="${em.name}"> `;
+                if (typeof em.startIndex === 'number' && typeof em.endIndex === 'number') {
+                    const bef = proc.substring(0, em.startIndex);
+                    const aft = proc.substring(em.endIndex + 1);
                     proc = bef + tag + aft;
                 } else {
-                    const reg = new RegExp(`\\b${escapeRegExp(name)}\\b`, 'gi');
+                    const reg = new RegExp(`\\b${escapeRegExp(em.name)}\\b`, 'gi');
                     proc = proc.replace(reg, tag);
                 }
             });
@@ -524,21 +524,8 @@ body {
     }
     function handleAutomaticRewardRedemption(d) {
         if(d.reward_type === 'gigantify_an_emote') {
-            const { id, user_id, user_name, gigantified_emote } = d;
-            const el = createSubscriptionElement('GIGANTIFY', '#FFD700', 'material-symbols:expand');
-            if(enterDirection === 'left') el.classList.add('slide-in-left');
-            const tx = document.createElement('div');
-            tx.classList.add('subscription-text');
-            const tN = document.createTextNode(`${user_name} gigantified ${gigantified_emote.name}`);
-            tx.appendChild(tN);
-            el.appendChild(tx);
-            const img = document.createElement('img');
-            img.src = gigantified_emote.imageUrl;
-            img.style.width = '100px';
-            img.style.height = '100px';
-            el.appendChild(img);
-            messageList.appendChild(el);
-            messagesMap.set(id, el);
+            const key = d.user_name + '|' + d.message_text;
+            pendingGigantify.set(key, d.gigantified_emote);
         }
     }
     function handleAnnouncement(d) {
@@ -795,9 +782,10 @@ body {
         if (!ea || ea.length === 0) return t;
         ea.sort((a, b) => b.startIndex - a.startIndex);
         ea.forEach(em => {
-            const { name, imageUrl } = em;
-            const reg = new RegExp(`\\b${escapeRegExp(name)}\\b`, 'gi');
-            const tag = ` <img src="${imageUrl}" alt="${name}"> `;
+            const reg = new RegExp(`\\b${escapeRegExp(em.name)}\\b`, 'gi');
+            const tag = (t.includes('gigantified-emote')) ?
+                ` <img class="gigantified-emote" src="${em.imageUrl}" alt="${em.name}"> ` :
+                ` <img src="${em.imageUrl}" alt="${em.name}"> `;
             t = t.replace(reg, tag);
         });
         return t;

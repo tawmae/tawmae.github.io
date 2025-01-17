@@ -108,7 +108,7 @@ Exclude specified Twitch events from appearing in the chat overlay. Seperate mul
 
 `excludeEvents=sub+resub+watchstreak+donation+raid`
 
-All excludable events: `sub, resub, giftsub, giftbomb, rewardredemption, watchstreak, cheer, raid, donation, announcement`
+You can copy this to exclude all events: `excludeEvents=sub+resub+giftsub+giftbomb+rewardredemption+watchstreak+cheer+raid+donation+announcement`
 
 ---
 

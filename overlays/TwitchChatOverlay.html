@@ -420,6 +420,21 @@ body {
         pronounCache.set(username, null);
         return null;
     }
+    function updateExistingGigantify(key, gigantifiedEmote) {
+        userMessagesMap.forEach((msgIds, userId) => {
+            msgIds.forEach(msgId => {
+                const el = messagesMap.get(msgId);
+                if (el && el.dataset.userName === key.split('|')[0].toLowerCase() && el.dataset.rawMessage === key.split('|')[1]) {
+                    const imgs = el.querySelectorAll('img');
+                    imgs.forEach(img => {
+                        if (img.alt === gigantifiedEmote.name) {
+                            img.classList.add('gigantified-emote');
+                        }
+                    });
+                }
+            });
+        });
+    }
     function addChatMessage(m, u, e, isShared, sharedData) {
         const { msgId, displayName, color, badges, message, parts, isReply, reply, firstMessage } = m;
         const { id: userId, username, login, name } = u;
@@ -428,7 +443,7 @@ body {
         if (excludedaccounts.includes(actualUsername)) return;
         if (excludecommands && message.startsWith('!')) return;
         const key = (u.user_name || displayName) + '|' + (message || '');
-        if(pendingGigantify.has(key)) {
+        if (pendingGigantify.has(key)) {
             m.gigantifyEmote = pendingGigantify.get(key);
             pendingGigantify.delete(key);
         }
@@ -437,6 +452,8 @@ body {
         if (enterDirection === 'left') el.classList.add('slide-in-left');
         el.dataset.msgId = msgId;
         el.dataset.userId = userId;
+        el.dataset.rawMessage = message;
+        el.dataset.userName = actualUsername;
         const header = document.createElement('div');
         header.classList.add('message-header');
         if(showAvatars) {
@@ -572,6 +589,7 @@ body {
         if(d.reward_type === 'gigantify_an_emote') {
             const key = d.user_name + '|' + d.message_text;
             pendingGigantify.set(key, d.gigantified_emote);
+            updateExistingGigantify(key, d.gigantified_emote);
         }
     }
     function handleAnnouncement(d) {

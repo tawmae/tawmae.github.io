@@ -76,6 +76,14 @@ You can customize the chat with URL parameters. The first parameter gets added w
 
 ---
 
+### <span class="iconify" data-icon="bx:hide" data-inline="false"></span> Hide Messages After X Seconds
+
+Hides messages/events after `x` seconds.
+
+`hideAfter=60`
+
+---
+
 ### <span class="iconify" data-icon="material-symbols:alarm-off" data-inline="false"></span> Timestamp
 
 Toggle the timestamp. Default is `false`.

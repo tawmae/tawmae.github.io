@@ -1,8 +1,8 @@
 ---
-title: 'Vertical Twitch Chat <span class="iconify" data-icon="material-symbols-light:mark-unread-chat-alt-rounded" style="color: #d4af37; font-size: 18px; margin-left: 2px;"></span>'
+title: 'Vertical Twitch Chat [BETA] <span class="iconify" data-icon="material-symbols-light:mark-unread-chat-alt-rounded" style="color: #d4af37; font-size: 18px; margin-left: 2px;"></span>'
 description: A customizable vertical Twitch chat overlay for OBS
 layout: default
-nav_order: 4
+nav_order: 2
 ---
 
 

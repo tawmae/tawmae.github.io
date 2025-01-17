@@ -184,7 +184,7 @@ Toggle the dropshadow for the text. Default is `true`.
 
 ---
 
-## FAQ
+## **FAQ**
 
 ![image](https://github.com/user-attachments/assets/c28e2f87-08d7-48d5-a7da-164c6b97b876)
 

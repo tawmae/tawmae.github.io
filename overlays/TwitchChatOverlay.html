@@ -109,7 +109,7 @@ body {
     height: 16px;
     width: 16px;
     margin-right: 2px;
-    margin-bottom: -3px;
+    margin-top: 6px;
 }
 .username {
     font-weight: 700;
@@ -125,7 +125,6 @@ body {
     padding: 0 3px;
     border-radius: 3px;
     margin-left: 5px;
-    margin-top: 3px;
     display: inline-flex;
     align-items: center;
 }
@@ -237,6 +236,10 @@ body {
     const backgroundEnabled = params.get('background') === 'true';
     const backgroundOpacity = params.get('backgroundopacity') ? Number(params.get('backgroundopacity')) : 90;
     const backgroundColor = params.get('backgroundcolor') || 'black';
+    const showPronouns = params.get('showpronouns') !== 'false';
+    const showTimestamp = params.get('showtimestamp') !== 'false';
+    const showAvatars = params.get('showavatars') !== 'false';
+
     document.body.style.fontFamily = `'${font}', sans-serif`;
     document.body.style.fontSize = fontsize;
     if(dropshadow) {
@@ -385,15 +388,17 @@ body {
         el.dataset.userId = userId;
         const header = document.createElement('div');
         header.classList.add('message-header');
-        const avatar = document.createElement('img');
-        avatar.classList.add('avatar');
-        if (avatarCache.has(actualUsername)) {
-            avatar.src = avatarCache.get(actualUsername);
-        } else {
-            const aUrl = `https://decapi.me/twitch/avatar/${actualUsername}`;
-            fetch(aUrl).then(r => r.text()).then(u => { avatar.src = u; avatarCache.set(actualUsername, u); }).catch(() => avatar.src = '');
+        if(showAvatars) {
+            const avatar = document.createElement('img');
+            avatar.classList.add('avatar');
+            if (avatarCache.has(actualUsername)) {
+                avatar.src = avatarCache.get(actualUsername);
+            } else {
+                const aUrl = `https://decapi.me/twitch/avatar/${actualUsername}`;
+                fetch(aUrl).then(r => r.text()).then(u => { avatar.src = u; avatarCache.set(actualUsername, u); }).catch(() => avatar.src = '');
+            }
+            header.appendChild(avatar);
         }
-        header.appendChild(avatar);
         const badCont = document.createElement('div');
         badCont.classList.add('badges');
         if (badges && badges.length > 0) {
@@ -410,21 +415,32 @@ body {
         unameSpan.textContent = displayName;
         unameSpan.style.color = color || '#ffffff';
         header.appendChild(unameSpan);
-        fetchPronouns(actualUsername).then(pronouns => {
-            if (pronouns) {
-                const pronounSpan = document.createElement('span');
-                pronounSpan.classList.add('pronouns-box');
-                pronounSpan.textContent = pronouns;
-                header.appendChild(pronounSpan);
+        if (showPronouns || showTimestamp) {
+            if (showPronouns) {
+                fetchPronouns(actualUsername).then(pronouns => {
+                    if (pronouns) {
+                        const pronounSpan = document.createElement('span');
+                        pronounSpan.classList.add('pronouns-box');
+                        pronounSpan.textContent = pronouns;
+                        header.appendChild(pronounSpan);
+                    }
+                    if (showTimestamp) {
+                        const ts = document.createElement('span');
+                        ts.classList.add('pronouns-box');
+                        ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
+                        header.appendChild(ts);
+                    }
+                });
+            } else if (showTimestamp) {
+                const ts = document.createElement('span');
+                ts.classList.add('pronouns-box');
+                ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
+                header.appendChild(ts);
             }
-            const ts = document.createElement('span');
-            ts.classList.add('pronouns-box');
-            ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
-            header.appendChild(ts);
-        });
+        }
         if (isShared && sharedData && sharedData.primarySource === false) {
             const sL = (sharedData.sourceRoom && sharedData.sourceRoom.login) ? sharedData.sourceRoom.login.toLowerCase() : null;
-            if (sL) {
+            if (sL && showAvatars) {
                 const sImg = document.createElement('img');
                 sImg.classList.add('shared-chat-icon');
                 if (sharedChatAvatarCache.has(sL)) {
@@ -507,71 +523,23 @@ body {
         userMessagesMap.get(userId).add(msgId);
     }
     function handleAutomaticRewardRedemption(d) {
-        const { id, user_id, user_login, user_name, user_input, reward_type, message_text, message_emotes } = d;
-        const dn = user_name;
-        const un = user_login;
-        const msg = user_input || message_text;
-        const eU = (un || '').toLowerCase();
-        if (excludedaccounts.includes(eU)) return;
-        if (excludecommands && msg.startsWith('!')) return;
-        const el = document.createElement('div');
-        el.classList.add('message', 'automatic-reward');
-        if (enterDirection === 'left') el.classList.add('slide-in-left');
-        el.dataset.msgId = id;
-        el.dataset.userId = user_id;
-        const hd = document.createElement('div');
-        hd.classList.add('message-header');
-        const av = document.createElement('img');
-        av.classList.add('avatar');
-        if (avatarCache.has(eU)) {
-            av.src = avatarCache.get(eU);
-        } else {
-            const aU = `https://decapi.me/twitch/avatar/${eU}`;
-            fetch(aU).then(r => r.text()).then(u => { av.src = u; avatarCache.set(eU, u); }).catch(() => av.src = '');
+        if(d.reward_type === 'gigantify_an_emote') {
+            const { id, user_id, user_name, gigantified_emote } = d;
+            const el = createSubscriptionElement('GIGANTIFY', '#FFD700', 'material-symbols:expand');
+            if(enterDirection === 'left') el.classList.add('slide-in-left');
+            const tx = document.createElement('div');
+            tx.classList.add('subscription-text');
+            const tN = document.createTextNode(`${user_name} gigantified ${gigantified_emote.name}`);
+            tx.appendChild(tN);
+            el.appendChild(tx);
+            const img = document.createElement('img');
+            img.src = gigantified_emote.imageUrl;
+            img.style.width = '100px';
+            img.style.height = '100px';
+            el.appendChild(img);
+            messageList.appendChild(el);
+            messagesMap.set(id, el);
         }
-        hd.appendChild(av);
-        const badC = document.createElement('div');
-        badC.classList.add('badges');
-        hd.appendChild(badC);
-        const uS = document.createElement('span');
-        uS.classList.add('username');
-        uS.textContent = dn;
-        uS.style.color = '#FFD700';
-        hd.appendChild(uS);
-        const ts = document.createElement('span');
-        ts.classList.add('pronouns-box');
-        ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
-        hd.appendChild(ts);
-        el.appendChild(hd);
-        const mt = document.createElement('div');
-        mt.classList.add('message-text');
-        if (reward_type === 'gigantify_an_emote' && message_emotes) {
-            if (Array.isArray(message_emotes)) {
-                message_emotes.forEach(em => {
-                    const i = document.createElement('img');
-                    i.src = em.imageUrl; i.alt = em.name;
-                    if (d.gigantified_emote && em.id === d.gigantified_emote.id) {
-                        i.classList.add('gigantified-emote');
-                    }
-                    mt.appendChild(i);
-                });
-            }
-        } else {
-            if (Array.isArray(message_emotes)) {
-                message_emotes.forEach(em => {
-                    const i = document.createElement('img');
-                    i.src = em.imageUrl; i.alt = em.name;
-                    mt.appendChild(i);
-                });
-            }
-            mt.appendChild(document.createTextNode(msg));
-        }
-        el.appendChild(mt);
-        messageList.appendChild(el);
-        messagesMap.set(id, el);
-        msgEmotesMap.set(id, message_emotes || []);
-        if (!userMessagesMap.has(user_id)) userMessagesMap.set(user_id, new Set());
-        userMessagesMap.get(user_id).add(id);
     }
     function handleAnnouncement(d) {
         const { text, messageId } = d;
@@ -589,10 +557,12 @@ body {
         tt.style.color = "#FF43D1";
         tt.textContent = 'ANNOUNCEMENT';
         hd.appendChild(tt);
-        const ts = document.createElement('span');
-        ts.classList.add('pronouns-box');
-        ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
-        hd.appendChild(ts);
+        if (showTimestamp) {
+            const ts = document.createElement('span');
+            ts.classList.add('pronouns-box');
+            ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
+            hd.appendChild(ts);
+        }
         el.appendChild(hd);
         const at = document.createElement('div');
         at.classList.add('announcement-text');
@@ -846,10 +816,12 @@ body {
         tt.textContent = title;
         tt.style.color = color;
         hd.appendChild(tt);
-        const ts = document.createElement('span');
-        ts.classList.add('pronouns-box');
-        ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
-        hd.appendChild(ts);
+        if (showTimestamp) {
+            const ts = document.createElement('span');
+            ts.classList.add('pronouns-box');
+            ts.textContent = new Date().toLocaleTimeString('de-DE', {hour12: false});
+            hd.appendChild(ts);
+        }
         el.appendChild(hd);
         return el;
     }

@@ -71,6 +71,9 @@ A customizable vertical Twitch chat overlay for OBS!
 
 You can customize the chat with URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
 
+**Example:**
+`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false`
+
 ---
 
 ### <span class="iconify" data-icon="material-symbols:alarm-off" data-inline="false"></span> Timestamp
@@ -178,11 +181,6 @@ Changes the font size and also scales all other elements according to it.
 Toggle the dropshadow for the text. Default is `true`.
 
 `dropshadow=false`
-
----
-
-**Example:**
-`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false` 
 
 ---
 

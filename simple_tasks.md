@@ -1,5 +1,6 @@
 ---
 title: Simple Tasks
+description: Keep track of your tasks via chat commands and display them in OBS.
 layout: default
 parent: OBS Widgets
 ---

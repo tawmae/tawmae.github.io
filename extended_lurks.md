@@ -1,5 +1,6 @@
 ---
 title: Extended Lurks
+description: Keep track of lurkers, track their lurking time and automatically remove them as lurkers whenever they leave or type something in chat again.
 layout: default
 parent: Utility
 ---

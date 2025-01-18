@@ -1,5 +1,6 @@
 ---
 title: Hot Words
+description: An OBS widget to display the most-used words in your Twitch chat.
 layout: default
 parent: OBS Widgets
 ---

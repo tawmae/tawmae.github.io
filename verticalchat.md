@@ -204,13 +204,32 @@ Set the minimum cost of channel point rewards to show in the overlay, so you can
 
 ---
 
-### <span class="iconify" data-icon="ri:expand-left-right-line" data-inline="false"></span> Enter Direction
+### <span class="iconify" data-icon="ri:expand-left-right-line" data-inline="false"></span> Entry Direction
 
 Change the entry direction of the chat messages. Default is `right`.
 
 `enter=left`
 
 ---
+
+### <span class="iconify" data-icon="hugeicons:text-vertical-alignment" data-inline="false"></span> Text alignment
+
+Change the alignment of the text. Default is `right`.
+
+`justify=left`
+
+---
+
+### <span class="iconify" data-icon="mdi:format-letter-case" data-inline="false"></span> Force Casing
+
+force upper- or lower-casing.
+
+`forceUppercase=true`
+
+`forceLowercase=true`
+
+---
+
 
 ## <span class="iconify" data-icon="streamline:interface-help-question-circle-circle-faq-frame-help-info-mark-more-query-question" data-inline="false"></span> **FAQ**
 

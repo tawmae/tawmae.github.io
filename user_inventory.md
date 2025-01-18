@@ -1,5 +1,6 @@
 ---
 title: User Inventory
+description: A full inventory system for your Twitch chat
 layout: default
 parent: Utility
 ---

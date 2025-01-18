@@ -309,6 +309,10 @@
             const showAvatars = getParam('showavatars', 'true') !== 'false';
             const minRewardCost = parseInt(getParam('minrewardcost', '0'), 10);
             const hideAfterSec = getParam('hideafter') ? parseInt(getParam('hideafter'), 10) : null;
+            const justify = getParam('justify', '');
+            const invert = getParam('invert', 'false') === 'true';
+            const forceUpper = getParam('forceuppercase', 'false') === 'true';
+            const forceLower = getParam('forcelowercase', 'false') === 'true';
             document.body.style.fontFamily = font + ', sans-serif';
             document.body.style.fontSize = fontsize;
             if (dropshadow) {
@@ -322,6 +326,11 @@
                 overlay.style.backgroundColor = backgroundColor;
                 overlay.style.opacity = op;
                 document.body.insertBefore(overlay, document.body.firstChild);
+            }
+            if (forceUpper) {
+                document.body.style.textTransform = 'uppercase';
+            } else if (forceLower) {
+                document.body.style.textTransform = 'lowercase';
             }
             const chatContainer = document.getElementById('chat-container');
             chatContainer.style.position = 'absolute';
@@ -413,6 +422,26 @@
             connectWebSocket();
             const messagesContainer = document.getElementById('messages');
             const messageList = document.getElementById('message-list');
+            if (invert) {
+                messagesContainer.style.justifyContent = 'flex-end';
+            }
+            if (justify === 'right') {
+                chatContainer.style.textAlign = 'right';
+                messageList.style.alignItems = 'flex-end';
+                const styleEl = document.createElement('style');
+                styleEl.innerHTML = ".message, .announcement, .subscription { text-align: right; } .message-header, .announcement-header, .subscription-header { justify-content: flex-end; } .message-text, .announcement-text, .subscription-text { text-align: right; }";
+                document.head.appendChild(styleEl);
+            } else if (justify === 'left') {
+                chatContainer.style.textAlign = 'left';
+                messageList.style.alignItems = 'flex-start';
+            }
+            function addElement(elt) {
+                if (invert) {
+                    messageList.insertBefore(elt, messageList.firstChild);
+                } else {
+                    messageList.appendChild(elt);
+                }
+            }
             const messagesMap = new Map();
             const userMessagesMap = new Map();
             const avatarCache = new Map();
@@ -452,7 +481,7 @@
                 return new Promise(resolve => {
                     if (document.hidden) {
                         messageList.style.transition = 'none';
-                        messageList.style.transform = `translateY(-${to}px)`;
+                        messageList.style.transform = invert ? `translateY(${to}px)` : `translateY(-${to}px)`;
                         resolve();
                         return;
                     }
@@ -467,7 +496,7 @@
                     messageList.style.transition = `transform ${duration}s ease`;
                     messageList.addEventListener('transitionend', onEnd);
                     requestAnimationFrame(() => {
-                        messageList.style.transform = `translateY(-${to}px)`;
+                        messageList.style.transform = invert ? `translateY(${to}px)` : `translateY(-${to}px)`;
                     });
                     function onEnd() {
                         messageList.removeEventListener('transitionend', onEnd);
@@ -668,7 +697,7 @@
                 el.appendChild(msgText);
                 const frag = document.createDocumentFragment();
                 frag.appendChild(el);
-                messageList.appendChild(frag);
+                addElement(frag);
                 messagesMap.set(msgId, el);
                 msgEmotesMap.set(msgId, e || []);
                 if (!userMessagesMap.has(userId)) userMessagesMap.set(userId, new Set());
@@ -709,7 +738,7 @@
                 at.classList.add('announcement-text');
                 at.innerHTML = replaceEmotesInText(text, []);
                 el.appendChild(at);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -728,7 +757,7 @@
                 const tN = document.createTextNode(`${dn} subscribed with a ${st} Sub!`);
                 tx.appendChild(tN);
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -753,7 +782,7 @@
                     tx.appendChild(uT);
                 }
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -770,7 +799,7 @@
                 const tN = document.createTextNode(`${dn} gifted a ${tt} sub to ${rn}!`);
                 tx.appendChild(tN);
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -787,7 +816,7 @@
                 const tN = document.createTextNode(`${dn} gifted ${gfts} ${tt} subs to the community!`);
                 tx.appendChild(tN);
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -809,7 +838,7 @@
                     tx.appendChild(uT);
                 }
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -828,7 +857,7 @@
                     tx.appendChild(uT);
                 }
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(msgId, el);
                 scheduleHide(el);
             }
@@ -849,7 +878,7 @@
                     tx.appendChild(uT);
                 }
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }
@@ -863,7 +892,7 @@
                 const tN = document.createTextNode(`${from_broadcaster_user_name} raided with ${viewers} viewers!`);
                 tx.appendChild(tN);
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(msgId, el);
                 scheduleHide(el);
             }
@@ -883,7 +912,7 @@
                     tx.appendChild(uT);
                 }
                 el.appendChild(tx);
-                messageList.appendChild(el);
+                addElement(el);
                 messagesMap.set(messageId, el);
                 scheduleHide(el);
             }

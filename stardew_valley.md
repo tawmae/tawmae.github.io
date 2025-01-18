@@ -1,5 +1,6 @@
 ---
 title: 1. Stardew Valley
+description: A full Stardew Valley integration for your Twitch stream
 layout: default
 parent: Videogame Integrations
 ---

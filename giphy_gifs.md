@@ -1,5 +1,6 @@
 ---
 title: GIPHY gifs
+description: Display GIFs based on keywords in your OBS.
 layout: default
 parent: OBS Widgets
 ---

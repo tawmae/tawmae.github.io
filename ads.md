@@ -1,5 +1,6 @@
 ---
 title: Ad Notification
+description: A notification widget for OBS to display upcoming and ongoing Twitch ads.
 layout: default
 parent: OBS Widgets
 ---

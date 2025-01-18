@@ -1,5 +1,6 @@
 ---
 title: Channel Point Auction
+description: An auction that accepts channel points as its currency. The highest bidder keeps the price.
 layout: default
 parent: Utility
 ---

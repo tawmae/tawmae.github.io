@@ -1,5 +1,6 @@
 ---
 title: Friend Stream Notifications
+description: Fire actions whenver someone you follow goes live on Twitch!
 layout: default
 parent: Utility
 ---

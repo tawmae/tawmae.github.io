@@ -32,12 +32,16 @@ StreamerBot
 A customizable vertical Twitch chat overlay for OBS!
 
 - Pronouns
-- Timestamps
 - Profile Pictures
-- Removes Deleted Messages
-- Twitch Events (including Watch Streaks, Gigantify, Announcements, Channel Rewards)
-- Kofi Donations
 - Replies
+- Timestamps
+- Removal Of Deleted Messages
+- Exclusion Filters
+- Highlight First Time Chatters
+- Events
+  - Subs, Channel Rewards, Gigantified Emotes, Watchstreaks, Cheers, Raids, Announcements
+  - KoFi-Donations
+- Customization
 - and much more...
 
 ![Picture](assets/media/vchat_title_2.gif)
@@ -208,7 +212,7 @@ Change the entry direction of the chat messages. Default is `right`.
 
 ---
 
-## **FAQ**
+## <span class="iconify" data-icon="streamline:interface-help-question-circle-circle-faq-frame-help-info-mark-more-query-question" data-inline="false"></span> **FAQ**
 
 ![image](https://github.com/user-attachments/assets/c28e2f87-08d7-48d5-a7da-164c6b97b876)
 

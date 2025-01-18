@@ -1,5 +1,6 @@
 ---
 title: Recent Events
+description: An OBS widget to display your most revent Twitch events.
 layout: default
 parent: OBS Widgets
 ---

@@ -1,5 +1,6 @@
 ---
 title: Command Checker
+description: Show a list of your channel commands whenever someone wants to know or accidentally uses a command that doesn't exist.
 layout: default
 parent: Utility
 ---

@@ -1,5 +1,6 @@
 ---
 title: First Words Notification
+description: An OBS widget to welcome Twitch chatters with their first message for your current stream.
 layout: default
 parent: OBS Widgets
 ---

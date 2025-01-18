@@ -1,5 +1,6 @@
 ---
 title: Champion Of The Hill
+description: An interactive channel point reward game to determine the champion of your stream
 layout: default
 parent: Chat Games
 ---

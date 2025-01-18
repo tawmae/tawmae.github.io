@@ -1,5 +1,6 @@
 ---
 title: Extended Hugs
+description: A hug extension with an optional consent-mechanic and integrated stat-tracking.
 layout: default
 parent: Utility
 ---

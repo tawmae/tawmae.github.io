@@ -1,5 +1,6 @@
 ---
 title: 'Temporary VIP <span class="iconify" data-icon="ri:vip-diamond-fill" style="color: #E005B9; font-size: 18px;"></span>'
+description: Add VIPs to your Twitch channel and have them automatically removed when their time runs out
 layout: default
 parent: Utility
 ---

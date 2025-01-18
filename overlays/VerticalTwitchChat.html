@@ -513,6 +513,16 @@
                 if (!actualUsername) return;
                 if (excludedaccounts.includes(actualUsername)) return;
                 if (excludecommands && message.startsWith('!')) return;
+                let displayColor = color;
+                if (!displayColor) {
+                    if (userColorCache.has(userId)) {
+                        displayColor = userColorCache.get(userId);
+                    } else {
+                        const defaultColors = ['#FF0000', '#0000FF', '#008000', '#B22222', '#FF7F50', '#9ACD32', '#8A2BE2', '#5F9EA0', '#1E90FF', '#D2691E', '#2E8B57', '#DAA520', '#FF69B4', '#FF4500', '#00FF7F'];
+                        displayColor = defaultColors[Math.floor(Math.random() * defaultColors.length)];
+                        userColorCache.set(userId, displayColor);
+                    }
+                }
                 const key = (u.user_name || displayName) + '|' + (message || '');
                 if (pendingGigantify.has(key)) {
                     m.gigantifyEmote = pendingGigantify.get(key);
@@ -555,7 +565,7 @@
                 const unameSpan = document.createElement('span');
                 unameSpan.classList.add('username');
                 unameSpan.textContent = displayName;
-                unameSpan.style.color = color || '#ffffff';
+                unameSpan.style.color = displayColor;
                 header.appendChild(unameSpan);
                 if (showPronouns || showTimestamp) {
                     if (showPronouns) {

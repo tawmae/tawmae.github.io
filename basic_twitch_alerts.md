@@ -1,5 +1,6 @@
 ---
 title: Basic Twitch Alerts
+description: An OBS widget to display Twitch events like follow, subs, raids and many more...
 layout: default
 parent: OBS Widgets
 ---

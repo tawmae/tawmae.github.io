@@ -1,5 +1,6 @@
 ---
 title: 'Twitch Raffle <span class="iconify" data-icon="streamline-emojis:game-dice" style="font-size: 24px;"></span>'
+description: A customizable raffle system for your Twitch stream
 layout: default
 parent: Utility
 ---

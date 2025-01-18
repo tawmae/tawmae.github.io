@@ -1,5 +1,6 @@
 ---
 title: Hot Potato
+description: A fun and interactive chat game for your Twitch stream.
 layout: default
 parent: Chat Games
 ---

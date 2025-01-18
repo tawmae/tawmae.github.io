@@ -1,5 +1,6 @@
 ---
 title: TTS Queue
+description: A TTS queue inspired by PirateSoftware
 layout: default
 parent: Utility
 ---

@@ -1,5 +1,6 @@
 ---
 title: Channel Reward Discount
+description: Apply a temporary discount to all or just selected Twitch channel point rewards
 layout: default
 parent: Utility
 ---

@@ -1,5 +1,6 @@
 ---
 title: Event Rotator
+description: A rotator widget for OBS to display your latest Twitch events and/or socials.
 layout: default
 parent: OBS Widgets
 ---

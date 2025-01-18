@@ -1,5 +1,6 @@
 ---
 title: Random OBS Source Position
+description: Randomize the position of a source on your OBS canvas.
 layout: default
 parent: Utility
 ---

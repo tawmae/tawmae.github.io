@@ -1,5 +1,6 @@
 ---
 title: User Birthdays
+description: Keep track of user birthdays in your Twitch chat and automatically congratulate them
 layout: default
 parent: Utility
 ---

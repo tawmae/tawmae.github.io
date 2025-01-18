@@ -1,6 +1,6 @@
 ---
 title: 'BLUESKY & SB <span class="iconify" data-icon="logos:bluesky" style="color: #ffd700; font-size: 18px;"></span>'
-description: A full Bluesky integration for Streamer.bot
+description: A full Bluesky integration for Streamer.bot. From creating automated posts up to automatically updating your profile...
 layout: default
 nav_order: 2
 ---

@@ -1,5 +1,6 @@
 ---
 title: Twitch Receipt
+description: An OBS widget to print a recipe with a summary of your current Twitch stream
 layout: default
 parent: OBS Widgets
 ---

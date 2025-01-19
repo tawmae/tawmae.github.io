@@ -56,9 +56,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 960.0,
                         "shape_center_y": 540.0,
                         "rectangle_width": 1046.0,
@@ -142,9 +142,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 960.0,
                         "shape_center_y": 540.0,
                         "rectangle_width": 1046.0,
@@ -206,9 +206,9 @@
                 "text": "MOVIE & TV SHOW QUIZ",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 72,
-                    "flags": 1
+                    "style": "Bold"
                 }
             },
             "mixers": 0,
@@ -290,15 +290,15 @@
             "versioned_id": "text_gdiplus_v3",
             "settings": {
                 "extents": true,
-                "text": "In the year 2035, convict James Cole reluctantly volunteers to be sent back in time to discover the origin of a deadly virus that wiped out nearly all of the earth's population and forced the survivors into underground communities. But when Cole is mistakenly sent to 1990 instead of 1996, he's arrested and locked up in a mental hospital. There he meets psychiatrist Dr. Kathryn Railly, and patient Jeffrey Goines, the son of a famous virus expert, who may hold the key to the mysterious rogue group, the Army of the [REDACTED], thought to be responsible for unleashing the killer disease.",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 43,
-                    "flags": 0
+                    "style": "Regular"
                 },
                 "extents_cx": 1010,
-                "extents_cy": 490
+                "extents_cy": 490,
+                "text": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape."
             },
             "mixers": 0,
             "sync": 0,
@@ -373,9 +373,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_type": 1,
                         "shape_center_x": 1018.0,
                         "shape_center_y": 90.0,
@@ -414,9 +414,9 @@
                 "text": "–",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 56,
-                    "flags": 1
+                    "style": "Bold"
                 }
             },
             "mixers": 0,
@@ -492,9 +492,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_type": 1,
                         "shape_center_x": 838.0,
                         "shape_center_y": 90.0,
@@ -525,18 +525,18 @@
             ]
         }, {
             "prev_ver": 520093696,
-            "name": "[MQT] Overview - Rounds",
+            "name": "[MTQ] Overview - Rounds",
             "uuid": "0eb0074f-8a13-42bf-aa29-03e5be502984",
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "Round 15/15",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 36,
-                    "flags": 1
-                }
+                    "style": "Bold"
+                },
+                "text": "ROUND 1/1"
             },
             "mixers": 0,
             "sync": 0,
@@ -561,10 +561,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 2312,
                 "cy": 1272,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Overview - Base Background",
                         "source_uuid": "493a89b0-a763-43cd-955a-63e6856749bf",
@@ -730,7 +730,7 @@
                     }, {
                         "name": "[MTQ] Overview - Overview",
                         "source_uuid": "ec28915d-f49d-40e0-8a1c-97adcb733fb5",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -900,7 +900,7 @@
                     }, {
                         "name": "[MTQ] Overview - Rounds Background",
                         "source_uuid": "db96c50c-dedf-4434-9849-f9ddeab2d430",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -952,9 +952,9 @@
                         },
                         "private_settings": {}
                     }, {
-                        "name": "[MQT] Overview - Rounds",
+                        "name": "[MTQ] Overview - Rounds",
                         "source_uuid": "0eb0074f-8a13-42bf-aa29-03e5be502984",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1098,9 +1098,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 582.0,
                         "shape_center_y": 705.0,
                         "rectangle_width": 1018.0,
@@ -1250,13 +1250,13 @@
             "versioned_id": "text_gdiplus_v3",
             "settings": {
                 "undo_suuid": "711dc73f-927c-47f7-84f1-434adb7e3a40",
-                "text": "MOVIE  |  RELEASED: 1995  |  GENRES: Science Fiction, Thriller, Mystery",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 37,
-                    "flags": 0
-                }
+                    "style": "Regular"
+                },
+                "text": "MOVIE  |  RELEASED: 1993  |  GENRES: Adventure, Science Fiction"
             },
             "mixers": 0,
             "sync": 0,
@@ -1285,9 +1285,9 @@
                 "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 72,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -1313,10 +1313,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 1920,
                 "cy": 1080,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 1 - Base Background",
                         "source_uuid": "35e0c733-312d-44b6-ace9-9279c6622cf4",
@@ -1618,9 +1618,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 553.0,
                         "shape_center_y": 794.0,
                         "rectangle_width": 1018.0,
@@ -1773,9 +1773,9 @@
                 "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 72,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -1802,14 +1802,14 @@
             "versioned_id": "text_gdiplus_v3",
             "settings": {
                 "undo_suuid": "711dc73f-927c-47f7-84f1-434adb7e3a40",
-                "text": "TAGLINE: \"The future is history.\"",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 37,
-                    "flags": 0
+                    "style": "Regular"
                 },
-                "align": "right"
+                "align": "right",
+                "text": "TAGLINE: «An adventure 65 million years in the making.»"
             },
             "mixers": 0,
             "sync": 0,
@@ -1834,10 +1834,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 1923,
                 "cy": 1081,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 2 - Base Background",
                         "source_uuid": "c7cf4153-f522-4a47-83a1-dffb07690f39",
@@ -1967,11 +1967,11 @@
                         "id": 69,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1061.5003662109375,
+                            "x": 1061.500244140625,
                             "y": 753.99993896484375
                         },
                         "pos_rel": {
-                            "x": 0.18796363472938538,
+                            "x": 0.18796341121196747,
                             "y": 0.39629614353179932
                         },
                         "scale": {
@@ -2139,9 +2139,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 1416.0,
                         "shape_center_y": 178.0,
                         "rectangle_width": 448.0,
@@ -2175,11 +2175,11 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w500/kODccJVnrt4ioPbJVEnkkKPHbG7.jpg",
                 "width": 500,
                 "height": 750,
                 "shutdown": true,
-                "restart_when_active": true
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -2273,15 +2273,15 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "DIRECTOR",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 28,
-                    "flags": 1
+                    "style": "Bold"
                 },
                 "valign": "center",
-                "transform": 1
+                "transform": 1,
+                "text": "DIRECTOR"
             },
             "mixers": 0,
             "sync": 0,
@@ -2337,14 +2337,14 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "TERRY GILLIAM",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 42,
-                    "flags": 0
+                    "style": "Regular"
                 },
-                "transform": 1
+                "transform": 1,
+                "text": "STEVEN SPIELBERG"
             },
             "mixers": 0,
             "sync": 0,
@@ -2460,9 +2460,9 @@
                 "text": "?",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 56,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -2488,10 +2488,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 1920,
                 "cy": 1080,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 3 - Base Background",
                         "source_uuid": "f36c9025-0a9e-4a1a-8476-4b02ddf18a8c",
@@ -2905,9 +2905,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 1416.0,
                         "shape_center_y": 178.0,
                         "rectangle_width": 448.0,
@@ -2941,14 +2941,14 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "BRAD PITT",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 42,
-                    "flags": 0
+                    "style": "Regular"
                 },
-                "transform": 1
+                "transform": 1,
+                "text": "JEFF GOLDBLUM"
             },
             "mixers": 0,
             "sync": 0,
@@ -2973,15 +2973,15 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "CAST #3",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 28,
-                    "flags": 1
+                    "style": "Bold"
                 },
                 "valign": "center",
-                "transform": 1
+                "transform": 1,
+                "text": "CAST #3"
             },
             "mixers": 0,
             "sync": 0,
@@ -3037,11 +3037,11 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w500/cckcYc2v0yh1tc9QjRelptcOBko.jpg",
                 "width": 500,
                 "height": 750,
                 "shutdown": true,
-                "restart_when_active": true
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/o3PahuK7OmCI0RAQUq38CUBWYZ9.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -3226,9 +3226,9 @@
                 "text": "?",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 56,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -3254,10 +3254,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 1920,
                 "cy": 1089,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 4 - Base Background",
                         "source_uuid": "2b92e751-6d42-418e-bf01-8d652bfdcf5d",
@@ -3621,15 +3621,15 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "CAST #2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 28,
-                    "flags": 1
+                    "style": "Bold"
                 },
                 "valign": "center",
-                "transform": 1
+                "transform": 1,
+                "text": "CAST #2"
             },
             "mixers": 0,
             "sync": 0,
@@ -3735,9 +3735,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 1416.0,
                         "shape_center_y": 178.0,
                         "rectangle_width": 448.0,
@@ -3771,14 +3771,14 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "MADELEINE STOWE",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 42,
-                    "flags": 0
+                    "style": "Regular"
                 },
-                "transform": 1
+                "transform": 1,
+                "text": "LAURA DERN"
             },
             "mixers": 0,
             "sync": 0,
@@ -3803,11 +3803,11 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w500/u86lNd3YTKqIVZb49DqbNtd1nOZ.jpg",
                 "width": 500,
                 "height": 750,
                 "shutdown": true,
-                "restart_when_active": true
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/gB9PnGEvxKg33OSlcqptQwTBwPE.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -3992,9 +3992,9 @@
                 "text": "?",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 56,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -4020,10 +4020,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 1920,
                 "cy": 1089,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 5 - Title",
                         "source_uuid": "90f5afb5-7aa0-4141-80f5-c0a34ed6b847",
@@ -4387,15 +4387,15 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "CAST #1",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 28,
-                    "flags": 1
+                    "style": "Bold"
                 },
                 "valign": "center",
-                "transform": 1
+                "transform": 1,
+                "text": "CAST #1"
             },
             "mixers": 0,
             "sync": 0,
@@ -4501,9 +4501,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 1416.0,
                         "shape_center_y": 178.0,
                         "rectangle_width": 448.0,
@@ -4537,14 +4537,14 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "BRUCE WILLIS",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "flags": 0,
                     "size": 42,
-                    "flags": 0
+                    "style": "Regular"
                 },
-                "transform": 1
+                "transform": 1,
+                "text": "SAM NEILL"
             },
             "mixers": 0,
             "sync": 0,
@@ -4569,11 +4569,11 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w500/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg",
                 "width": 500,
                 "height": 750,
                 "shutdown": true,
-                "restart_when_active": true
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/bNZ03phkLewj8eUR6mGbKZ7jtmv.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -4758,9 +4758,9 @@
                 "text": "?",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 56,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -4786,10 +4786,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 2079,
                 "cy": 1197,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 6 - Title",
                         "source_uuid": "04501bbb-219c-42b9-b9bd-2624856784c8",
@@ -5153,9 +5153,9 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w780/1IWaKG7AWiYMhADxhGtnElDJAGI.jpg",
                 "width": 780,
-                "height": 439
+                "height": 439,
+                "url": "https://image.tmdb.org/t/p/w780/79bJL9ydAMYVltuNTt4VhxORqIz.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -5186,10 +5186,10 @@
                     "id": "crop_filter",
                     "versioned_id": "crop_filter",
                     "settings": {
-                        "left": -10,
-                        "top": -10,
                         "bottom": -10,
+                        "left": -10,
                         "right": -10,
+                        "top": -10,
                         "relative": true
                     },
                     "mixers": 0,
@@ -5215,9 +5215,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 401.0,
                         "shape_center_y": 230.0,
                         "rectangle_width": 780.0,
@@ -5373,9 +5373,9 @@
                 "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 72,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -5401,10 +5401,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
                 "cx": 2759,
                 "cy": 1163,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Hint 7 - Image",
                         "source_uuid": "bda6a279-ad5b-4e6d-8796-8c6ba0b8e455",
@@ -5600,11 +5600,11 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://image.tmdb.org/t/p/w500/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
                 "width": 500,
                 "height": 750,
                 "shutdown": true,
-                "restart_when_active": true
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/fjTU1Bgh3KJu4aatZil3sofR2zC.jpg"
             },
             "mixers": 255,
             "sync": 0,
@@ -5635,10 +5635,10 @@
                     "id": "crop_filter",
                     "versioned_id": "crop_filter",
                     "settings": {
+                        "bottom": -10,
                         "left": -10,
-                        "top": -10,
                         "right": -10,
-                        "bottom": -10
+                        "top": -10
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -5663,9 +5663,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 260.0,
                         "shape_center_y": 385.0,
                         "rectangle_width": 500.0,
@@ -5778,9 +5778,9 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
                         "shape_center_x": 582.0,
                         "shape_center_y": 705.0,
                         "rectangle_width": 1018.0,
@@ -5933,9 +5933,9 @@
                 "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 72,
-                    "flags": 1
+                    "style": "Black"
                 }
             },
             "mixers": 0,
@@ -5962,13 +5962,13 @@
             "versioned_id": "text_gdiplus_v3",
             "settings": {
                 "undo_suuid": "711dc73f-927c-47f7-84f1-434adb7e3a40",
-                "text": "Twelve Monkeys (1995)",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Bold",
+                    "flags": 1,
                     "size": 45,
-                    "flags": 1
-                }
+                    "style": "Bold"
+                },
+                "text": "Jurassic Park (1993)"
             },
             "mixers": 0,
             "sync": 0,
@@ -6086,8 +6086,1014 @@
                 "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Black",
+                    "flags": 1,
                     "size": 72,
+                    "style": "Black"
+                }
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Image 2",
+            "uuid": "f08ba8ee-c18a-450c-bb6a-a080202ca92e",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "width": 500,
+                "height": 750,
+                "shutdown": true,
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/bNZ03phkLewj8eUR6mGbKZ7jtmv.jpg"
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "340f4480-4b23-4da2-b458-ecc85517dbac",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 250.0,
+                        "shape_center_y": 306.0,
+                        "position_x": 250.0,
+                        "position_y": 375.0,
+                        "circle_radius": 241.0,
+                        "mask_gradient_position": 250.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "ebcec924-98f0-42e1-8646-d5b7016fb445",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 3.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 57.899999999999999,
+                        "glow_offset_distance": 7.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Text 2",
+            "uuid": "cfa8aebb-c752-4927-a401-2a5abf3806e1",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Bold",
+                    "size": 38,
+                    "flags": 1
+                },
+                "transform": 0,
+                "text": "Sam Neill as «Grant»"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Text 3",
+            "uuid": "6f097d71-02e3-4b8c-8392-ee37ed7feea2",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Bold",
+                    "size": 38,
+                    "flags": 1
+                },
+                "transform": 0,
+                "text": "Laura Dern as «Ellie»"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Text 4",
+            "uuid": "974396ae-f248-4b4a-a86d-36b155034f9c",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Bold",
+                    "size": 38,
+                    "flags": 1
+                },
+                "transform": 0,
+                "text": "Jeff Goldblum as «Malcolm»"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Text 5",
+            "uuid": "0ff427c9-ed35-4e46-bf91-ed373fd82409",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "Directed by Steven Spielberg",
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Bold",
+                    "size": 38,
+                    "flags": 1
+                },
+                "align": "left",
+                "valign": "center",
+                "transform": 0
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Image 3",
+            "uuid": "a721ddc3-06f6-4b1b-ab5e-6c21115ce04d",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "width": 500,
+                "height": 750,
+                "shutdown": true,
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/gB9PnGEvxKg33OSlcqptQwTBwPE.jpg"
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "a950612e-3534-4247-955a-3a7991acdeb3",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 250.0,
+                        "shape_center_y": 306.0,
+                        "position_x": 250.0,
+                        "position_y": 375.0,
+                        "circle_radius": 241.0,
+                        "mask_gradient_position": 250.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "96377cf4-6321-450b-bf87-daf6180306e2",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 3.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 57.899999999999999,
+                        "glow_offset_distance": 7.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Image 4",
+            "uuid": "ab5d4e95-6576-498c-ac01-0fe85b946c58",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "width": 500,
+                "height": 750,
+                "shutdown": true,
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/o3PahuK7OmCI0RAQUq38CUBWYZ9.jpg"
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "dc3681dc-128b-4930-b565-38d3751e6598",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 250.0,
+                        "shape_center_y": 306.0,
+                        "position_x": 250.0,
+                        "position_y": 375.0,
+                        "circle_radius": 241.0,
+                        "mask_gradient_position": 250.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "69302b91-d641-4174-abf6-30a8894e229c",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 3.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 57.899999999999999,
+                        "glow_offset_distance": 7.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Image 5",
+            "uuid": "033a68d4-5bc3-48de-94c0-291adad0ee27",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "width": 500,
+                "height": 750,
+                "shutdown": true,
+                "restart_when_active": true,
+                "url": "https://image.tmdb.org/t/p/w500/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg"
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "e11b5002-8312-4292-8883-9d1c634a5991",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 250.0,
+                        "shape_center_y": 306.0,
+                        "position_x": 250.0,
+                        "position_y": 375.0,
+                        "circle_radius": 241.0,
+                        "mask_gradient_position": 250.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "24976513-4eb5-4f09-8648-4ae32e04d4ef",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 3.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 57.899999999999999,
+                        "glow_offset_distance": 7.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Top Background 3",
+            "uuid": "a5abc0f6-eaf2-44f8-8d09-6facee263d48",
+            "id": "color_source",
+            "versioned_id": "color_source_v3",
+            "settings": {
+                "undo_suuid": "cb9e1772-84a7-403e-a10e-b5daac34a636",
+                "color": 4286045559
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "3be84377-d89a-43ee-8587-d1530ce83148",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 75.0,
+                        "shape_center_y": 704.0,
+                        "position_x": 960.0,
+                        "position_y": 540.0,
+                        "circle_radius": 17.0,
+                        "mask_gradient_position": 960.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "817fb3f7-df4f-4f18-bde8-1ba15b046344",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 1.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 26.800000000000001,
+                        "glow_offset_distance": 3.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Symbol 3",
+            "uuid": "f8e116bb-7a64-4a34-911b-9df95dbb81ac",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "!",
+                "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Black",
+                    "size": 48,
+                    "flags": 1
+                }
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Top Background 4",
+            "uuid": "10dc471f-e50e-4915-b58d-cf09e157427b",
+            "id": "color_source",
+            "versioned_id": "color_source_v3",
+            "settings": {
+                "undo_suuid": "cb9e1772-84a7-403e-a10e-b5daac34a636",
+                "color": 4286045559
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "3e0cbb0b-cb34-4ef6-aa8b-1396e8ca2c04",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 75.0,
+                        "shape_center_y": 704.0,
+                        "position_x": 960.0,
+                        "position_y": 540.0,
+                        "circle_radius": 17.0,
+                        "mask_gradient_position": 960.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "53d38983-547d-4b94-bb53-361bd747b7aa",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 1.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 26.800000000000001,
+                        "glow_offset_distance": 3.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Symbol 4",
+            "uuid": "a03b8c5a-fcbe-4754-9a3b-cd45c93bd703",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "!",
+                "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Black",
+                    "size": 48,
+                    "flags": 1
+                }
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Top Background 5",
+            "uuid": "2573da76-fcb7-4148-9976-65a57293fb85",
+            "id": "color_source",
+            "versioned_id": "color_source_v3",
+            "settings": {
+                "undo_suuid": "cb9e1772-84a7-403e-a10e-b5daac34a636",
+                "color": 4286045559
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "8b90b186-e391-46fb-910d-a50863901566",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 75.0,
+                        "shape_center_y": 704.0,
+                        "position_x": 960.0,
+                        "position_y": 540.0,
+                        "circle_radius": 17.0,
+                        "mask_gradient_position": 960.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "156ba4c6-26de-4ba4-8252-4aabbe888942",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 1.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 26.800000000000001,
+                        "glow_offset_distance": 3.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Symbol 5",
+            "uuid": "989be775-2b96-4f40-a06a-b623f631d975",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "!",
+                "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Black",
+                    "size": 48,
+                    "flags": 1
+                }
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Top Background 6",
+            "uuid": "6ca3210c-78d5-4f15-8816-98f1ac440711",
+            "id": "color_source",
+            "versioned_id": "color_source_v3",
+            "settings": {
+                "undo_suuid": "cb9e1772-84a7-403e-a10e-b5daac34a636",
+                "color": 4286045559
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Advanced Mask",
+                    "uuid": "d1424030-49a0-4c2a-ba7d-ea75b2b41f82",
+                    "id": "advanced_masks_filter",
+                    "versioned_id": "advanced_masks_filter_v2",
+                    "settings": {
+                        "rectangle_corner_type": 1,
+                        "shape_feather_type": 1,
+                        "shape_type": 2,
+                        "shape_center_x": 75.0,
+                        "shape_center_y": 704.0,
+                        "position_x": 960.0,
+                        "position_y": 540.0,
+                        "circle_radius": 17.0,
+                        "mask_gradient_position": 960.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }, {
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "82cec5f9-6468-494e-8b01-a59b3c02a3b9",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "glow_size": 1.0,
+                        "blur_type": 2,
+                        "glow_offset_angle": 26.800000000000001,
+                        "glow_offset_distance": 3.0
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
+        }, {
+            "prev_ver": 520093696,
+            "name": "[MTQ] Answer - Symbol 6",
+            "uuid": "d5e4a51a-f7ea-4722-818b-6fc42e092ce4",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "!",
+                "undo_suuid": "c65b8456-b102-4b56-a81a-281f7cf9b6e2",
+                "font": {
+                    "face": "Segoe UI",
+                    "style": "Black",
+                    "size": 48,
                     "flags": 1
                 }
             },
@@ -6164,12 +7170,12 @@
                     "id": "advanced_masks_filter",
                     "versioned_id": "advanced_masks_filter_v2",
                     "settings": {
+                        "rectangle_corner_radius": 5.0,
                         "rectangle_corner_type": 1,
                         "shape_feather_type": 1,
-                        "rectangle_corner_radius": 5.0,
-                        "shape_center_x": 288.0,
+                        "shape_center_x": 555.0,
                         "shape_center_y": 699.0,
-                        "rectangle_width": 448.0,
+                        "rectangle_width": 989.0,
                         "rectangle_height": 39.0,
                         "position_x": 960.0,
                         "position_y": 540.0,
@@ -6226,13 +7232,13 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v3",
             "settings": {
-                "text": "guessed by tawmaeaaaaaaaaaaaaaai",
                 "font": {
                     "face": "Segoe UI",
-                    "style": "Regular",
+                    "style": "Bold",
                     "size": 36,
-                    "flags": 0
-                }
+                    "flags": 1
+                },
+                "text": "guessed by tawmae"
             },
             "mixers": 0,
             "sync": 0,
@@ -6249,7 +7255,38 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
-            "private_settings": {}
+            "private_settings": {},
+            "filters": [{
+                    "prev_ver": 520093696,
+                    "name": "Shadow",
+                    "uuid": "7109b667-a7f4-4533-9bb4-fba4126c17cf",
+                    "id": "obs_shadow_filter",
+                    "versioned_id": "obs_shadow_filter",
+                    "settings": {
+                        "blur_type": 2,
+                        "glow_size": 1.0,
+                        "glow_offset_angle": 40.299999999999997,
+                        "glow_offset_distance": 2.0,
+                        "glow_intensity": 111.8
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
         }, {
             "prev_ver": 520093696,
             "name": "[MTQ] Answer - User Profile Image",
@@ -6326,38 +7363,10 @@
                     "id": "crop_filter",
                     "versioned_id": "crop_filter",
                     "settings": {
+                        "bottom": -75,
                         "left": -75,
-                        "top": -75,
                         "right": -75,
-                        "bottom": -75
-                    },
-                    "mixers": 0,
-                    "sync": 0,
-                    "flags": 0,
-                    "volume": 1.0,
-                    "balance": 0.5,
-                    "enabled": true,
-                    "muted": false,
-                    "push-to-mute": false,
-                    "push-to-mute-delay": 0,
-                    "push-to-talk": false,
-                    "push-to-talk-delay": 0,
-                    "hotkeys": {},
-                    "deinterlace_mode": 0,
-                    "deinterlace_field_order": 0,
-                    "monitoring_type": 0,
-                    "private_settings": {}
-                }, {
-                    "prev_ver": 520093696,
-                    "name": "Stroke",
-                    "uuid": "9212403a-f3cc-4595-a5ed-011d26ae5235",
-                    "id": "obs_stroke_filter",
-                    "versioned_id": "obs_stroke_filter",
-                    "settings": {
-                        "stroke_size": 49.0,
-                        "anti_alias": true,
-                        "stroke_fill_color": 4286045559,
-                        "stroke_offset_quality": 1
+                        "top": -75
                     },
                     "mixers": 0,
                     "sync": 0,
@@ -6412,10 +7421,10 @@
             "id": "group",
             "versioned_id": "group",
             "settings": {
-                "id_counter": 0,
                 "custom_size": true,
-                "cx": 3424,
-                "cy": 2018,
+                "cx": 3432,
+                "cy": 1777,
+                "id_counter": 0,
                 "items": [{
                         "name": "[MTQ] Answer - Image",
                         "source_uuid": "56c858b2-2e3a-46c5-a4f0-1596033b763a",
@@ -6437,11 +7446,11 @@
                         "id": 58,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1105.0,
+                            "x": 1113.0,
                             "y": 645.00054931640625
                         },
                         "pos_rel": {
-                            "x": 0.26851850748062134,
+                            "x": 0.28333333134651184,
                             "y": 0.19444549083709717
                         },
                         "scale": {
@@ -6500,11 +7509,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
-                            "y": 605.00054931640625
+                            "y": 605.0010986328125
                         },
                         "pos_rel": {
                             "x": -1.7777777910232544,
-                            "y": 0.12037134170532227
+                            "y": 0.12037241458892822
                         },
                         "scale": {
                             "x": 1.0,
@@ -6554,11 +7563,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
-                            "y": 605.00054931640625
+                            "y": 605.0010986328125
                         },
                         "pos_rel": {
                             "x": -1.7777777910232544,
-                            "y": 0.12037134170532227
+                            "y": 0.12037241458892822
                         },
                         "scale": {
                             "x": 1.0,
@@ -6608,11 +7617,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 60.5,
-                            "y": 1271.000244140625
+                            "y": 1271.000732421875
                         },
                         "pos_rel": {
                             "x": -1.6657407283782959,
-                            "y": 1.3537042140960693
+                            "y": 1.3537051677703857
                         },
                         "scale": {
                             "x": 1.0,
@@ -6661,12 +7670,12 @@
                         "id": 62,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 130.0,
-                            "y": 1309.000244140625
+                            "x": 130.00006103515625,
+                            "y": 1309.000732421875
                         },
                         "pos_rel": {
-                            "x": -1.5370370149612427,
-                            "y": 1.4240744113922119
+                            "x": -1.5370368957519531,
+                            "y": 1.4240753650665283
                         },
                         "scale": {
                             "x": 1.0,
@@ -6715,11 +7724,11 @@
                         "id": 64,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1503.00048828125,
+                            "x": 1511.00048828125,
                             "y": 0.0
                         },
                         "pos_rel": {
-                            "x": 1.0055564641952515,
+                            "x": 1.0203713178634644,
                             "y": -1.0
                         },
                         "scale": {
@@ -6769,12 +7778,876 @@
                         "id": 65,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 1578.77001953125,
+                            "x": 1586.77001953125,
                             "y": 662.9927978515625
                         },
                         "pos_rel": {
-                            "x": 1.1458704471588135,
+                            "x": 1.1606851816177368,
                             "y": 0.22776448726654053
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 2",
+                        "source_uuid": "f08ba8ee-c18a-450c-bb6a-a080202ca92e",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 75,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 734.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": 0.35926127433776855
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 2",
+                        "source_uuid": "cfa8aebb-c752-4927-a401-2a5abf3806e1",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 76,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 809.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": 0.49815022945404053
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 3",
+                        "source_uuid": "6f097d71-02e3-4b8c-8392-ee37ed7feea2",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 77,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 935.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": 0.73148345947265625
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 4",
+                        "source_uuid": "974396ae-f248-4b4a-a86d-36b155034f9c",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 78,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 1065.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": 0.97222423553466797
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 5",
+                        "source_uuid": "0ff427c9-ed35-4e46-bf91-ed373fd82409",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 79,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 192.9996337890625,
+                            "y": 1191.0009765625
+                        },
+                        "pos_rel": {
+                            "x": -1.4203710556030273,
+                            "y": 1.2055573463439941
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 856.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.585185170173645,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 3",
+                        "source_uuid": "a721ddc3-06f6-4b1b-ab5e-6c21115ce04d",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 80,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 860.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": 0.59259462356567383
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 4",
+                        "source_uuid": "ab5d4e95-6576-498c-ac01-0fe85b946c58",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 81,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 990.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": 0.83333539962768555
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 5",
+                        "source_uuid": "033a68d4-5bc3-48de-94c0-291adad0ee27",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 82,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 62.99932861328125,
+                            "y": 1114.001220703125
+                        },
+                        "pos_rel": {
+                            "x": -1.6611123085021973,
+                            "y": 1.0629651546478271
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 3",
+                        "source_uuid": "a5abc0f6-eaf2-44f8-8d09-6facee263d48",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 83,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.50006103515625,
+                            "y": 144.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.7768517732620239,
+                            "y": -0.73333132266998291
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 3",
+                        "source_uuid": "f8e116bb-7a64-4a34-911b-9df95dbb81ac",
+                        "visible": true,
+                        "locked": false,
+                        "rot": -7.5300002098083496,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 84,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 67.0,
+                            "y": 823.5010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6537036895751953,
+                            "y": 0.52500200271606445
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 4",
+                        "source_uuid": "10dc471f-e50e-4915-b58d-cf09e157427b",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 86,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 265.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -0.50925719738006592
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 4",
+                        "source_uuid": "a03b8c5a-fcbe-4754-9a3b-cd45c93bd703",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 6.7399997711181641,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 85,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 72.50006103515625,
+                            "y": 943.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6435184478759766,
+                            "y": 0.74629831314086914
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 5",
+                        "source_uuid": "2573da76-fcb7-4148-9976-65a57293fb85",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 88,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 3.5,
+                            "y": 394.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.7712962627410889,
+                            "y": -0.27036833763122559
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 5",
+                        "source_uuid": "989be775-2b96-4f40-a06a-b623f631d975",
+                        "visible": true,
+                        "locked": false,
+                        "rot": -15.159999847412109,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 87,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 67.0,
+                            "y": 1075.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.6537036895751953,
+                            "y": 0.99074280261993408
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 6",
+                        "source_uuid": "6ca3210c-78d5-4f15-8816-98f1ac440711",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 90,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 98.0,
+                            "y": 442.0010986328125
+                        },
+                        "pos_rel": {
+                            "x": -1.5962963104248047,
+                            "y": -0.18147945404052734
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 6",
+                        "source_uuid": "d5e4a51a-f7ea-4722-818b-6fc42e092ce4",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 15.000000953674316,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 89,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 175.00006103515625,
+                            "y": 1120.001220703125
+                        },
+                        "pos_rel": {
+                            "x": -1.4537036418914795,
+                            "y": 1.0740764141082764
                         },
                         "scale": {
                             "x": 1.0,
@@ -6823,12 +8696,12 @@
                         "id": 68,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 23.0,
-                            "y": 937.0010986328125
+                            "x": 43.00067138671875,
+                            "y": 696.00146484375
                         },
                         "pos_rel": {
-                            "x": -1.7351851463317871,
-                            "y": 0.73518717288970947
+                            "x": -1.6981469392776489,
+                            "y": 0.28889155387878418
                         },
                         "scale": {
                             "x": 1.0,
@@ -6853,7 +8726,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }, {
@@ -6867,8 +8744,8 @@
                             "y": 1080.0
                         },
                         "align": 1,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
                         "bounds_crop": false,
                         "crop_left": 0,
                         "crop_top": 0,
@@ -6877,12 +8754,12 @@
                         "id": 67,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 104.0,
-                            "y": 1634.0010986328125
+                            "x": 127.00091552734375,
+                            "y": 1393.000244140625
                         },
                         "pos_rel": {
-                            "x": -1.585185170173645,
-                            "y": 2.0259280204772949
+                            "x": -1.542590856552124,
+                            "y": 1.5796301364898682
                         },
                         "scale": {
                             "x": 1.0,
@@ -6893,11 +8770,11 @@
                             "y": 1.0
                         },
                         "bounds": {
-                            "x": 366.0,
+                            "x": 946.0,
                             "y": 36.0
                         },
                         "bounds_rel": {
-                            "x": 0.67777776718139648,
+                            "x": 1.7518517971038818,
                             "y": 0.066666670143604279
                         },
                         "scale_filter": "disable",
@@ -6907,7 +8784,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }, {
@@ -6931,20 +8812,20 @@
                         "id": 66,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 14.0,
-                            "y": 1591.0010986328125
+                            "x": 42.9996337890625,
+                            "y": 1347.001708984375
                         },
                         "pos_rel": {
-                            "x": -1.7518517971038818,
-                            "y": 1.946298360824585
+                            "x": -1.6981488466262817,
+                            "y": 1.4944477081298828
                         },
                         "scale": {
-                            "x": 0.20000000298023224,
-                            "y": 0.20000000298023224
+                            "x": 0.20888888835906982,
+                            "y": 0.20888888835906982
                         },
                         "scale_rel": {
-                            "x": 0.20000000298023224,
-                            "y": 0.20000000298023224
+                            "x": 0.20888888835906982,
+                            "y": 0.20888888835906982
                         },
                         "bounds": {
                             "x": 0.0,
@@ -6961,7 +8842,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }
@@ -6993,6 +8878,38 @@
                 "libobs.hide_scene_item.64": [],
                 "libobs.show_scene_item.65": [],
                 "libobs.hide_scene_item.65": [],
+                "libobs.show_scene_item.75": [],
+                "libobs.hide_scene_item.75": [],
+                "libobs.show_scene_item.76": [],
+                "libobs.hide_scene_item.76": [],
+                "libobs.show_scene_item.77": [],
+                "libobs.hide_scene_item.77": [],
+                "libobs.show_scene_item.78": [],
+                "libobs.hide_scene_item.78": [],
+                "libobs.show_scene_item.79": [],
+                "libobs.hide_scene_item.79": [],
+                "libobs.show_scene_item.80": [],
+                "libobs.hide_scene_item.80": [],
+                "libobs.show_scene_item.81": [],
+                "libobs.hide_scene_item.81": [],
+                "libobs.show_scene_item.82": [],
+                "libobs.hide_scene_item.82": [],
+                "libobs.show_scene_item.83": [],
+                "libobs.hide_scene_item.83": [],
+                "libobs.show_scene_item.84": [],
+                "libobs.hide_scene_item.84": [],
+                "libobs.show_scene_item.86": [],
+                "libobs.hide_scene_item.86": [],
+                "libobs.show_scene_item.85": [],
+                "libobs.hide_scene_item.85": [],
+                "libobs.show_scene_item.88": [],
+                "libobs.hide_scene_item.88": [],
+                "libobs.show_scene_item.87": [],
+                "libobs.hide_scene_item.87": [],
+                "libobs.show_scene_item.90": [],
+                "libobs.hide_scene_item.90": [],
+                "libobs.show_scene_item.89": [],
+                "libobs.hide_scene_item.89": [],
                 "libobs.show_scene_item.68": [],
                 "libobs.hide_scene_item.68": [],
                 "libobs.show_scene_item.67": [],
@@ -7011,8 +8928,8 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 73,
                 "custom_size": false,
+                "id_counter": 92,
                 "items": [{
                         "name": "[MTQ] Overview - Base Background",
                         "source_uuid": "493a89b0-a763-43cd-955a-63e6856749bf",
@@ -7178,7 +9095,7 @@
                     }, {
                         "name": "[MTQ] Overview - Overview",
                         "source_uuid": "ec28915d-f49d-40e0-8a1c-97adcb733fb5",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -7348,7 +9265,7 @@
                     }, {
                         "name": "[MTQ] Overview - Rounds Background",
                         "source_uuid": "db96c50c-dedf-4434-9849-f9ddeab2d430",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -7400,9 +9317,9 @@
                         },
                         "private_settings": {}
                     }, {
-                        "name": "[MQT] Overview - Rounds",
+                        "name": "[MTQ] Overview - Rounds",
                         "source_uuid": "0eb0074f-8a13-42bf-aa29-03e5be502984",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -9876,11 +11793,11 @@
                         "id": 58,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1105.0,
+                            "x": 1113.0,
                             "y": 39.99945068359375
                         },
                         "pos_rel": {
-                            "x": 0.26851850748062134,
+                            "x": 0.28333333134651184,
                             "y": -0.92592692375183105
                         },
                         "scale": {
@@ -9939,11 +11856,11 @@
                         "group_item_backup": true,
                         "pos": {
                             "x": 0.0,
-                            "y": -0.00054931640625
+                            "y": 0.0
                         },
                         "pos_rel": {
                             "x": -1.7777777910232544,
-                            "y": -1.000001072883606
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -9993,11 +11910,11 @@
                         "group_item_backup": true,
                         "pos": {
                             "x": 0.0,
-                            "y": -0.00054931640625
+                            "y": 0.0
                         },
                         "pos_rel": {
                             "x": -1.7777777910232544,
-                            "y": -1.000001072883606
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -10047,11 +11964,11 @@
                         "group_item_backup": true,
                         "pos": {
                             "x": 60.5,
-                            "y": 665.9991455078125
+                            "y": 665.9996337890625
                         },
                         "pos_rel": {
                             "x": -1.6657407283782959,
-                            "y": 0.23333179950714111
+                            "y": 0.23333263397216797
                         },
                         "scale": {
                             "x": 1.0,
@@ -10100,12 +12017,12 @@
                         "id": 62,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 130.0,
-                            "y": 703.9991455078125
+                            "x": 130.00006103515625,
+                            "y": 703.9996337890625
                         },
                         "pos_rel": {
-                            "x": -1.5370370149612427,
-                            "y": 0.30370211601257324
+                            "x": -1.5370368957519531,
+                            "y": 0.30370306968688965
                         },
                         "scale": {
                             "x": 1.0,
@@ -10154,11 +12071,11 @@
                         "id": 64,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1503.00048828125,
+                            "x": 1511.00048828125,
                             "y": -605.0010986328125
                         },
                         "pos_rel": {
-                            "x": 1.0055564641952515,
+                            "x": 1.0203713178634644,
                             "y": -2.1203722953796387
                         },
                         "scale": {
@@ -10208,12 +12125,876 @@
                         "id": 65,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 1578.77001953125,
+                            "x": 1586.77001953125,
                             "y": 57.99169921875
                         },
                         "pos_rel": {
-                            "x": 1.1458704471588135,
+                            "x": 1.1606851816177368,
                             "y": -0.89260798692703247
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 2",
+                        "source_uuid": "f08ba8ee-c18a-450c-bb6a-a080202ca92e",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 75,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 128.99996948242188
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": -0.76111114025115967
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 2",
+                        "source_uuid": "cfa8aebb-c752-4927-a401-2a5abf3806e1",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 76,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 204.00003051757812
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": -0.6222221851348877
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 3",
+                        "source_uuid": "6f097d71-02e3-4b8c-8392-ee37ed7feea2",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 77,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 330.0
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": -0.3888888955116272
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 4",
+                        "source_uuid": "974396ae-f248-4b4a-a86d-36b155034f9c",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 78,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 194.0,
+                            "y": 460.0
+                        },
+                        "pos_rel": {
+                            "x": -1.4185185432434082,
+                            "y": -0.14814811944961548
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 864.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.6000000238418579,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Text 5",
+                        "source_uuid": "0ff427c9-ed35-4e46-bf91-ed373fd82409",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 1,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 79,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 192.9996337890625,
+                            "y": 585.9998779296875
+                        },
+                        "pos_rel": {
+                            "x": -1.4203710556030273,
+                            "y": 0.085184931755065918
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 856.0,
+                            "y": 38.0
+                        },
+                        "bounds_rel": {
+                            "x": 1.585185170173645,
+                            "y": 0.070370368659496307
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 3",
+                        "source_uuid": "a721ddc3-06f6-4b1b-ab5e-6c21115ce04d",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 80,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 255.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": -0.52777779102325439
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 4",
+                        "source_uuid": "ab5d4e95-6576-498c-ac01-0fe85b946c58",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 81,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 385.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": -0.28703701496124268
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Image 5",
+                        "source_uuid": "033a68d4-5bc3-48de-94c0-291adad0ee27",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 82,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 62.99932861328125,
+                            "y": 509.0001220703125
+                        },
+                        "pos_rel": {
+                            "x": -1.6611123085021973,
+                            "y": -0.057407200336456299
+                        },
+                        "scale": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "scale_rel": {
+                            "x": 0.23999997973442078,
+                            "y": 0.23999997973442078
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 3",
+                        "source_uuid": "a5abc0f6-eaf2-44f8-8d09-6facee263d48",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 83,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 0.50006103515625,
+                            "y": -461.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7768517732620239,
+                            "y": -1.8537037372589111
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 3",
+                        "source_uuid": "f8e116bb-7a64-4a34-911b-9df95dbb81ac",
+                        "visible": true,
+                        "locked": false,
+                        "rot": -7.5300002098083496,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 84,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 67.0,
+                            "y": 218.49996948242188
+                        },
+                        "pos_rel": {
+                            "x": -1.6537036895751953,
+                            "y": -0.59537041187286377
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 4",
+                        "source_uuid": "10dc471f-e50e-4915-b58d-cf09e157427b",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 86,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 0.0,
+                            "y": -340.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.6296296119689941
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 4",
+                        "source_uuid": "a03b8c5a-fcbe-4754-9a3b-cd45c93bd703",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 6.7399997711181641,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 85,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 72.50006103515625,
+                            "y": 338.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6435184478759766,
+                            "y": -0.37407410144805908
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 5",
+                        "source_uuid": "2573da76-fcb7-4148-9976-65a57293fb85",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 88,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 3.5,
+                            "y": -211.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7712962627410889,
+                            "y": -1.3907407522201538
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 5",
+                        "source_uuid": "989be775-2b96-4f40-a06a-b623f631d975",
+                        "visible": true,
+                        "locked": false,
+                        "rot": -15.159999847412109,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 87,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 67.0,
+                            "y": 470.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6537036895751953,
+                            "y": -0.12962961196899414
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0018518518190830946,
+                            "y": 0.0018518518190830946
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Top Background 6",
+                        "source_uuid": "6ca3210c-78d5-4f15-8816-98f1ac440711",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 90,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 98.0,
+                            "y": -163.0
+                        },
+                        "pos_rel": {
+                            "x": -1.5962963104248047,
+                            "y": -1.3018518686294556
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }, {
+                        "name": "[MTQ] Answer - Symbol 6",
+                        "source_uuid": "d5e4a51a-f7ea-4722-818b-6fc42e092ce4",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 15.000000953674316,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 89,
+                        "group_item_backup": true,
+                        "pos": {
+                            "x": 175.00006103515625,
+                            "y": 515.0001220703125
+                        },
+                        "pos_rel": {
+                            "x": -1.4537036418914795,
+                            "y": -0.046296060085296631
                         },
                         "scale": {
                             "x": 1.0,
@@ -10262,12 +13043,12 @@
                         "id": 68,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 23.0,
-                            "y": 332.0
+                            "x": 43.00067138671875,
+                            "y": 91.0003662109375
                         },
                         "pos_rel": {
-                            "x": -1.7351851463317871,
-                            "y": -0.38518518209457397
+                            "x": -1.6981469392776489,
+                            "y": -0.83148080110549927
                         },
                         "scale": {
                             "x": 1.0,
@@ -10292,7 +13073,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }, {
@@ -10306,8 +13091,8 @@
                             "y": 1080.0
                         },
                         "align": 1,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
+                        "bounds_type": 6,
+                        "bounds_align": 1,
                         "bounds_crop": false,
                         "crop_left": 0,
                         "crop_top": 0,
@@ -10316,12 +13101,12 @@
                         "id": 67,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 104.0,
-                            "y": 1029.0
+                            "x": 127.00091552734375,
+                            "y": 787.9991455078125
                         },
                         "pos_rel": {
-                            "x": -1.585185170173645,
-                            "y": 0.9055556058883667
+                            "x": -1.542590856552124,
+                            "y": 0.45925772190093994
                         },
                         "scale": {
                             "x": 1.0,
@@ -10332,11 +13117,11 @@
                             "y": 1.0
                         },
                         "bounds": {
-                            "x": 366.0,
+                            "x": 946.0,
                             "y": 36.0
                         },
                         "bounds_rel": {
-                            "x": 0.67777776718139648,
+                            "x": 1.7518517971038818,
                             "y": 0.066666670143604279
                         },
                         "scale_filter": "disable",
@@ -10346,7 +13131,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }, {
@@ -10370,20 +13159,20 @@
                         "id": 66,
                         "group_item_backup": true,
                         "pos": {
-                            "x": 14.0,
-                            "y": 986.0
+                            "x": 42.9996337890625,
+                            "y": 742.0006103515625
                         },
                         "pos_rel": {
-                            "x": -1.7518517971038818,
-                            "y": 0.82592594623565674
+                            "x": -1.6981488466262817,
+                            "y": 0.37407517433166504
                         },
                         "scale": {
-                            "x": 0.20000000298023224,
-                            "y": 0.20000000298023224
+                            "x": 0.20888888835906982,
+                            "y": 0.20888888835906982
                         },
                         "scale_rel": {
-                            "x": 0.20000000298023224,
-                            "y": 0.20000000298023224
+                            "x": 0.20888888835906982,
+                            "y": 0.20888888835906982
                         },
                         "bounds": {
                             "x": 0.0,
@@ -10400,7 +13189,11 @@
                             "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 0
+                            "id": "fade_transition",
+                            "versioned_id": "fade_transition",
+                            "name": "[MTQ] Answer Hide Transition",
+                            "transition": {},
+                            "duration": 1000
                         },
                         "private_settings": {}
                     }, {
@@ -10453,14 +13246,14 @@
                         "show_transition": {
                             "id": "fade_transition",
                             "versioned_id": "fade_transition",
-                            "name": "[MTQ] Hint 1 Show Transition",
+                            "name": "[MTQ] Answer Show Transition",
                             "transition": {},
                             "duration": 1000
                         },
                         "hide_transition": {
                             "id": "fade_transition",
                             "versioned_id": "fade_transition",
-                            "name": "[MTQ] Hint 1 Show Transition",
+                            "name": "[MTQ] Answer Hide Transition",
                             "transition": {},
                             "duration": 1000
                         },

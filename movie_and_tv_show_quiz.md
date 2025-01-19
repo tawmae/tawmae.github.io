@@ -151,7 +151,7 @@ You have a bunch of custom triggers available for use.
 1. `Correct Guess (single round played)` - Fires when only one round is played and someone guesses the title correctly. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
 2. `Correct Guess (multiple rounds played)` - Fires when only multiple rounds are played and someone guesses the title correctly. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
 3. `No Correct Guess` - Fires when no one guesses the correct title.
-4. `Most Correct Guesses (multiple rounds played)` - Fires after all rounds have been played. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
+4. `Most Correct Guesses (multiple rounds played)` - Fires after all rounds have been played. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`, `_userCorrectGuesses`.
 5. `Round Starting` - Fires when a round starts.
 6. `Round Halftime` - Fires after half the time has passed.
 7. `Round Ending` - Fires when a round ends.

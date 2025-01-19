@@ -35,14 +35,15 @@ Have your chat guess the movie and/or TV show based on its description and addit
 
 ![Picture](assets/media/mtq_title_4.png)
 
-{ .new }
+
+{: .new }
 Chat guesses can have typos. They don't need to match exactly to count.
 
 ---
 
 ## <span class="iconify" data-icon="material-symbols:vpn-key-outline" data-inline="false"></span> API key
 
-{ .new }
+{: .new }
 This extension requires a The Movie Database (TMDB) API key
 
 You can get your API key for free at: [https://developer.themoviedb.org/reference/intro/getting-started](https://developer.themoviedb.org/reference/intro/getting-started)
@@ -93,7 +94,7 @@ The plugins are **not** required if you only plan to play the chat based version
 
    ![Picture](assets/media/mtq_setup_obs.png)
 
-9. Done!
+9. Done 🥳
 
 ---
 
@@ -152,7 +153,7 @@ You have a bunch of custom triggers available for use.
 3. `No Correct Guess` - Fires when no one guesses the correct title.
 4. `Most Correct Guesses (multiple rounds played)` - Fires after all rounds have been played. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
 
-{ .new }
+{: .new }
 Based on how the code works, the custom triggers come with A LOT of variables, like settings and movie/show info. Most of them aren't of any use, but feel free to check the action history.
 
 ---
@@ -178,7 +179,14 @@ Based on how the code works, the custom triggers come with A LOT of variables, l
 ### Can I exclude animes and cartoons?
    - Sure, you can either exclude the genre 'Animation' and/or "Japanese" language in the Movie/TV Show Settings.
 
+### Can I use triggers other than a command?
+   - Yes, any trigger works. By default, the round count is set to 1. But you can populate a `rounds` argument/variable to set the rounds played. If `rawInput` is populated too, it will take priority over `rounds`.
 
+### How do I reset the stats?
+   - Settings UI -> General -> Very Bottom -> Reset Stats
+
+### Can I change the scene name?
+   - No.
 
 ---
 

@@ -189,6 +189,9 @@ Based on how the code works, the custom triggers come with A LOT of variables, l
 ### How do I reset the stats?
    - Settings UI -> General -> Very Bottom -> Reset Stats
 
+### Can I customize the design?
+   - Since it's all OBS sources, you can totally do that. The only thing you can't do is **renaming** sources or putting them out of the groups.
+
 ### Can I change the scene name?
    - No.
 

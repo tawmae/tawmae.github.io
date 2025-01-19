@@ -149,9 +149,13 @@ You have a bunch of custom triggers available for use.
 ![Picture](assets/media/mtq_custom_triggers.png)
 
 1. `Correct Guess (single round played)` - Fires when only one round is played and someone guesses the title correctly. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
-2. `Correct Guess (multiple rounds played)` - Fires when only multiple rounds are played and someone guesses the title correctly.
+2. `Correct Guess (multiple rounds played)` - Fires when only multiple rounds are played and someone guesses the title correctly. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
 3. `No Correct Guess` - Fires when no one guesses the correct title.
 4. `Most Correct Guesses (multiple rounds played)` - Fires after all rounds have been played. Provides user variables: `_user`, `_userName`, `_userId`, `_userProfilePicture`.
+5. `Round Starting` - Fires when a round starts.
+6. `Round Halftime` - Fires after half the time has passed.
+7. `Round Ending` - Fires when a round ends.
+8. `Hint Showing` - Fires whenever a hint shows.
 
 {: .new }
 Based on how the code works, the custom triggers come with A LOT of variables, like settings and movie/show info. Most of them aren't of any use, but feel free to check the action history.

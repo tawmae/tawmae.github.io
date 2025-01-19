@@ -1,8 +1,4 @@
----
-title: 'Movie Quiz <span class="iconify" data-icon="noto-v1:movie-camera" style="color: #E005B9; font-size: 18px;"></span>'
-layout: default
-parent: Chat Games
----
+
 
 
 ![Picture](assets/general/title_moviequiz.png)

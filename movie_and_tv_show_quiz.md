@@ -172,27 +172,35 @@ Based on how the code works, the custom triggers come with A LOT of variables, l
    - Remember: not every edge case can be handled and sooner or later, you will stumble upon things that should have counted while they didn't and vice versa.
 
 ### Can I get duplicates?
+{: .no_toc }
    - During one session? No. Between sessions? Yes. The IDs are stored in non-persisted global variables and will re-roll if you were about to get a duplicate. Once you close Streamer.bot, the list is gone.
 
 ### What if my settings are too narrow?
+{: .no_toc }
    - This can happen, there aren't infinite movies and TV shows. But the extension will give you Windows Toast-notifications if that's about to happen. So make sure to enable notifications.
 
 ### Is there a leaderboard?
+{: .no_toc }
    - While there's no integrated leaderboard, stats are still being tracked. You can use any Streamer.bot extensions done by other people (like pwnyy) and use the global user variable `tawmae_userCorrectGuesses_MOVIE_AND_TV_SHOW_QUIZ` to display the top rank.
 
 ### Can I exclude animes and cartoons?
+{: .no_toc }
    - Sure, you can either exclude the genre 'Animation' and/or "Japanese" language in the Movie/TV Show Settings.
 
 ### Can I use triggers other than a command?
+{: .no_toc }
    - Yes, any trigger works. By default, the round count is set to 1. But you can populate a `rounds` argument/variable to set the rounds played. If `rawInput` is populated too, it will take priority over `rounds`.
 
 ### How do I reset the stats?
+{: .no_toc }
    - Settings UI -> General -> Very Bottom -> Reset Stats
 
 ### Can I customize the design?
+{: .no_toc }
    - Since it's all OBS sources, you can totally do that. The only thing you can't do is **renaming** sources or putting them out of the groups.
 
 ### Can I change the scene name?
+{: .no_toc }
    - No.
 
 ---

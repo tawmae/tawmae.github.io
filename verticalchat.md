@@ -170,7 +170,7 @@ Toggles the background.
 
 Changes the opacity of the background.
 
-`backgroundopacity=69`
+`backgroundOpacity=69`
 
 ---
 
@@ -178,9 +178,19 @@ Changes the opacity of the background.
 
 Changes the background color of the background box. Supports hex colors, but then you need to replace the `#` with `%23`
 
-`backgroundcolor=pink`
+`backgroundColor=pink`
 
-`backgroundcolor=%23ffc0cb`
+`backgroundColor=%23ffc0cb`
+
+---
+
+### <span class="iconify" data-icon="material-symbols:style-sharp" data-inline="false"></span> Background Style
+
+Applies the background just to individual message instead of the entire browser source. You can choose between regular cards or one with rounded corners. Opacity and colors apply to them.
+
+`backgroundStyle=cards`
+
+`backgroundStyle=cardsRounded`
 
 ---
 

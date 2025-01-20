@@ -333,7 +333,7 @@
             const hideIcons = getParam('hideicons', 'false') === 'true';
             const hideBadges = getParam('hidebadges', 'false') === 'true';
             const bigDropshadow = getParam('bigdropshadow', 'false') === 'true';
-            const backgroundStyle = getParam('backgroundstyle', null);
+            const backgroundStyle = getParam('backgroundstyle', null)?.toLowerCase();
             document.body.style.fontFamily = font + ', sans-serif';
             document.body.style.fontSize = fontsize;
             if (dropshadow) {
@@ -1016,7 +1016,7 @@
                 return el;
             }
 
-            if (backgroundEnabled && (backgroundStyle === 'cards' || backgroundStyle === 'cardsRounded')) {
+            if (backgroundEnabled && (backgroundStyle === 'cards' || backgroundStyle === 'cardsrounded')) {
                 let op = Number(backgroundOpacity) / 100;
                 let rgbaCol = parseColorToRGBA(backgroundColor, op);
                 const styleEl = document.createElement('style');
@@ -1029,7 +1029,7 @@
                     margin: 0.5em 0;
                 }
                 `;
-                if (backgroundStyle === 'cardsRounded') {
+                if (backgroundStyle === 'cardsrounded') {
                     styleEl.innerHTML += `
                     .message,
                     .announcement,

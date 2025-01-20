@@ -98,7 +98,7 @@ Toggle the timestamp. Default is `false`.
 
 ### <span class="iconify" data-icon="ic:twotone-transgender" data-inline="false"></span> Pronouns
 
-Toggle pronouns. Default is `true`.
+Hide pronouns. Default is `true`.
 
 `showPronouns=false`
 
@@ -109,6 +109,22 @@ Toggle pronouns. Default is `true`.
 Hide user avatars / profile pictures. Default is `true`.
 
 `showAvatars=false`
+
+---
+
+### <span class="iconify" data-icon="ri:vip-fill" data-inline="false"></span> Badges
+
+Hide chat badges and shared chat icons. Default is `true`.
+
+`hideBadges=false`
+
+---
+
+### <span class="iconify" data-icon="hugeicons:advertisement" data-inline="false"></span> Icons
+
+Hide the event icons. Default is `true`.
+
+`hideIcons=false`
 
 ---
 
@@ -193,6 +209,14 @@ Changes the font size and also scales all other elements according to it.
 Toggle the dropshadow for the text. Default is `true`.
 
 `dropshadow=false`
+
+---
+
+### <span class="iconify" data-icon="material-symbols-light:ev-shadow-add-rounded" data-inline="false"></span> Big Dropshadow
+
+If the dropshadow has not been disabled, you can make it even bigger to give more contrast.
+
+`bigDropshadow=true`
 
 ---
 

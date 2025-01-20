@@ -1,2 +1,0 @@
-• OBS overlay changes (added rating)
-• Fixed 'Science-Fiction' not being preselected

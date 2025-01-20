@@ -186,7 +186,7 @@ Changes the background color of the background box. Supports hex colors, but the
 
 ### <span class="iconify" data-icon="material-symbols:style-sharp" data-inline="false"></span> Background Style
 
-Applies the background just to individual message instead of the entire browser source. You can choose between regular cards or one with rounded corners. Opacity and colors apply to them.
+Applies the background just to individual message instead of the entire browser source, so `background=true` needs to be in the enabled. You can choose between regular cards or ones with rounded corners. Opacity and colors apply to them. 
 
 `backgroundStyle=cards`
 

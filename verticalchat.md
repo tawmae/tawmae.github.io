@@ -76,7 +76,9 @@ A customizable vertical Twitch chat overlay for OBS!
 You can customize the chat with URL parameters. The first parameter gets added with a `?`, every additional one with `&`.
 
 **Example:**
-`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&fontsize=21px&showavatars=false&excludecommands=true&excludeaccounts=tawmaebot+kofibot`
+`https://tawmae.github.io/overlays/VerticalTwitchChat.html?background=true&backgroundcolor=white&backgroundstyle=cardsrounded&backgroundopacity=10&excludecommands=true&excludeaccounts=tawmaebot+kofibot`
+
+![Picture](assets/media/vc_example_2.png)
 
 ---
 
@@ -274,6 +276,9 @@ force upper- or lower-casing.
 
 ### 2. Does it support YouTube, Kick, Tiktok and Trovo?
    - No, the Vertical Twitch Chat does not support any other platforms.
+
+### 3. Can I run the HTML locally?
+   - Yes, just save the HTML to your PC and use the local file in your browser source.
 
 ---
 

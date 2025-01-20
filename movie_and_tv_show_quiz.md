@@ -165,6 +165,7 @@ Based on how the code works, the custom triggers come with A LOT of variables, l
 ## <span class="iconify" data-icon="streamline:interface-help-question-circle-circle-faq-frame-help-info-mark-more-query-question" data-inline="false"></span> **FAQ**
 
 ### What's the criteria for typing the correct title?
+{: .no_toc }
    - There's an 'algorithm' that calculates the difference between two texts. This allows for typos and other differences in answer vs. title to make it count.
    - I'm adding a bunch of variants of the title to a list to make it as convenient as possible while at the same time maintaining some kind of accuracy.
    - Titles seperated by `:` or `-` like `Star Wars - The Force Unleashed` will make both parts count as an answer, `Star Wars` and `The Force Unleashed`.

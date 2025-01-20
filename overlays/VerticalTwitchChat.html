@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Vertical Twitch Chat – tawmae</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <style>
         html,
@@ -20,19 +21,24 @@
             color: #ffffff;
             text-shadow: none;
         }
+
         body.dropshadow * {
             text-shadow: 1.3px 1.3px 1.3px black;
         }
+
         body.big-dropshadow * {
             text-shadow: 0.8px 0.8px black, 0.9px 0.9px black, 1px 1px black, 1.1px 1.1px black, 1.2px 1.2px black, 1.3px 1.3px black, 1.4px 1.4px black, 1.5px 1.5px black;
         }
+
         body.dropshadow .iconify,
         body.big-dropshadow .iconify {
             filter: drop-shadow(1.3px 1.3px 1.3px black);
         }
+
         body.big-dropshadow .iconify {
             filter: drop-shadow(0.8px 0.8px black, 0.9px 0.9px black, 1px 1px black, 1.1px 1.1px black, 1.2px 1.2px black, 1.3px 1.3px black, 1.4px 1.4px black, 1.5px 1.5px black);
         }
+
         #background-overlay {
             position: fixed;
             top: 0;
@@ -41,6 +47,7 @@
             height: 100%;
             z-index: 0;
         }
+
         #chat-container {
             width: 100%;
             height: 100%;
@@ -49,6 +56,7 @@
             background: transparent;
             z-index: 1;
         }
+
         #messages {
             flex: 1;
             padding: 0.625em;
@@ -57,6 +65,7 @@
             overflow: hidden;
             position: relative;
         }
+
         #message-list {
             display: flex;
             flex-direction: column;
@@ -64,6 +73,7 @@
             transform: translateY(0);
             will-change: transform;
         }
+
         .message,
         .announcement,
         .subscription {
@@ -75,30 +85,36 @@
             animation: slide-in-right 0.5s forwards;
             color: #ffffff;
         }
+
         .slide-in-left {
             transform: translateX(-100%);
             animation: slide-in-left 0.5s forwards;
         }
+
         @keyframes slide-in-right {
             from {
                 opacity: 0;
                 transform: translateX(100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         @keyframes slide-in-left {
             from {
                 opacity: 0;
                 transform: translateX(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         .message-header,
         .announcement-header,
         .subscription-header {
@@ -106,6 +122,7 @@
             align-items: center;
             margin-bottom: 0.3125em;
         }
+
         .avatar {
             height: 2.5em;
             width: 2.5em;
@@ -113,18 +130,21 @@
             margin-right: 0.3125em;
             flex-shrink: 0;
         }
+
         .shared-chat-icon {
             height: 1em;
             width: 1em;
             border-radius: 50%;
             margin-left: 0.3125em;
         }
+
         .badges img {
             height: 1em;
             width: 1em;
             margin-right: 0.125em;
             margin-top: 0.375em;
         }
+
         .username {
             font-weight: 700;
             margin-right: 0.3125em;
@@ -132,6 +152,7 @@
             display: inline-flex;
             align-items: center;
         }
+
         .pronouns-box {
             font-size: 0.625em;
             color: #cccccc;
@@ -142,6 +163,7 @@
             display: inline-flex;
             align-items: center;
         }
+
         .new-chatter {
             font-size: 0.75em;
             color: #00FFFF;
@@ -150,6 +172,7 @@
             display: inline-flex;
             align-items: center;
         }
+
         .message-text {
             word-wrap: break-word;
             margin: 0.0625em 0 0.3125em 0;
@@ -159,6 +182,7 @@
             width: 100%;
             margin-top: 0;
         }
+
         .announcement-text,
         .subscription-text {
             word-wrap: break-word;
@@ -168,6 +192,7 @@
             width: 100%;
             margin-top: 0;
         }
+
         .message-text img,
         .announcement-text img,
         .subscription-text img {
@@ -178,6 +203,7 @@
             margin-left: 0.25em;
             margin-right: 0.25em;
         }
+
         .gigantified-emote {
             width: 6.25em !important;
             height: 6.25em !important;
@@ -186,6 +212,7 @@
             margin-left: 0.25em;
             margin-right: 0.25em;
         }
+
         .reply-preview {
             padding: 0.0625em 0.1875em;
             margin: 0.0625em 0 0.3125em 0;
@@ -200,6 +227,7 @@
             display: flex;
             align-items: center;
         }
+
         .reply-preview img {
             height: 0.75em;
             width: auto;
@@ -208,6 +236,7 @@
             margin-left: 0.125em;
             margin-right: 0.125em;
         }
+
         .announcement .icon,
         .subscription .icon {
             height: 1em;
@@ -216,17 +245,20 @@
             flex-shrink: 0;
             margin-bottom: 0.3125em;
         }
+
         .announcement .icon svg,
         .subscription .icon svg {
             width: 100%;
             height: 100%;
             fill: currentColor;
         }
+
         .announcement-title,
         .subscription-title {
             font-weight: 900;
             font-size: 1em;
         }
+
         #status-indicator {
             position: fixed;
             top: 0.625em;
@@ -239,10 +271,12 @@
             z-index: 9999;
             transition: background 0.5s, opacity 0.5s;
         }
+
         .hidden {
             opacity: 0;
             pointer-events: none;
         }
+
         .message-text,
         .announcement-text,
         .subscription-text {
@@ -299,6 +333,7 @@
             const hideIcons = getParam('hideicons', 'false') === 'true';
             const hideBadges = getParam('hidebadges', 'false') === 'true';
             const bigDropshadow = getParam('bigdropshadow', 'false') === 'true';
+            const backgroundStyle = getParam('backgroundstyle', null);
             document.body.style.fontFamily = font + ', sans-serif';
             document.body.style.fontSize = fontsize;
             if (dropshadow) {
@@ -309,13 +344,18 @@
                 }
             }
             document.body.style.backgroundColor = 'transparent';
-            if (backgroundEnabled) {
-                const overlay = document.createElement('div');
-                overlay.id = 'background-overlay';
-                let op = backgroundOpacity / 100;
-                overlay.style.backgroundColor = backgroundColor;
-                overlay.style.opacity = op;
-                document.body.insertBefore(overlay, document.body.firstChild);
+            function parseColorToRGBA(col, alpha) {
+                let tempDiv = document.createElement('div');
+                tempDiv.style.color = col;
+                document.body.appendChild(tempDiv);
+                let computedColor = window.getComputedStyle(tempDiv).color;
+                document.body.removeChild(tempDiv);
+                if (computedColor.indexOf("rgba") === 0) {
+                    return computedColor.replace(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*(.*)\)/, "rgba($1,$2,$3," + alpha + ")");
+                } else if (computedColor.indexOf("rgb") === 0) {
+                    return computedColor.replace(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/, "rgba($1,$2,$3," + alpha + ")");
+                }
+                return col;
             }
             if (forceUpper) {
                 document.body.style.textTransform = 'uppercase';
@@ -398,7 +438,9 @@
                             default: return;
                         }
                         eventQueueCount++;
-                        eventQueue = eventQueue.then(() => action().then(() => { eventQueueCount--; }));
+                        eventQueue = eventQueue.then(() => action().then(() => {
+                            eventQueueCount--;
+                        }));
                     } catch (error) { }
                 };
                 ws.onclose = () => {
@@ -972,6 +1014,38 @@
                 }
                 el.appendChild(hd);
                 return el;
+            }
+
+            if (backgroundEnabled && (backgroundStyle === 'cards' || backgroundStyle === 'cardsRounded')) {
+                let op = Number(backgroundOpacity) / 100;
+                let rgbaCol = parseColorToRGBA(backgroundColor, op);
+                const styleEl = document.createElement('style');
+                styleEl.innerHTML = `
+                .message,
+                .announcement,
+                .subscription {
+                    background-color: ${rgbaCol} !important;
+                    padding: 0.5em;
+                    margin: 0.5em 0;
+                }
+                `;
+                if (backgroundStyle === 'cardsRounded') {
+                    styleEl.innerHTML += `
+                    .message,
+                    .announcement,
+                    .subscription {
+                        border-radius: 0.5em;
+                    }
+                    `;
+                }
+                document.head.appendChild(styleEl);
+            } else if (backgroundEnabled) {
+                const overlay = document.createElement('div');
+                overlay.id = 'background-overlay';
+                let op = Number(backgroundOpacity) / 100;
+                overlay.style.backgroundColor = backgroundColor;
+                overlay.style.opacity = op;
+                document.body.insertBefore(overlay, document.body.firstChild);
             }
         })();
     </script>

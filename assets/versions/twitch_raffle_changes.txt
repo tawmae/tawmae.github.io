@@ -1,2 +1,1 @@
-• UI design changes
-• Improved debugging
+• Added seperate entries for T2 and T3 subs

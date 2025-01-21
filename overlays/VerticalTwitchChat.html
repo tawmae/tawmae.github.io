@@ -836,15 +836,14 @@
                 scheduleHide(el);
             }
             function handleRewardRedemption(d) {
-                const { user, reward, user_input, messageId } = d;
+                const { user_name, reward, user_input, messageId } = d;
                 const { title, cost } = reward;
                 if (cost < minRewardCost) return;
-                const { name: dn } = user;
                 const el = createSubscriptionElement('REWARD REDEMPTION', '#64d419', 'mdi:star-four-points-circle-outline');
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const tx = document.createElement('div');
                 tx.classList.add('subscription-text');
-                const tN = document.createTextNode(`${dn} redeemed ${title} for ${cost} channel points!`);
+                const tN = document.createTextNode(`${user_name} redeemed ${title} for ${cost} channel points!`);
                 tx.appendChild(tN);
                 if (user_input && user_input.trim() !== '') {
                     const br = document.createElement('br');

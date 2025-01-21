@@ -2,7 +2,8 @@
 title: 'MOD TOOLS <span class="iconify" data-icon="jam:sword-f" style="color: #1CB96A; font-size: 24px;"></span>'
 description: Everything you need to moderate your Twitch stream and keep the bots away from you.
 layout: default
-nav_order: 3
+parent: Utility
+nav_order: 2
 ---
 
 

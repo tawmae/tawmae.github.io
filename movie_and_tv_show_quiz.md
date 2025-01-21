@@ -2,6 +2,7 @@
 title: 'MOVIE & TV SHOW QUIZ <span class="iconify" data-icon="fluent:movies-and-tv-16-regular" style="color: #d4af37 ; font-size: 18px; margin-left: 2px;"></span>'
 description: An interactive game to guess movies and TV shows in your Twitch chat. Powered by TMDB.
 layout: default
+parent: Chat Game
 nav_order: 1
 ---
 

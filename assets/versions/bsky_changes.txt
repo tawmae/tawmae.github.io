@@ -1,1 +1,1 @@
-• Added handling for image aspect ratio on previews
+• Added the option to reply to a created post

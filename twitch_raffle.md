@@ -137,7 +137,7 @@ If you want to use a different trigger (that is not a command), you can create a
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|
-| January 21, 2025           | Added seperate entries for T2 and T3 subs. | 1.0.5 |
+| January 21, 2025           | Added separate entries for T2 and T3 subs. | 1.0.5 |
 | January 13, 2025           | UI changes, improved debugging. | 1.0.4 |
 | January 5, 2025           | Added version check, redone Settings UI, added additional variables to chat responses. | 1.0.3 |
 | November 15, 2024           | Added options to take persisted user variable values into account (and an option to deduct). If you updated to 1.0.2, you might need to reset the settings. | 1.0.2 |

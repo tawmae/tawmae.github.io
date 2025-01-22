@@ -3,7 +3,6 @@ title: 'Vertical Twitch Chat [BETA] <span class="iconify" data-icon="material-sy
 description: A customizable vertical Twitch chat overlay for OBS
 layout: default
 parent: OBS Widgets
-nav_order: 2
 ---
 
 ![Picture](assets/media/vchat_title_1.png)

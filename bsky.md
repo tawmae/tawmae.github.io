@@ -3,7 +3,6 @@ title: 'BLUESKY & SB <span class="iconify" data-icon="logos:bluesky" style="colo
 description: A full Bluesky integration for Streamer.bot. From creating automated posts up to automatically updating your profile...
 layout: default
 parent: Utility
-nav_order: 1
 ---
 
 ![Picture](assets/general/title_bsky.png)

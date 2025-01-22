@@ -3,7 +3,6 @@ title: 'SPOTIFY & SB <span class="iconify" data-icon="logos:spotify-icon" style=
 description: A full Spotify integration for Streamer.bot. Request songs and control your entire Spotify player.
 layout: default
 parent: Utility
-nav_order: 1
 ---
 
 

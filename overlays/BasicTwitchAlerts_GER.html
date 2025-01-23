@@ -307,7 +307,7 @@
     }
 
     switch (type) {
-        case 'Follow': return 'folgt dem Kanal jetzt!';
+        case 'Follow': return `folgt dem Kanal jetzt!`;
         case 'Cheer': return `cheert mit ${bits} Bits!`;
         case 'Sub': return `hat mit einem ${tier} Sub abonniert!`;
         case 'ReSub': return `hat mit einem ${tier} Sub im ${cumulativeMonths}. Monat abonniert!`;
@@ -316,7 +316,7 @@
         case 'Raid': return `raidet mit ${viewers} Zuschauern!`;
         case 'Donation': return `hat ${amount} ${currency} gespendet!`;
         case 'WatchStreak': return `hat eine ${watchStreak}x Watchstreak!`;
-        default: return 'hat etwas wunderbares gemacht!';
+        default: return `hat etwas wunderbares gemacht!`;
       }
 
   </script>

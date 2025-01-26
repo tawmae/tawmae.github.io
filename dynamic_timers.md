@@ -59,7 +59,7 @@ U0JBRR+LCAAAAAAABADtfWlz4siW9veJmP/A7fnQMxGtupnasyPmQ4ENBttUGwwYbnW8kZtARiyXxTa+
     https://tawmae.github.io/overlays/DynamicTimers.html
     ```
    
-5. Go into your OBS, create a browser source and paste the URL in there. Set it to your canvas size.
+5. Go into your OBS, create a browser source and paste the URL in there. Set it to your canvas size. **I'd also recommend to keep `Shutdown source when not visible` unchecked as the timers only work if the browser source is active.**
    
    [![Picture](assets/media/notif_obs_1.png)](https://tawmae.github.io/assets/media/notif_obs_1.png)
    

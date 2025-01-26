@@ -67,6 +67,9 @@ U0JBRR+LCAAAAAAABADtfVlz4siW8PtEzH/g9jz0TEyrbqb27Ih5MNhgsE212eFWxxe5CWTEMizG+M79
    
 6. Done 🥳
 
+{: .highlight }
+If you want to have the timers in multiple scenes, don't create a second browser source. Instead, use nested scenes or source clones.
+
 ---
 
 {: .new }

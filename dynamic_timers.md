@@ -232,6 +232,4 @@ Changes the max. limit of timers you can have at the same time. Default is set t
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|
-| January21, 2025           | Added URL parameters (backgroundStyle), fixed a bug where channel rewards were not showing | 0.1.2 |
-| January 20, 2025           | Added URL parameters (hideBadges, hideIcons, backgroundStyle, forceUppercase, forceLowercase, justify, minRewardCost,bigDropshadow) | 0.1.1 |
 | January 17, 2025           | Beta-Release | 0.1.0 |

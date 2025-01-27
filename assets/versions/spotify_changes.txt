@@ -1,1 +1,2 @@
-• Improved update notification
+• Bug fix: Repeated New Song trigger when paused on 00:00
+• UI changes

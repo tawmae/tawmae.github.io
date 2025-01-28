@@ -6,7 +6,7 @@ nav_order: 1
 
 ![Picture](assets/general/Github_Title.png)
 
-Here you'll find a collection of my personal StreamerBot extensions. If you run into any issues, you can join my [discord server](https://discord.gg/gEm5UMSvYs) and ping me there.
+Welcome to my collection of personal StreamerBot extensions. If you encounter any issues or have questions, feel free to join my [Discord server](https://discord.gg/gEm5UMSvYs) and reach out to me there.
 
 ---
 

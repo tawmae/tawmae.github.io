@@ -316,7 +316,7 @@
             const excludecommands = getParam('excludecommands') === 'true';
             const enterDirection = getParam('enter', 'right') === 'left' ? 'left' : 'right';
             const excludeEventsParam = getParam('excludeevents') ? getParam('excludeevents').split(/[,+\s]+/).map(e => e.trim().toLowerCase()) : [];
-            const address = getParam('address', '127.0.0.1');
+            const address = getParam('address', 'localhost');
             const port = getParam('port', '8080');
             const backgroundEnabled = getParam('background') === 'true';
             const backgroundOpacity = getParam('backgroundopacity', '90');

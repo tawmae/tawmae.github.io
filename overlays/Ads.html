@@ -11,8 +11,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background-color: #1b2838;
+            background-color: black;
             color: white;
+            opacity: 0.9;
         }
 
         .notification-container {
@@ -141,8 +142,9 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
-        const rawColor = urlParams.get("color") || "ffd700";
+        const rawColor = urlParams.get("color") || "black";
         const font = urlParams.get("font") || "Inter";
+        const backgroundOpacity = urlParams.get("backgroundOpacity") || "90"; 
         const audioCache = new Map();
         const notificationQueue = [];
         let isNotificationActive = false;
@@ -157,6 +159,7 @@
         document.documentElement.style.setProperty("--title-color", color);
         document.documentElement.style.setProperty("--loading-bar-color", color);
         document.body.style.fontFamily = font;
+        document.body.style.opacity = backgroundOpacity / 100;
 
         function connectWebSocket() {
             const ws = new WebSocket("ws://localhost:8080/");

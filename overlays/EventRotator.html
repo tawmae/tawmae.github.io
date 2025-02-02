@@ -194,7 +194,7 @@ const eventOrder = [
 let activeEvents = [];
 let currentIndex = 0;
 function loadSavedEvents() {
-  const savedData = JSON.parse(sessionStorage.getItem("eventsMap")) || {};
+  const savedData = JSON.parse(localStorage.getItem("eventsMap")) || {};
   ["follow","sub","cheer","kofi","gift"].forEach(eventType => {
     if (savedData[eventType] && eventsMap[eventType]) {
       eventsMap[eventType].displayName = savedData[eventType].displayName;
@@ -211,7 +211,7 @@ function saveEvents() {
       amount: eventsMap[eventType].amount
     };
   });
-  sessionStorage.setItem("eventsMap", JSON.stringify(dataToSave));
+  localStorage.setItem("eventsMap", JSON.stringify(dataToSave));
 }
 function updateActiveEvents() {
   activeEvents = eventOrder.filter(
@@ -342,6 +342,7 @@ ws.onopen = () => {
 };
 ws.onmessage = message => {
   const payload = JSON.parse(message.data);
+  console.debug("Received event:", payload);  // Debugging the incoming event
   if (payload.event?.type === "Follow") {
     updateEvent("follow", payload.data.user_name);
   } else if (payload.event?.type === "ReSub") {
@@ -398,7 +399,7 @@ function updateContent() {
 }
 window.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
-    sessionStorage.clear();
+    localStorage.clear();
     ["follow","sub","cheer","kofi","gift"].forEach(eventType => {
       eventsMap[eventType].displayName = "Unknown User";
       eventsMap[eventType].amount = null;
@@ -410,6 +411,8 @@ window.addEventListener('keydown', function (e) {
     setTimeout(() => {
       document.getElementById("icon").querySelector("img").src = "";
       document.getElementById("text").textContent = "Loading...";
+     
+
       document.getElementById("header-text").textContent = "LATEST EVENT";
       document.getElementById("amount-box").classList.remove("visible");
       document.getElementById("header-text").classList.add("visible");

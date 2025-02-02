@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tawmae Adge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background-color: black;
             color: white;
             opacity: 0.9;
@@ -143,7 +142,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
         const rawColor = urlParams.get("color") || "black";
-        const font = urlParams.get("font") || "Inter";
+        const font = urlParams.get("font") || "Segoe UI";
         const backgroundOpacity = urlParams.get("backgroundOpacity") || "90"; 
         const audioCache = new Map();
         const notificationQueue = [];

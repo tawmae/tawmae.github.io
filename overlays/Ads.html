@@ -141,7 +141,7 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
-        const rawColor = urlParams.get("color") || "black";
+        const rawColor = urlParams.get("color") || "#d4af37";
         const font = urlParams.get("font") || "Segoe UI";
         const backgroundOpacity = urlParams.get("backgroundOpacity") || "90"; 
         const audioCache = new Map();

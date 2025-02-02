@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tawmae Adge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: black;
+            font-family: 'Inter', sans-serif;
+            background-color: #1b2838;
             color: white;
-            opacity: 0.9;
         }
 
         .notification-container {
@@ -20,8 +20,7 @@
             top: 20px;
             right: -420px;
             width: auto;
-            background: black;
-            opacity: 0.9;
+            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
             color: white;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -142,9 +141,8 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const soundEnabled = urlParams.get("sound") === "true";
-        const rawColor = urlParams.get("color") || "#d4af37";
-        const font = urlParams.get("font") || "Segoe UI";
-        const backgroundOpacity = urlParams.get("backgroundOpacity") || "90"; 
+        const rawColor = urlParams.get("color") || "ffd700";
+        const font = urlParams.get("font") || "Inter";
         const audioCache = new Map();
         const notificationQueue = [];
         let isNotificationActive = false;
@@ -159,8 +157,6 @@
         document.documentElement.style.setProperty("--title-color", color);
         document.documentElement.style.setProperty("--loading-bar-color", color);
         document.body.style.fontFamily = font;
-        const notificationContainer = document.getElementById("notification");
-        notificationContainer.style.opacity = backgroundOpacity / 100;
 
         function connectWebSocket() {
             const ws = new WebSocket("ws://localhost:8080/");

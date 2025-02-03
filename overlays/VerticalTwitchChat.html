@@ -772,7 +772,12 @@
                 if (enterDirection === 'left') el.classList.add('slide-in-left');
                 const at = document.createElement('div');
                 at.classList.add('subscription-text');
-                at.innerHTML = replaceEmotesInText(text, []);
+                const announcementContent = replaceEmotesInText(text, []);
+                if (announcementContent instanceof DocumentFragment) {
+                    at.appendChild(announcementContent);
+                } else {
+                    at.textContent = announcementContent.textContent;
+                }
                 el.appendChild(at);
                 addElement(el);
                 messagesMap.set(messageId, el);

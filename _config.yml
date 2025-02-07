@@ -1,11 +1,11 @@
-title: tawmae
-description: A collection of Streamer.bot extensions
-og:image: https://tawmae.github.io/assets/media/sb_title.png
+title: tawmae | Streamer.bot Extensions
+description: Visit the new website: www.tawmae.xyz
+og:image: https://raw.githubusercontent.com/tawmae/tawmae/refs/heads/main/assets/page-design/website-card.webp
 theme: just-the-docs
 
 url: https://tawmae.github.io/
 
-
+nav_enabled: false;
 
 logo: "/assets/general/logo.png"
 favicon_ico: "/assets/media/favicon.ico"

@@ -1,2 +1,2 @@
-• Bug fix: Repeated New Song trigger when paused on 00:00
-• UI changes
+• Added 'Default Device' to settings
+• Default Devices may wake from sleep if inactive

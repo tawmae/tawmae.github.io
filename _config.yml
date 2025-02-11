@@ -2,7 +2,7 @@ title: tawmae | Streamer.bot Extensions
 description: Visit the new website www.tawmae.xyz
 og:image: https://raw.githubusercontent.com/tawmae/tawmae/refs/heads/main/assets/page-design/website-card.webp
 theme: just-the-docs
-
+nav_enabled: false
 url: https://tawmae.github.io/
 
 logo: "/assets/general/logo.png"

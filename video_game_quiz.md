@@ -1,4 +1,7 @@
-
+---
+title: Video Game Quiz (un-supported)
+layout: default
+---
 
 
 ![Picture](assets/general/title_videogamequiz.png)

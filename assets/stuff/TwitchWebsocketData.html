@@ -621,7 +621,10 @@
             div.appendChild(copyButton);
 
             output.appendChild(div);
+            if (!output.querySelector('.message.expanded')) {
             output.scrollTop = output.scrollHeight;
+            }
+
 
             saveEventLog();
         }

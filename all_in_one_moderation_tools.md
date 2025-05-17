@@ -407,43 +407,4 @@ All the other settings can be left at default if wanted. You can of course chang
 
 | Date        | Changes          | Version |
 |:-------------|:------------------|:------------------|:-----|
-| January 15, 2025           | Updated version check notification with an optional URL redirect to update | 1.6.2 |
-| January 14, 2025           | Fetching bot and broadcaster info on startup and added bot account to be excluded from blacklisted words filter (restart SB after updating) | 1.6.1 |
-| January 13, 2025           | UI changes, improved debugging | 1.6.0 |
-| January 5, 2025           | Changed ASCII-detection pattern, fixed a bug with the wrong person being warned for URL deletion | 1.5.9 |
-| December 29, 2024           | Code Optimization (please restart SB to convert your old settings), added a dropdown to select the action & queue for follow attacks | 1.5.8 |
-| December 03, 2024           | Added "Shared Chat Message" as command sources | 1.5.7 |
-| December 01, 2024           | Custom Counter Commands without an input now just show the current count without incrementing it | 1.5.6 |
-| November 27, 2024           | Reverted trigger changes from 1.3.0 // fixed an issue with the blacklisted words filter being too aggressive on terms with less than 3 characters | 1.5.5 |
-| November 25, 2024           | Added custom counters // Added version check on startup // Added a lock mechanic | 1.5.3 |
-| November 24, 2024           | URLs are only blocked if it's a valid TLD to prevent false blocks for stuff like "Hey there.glad i caught the stream". Thanks to WhazzItToYa for the initial input. // Improved debugging | 1.5.0 |
-| October 28, 2024           | Added !ban and !unban commands | 1.4.8 |
-| October 24, 2024           | Fixed an issue with TLDs for the URL blocking filter | 1.4.7 |
-| October 23, 2024           | Spambot adjustments | 1.4.5 |
-| October 12, 2024           | Added custom commands to add via chat // added keywords for bots | 1.4.4 |
-| October 12, 2024           | Added stricter keywords to catch the "Best viewers on.." bots. Now it's not only checking for URLs, but also for keywords like "viewers" or "remove the space" | 1.4.3 |
-| October 08, 2024           | Added support for best-viewer-bot bans in case you are blocking hyperlinks in Twitch natively | 1.4.2 |
-| October 07, 2024           | Fixed the chat response for !modRunAds | 1.4.1 |
-| October 03, 2024           | Code optimization for the settings menu | 1.4.0 |
-| September 27, 2024           | Fixed a bug with whitelisted URLs not always getting recognized correctly | 1.3.9 |
-| September 24, 2024           | Added an ASCII spam filter to the "Blacklisted Words" tab | 1.3.8 |
-| September 23, 2024           | Added a new option to the "General" tab to ban potential discord scam bots | 1.3.7 |
-| September 17, 2024           | Fixed a bug that falsely banned first time chatters (occured in 1.3.0) | 1.3.6 |
-| September 17, 2024           | Added "Emote Spam-" and "Caps Spam-Prevention" to the Blacklisted Words tab | 1.3.5 |
-| September 16, 2024           | Added some debugging | 1.3.4 |
-| September 15, 2024           | Added a reply possibility for the `!modTranslate` command | 1.3.3 |
-| September 12, 2024           | Fixed a bug for the URL filter and first words + whitelist URLs| 1.3.2 |
-| September 11, 2024           | Improved the Blacklisted Words filter // Added !modCommands back in | 1.3.1 |
-| September 10, 2024           | Changed the SettingsUI, no more dll required // unmerged the single command into individual commands | 1.3.0 |
-| August 27, 2024           | Removed chat message responses if a command was disabled in settings | 1.2.2 |
-| August 21, 2024           | Allow the removal of recent followers the bot has not seen | 1.2.1 |
-| August 21, 2024           | Added a command to toggle AutoMod | 1.1.2 |
-| August 19, 2024           | Added an option to the Blacklisted Words filter to repost the message in a redacted version // added TTS management | 1.1.1 |
-| August 15, 2024           | Polishing (fixed typos, changed default settings) | 1.1.0 |
-| August 11, 2024           | Added an own blacklisted words system | 1.0.8 |
-| August 10, 2024           | Added "Allow Followers to post links to chat" into the settings // added more TLDs to the URL check | 1.0.7 |
-| August 09, 2024           | Added !removeAllFollowers | 1.0.6 |
-| August 09, 2024           | Added !pollEnd and !pollArchive // Changed predictions to allow resolving, locking and deleting predictions that have not been created with a command // Added !endStream | 1.0.5 |
-| August 08, 2024           | Fixed a typo for the global variable of !FollowAttackUndoAll | 1.0.3 |
-| August 08, 2024           | Added a !FollowAttackUndoAll command | 1.0.1 |
-| August 06, 2024           | Release for SB 0.2.4-beta.11 | 1.0.0 |
+| February 01, 2025           | Release | 1.0.0 |

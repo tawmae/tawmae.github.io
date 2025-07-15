@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>LaTeX → PNG (dark)</title>
+
+  <!-- Google Fonts: Barlow -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- KaTeX CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-vZTGWk2xD/Yx3faZqtVhBGiuwEPF78yeLjHUxnbyJW7KjZ48z+K+drawHEQTgQRV"
+    crossorigin="anonymous"
+  />
+
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      background: #121212;
+      color: #eee;
+      font-family: 'Barlow', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #333;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 100px;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      color: #eee;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+    }
+    select, button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      color: #eee;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #preview-container {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: transparent;
+    }
+    #preview {
+      display: inline-block;
+      padding: 0.5rem;
+      background: transparent;
+    }
+    img#output {
+      margin-top: 1rem;
+      max-width: 90%;
+      border: 1px solid #333;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <header>LaTeX → PNG (Dark &amp; Barlow)</header>
+  <main>
+    <label for="formula">LaTeX-Formel:</label>
+    <textarea id="formula" placeholder="z. B. E=mc^2"></textarea>
+
+    <div>
+      <label for="weight">Barlow‑Weight:</label>
+      <select id="weight">
+        <option value="400">Regular</option>
+        <option value="500">Medium</option>
+        <option value="600">SemiBold</option>
+        <option value="700" selected>Bold</option>
+        <option value="800">ExtraBold</option>
+      </select>
+
+      <button id="render">Render &amp; Download PNG</button>
+    </div>
+
+    <div id="preview-container">
+      <div id="preview"></div>
+    </div>
+
+    <img id="output" alt="Gerendertes PNG wird hier angezeigt" />
+  </main>
+
+  <!-- KaTeX JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-yV7WZ4UnqTA2a5Z+6ss3OQ1kL1zsX+UEoVQb1BdR+R+woa3g8y4H6edOzVcQjXAS"
+    crossorigin="anonymous"
+  ></script>
+  <!-- html2canvas -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+    integrity="sha384-MlY9uooI65YEn2VFoU6kkR86mgFq1aR1cx+0iWxC0txIdG1k3QI5brypGoXhLLXt"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    const formulaEl = document.getElementById('formula');
+    const weightEl  = document.getElementById('weight');
+    const preview   = document.getElementById('preview');
+    const outputImg = document.getElementById('output');
+    const btn       = document.getElementById('render');
+
+    btn.addEventListener('click', () => {
+      const tex = formulaEl.value.trim();
+      if (!tex) return alert('Bitte eine LaTeX‑Formel eingeben.');
+
+      // Schriftgewicht setzen
+      const w = weightEl.value;
+      preview.style.fontWeight = w;
+
+      // KaTeX rendern
+      try {
+        katex.render(tex, preview, {
+          throwOnError: false,
+          displayMode: true
+        });
+      } catch (err) {
+        return alert('KaTeX‑Fehler: ' + err.message);
+      }
+
+      // PNG erstellen
+      html2canvas(preview, {
+        backgroundColor: null,
+        scale: 2
+      }).then(canvas => {
+        // als Data-URL anzeigen & Download-Link anlegen
+        const url = canvas.toDataURL('image/png');
+        outputImg.src = url;
+
+        // automatischer Download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'formula.png';
+        a.click();
+      });
+    });
+  </script>
+</body>
+</html>

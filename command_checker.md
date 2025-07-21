@@ -1,117 +1,22 @@
 ---
-title: Command Checker
-description: Show a list of your channel commands whenever someone wants to know or accidentally uses a command that doesn't exist.
 layout: default
-parent: Utility
----
-
-![Picture](assets/general/title_commandchecker.png)
-
-Twitch
-{: .label .label-purple }
-
-StreamerBot
-{: .label .label-blue }
-
-
-# Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+permalink: /command_chcker
+redirect_to: https://tawmae.xyz/utility/command-check.html
+nav_exclude: true
+search_exclude: true
 ---
 
 
-## <span class="iconify" data-icon="material-symbols:description-outline-sharp" data-inline="false"></span> Description
-Whenever a user types in a command (starting with an exclamation mark `!`) that does not exist, it will instead return a list of all your available commands. You can specify which commands to show (like groups, commands the user has permission for etc. pp.). To prevent spam, you can get a cooldown for the list to show in chat or enable it for whispers only (see note below).
-
-![Picture](assets/media/command_checker_title_2.png)
-
----
-
-## <span class="iconify" data-icon="material-symbols:content-copy-outline-sharp" data-inline="false"></span> Import Code
-```
-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
-``` 
-
----
-
-
-## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Installation
-
-1. Copy the import code from above and import the content
-
-    ![Import Actions](assets/media/import_actions.png)
-
-2. Move to the `Commands` tab and enable the imported commands
-
-    ![How To Enable Commands](assets/media/enable_commands.png)
-
-3. Done! 🥳
-
----
-
-## <span class="iconify" data-icon="material-symbols:settings-alert-rounded" data-inline="false"></span> Settings
-
-You'll have a new settings menu that you can find in the `[Command Checker] 2 - Settings` action by rightclicking the "Test" trigger and hit "Test Trigger".
-
-![Picture](assets/media/command_check_menu.png)
-
-1. You can set the default commands to commands of your choice, so it will just return the list without the `...does not exist` message. That one is not affected by the cooldown. One command per line.
-   
-2. You can also set a cooldown duration of your choice in **seconds**. That means, if it's on `60`, the first wrong command will show the command list, but the second won't. Only if 60 seconds have passed, it will show the entire list in chat again whenever someone types in a wrong command.
-
-3. If you use 3rd party bots like StreamElements and have active commands there, you can enter whitelisted commands that will be excluded from the command check. One command per line.
-
-4. You can choose whether the message is only being send vía whispers instead of chat.
-
-{: .highlight }
-Users need to be phone-verified **and** have whispers enabled (for strangers) in order to send and receive whispers.
-
-5. In the `Command Groups` group of the `[Command Checker] 1 - Main Action` action, you can choose whether you only want to show a specific command group or all of them. And then, whether you want to include command aliases and permission rights. If you want to show multiple command groups, you can duplicate the subaction and replace `selectedCommands[x]` with the next higher number.
-
---- 
-
-So the first subaction shows all my commands in the "Movie Quiz" group.
-
-![Picture](assets/media/command_check_2.png)
-
-![Picture](assets/media/command_check_5.png)
-
----
-
-The second subaction then shows the "Video Game Quiz" group. I changed `selectedCommands1` to `selectedCommands2`
-
-![Picture](assets/media/command_check_3.png)
-
-![Picture](assets/media/command_check_6.png)
-
----
-
-The third subaction then shows the "User Inventory" group. I changed `selectedCommands2` to `selectedCommands3`
-
-![Picture](assets/media/command_check_4.png)
-![Picture](assets/media/command_check_7.png)
-
-
----
-
-{: .note }
-If your commands exceed Twitch's character limit, it will automatically split the messages
-
----
-
-## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
-
-| Date        | Changes          | Version |
-|:-------------|:------------------|:------------------|
-| December 01, 2024          | Showing excluded commands in the output list is now optional // added a version check | 1.1.5 |
-| November 25, 2024          | Added AIO-Mod-Tool counters to the whitelist // added whitelisted commands to the full list of returned commands | 1.1.4 |
-| October 18, 2024          | Added AIO-Mod-Tool commands to the whitelist | 1.1.3 |
-| October 03, 2024          | Optimized the code for the settings menu | 1.1.2 |
-| August 30, 2024          | Can now add aliases for the default command | 1.1.1 |
-| August 29, 2024          | Added a settings menu and an option to send replys as whispers only | 1.1.0 |
-| June 23, 2024           | Added a commands whitelist for 3rd party bots | 1.0.3 |
-| June 22, 2024           | Changed the list-fetch-method so mod-only commands won't break the process for regular users | 1.0.2 |
-| June 22, 2024           | Added a default command to just return the command list | 1.0.1 |
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="canonical" href="{{ page.redirect_to }}"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="refresh" content="0;url={{ page.redirect_to }}" />
+</head>
+<body>
+    <h1>Redirecting...</h1>
+      <a href="{{ page.redirect_to }}">Click here if you are not redirected.<a>
+      <script>location='{{ page.redirect_to }}'</script>
+</body>
+</html>

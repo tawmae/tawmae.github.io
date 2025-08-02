@@ -1,91 +1,22 @@
-
-
-![Picture](assets/general/title_heart.png)
-
-Twitch
-{: .label .label-purple }
-
-OBS
-{: .label .label-yellow }
-
-StreamerBot
-{: .label .label-blue }
-
-
-# Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+---
+layout: default
+permalink: /heart_container
+redirect_to: https://tawmae.xyz/
+nav_exclude: true
+search_exclude: true
 ---
 
-## <span class="iconify" data-icon="material-symbols:description-outline-sharp" data-inline="false"></span> Description
 
-Use events, commands or any trigger you can think of to add or remove heart containers from your OBS overlay.
-
-![Picture](assets/media/heart_container_title_2.gif)
-
----
-
-## <span class="iconify" data-icon="material-symbols:content-copy-outline-sharp" data-inline="false"></span> Import Code
-```
-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
-```
-
----
-
-## <span class="iconify" data-icon="simple-icons:obsstudio" data-inline="false"></span> Required OBS Plugins
-1. [Source Copy Plugin](https://obsproject.com/forum/resources/source-copy.1261/) 
-2. [Move Plugin](https://obsproject.com/forum/resources/move.913/)
-
-{: .highlight }
-Make sure you have the latest version of Source Copy (Feb 15, 2024) and OBS on version `30.1.1` or newer
-
----
-
-## <span class="iconify" data-icon="material-symbols:cloud-download" data-inline="false"></span> Downloads
-
-* Images and sounds: [OBS Heart Containers.zip](assets/media/OBS%20Heart%20Containers.zip)
-
----
-
-## <span class="iconify" data-icon="tabler:tool" data-inline="false"></span> Installation
-
-1. Download and install the "Move" and "Source Copy" plugins for OBS.
-
-2. Download the **zip-file** that contains the images and sounds (OBS Heart Containers.zip).
-
-   Unzip "OBS Heart Containers.zip" and place the folder right into your StreamerBot folder. 
-
-   ![Picture](assets/media/heart_container_folder.png)
-
-3. Copy the import code from above and import the content
-
-    ![Import Actions](assets/media/import_actions.png)
-
-4. Navigate to the action `[Heart Containers] ++ Setup ++`, rightclick the "Test" trigger and hit "Test Trigger". 
-
-
-   ![Picture](assets/media/heart_container_test_trigger.png)
-
-   This will create the OBS scene and sources for you. You will get a success response in chat afterwards. 
-
-   ![Picture](assets/media/heart_container_setup_completed.png)
-
-
-5. You can now assign any triggers you want to the `[Heart Containers] Add Hearts` and `[Heart Containers] Remove Hearts` action.
-
-6. **Done!** 🥳
-
-{: .new }
-Note: You can choose any trigger to reset the Heart Containers back to 0, but by default they will automatically reset once your StreamerBot connects to OBS.
-
----
-
-## <span class="iconify" data-icon="material-symbols:published-with-changes" data-inline="false"></span> Changelog
-
-| Date        | Changes          | Version |
-|:-------------|:------------------|:------------------|
-| August 16, 2024           | Fixed a bug when trying to remove hearts | 1.0.1 |
-| August 16, 2024           | Updated to Streamer.bot version 0.2.4 | 1.0.0 |
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="canonical" href="{{ page.redirect_to }}"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="refresh" content="0;url={{ page.redirect_to }}" />
+</head>
+<body>
+    <h1>Redirecting...</h1>
+      <a href="{{ page.redirect_to }}">Click here if you are not redirected.<a>
+      <script>location='{{ page.redirect_to }}'</script>
+</body>
+</html>
